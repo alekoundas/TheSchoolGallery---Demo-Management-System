@@ -23,8 +23,8 @@ namespace WebApi_Database
         public DbSet<Student> StudentDb { get; set; }
         public DbSet<Teacher> TeacherDb { get; set; }
 
-        public System.Data.Entity.DbSet<WebApi_Entities.Classroom> Classrooms { get; set; }
+        public DbSet<Classroom> Classrooms { get; set; }
 
-        public System.Data.Entity.DbSet<WebApi_Entities.School> Schools { get; set; }
+        public DbSet<School> Schools { get; set; }
     }
 }

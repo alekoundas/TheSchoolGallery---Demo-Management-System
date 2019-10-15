@@ -43,11 +43,5 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Web_Entities\Web_Entities.csproj">
-      <Project>{9358e89a-72e1-4f48-be06-6c6f4f5d9e60}</Project>
-      <Name>Web_Entities</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

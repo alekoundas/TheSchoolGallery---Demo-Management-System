@@ -173,6 +173,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -238,6 +239,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Teacher\Create.cshtml" />
+    <Content Include="Views\Teacher\Delete.cshtml" />
+    <Content Include="Views\Teacher\Details.cshtml" />
+    <Content Include="Views\Teacher\Edit.cshtml" />
+    <Content Include="Views\Teacher\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -256,17 +262,13 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Web_Entities\Web_Entities.csproj">
-      <Project>{9358e89a-72e1-4f48-be06-6c6f4f5d9e60}</Project>
-      <Name>Web_Entities</Name>
+    <ProjectReference Include="..\Web_DomainClasses\Web_DomainClasses.csproj">
+      <Project>{9814e8f1-1309-4600-b45f-74a2aa597d30}</Project>
+      <Name>Web_DomainClasses</Name>
     </ProjectReference>
     <ProjectReference Include="..\Web_Services\Web_Services.csproj">
       <Project>{42d8f938-efda-4e92-822c-7e52d634d784}</Project>
       <Name>Web_Services</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Web_ViewModels\Web_ViewModels.csproj">
-      <Project>{eebb79f5-8c3d-4c6d-a459-462c26a031b8}</Project>
-      <Name>Web_ViewModels</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

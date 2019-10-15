@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Web_Services
+namespace Web_DomainClasses.Entities.Avatar
 {
-    public class Class1
+    class Class1
     {
     }
 }

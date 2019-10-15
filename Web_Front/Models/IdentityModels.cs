@@ -29,5 +29,7 @@ namespace Web_Front.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Web_DomainClasses.Entities.School.Teacher> Teachers { get; set; }
     }
 }

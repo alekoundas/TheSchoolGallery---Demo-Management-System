@@ -2,11 +2,14 @@
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Web_Entities;
-using Web_Entities.Avatar;
+using Web_DomainClasses;
+using Web_DomainClasses.Entities;
+using Web_DomainClasses.Entities.Avatar;
+using Web_DomainClasses.Entities.School;
 
 namespace Web_Front.Controllers
 {
@@ -23,9 +26,9 @@ namespace Web_Front.Controllers
             RestClient client = new RestClient(Url);
             RestRequest request = new RestRequest(Method.GET);
             var response = client.Execute(request).Content;
-            object JsonObj = JsonConvert.DeserializeObject<dynamic>(response);
+            object JsonObj = JsonConvert.DeserializeObject<List<Teacher>>(response);
             ViewBag.Message = JsonObj;
-
+            Trace.WriteLine(JsonObj);
             return View();
         }
 
@@ -35,39 +38,5 @@ namespace Web_Front.Controllers
 
             return View();
         }
-    }
-    class Teacher
-    {
-        public int TeacherId { get; set; }
-
-
-        public string FirstName { get; set; }
-
-        public string LastName { get; set; }
-
-        // Has one Avatar ---------------------------------->>
-        public Avatar Avatar { get; set; }
-
-        // Has one Class ----------------------------------->>
-
-        public ICollection<Classroom> Classroom { get; set; }
-    }
-
-    class Results
-    {
-        [JsonProperty("jobcodes")]
-        public Dictionary<string, JobCode> JobCodes { get; set; }
-    }
-
-    class JobCode
-    {
-        [JsonProperty("_status_code")]
-        public string StatusCode { get; set; }
-        [JsonProperty("_status_message")]
-        public string StatusMessage { get; set; }
-        [JsonProperty("id")]
-        public string Id { get; set; }
-        [JsonProperty("name")]
-        public string Name { get; set; }
     }
 }
