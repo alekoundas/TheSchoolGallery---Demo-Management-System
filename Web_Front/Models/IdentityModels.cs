@@ -20,8 +20,7 @@ namespace Web_Front.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+        public ApplicationDbContext(): base("ConnString", throwIfV1Schema: false)
         {
         }
 
@@ -30,6 +29,11 @@ namespace Web_Front.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<Web_DomainClasses.Entities.School.Teacher> Teachers { get; set; }
+        public System.Data.Entity.DbSet<Web_DomainClasses.Entities.School.Teacher> TeachersDb { get; set; }
+        public System.Data.Entity.DbSet<Web_DomainClasses.Entities.School.Painting> PaintingDb { get; set; }
+        public System.Data.Entity.DbSet<Web_DomainClasses.Entities.School.Classroom> ClassroomDb { get; set; }
+        public System.Data.Entity.DbSet<Web_DomainClasses.Entities.School.School> SchoolDb { get; set; }
+
+        public System.Data.Entity.DbSet<Web_DomainClasses.Entities.School.Student> Students { get; set; }
     }
 }

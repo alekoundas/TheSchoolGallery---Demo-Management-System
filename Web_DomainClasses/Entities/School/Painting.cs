@@ -23,7 +23,7 @@ namespace Web_DomainClasses.Entities.School
         public  Student Student { get; set; }
 
         // Has Many Prices ------------------------------>>
-        //public  ICollection<Price> Prices { get; set; }
+        public double Price { get; set; }
 
         // Has Many Awards ------------------------------>>
         //public  ICollection<Award> Awards { get; set; }

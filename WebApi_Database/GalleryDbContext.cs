@@ -11,7 +11,7 @@ namespace WebApi_Database
 {
     public class GalleryDbContext : DbContext
     {
-        public GalleryDbContext() : base("name=ConnString")
+        public GalleryDbContext() : base("name=ConnStringAPI")
         {
 
         }
@@ -22,9 +22,8 @@ namespace WebApi_Database
         public DbSet<AvatarClothes> AvatarClothesDb { get; set; }
         public DbSet<Student> StudentDb { get; set; }
         public DbSet<Teacher> TeacherDb { get; set; }
-
         public DbSet<Classroom> Classrooms { get; set; }
-
         public DbSet<School> Schools { get; set; }
+        public DbSet<Painting> Paintings { get; set; }
     }
 }

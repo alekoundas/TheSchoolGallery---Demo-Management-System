@@ -16,7 +16,8 @@ namespace Web_Services.ApiMapping
         const string Url = "https://localhost:44300/api/Teacher";
 
 
-        //                GET All Teachers           \\
+        //                GET All Teachers                    \\
+        //         Method:GET  -->  /api/Teacher               \\
         public List<Teacher> GetTeachers()
         {
             //Create Client
@@ -37,7 +38,8 @@ namespace Web_Services.ApiMapping
 
 
 
-        //                GET All Teacher By ID           \\
+        //                GET All Teacher By ID                \\
+        //          Method:GET  -->  /api/Teacher/id            \\
         public Teacher GetTeacher(int? Id)
         {
             //Create Client
@@ -57,8 +59,9 @@ namespace Web_Services.ApiMapping
 
 
 
-        
-        //                EDIT Teacher By ID           \\
+
+        //                EDIT Teacher By ID                   \\
+        //           Method:PUT  -->  /api/Teacher/id           \\
         public void EditTeacher(Teacher teacher)
         {
             //Create Client
@@ -75,8 +78,10 @@ namespace Web_Services.ApiMapping
         }
 
 
-        
+
         //               CREATE Teacher By ID           \\
+        //       Method:POST  -->  /api/Teacher/id       \\
+
         public void CreateTeacher(Teacher teacher)
         {
             //Create Client
@@ -91,8 +96,10 @@ namespace Web_Services.ApiMapping
             //Desirialise Response(JSON) To Model
             Teacher teachers = JsonConvert.DeserializeObject<Teacher>(response);
         }
-        
-        //               CREATE Teacher By ID           \\
+
+        //               DELETE Teacher By ID                 \\
+        //        Method:DELETE  -->  /api/Teacher/id          \\
+
         public void DeleteTeacher(int id)
         {
             //Create Client
@@ -107,10 +114,5 @@ namespace Web_Services.ApiMapping
             //Desirialise Response(JSON) To Model
             Teacher teachers = JsonConvert.DeserializeObject<Teacher>(response);
         }
-
-
-
-
-
     }
 }

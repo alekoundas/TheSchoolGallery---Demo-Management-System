@@ -22,8 +22,8 @@ namespace WebApi_Entities
         // Has One Student ------------------------------>>
         public  Student Student { get; set; }
 
-        // Has Many Prices ------------------------------>>
-        //public  ICollection<Price> Prices { get; set; }
+        // Has A Price ------------------------------>>
+        public  double Price { get; set; }
 
         // Has Many Awards ------------------------------>>
         //public  ICollection<Award> Awards { get; set; }

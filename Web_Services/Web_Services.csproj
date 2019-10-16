@@ -49,6 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiMapping\AvatarApiService.cs" />
+    <Compile Include="ApiMapping\PaintingApiService.cs" />
+    <Compile Include="ApiMapping\StudentApiService.cs" />
     <Compile Include="ApiMapping\TeacherApiService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
