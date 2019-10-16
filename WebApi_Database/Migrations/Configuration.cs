@@ -1,4 +1,4 @@
-namespace WebApi_Database.Migrations
+﻿namespace WebApi_Database.Migrations
 {
     using System;
     using System.Collections.Generic;
@@ -57,7 +57,7 @@ namespace WebApi_Database.Migrations
 
 
 
-            //                        Teacher                           \\    
+            //                        Teacher                             \\    
             Teacher t1 = new Teacher { FirstName = "John", LastName = "O'Neil", Avatar = a1 };
             Teacher t2 = new Teacher { FirstName = "Mary", LastName = "William" };
             Teacher t3 = new Teacher { FirstName = "Ethan", LastName = "Charles" };
@@ -66,11 +66,28 @@ namespace WebApi_Database.Migrations
             context.TeacherDb.AddOrUpdate(t3);
 
 
-            //                        Student                           \\    
-            Student s1 = new Student { FirstName = "James", LastName = "Hernandez", Age = 12 };
+            //                        Student                             \\    
+            Student s1 = new Student { FirstName = "James", LastName = "Hernandez", Age = 12, Avatar = a1 };
             Student s2 = new Student { FirstName = "David", LastName = "Smith", Age = 12 };
             Student s3 = new Student { FirstName = "Robert ", LastName = "Rodriguez", Age = 12 };
             Student s4 = new Student { FirstName = "Maria", LastName = "Garcia", Age = 12 };
+            context.StudentDb.AddOrUpdate(s1);
+            context.StudentDb.AddOrUpdate(s2);
+            context.StudentDb.AddOrUpdate(s3);
+            context.StudentDb.AddOrUpdate(s4);
+
+
+
+            //                        Classroom                           \\    
+            Classroom cl1 = new Classroom { Name = "A Δημοτικου", Description = "Η ταξη του 2017", Image = "C://fffffffffff", Teacher = t1, Students = new List<Student> { s1, s2, s3 } };
+            Classroom cl2 = new Classroom { Name = "B Δημοτικου", Description = "Η ταξη του 2018", Image = "C://uuuuuuuuuuu", Teacher = t1, Students = new List<Student> { s1, s4, s3 } };
+            Classroom cl3 = new Classroom { Name = "Γ Δημοτικου", Description = "Η ταξη του 2019", Image = "C://ccccccccccc", Teacher = t1, Students = new List<Student> { s4, s3 } };
+            Classroom cl4 = new Classroom { Name = "Δ Δημοτικου", Description = "Η ταξη του 2020", Image = "C://kkkkkkkkkkk", Teacher = t1, Students = new List<Student> { s2, s2 } };
+
+            //                        School                             \\    
+            School sh1 = new School { Name = "Panteio", City = "Athens", Adress = "Ipokratous 1", Tel = 2109755555, Image = "C://ssssssss", Classroom = new List<Classroom> { cl1, cl2, cl4 } };
+            School sh2 = new School { Name = "ΤΕΙ ΛΑΜΙΑΣ", City = "L.A.mia", Adress = "OXI ALLO SEED!!!!", Tel = 2109755555, Image = "C://xxxxxxxxx", Classroom = new List<Classroom> { cl3, cl4 } };
+
         }
     }
 }
