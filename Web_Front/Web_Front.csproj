@@ -199,6 +199,7 @@
     <Content Include="css\main.css" />
     <Content Include="css\nice-select.css" />
     <Content Include="css\owl.carousel.css" />
+    <Content Include="css\parallaxStyle.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\elegant-theme-line.svg" />
     <Content Include="fonts\flexslider-icon.svg" />
@@ -222,6 +223,13 @@
     <Content Include="images\parallax\parallax_003.png" />
     <Content Include="images\parallax\parallax_004.png" />
     <Content Include="images\parallax\parallax_005.png" />
+    <Content Include="images\parallax\parallax_006.png" />
+    <Content Include="images\parallax\parallax_007.png" />
+    <Content Include="images\parallax\parallax_008.png" />
+    <Content Include="images\parallax\parallax_ribbons.png" />
+    <Content Include="images\parallax\parallax_ribbons2.png" />
+    <Content Include="images\parallax\parallax_sbirds.png" />
+    <Content Include="images\parallax\parallax_smoke.png" />
     <Content Include="images\work-1.jpg" />
     <Content Include="images\work-2.jpg" />
     <Content Include="images\work-3.jpg" />
