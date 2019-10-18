@@ -1,23 +1,38 @@
-﻿<!-- header section -->
-<section class="banner" role="banner">
-    <!--header navigation -->
-    <header id="header">
-        <div class="header-content clearfix">
-            <a class="logo" href="index.html"><img src="images/logo.png" alt=""></a>
-            <nav class="navigation" role="navigation">
-                <ul class="primary-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Schools", "Index", "School")</li>
-                    <li>@Html.ActionLink("Teacher", "Index", "Teacher")</li>
-                    <li><a href="#focus">Donation</a></li>
-                    <li><a href="#chat">Chat</a></li>
-                </ul>
-            </nav>
-            <a href="#" class="nav-toggle">Menu<span></span></a>
-        </div>
-    </header>
-    <!--header navigation -->
-</section>
-<!-- header section -->
+﻿<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#"><i class="fa fa-paint-photo" aria-hidden="true"></i></a>
 
+    <!-- Links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            @Html.Partial("_LoginPartial")
+        </li>
 
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Admin Links
+            </a>
+            <div class="dropdown-menu">
+                <h3>
+                    <i class="fa fa-heart" aria-hidden="true"></i>@Html.ActionLink("Home", "Index", "Home")
+                </h3>
+                <h3>
+                    <i class="fa fa-paint-brush" aria-hidden="true"></i>@Html.ActionLink("Paintings", "Index", "Painting")
+                </h3>
+                <h3>
+                    <i class="fa fa-university" aria-hidden="true"></i>@Html.ActionLink("Schools", "Index", "School")
+                </h3>
+                <h3>
+                    <i class="fa fa-university" aria-hidden="true"></i>@Html.ActionLink("Class", "Index", "Classroom")
+                </h3>
+                <h3>
+                    <i class="fa fa-graduation-cap" aria-hidden="true"></i>@Html.ActionLink("Teachers", "Index", "Teacher")
+                </h3>
+                <h3>
+                    <i class="fa fa-star" aria-hidden="true"></i>@Html.ActionLink("Students", "Index", "Student")
+                </h3>
+            </div>
+        </li>
+    </ul>
+</nav>

@@ -1,0 +1,102 @@
+﻿
+    <div id="navbar" class="container-fluid">
+        <div class="container nav-fill w-100">
+            <nav class="navbar navbar-expand-md navbar-light" role="navigation">
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav nav-fill w-100">
+
+                        <li class="nav-item">
+                            @Html.Partial("_LoginPartial")
+                        </li>
+
+                        <li class="nav-item">
+                            <div class="btn-group">
+                                <h2>
+                                    <i class="fa fa-home" aria-hidden="true"></i>
+                                </h2>
+                                <button class="btn btn-default dropdown-toggle dropdown-toggle-split d-none d-md-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <ul>
+                                        <li>
+                                            <i class="fa fa-heart" aria-hidden="true"></i>@Html.ActionLink("Home", "Index", "Home")
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-paint-brush" aria-hidden="true"></i>@Html.ActionLink("Paintings", "Index", "Painting")
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <div class="btn-group">
+                                <h2>
+                                    <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                                </h2>
+                                <button class="btn btn-default dropdown-toggle dropdown-toggle-split d-none d-md-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <ul>
+                                        <li>
+                                            <i class="fa fa-university" aria-hidden="true"></i>@Html.ActionLink("Schools", "Index", "School")
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-university" aria-hidden="true"></i>@Html.ActionLink("Class", "Index", "Classroom")
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <div class="btn-group">
+                                <h2>
+                                    <i class="fa fa-users" aria-hidden="true"></i>
+                                </h2>
+                                <button class="btn btn-default dropdown-toggle dropdown-toggle-split d-none d-md-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <ul>
+                                        <li>
+                                            <i class="fa fa-graduation-cap" aria-hidden="true"></i>@Html.ActionLink("Teachers", "Index", "Teacher")
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-child" aria-hidden="true"></i>
+                                            @Html.ActionLink("Students", "Index", "Student")
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <div class="btn-group">
+                                <h2>
+                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                </h2>
+                                <button class="btn btn-default dropdown-toggle dropdown-toggle-split d-none d-md-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Cart</a>
+                                    <a class="dropdown-item" href="#">Donations</a>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
