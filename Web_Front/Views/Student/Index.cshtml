@@ -4,12 +4,35 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Students</h2>
+<div class="col-md-12 text-center pt-20 pb-20">
+    <h1>
+        <img style="height:100px; width:100%" src="~/images/banner.jpg" alt="Alternate Text" />
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+        Students
+    </h1>
+</div>
+<hr />
+<div class="feature-area pt-10 pb-10  relative">
+    <div class="container">
+        <div class="row">
+            <h2 class="col-md-6">
+                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                @Html.ActionLink("Create New", "Create")
+            </h2>
+            <div class="col-md-6">
+                @using (Html.BeginForm())
+                {
+                    <p>
+                        Find by Name: @Html.TextBox("SearchString")
+                        <input class="btn btn-large" type="submit" value="Search" />
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
 
+</div>
+<hr />
 
 <div>
     <div class="container">

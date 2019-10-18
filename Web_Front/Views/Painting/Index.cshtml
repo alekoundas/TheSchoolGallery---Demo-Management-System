@@ -4,27 +4,50 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Paintings</h2>
+<div class="col-md-12 text-center pt-20 pb-20">
+    <h1>
+        <img style="height:100px; width:100%" src="~/images/banner.jpg" alt="Alternate Text" />
+        Paintings
+    </h1>
+</div>
+<hr />
+<div class="feature-area pt-10 pb-10  relative">
+    <div class="container">
+        <div class="row">
+            <h2 class="col-md-6">
+                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                @Html.ActionLink("Create New", "Create")
+            </h2>
+            <div class="col-md-6">
+                @using (Html.BeginForm())
+                {
+                    <p>
+                        Find by Name: @Html.TextBox("SearchString")
+                        <input class="btn btn-large" type="submit" value="Search" />
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+</div>
+<hr />
 
 @*<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ImageUrl)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PaintingTitle)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th></th>
-    </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaintingTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
 
-</table>*@
+    </table>*@
 
 <section class="feature-area pt-100 pb-100  relative">
     <div class="overlay overlay-bg"></div>
