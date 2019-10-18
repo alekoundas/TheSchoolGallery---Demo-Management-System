@@ -4,12 +4,13 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Paintings</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+
+@*<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.ImageUrl)
@@ -23,23 +24,31 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ImageUrl)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PaintingTitle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PaintingId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PaintingId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PaintingId })
-        </td>
-    </tr>
-}
+</table>*@
 
-</table>
+<section class="feature-area pt-100 pb-100  relative">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-sm-6 align-items-stretch">
+                    <div class="single-feature">
+                        <div class="painting">
+                            <img src="~/images/@Html.DisplayFor(modelItem => item.ImageUrl)" />
+                        </div>
+                        <div class="desc">
+                            <h2 class="text-uppercase">@Html.DisplayFor(modelItem => item.PaintingTitle) <br> By Yio Cho</h2>
+                            <p>
+                                @Html.DisplayFor(modelItem => item.Price)
+                            </p>
+                        </div>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.PaintingId }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.PaintingId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.PaintingId })
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
