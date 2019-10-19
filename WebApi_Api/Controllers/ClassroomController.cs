@@ -20,14 +20,14 @@ namespace WebApi_Api.Controllers
         // GET: api/Classroom
         public IQueryable<Classroom> GetClassrooms()
         {
-            return db.Classrooms.Include(x=>x.School).Include(y=>y.Teacher).Include(z=>z.Students);
+            return db.ClassroomsDb.Include(x=>x.School).Include(y=>y.Teacher).Include(z=>z.Students);
         }
 
         // GET: api/Classroom/5
         [ResponseType(typeof(Classroom))]
         public IHttpActionResult GetClassroom(int id)
         {
-            Classroom classroom = db.Classrooms.Where(w=>w.ClassroomId == id).Include(x => x.School).Include(y => y.Teacher).Include(z => z.Students).FirstOrDefault();
+            Classroom classroom = db.ClassroomsDb.Where(w=>w.ClassroomId == id).Include(x => x.School).Include(y => y.Teacher).Include(z => z.Students).FirstOrDefault();
             if (classroom == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace WebApi_Api.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.Classrooms.Add(classroom);
+            db.ClassroomsDb.Add(classroom);
             db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = classroom.ClassroomId }, classroom);
@@ -90,13 +90,13 @@ namespace WebApi_Api.Controllers
         [ResponseType(typeof(Classroom))]
         public IHttpActionResult DeleteClassroom(int id)
         {
-            Classroom classroom = db.Classrooms.Find(id);
+            Classroom classroom = db.ClassroomsDb.Find(id);
             if (classroom == null)
             {
                 return NotFound();
             }
 
-            db.Classrooms.Remove(classroom);
+            db.ClassroomsDb.Remove(classroom);
             db.SaveChanges();
 
             return Ok(classroom);
@@ -113,7 +113,7 @@ namespace WebApi_Api.Controllers
 
         private bool ClassroomExists(int id)
         {
-            return db.Classrooms.Count(e => e.ClassroomId == id) > 0;
+            return db.ClassroomsDb.Count(e => e.ClassroomId == id) > 0;
         }
     }
 }

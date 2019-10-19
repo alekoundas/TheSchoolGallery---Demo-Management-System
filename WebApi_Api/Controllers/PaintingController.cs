@@ -20,14 +20,14 @@ namespace WebApi_Api.Controllers
         // GET: api/Painting
         public IQueryable<Painting> GetPaintings()
         {
-            return db.Paintings;
+            return db.PaintingsDb;
         }
 
         // GET: api/Painting/5
         [ResponseType(typeof(Painting))]
         public IHttpActionResult GetPainting(int id)
         {
-            Painting painting = db.Paintings.Find(id);
+            Painting painting = db.PaintingsDb.Find(id);
             if (painting == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace WebApi_Api.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.Paintings.Add(painting);
+            db.PaintingsDb.Add(painting);
             db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = painting.PaintingId }, painting);
@@ -90,13 +90,13 @@ namespace WebApi_Api.Controllers
         [ResponseType(typeof(Painting))]
         public IHttpActionResult DeletePainting(int id)
         {
-            Painting painting = db.Paintings.Find(id);
+            Painting painting = db.PaintingsDb.Find(id);
             if (painting == null)
             {
                 return NotFound();
             }
 
-            db.Paintings.Remove(painting);
+            db.PaintingsDb.Remove(painting);
             db.SaveChanges();
 
             return Ok(painting);
@@ -113,7 +113,7 @@ namespace WebApi_Api.Controllers
 
         private bool PaintingExists(int id)
         {
-            return db.Paintings.Count(e => e.PaintingId == id) > 0;
+            return db.PaintingsDb.Count(e => e.PaintingId == id) > 0;
         }
     }
 }
