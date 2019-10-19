@@ -17,6 +17,7 @@ $(document).ready(function(){
 
     });
 
+    // BANNER ------------------------------------------------------->>
     $('#boxTwo').hide();
     // Swap Typing letters with Main Parallax Banner
     $('#paintBrushButton').on('click',

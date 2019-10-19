@@ -23,7 +23,7 @@ namespace WebApi_Entities
         public  Student Student { get; set; }
 
         // Has A Price ------------------------------>>
-        public  double Price { get; set; }
+        public  int Price { get; set; }
 
         // Has Many Awards ------------------------------>>
         //public  ICollection<Award> Awards { get; set; }

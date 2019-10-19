@@ -2886,9 +2886,9 @@ header {
         height: 100%;
     }
 
-header .container {
-    height: 400px;
-}
+    header .container {
+        height: 100%;
+    }
 
     header .header-text {
         display: table-cell;
