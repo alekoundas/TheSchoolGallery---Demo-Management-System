@@ -20,14 +20,14 @@ namespace WebApi_Api.Controllers
         // GET: api/School
         public IQueryable<School> GetSchools()
         {
-            return db.Schools.Include(x=>x.Classroom);
+            return db.SchoolsDb.Include(x=>x.Classroom);
         }
 
         // GET: api/School/5
         [ResponseType(typeof(School))]
         public IHttpActionResult GetSchool(int id)
         {
-            School school = db.Schools.Where(w=>w.SchoolId==id).Include(x => x.Classroom).FirstOrDefault();
+            School school = db.SchoolsDb.Where(w=>w.SchoolId==id).Include(x => x.Classroom).FirstOrDefault();
             if (school == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace WebApi_Api.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.Schools.Add(school);
+            db.SchoolsDb.Add(school);
             db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = school.SchoolId }, school);
@@ -90,13 +90,13 @@ namespace WebApi_Api.Controllers
         [ResponseType(typeof(School))]
         public IHttpActionResult DeleteSchool(int id)
         {
-            School school = db.Schools.Find(id);
+            School school = db.SchoolsDb.Find(id);
             if (school == null)
             {
                 return NotFound();
             }
 
-            db.Schools.Remove(school);
+            db.SchoolsDb.Remove(school);
             db.SaveChanges();
 
             return Ok(school);
@@ -113,7 +113,7 @@ namespace WebApi_Api.Controllers
 
         private bool SchoolExists(int id)
         {
-            return db.Schools.Count(e => e.SchoolId == id) > 0;
+            return db.SchoolsDb.Count(e => e.SchoolId == id) > 0;
         }
     }
 }

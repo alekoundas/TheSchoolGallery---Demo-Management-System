@@ -22,8 +22,8 @@ namespace WebApi_Database
         public DbSet<AvatarClothes> AvatarClothesDb { get; set; }
         public DbSet<Student> StudentDb { get; set; }
         public DbSet<Teacher> TeacherDb { get; set; }
-        public DbSet<Classroom> Classrooms { get; set; }
-        public DbSet<School> Schools { get; set; }
-        public DbSet<Painting> Paintings { get; set; }
+        public DbSet<Classroom> ClassroomsDb { get; set; }
+        public DbSet<School> SchoolsDb { get; set; }
+        public DbSet<Painting> PaintingsDb { get; set; }
     }
 }
