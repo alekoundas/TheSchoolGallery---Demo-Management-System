@@ -192,7 +192,9 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="css\animate.css" />
     <Content Include="css\bootstrap.css" />
+    <Content Include="css\et-icons.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\linearicons.css" />
     <Content Include="css\magnific-popup.css" />
@@ -298,6 +300,9 @@
     <Content Include="js\owl.carousel.min.js" />
     <Content Include="js\parallax.js" />
     <Content Include="js\pgwslider.min.js" />
+    <Content Include="js\tooltip.js" />
+    <Content Include="js\typed.js" />
+    <Content Include="js\typewriter.js" />
     <Content Include="js\vendor\bootstrap.min.js" />
     <Content Include="js\vendor\jquery-2.2.4.min.js" />
     <Content Include="js\waypoints.min.js" />

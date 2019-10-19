@@ -1942,14 +1942,15 @@ nav a:hover {
 /*#endregion NAVBAR*/
 
 body {
-    background-image: url(../images/white-paper-texture.jpg);
+    /*background-image: url(../images/white-paper-texture.jpg);
     background-repeat: repeat;
-    background-size: auto;
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+    background-size: auto;*/
+    background-color: #f3efe9;
 }
 
+/*FIRST LARGE FRAME*/
 .oz-body-wrap {
-    box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.2);
+    box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
     margin: 50px;
     position: relative
 }
@@ -1965,6 +1966,29 @@ body {
         margin: 10px
     }
 }
+
+/*SECOND MEDIUM FRAME*/
+.oz-body-wrap2 {
+    box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
+    margin: 80px;
+    position: relative; 
+    background-color: #fff;
+}
+
+@media (max-width: 767px) {
+    .oz-body-wrap2 {
+        margin: 60px
+    }
+}
+
+@media (max-width: 575px) {
+    .oz-body-wrap2 {
+        margin: 30px
+    }
+}
+
+
+
 
 .section-gap {
     padding: 100px 0
@@ -2052,10 +2076,10 @@ body {
             }
 
 .banner-area {
-    background-image: url(../images/white-paper-texture.jpg);
+    /*background-image: url(../images/white-paper-texture.jpg);
     background-repeat: repeat;
-    background-size: auto;
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+    background-size: auto;*/
+    background-color: #f3efe9;
 }
 
 
@@ -2161,10 +2185,10 @@ body {
 .video-area {
     padding: 200px 0 60px 0;
     position: relative;
-    background-image: url(../images/white-paper-texture.jpg);
+    /*background-image: url(../images/white-paper-texture.jpg);
     background-repeat: repeat;
-    background-size: auto;
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+    background-size: auto;*/
+    background-color: #f3efe9;
 }
 
     .video-area .overlay-bg {
@@ -2211,10 +2235,10 @@ body {
 /*#region ABOUT*/
 .about-area {
     position: relative;
-    background-image: url(../images/white-paper-texture.jpg);
+    /*background-image: url(../images/white-paper-texture.jpg);
     background-repeat: repeat;
-    background-size: auto;
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+    background-size: auto;*/
+    background-color: #f3efe9;
 }
 
     .about-area .story-content h2 {
@@ -2241,10 +2265,10 @@ body {
 }
 
 .feature-area {
-    background-image: url(../images/white-paper-texture.jpg);
+    /*background-image: url(../images/white-paper-texture.jpg);
     background-repeat: repeat;
-    background-size: auto;
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+    background-size: auto;*/
+    background-color: #f3efe9;
 }
 
     .feature-area .overlay-bg {
@@ -2291,19 +2315,19 @@ body {
         }
 
 .single-feature {
-    background-image: url(../images/white-paper-texture.jpg);
+    /*background-image: url(../images/white-paper-texture.jpg);
     background-repeat: repeat;
-    background-size: auto;
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+    background-size: auto;*/
+    background-color: #f3efe9;
     padding: 30px;
     margin-bottom: 30px
 }
 
 .faq-area {
-    background-image: url(../images/white-paper-texture.jpg);
+    /*background-image: url(../images/white-paper-texture.jpg);
     background-repeat: repeat;
-    background-size: auto;
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+    background-size: auto;*/
+    background-color: #f3efe9;
 }
 
 .counter-left {
@@ -2466,11 +2490,10 @@ body {
 
 /*#region FOOTER*/
 footer {
-    background-image: url(../images/old-paper-texture.jpg);
+    background-image: url(../images/white-paper-texture.jpg);
     background-repeat: repeat;
     background-size: auto;
-    box-shadow: -4px -4px 6px rgba(0, 0, 0, 0.4);
-
+    box-shadow: -3px -3px 18px rgba(0, 0, 0, 0.2);
 }
 
     footer .footer-nav li {
@@ -2559,18 +2582,18 @@ footer {
 }
 
 .generic-banner {
-    background-image: url(../images/white-paper-texture.jpg);
+    /*background-image: url(../images/white-paper-texture.jpg);
     background-repeat: repeat;
-    background-size: auto;
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
+    background-size: auto;*/
+    background-color: #f3efe9;
     color: #222
 }
 
 .about-generic-area {
-    background-image: url(../images/white-paper-texture.jpg);
+    /*background-image: url(../images/white-paper-texture.jpg);
     background-repeat: repeat;
-    background-size: auto;
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
+    background-size: auto;*/
+    background-color: #f3efe9;
 }
 
     .about-generic-area .border-top-generic {
@@ -2582,10 +2605,10 @@ footer {
     }
 
 .white-bg {
-    background-image: url(../images/white-paper-texture.jpg);
+    /*background-image: url(../images/white-paper-texture.jpg);
     background-repeat: repeat;
-    background-size: auto;
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
+    background-size: auto;*/
+    background-color: #f3efe9;
 }
 
 .section-top-border {
@@ -2608,10 +2631,10 @@ footer {
 
 /*EDITS*/
 body {
-    background-image: url(../images/white-paper-texture.jpg);
+    /*background-image: url(../images/white-paper-texture.jpg);
     background-repeat: repeat;
-    background-size: auto;
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
+    background-size: auto;*/
+    background-color: #f3efe9;
 }
 
 
@@ -2626,15 +2649,21 @@ body {
 -------------------------------- */
 
 /*#region PARALLAX*/
+
+#boxtwo{
+    
+}
+
 .cd-background-wrapper {
     background-image: url(../images/parallax/sky.png);
     background-repeat: repeat;
     background-size: auto;
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
     position: relative;
     overflow: hidden;
     -webkit-perspective: 4000px;
     perspective: 4000px;
+    padding: 20px;
+    border: 20px solid #fff;
 }
 
 
@@ -2662,11 +2691,15 @@ body {
         background-color: rgba(255, 255, 255, 0.01);
     }
 
+
         .cd-floating-background img:not(:first-child) {
             position: absolute;
             top: 0;
             left: 0;
         }
+
+
+
 
         .cd-floating-background img:first-child {
             -webkit-transform: translateZ(-3000px);
@@ -2753,16 +2786,12 @@ body {
         }
 
         .cd-floating-background img:nth-child(15) {
-            -webkit-transform: translateZ(-10px);
-            -ms-transform: translateZ(-10px);
-            transform: translateZ(-10px);
-        }
-
-        .cd-floating-background img:nth-child(16) {
             -webkit-transform: translateZ(0px);
             -ms-transform: translateZ(0px);
             transform: translateZ(0px);
         }
+
+
 
 .no-preserve-3d .cd-floating-background {
     /* we target browsers that don't support preserve-3d and show just a standard image - no effect visible */
@@ -2779,19 +2808,15 @@ body {
 
 /*#endregion PARALLAX*/
 
-/*
-*
-* ==========================================
-*   ADMIN NAVBAR
-* ==========================================
-*
-*/
+/* -------------------------------- 
 
+    ADMIN NAVBAR
+
+-------------------------------- */
+
+/*#region ADMIN NAVBAR*/
 #navbar {
-    background-image: url(../images/old-paper-texture.jpg);
-    background-repeat: repeat;
-    background-size: auto;
-    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.5);
+
 }
 
     #navbar .btn {
@@ -2805,7 +2830,7 @@ body {
 
     #navbar li.nav-item a {
         font-weight: 700;
-        color: #333;
+        color: #575757;
     }
 
         #navbar li.nav-item a:hover {
@@ -2821,7 +2846,7 @@ body {
     }
 
         #navbar button.dropdown-toggle-split:hover {
-            color: #fff;
+            color: #f3efe9;
         }
 
         #navbar button.dropdown-toggle-split:active {
@@ -2834,7 +2859,76 @@ i {
 }
 
 .dropdown-menu {
-    width: 300px;
+    width: 100vw;
     padding: 20px;
-    background-color: #e0d7ca;
+    background-color: #f3efe9;
 }
+
+/*#endregion ADMIN NAVBAR*/
+
+/* -------------------------------- 
+
+    TYPED LETTERS
+
+-------------------------------- */
+
+/* Typography */
+
+header {
+    position: relative;
+    width: 100%;
+    color: #222;
+    background: #fff;
+}
+
+    header .table {
+        display: table;
+        height: 100%;
+    }
+
+header .container {
+    height: 400px;
+}
+
+    header .header-text {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+        color: #222;
+    }
+
+    header .typed {
+        display: inline-block;
+        margin: 0;
+    }
+
+    header .typed-cursor {
+        font-size: 60px;
+        display: inline-block;
+        margin: 0 10px;
+        color: #ff6a00;
+        -webkit-animation-name: flash;
+        animation-name: flash;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+    }
+
+
+
+/* Blink Cursor */
+.blink {
+    position: relative;
+    top: 4px;
+    display: inline-block;
+    width: 4px;
+    height: 50px;
+    height: 5vh;
+    margin: 0 10px;
+}
+
+.navbar {
+    top: 50px;
+}
+

@@ -1,6 +1,34 @@
 
 $(document).ready(function(){
-	"use strict";
+
+    // Window Load
+    $(window).load(function () {
+        $('header').height($(window).height() + 80);
+        $('section .cut').each(function () {
+            if ($(this).hasClass('cut-top'))
+                $(this).css('border-right-width', $(this).parent().width() + "px");
+            else if ($(this).hasClass('cut-bottom'))
+                $(this).css('border-left-width', $(this).parent().width() + "px");
+        });
+        // Typing Intro Init
+        $(".typed").typewriter({
+            speed: 60
+        });
+
+    });
+
+    $('#boxTwo').hide();
+    // Swap Typing letters with Main Parallax Banner
+    $('#paintBrushButton').on('click',
+        function () {
+            $('#boxOne, #boxTwo').toggle(3200);
+            //$('#boxOne, #boxTwo').fadeToggle("slow", "linear");
+
+        }
+    );
+
+
+    "use strict";
 
 	var window_width 	 = $(window).width(),
 	window_height 		 = window.innerHeight,

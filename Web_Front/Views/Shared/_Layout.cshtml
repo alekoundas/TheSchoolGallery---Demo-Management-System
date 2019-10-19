@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="~/css/nice-select.css">
     <link rel="stylesheet" href="~/css/magnific-popup.css">
     <link rel="stylesheet" href="~/css/bootstrap.css">
+    <link rel="stylesheet" href="~/css/animate.css">
     <link rel="stylesheet" href="~/css/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
@@ -22,8 +23,10 @@
     <!-- NAVIGATION BAR -------------------------------------------------- -->
     @Html.Partial("_Navigation_C")
 
-    <!-- MAIN BODY ------------------------------------------------------- -->
-    @RenderBody()
+    <div class="oz-body-wrap">
+        <!-- MAIN BODY ------------------------------------------------------- -->
+        @RenderBody()
+    </div>
 
     <!-- FOOTER AREA ----------------------------------------------------- -->
     @Html.Partial("_Footer")
@@ -39,6 +42,7 @@
     <script src="~/js/jquery.counterup.min.js"></script>
     <script src="~/js/waypoints.min.js"></script>
     <script src="~/js/parallax.js"></script>
+    <script src="~/js/typewriter.js"></script>
     <script src="~/js/main.js"></script>
     @RenderSection("scripts", required: false)
 </body>
