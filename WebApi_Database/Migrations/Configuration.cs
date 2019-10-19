@@ -94,65 +94,65 @@
 
 
             // STUDENTS ------------------------------------------------------------------------------->>  
-            Student s01 = new Student { StudentId = 01,FirstName = "James", LastName = "Hernandez", Age = 5, Avatar = a1 };
-            Student s02 = new Student { StudentId = 02,FirstName = "David", LastName = "Smith", Age = 5, Avatar = a1 };
-            Student s03 = new Student { StudentId = 03,FirstName = "Robert", LastName = "Rodriguez", Age = 5, Avatar = a1 };
-            Student s04 = new Student { StudentId = 04,FirstName = "Maria", LastName = "Garcia", Age = 5, Avatar = a1 };
-            Student s05 = new Student { StudentId = 05,FirstName = "Fumiko", LastName = "Koyama", Age = 5, Avatar = a1 };
-            Student s06 = new Student { StudentId = 06,FirstName = "Ryoya", LastName = "Urehara", Age = 5, Avatar = a1 };
-            Student s07 = new Student { StudentId = 07,FirstName = "Kim", LastName = "Yun", Age = 5, Avatar = a1 };
-            Student s08 = new Student { StudentId = 08,FirstName = "Fael", LastName = "Faery", Age = 5, Avatar = a1 };
-            Student s09 = new Student { StudentId = 09,FirstName = "Amanda", LastName = "Diamond", Age = 5, Avatar = a1 };
-            Student s10 = new Student { StudentId = 10,FirstName = "Michael", LastName = "Shumy", Age = 5, Avatar = a1 };
-            Student s11 = new Student { StudentId = 11,FirstName = "Will", LastName = "Smooth", Age = 6, Avatar = a1 };
-            Student s12 = new Student { StudentId = 12,FirstName = "Bob", LastName = "Sfougg", Age = 6, Avatar = a1 };
-            Student s13 = new Student { StudentId = 13,FirstName = "Jenny", LastName = "Ntouzi", Age = 6, Avatar = a1 };
-            Student s14 = new Student { StudentId = 14,FirstName = "Mathiew", LastName = "MacTrack", Age = 6, Avatar = a1 };
-            Student s15 = new Student { StudentId = 15,FirstName = "Mairy", LastName = "Pops", Age = 6, Avatar = a1 };
-            Student s16 = new Student { StudentId = 16,FirstName = "Triplos", LastName = "Kakos", Age = 6, Avatar = a1 };
-            Student s17 = new Student { StudentId = 17,FirstName = "Diplos", LastName = "Arithmos", Age = 6, Avatar = a1 };
-            Student s18 = new Student { StudentId = 18,FirstName = "Monos", LastName = "Erimos", Age = 6, Avatar = a1 };
-            Student s19 = new Student { StudentId = 19,FirstName = "Notis", LastName = "Sfakias", Age = 6, Avatar = a1 };
-            Student s20 = new Student { StudentId = 20,FirstName = "Lookia", LastName = "Kelaidoni", Age = 7, Avatar = a1 };
-            Student s21 = new Student { StudentId = 21,FirstName = "Mairy", LastName = "Dounia", Age = 7, Avatar = a1 };
-            Student s22 = new Student { StudentId = 22,FirstName = "Xristina", LastName = "Mama", Age = 7, Avatar = a1 };
-            Student s23 = new Student { StudentId = 23,FirstName = "Jenny", LastName = "Mpotsi", Age = 7, Avatar = a1 };
-            Student s24 = new Student { StudentId = 24,FirstName = "Zozo", LastName = "Markoulaki", Age = 7, Avatar = a1 };
-            Student s25 = new Student { StudentId = 25,FirstName = "Babis", LastName = "Lipsos", Age = 7, Avatar = a1 };
-            Student s26 = new Student { StudentId = 26,FirstName = "Volos", LastName = "Mpilias", Age = 6, Avatar = a1 };
-            Student s27 = new Student { StudentId = 27,FirstName = "Yiorgos", LastName = "Georgiou", Age = 7, Avatar = a1 };
-            Student s28 = new Student { StudentId = 28,FirstName = "Ioannis", LastName = "Xaros", Age = 7, Avatar = a1 };
-            Student s29 = new Student { StudentId = 29,FirstName = "Vaggelis", LastName = "Giortis", Age = 7, Avatar = a1 };
-            Student s30 = new Student { StudentId = 30,FirstName = "Artemis", LastName = "Matsas", Age = 8, Avatar = a1 };
-            Student s31 = new Student { StudentId = 31,FirstName = "Iosif", LastName = "Pateras", Age = 8, Avatar = a1 };
-            Student s32 = new Student { StudentId = 32,FirstName = "Kostas", LastName = "Karagkounis", Age = 8, Avatar = a1 };
-            Student s33 = new Student { StudentId = 33,FirstName = "Elias", LastName = "Apalou", Age = 8, Avatar = a1 };
-            Student s34 = new Student { StudentId = 34,FirstName = "Ektoras", LastName = "Limnios", Age = 8, Avatar = a1 };
-            Student s35 = new Student { StudentId = 35,FirstName = "Ifigeneia", LastName = "Grevena", Age = 8, Avatar = a1 };
-            Student s36 = new Student { StudentId = 36,FirstName = "Manolis", LastName = "Kairos", Age = 8, Avatar = a1 };
-            Student s37 = new Student { StudentId = 37,FirstName = "Giannis", LastName = "Xromas", Age = 9, Avatar = a1 };
-            Student s38 = new Student { StudentId = 38,FirstName = "Nikos", LastName = "Gkagkas", Age = 9, Avatar = a1 };
-            Student s39 = new Student { StudentId = 39,FirstName = "Yiorgos", LastName = "Dedes", Age = 9, Avatar = a1 };
-            Student s40 = new Student { StudentId = 40,FirstName = "Betty", LastName = "Mpantianou", Age = 9, Avatar = a1 };
-            Student s41 = new Student { StudentId = 41,FirstName = "Michalis", LastName = "Karydas", Age = 9, Avatar = a1 };
-            Student s42 = new Student { StudentId = 42,FirstName = "Rea Ifigeneia", LastName = "Chorman", Age = 9, Avatar = a1 };
-            Student s43 = new Student { StudentId = 43,FirstName = "Johnnys", LastName = "Perpatitis", Age = 8, Avatar = a1 };
-            Student s44 = new Student { StudentId = 44,FirstName = "Dimitris", LastName = "Lymperis", Age = 10, Avatar = a1 };
-            Student s45 = new Student { StudentId = 45,FirstName = "Filippas", LastName = "Mpitsis", Age = 8, Avatar = a1 };
-            Student s46 = new Student { StudentId = 46,FirstName = "Alexis", LastName = "Prothypos", Age = 8, Avatar = a1 };
-            Student s47 = new Student { StudentId = 47,FirstName = "Konstantinos", LastName = "Torinos", Age = 10, Avatar = a1 };
-            Student s48 = new Student { StudentId = 48,FirstName = "Maria", LastName = "Maraki", Age = 10, Avatar = a1 };
-            Student s49 = new Student { StudentId = 49,FirstName = "Katerina", LastName = "Vafeidi", Age = 10, Avatar = a1 };
-            Student s50 = new Student { StudentId = 50,FirstName = "Vaggelitsa", LastName = "Grylou", Age = 9, Avatar = a1 };
-            Student s51 = new Student { StudentId = 51,FirstName = "Hector", LastName = "Gatsos", Age = 9, Avatar = a1 };
-            Student s52 = new Student { StudentId = 52,FirstName = "Mike", LastName = "Lawry", Age = 9, Avatar = a1 };
-            Student s53 = new Student { StudentId = 53,FirstName = "Vanessa", LastName = "Smith", Age = 10, Avatar = a1 };
-            Student s54 = new Student { StudentId = 54,FirstName = "Maria", LastName = "Mpihi", Age = 10, Avatar = a1 };
-            Student s55 = new Student { StudentId = 55,FirstName = "Kostas", LastName = "Malamoutis", Age = 10, Avatar = a1 };
-            Student s56 = new Student { StudentId = 56,FirstName = "Yiannis", LastName = "Noaa", Age = 10, Avatar = a1 };
-            Student s57 = new Student { StudentId = 57,FirstName = "Kaori", LastName = "Koyama", Age = 10, Avatar = a1 };
-            Student s58 = new Student { StudentId = 58,FirstName = "Jessica", LastName = "Nian", Age = 10, Avatar = a1 };
-            Student s59 = new Student { StudentId = 59,FirstName = "Biki", LastName = "Valgeri", Age = 10, Avatar = a1 };
+            Student s01 = new Student { StudentId = 01, FirstName = "James", LastName = "Hernandez", Age = 5, Avatar = a1 };
+            Student s02 = new Student { StudentId = 02, FirstName = "David", LastName = "Smith", Age = 5, Avatar = a1 };
+            Student s03 = new Student { StudentId = 03, FirstName = "Robert", LastName = "Rodriguez", Age = 5, Avatar = a1 };
+            Student s04 = new Student { StudentId = 04, FirstName = "Maria", LastName = "Garcia", Age = 5, Avatar = a1 };
+            Student s05 = new Student { StudentId = 05, FirstName = "Fumiko", LastName = "Koyama", Age = 5, Avatar = a1 };
+            Student s06 = new Student { StudentId = 06, FirstName = "Ryoya", LastName = "Urehara", Age = 5, Avatar = a1 };
+            Student s07 = new Student { StudentId = 07, FirstName = "Kim", LastName = "Yun", Age = 5, Avatar = a1 };
+            Student s08 = new Student { StudentId = 08, FirstName = "Fael", LastName = "Faery", Age = 5, Avatar = a1 };
+            Student s09 = new Student { StudentId = 09, FirstName = "Amanda", LastName = "Diamond", Age = 5, Avatar = a1 };
+            Student s10 = new Student { StudentId = 10, FirstName = "Michael", LastName = "Shumy", Age = 5, Avatar = a1 };
+            Student s11 = new Student { StudentId = 11, FirstName = "Will", LastName = "Smooth", Age = 6, Avatar = a1 };
+            Student s12 = new Student { StudentId = 12, FirstName = "Bob", LastName = "Sfougg", Age = 6, Avatar = a1 };
+            Student s13 = new Student { StudentId = 13, FirstName = "Jenny", LastName = "Ntouzi", Age = 6, Avatar = a1 };
+            Student s14 = new Student { StudentId = 14, FirstName = "Mathiew", LastName = "MacTrack", Age = 6, Avatar = a1 };
+            Student s15 = new Student { StudentId = 15, FirstName = "Mairy", LastName = "Pops", Age = 6, Avatar = a1 };
+            Student s16 = new Student { StudentId = 16, FirstName = "Triplos", LastName = "Kakos", Age = 6, Avatar = a1 };
+            Student s17 = new Student { StudentId = 17, FirstName = "Diplos", LastName = "Arithmos", Age = 6, Avatar = a1 };
+            Student s18 = new Student { StudentId = 18, FirstName = "Monos", LastName = "Erimos", Age = 6, Avatar = a1 };
+            Student s19 = new Student { StudentId = 19, FirstName = "Notis", LastName = "Sfakias", Age = 6, Avatar = a1 };
+            Student s20 = new Student { StudentId = 20, FirstName = "Lookia", LastName = "Kelaidoni", Age = 7, Avatar = a1 };
+            Student s21 = new Student { StudentId = 21, FirstName = "Mairy", LastName = "Dounia", Age = 7, Avatar = a1 };
+            Student s22 = new Student { StudentId = 22, FirstName = "Xristina", LastName = "Mama", Age = 7, Avatar = a1 };
+            Student s23 = new Student { StudentId = 23, FirstName = "Jenny", LastName = "Mpotsi", Age = 7, Avatar = a1 };
+            Student s24 = new Student { StudentId = 24, FirstName = "Zozo", LastName = "Markoulaki", Age = 7, Avatar = a1 };
+            Student s25 = new Student { StudentId = 25, FirstName = "Babis", LastName = "Lipsos", Age = 7, Avatar = a1 };
+            Student s26 = new Student { StudentId = 26, FirstName = "Volos", LastName = "Mpilias", Age = 6, Avatar = a1 };
+            Student s27 = new Student { StudentId = 27, FirstName = "Yiorgos", LastName = "Georgiou", Age = 7, Avatar = a1 };
+            Student s28 = new Student { StudentId = 28, FirstName = "Ioannis", LastName = "Xaros", Age = 7, Avatar = a1 };
+            Student s29 = new Student { StudentId = 29, FirstName = "Vaggelis", LastName = "Giortis", Age = 7, Avatar = a1 };
+            Student s30 = new Student { StudentId = 30, FirstName = "Artemis", LastName = "Matsas", Age = 8, Avatar = a1 };
+            Student s31 = new Student { StudentId = 31, FirstName = "Iosif", LastName = "Pateras", Age = 8, Avatar = a1 };
+            Student s32 = new Student { StudentId = 32, FirstName = "Kostas", LastName = "Karagkounis", Age = 8, Avatar = a1 };
+            Student s33 = new Student { StudentId = 33, FirstName = "Elias", LastName = "Apalou", Age = 8, Avatar = a1 };
+            Student s34 = new Student { StudentId = 34, FirstName = "Ektoras", LastName = "Limnios", Age = 8, Avatar = a1 };
+            Student s35 = new Student { StudentId = 35, FirstName = "Ifigeneia", LastName = "Grevena", Age = 8, Avatar = a1 };
+            Student s36 = new Student { StudentId = 36, FirstName = "Manolis", LastName = "Kairos", Age = 8, Avatar = a1 };
+            Student s37 = new Student { StudentId = 37, FirstName = "Giannis", LastName = "Xromas", Age = 9, Avatar = a1 };
+            Student s38 = new Student { StudentId = 38, FirstName = "Nikos", LastName = "Gkagkas", Age = 9, Avatar = a1 };
+            Student s39 = new Student { StudentId = 39, FirstName = "Yiorgos", LastName = "Dedes", Age = 9, Avatar = a1 };
+            Student s40 = new Student { StudentId = 40, FirstName = "Betty", LastName = "Mpantianou", Age = 9, Avatar = a1 };
+            Student s41 = new Student { StudentId = 41, FirstName = "Michalis", LastName = "Karydas", Age = 9, Avatar = a1 };
+            Student s42 = new Student { StudentId = 42, FirstName = "Rea Ifigeneia", LastName = "Chorman", Age = 9, Avatar = a1 };
+            Student s43 = new Student { StudentId = 43, FirstName = "Johnnys", LastName = "Perpatitis", Age = 8, Avatar = a1 };
+            Student s44 = new Student { StudentId = 44, FirstName = "Dimitris", LastName = "Lymperis", Age = 10, Avatar = a1 };
+            Student s45 = new Student { StudentId = 45, FirstName = "Filippas", LastName = "Mpitsis", Age = 8, Avatar = a1 };
+            Student s46 = new Student { StudentId = 46, FirstName = "Alexis", LastName = "Prothypos", Age = 8, Avatar = a1 };
+            Student s47 = new Student { StudentId = 47, FirstName = "Konstantinos", LastName = "Torinos", Age = 10, Avatar = a1 };
+            Student s48 = new Student { StudentId = 48, FirstName = "Maria", LastName = "Maraki", Age = 10, Avatar = a1 };
+            Student s49 = new Student { StudentId = 49, FirstName = "Katerina", LastName = "Vafeidi", Age = 10, Avatar = a1 };
+            Student s50 = new Student { StudentId = 50, FirstName = "Vaggelitsa", LastName = "Grylou", Age = 9, Avatar = a1 };
+            Student s51 = new Student { StudentId = 51, FirstName = "Hector", LastName = "Gatsos", Age = 9, Avatar = a1 };
+            Student s52 = new Student { StudentId = 52, FirstName = "Mike", LastName = "Lawry", Age = 9, Avatar = a1 };
+            Student s53 = new Student { StudentId = 53, FirstName = "Vanessa", LastName = "Smith", Age = 10, Avatar = a1 };
+            Student s54 = new Student { StudentId = 54, FirstName = "Maria", LastName = "Mpihi", Age = 10, Avatar = a1 };
+            Student s55 = new Student { StudentId = 55, FirstName = "Kostas", LastName = "Malamoutis", Age = 10, Avatar = a1 };
+            Student s56 = new Student { StudentId = 56, FirstName = "Yiannis", LastName = "Noaa", Age = 10, Avatar = a1 };
+            Student s57 = new Student { StudentId = 57, FirstName = "Kaori", LastName = "Koyama", Age = 10, Avatar = a1 };
+            Student s58 = new Student { StudentId = 58, FirstName = "Jessica", LastName = "Nian", Age = 10, Avatar = a1 };
+            Student s59 = new Student { StudentId = 59, FirstName = "Biki", LastName = "Valgeri", Age = 10, Avatar = a1 };
             Student s60 = new Student { StudentId = 60, FirstName = "Ifigeneia", LastName = "Fotopoulou", Age = 11, Avatar = a1 };
 
             //Unecessary...Classroom will Crerate Them
@@ -280,23 +280,23 @@
 
             // CLASSROOM ------------------------------------------------------------------------------->>  
             List<Student> slist = new List<Student> { s01, s02, s03, s04, s05, s06, s07, s08, s09, s13 };
-            Classroom cl1 = new Classroom {ClassroomId=1, Name = "Preliminary", Description = "Η ταξη του 2017", Image = "grade_00.jpg", Teacher = t01, Students = new List<Student> { s01, s02, s03, s04, s05, s06, s07, s08, s09, s13 } };
-            Classroom cl2 = new Classroom {ClassroomId=2, Name = "First Grade", Description = "Η ταξη του 2017", Image = "grade_01.jpg", Teacher = t05, Students = new List<Student> { s10, s11, s12, s14, s15, s16, s17, s18, s19 } };
-            Classroom cl3 = new Classroom {ClassroomId=3, Name = "Second Grade", Description = "Η ταξη του 2018", Image = "grade_02.jpg", Teacher = t06, Students = new List<Student> { s20, s21, s22, s24, s25, s26 } };
-            Classroom cl4 = new Classroom {ClassroomId=4, Name = "Third Grade", Description = "Η ταξη του 2019", Image = "grade_03.jpg", Teacher = t02, Students = new List<Student> { s30, s31, s32, s34, s35, s36, s27, s28, s29 } };
-            Classroom cl5 = new Classroom {ClassroomId=5, Name = "Fourth Grade", Description = "Η ταξη του 2020", Image = "grade_04.jpg", Teacher = t03, Students = new List<Student> { s40, s41, s42, s44, s45, s46, s59 } };
-            Classroom cl6 = new Classroom {ClassroomId=6, Name = "Fifth Grade", Description = "Η ταξη του 2020", Image = "grade_05.jpg", Teacher = t07, Students = new List<Student> { s37, s38, s39, s50, s51, s52, s60 } };
-            Classroom cl7 = new Classroom {ClassroomId= 7, Name = "Sixth Grade", Description = "Η ταξη του 2020", Image = "grade_06.jpg", Teacher = t04, Students = new List<Student> { s47, s48, s49, s53, s54, s55, s56, s57, s58 } };
+            Classroom cl1 = new Classroom { ClassroomId = 1, Name = "Preliminary", Description = "Η ταξη του 2017", Image = "grade_00.jpg", Teacher = t01, Students = new List<Student> { s01, s02, s03, s04, s05, s06, s07, s08, s09, s13 } };
+            Classroom cl2 = new Classroom { ClassroomId = 2, Name = "First Grade", Description = "Η ταξη του 2017", Image = "grade_01.jpg", Teacher = t05, Students = new List<Student> { s10, s11, s12, s14, s15, s16, s17, s18, s19 } };
+            Classroom cl3 = new Classroom { ClassroomId = 3, Name = "Second Grade", Description = "Η ταξη του 2018", Image = "grade_02.jpg", Teacher = t06, Students = new List<Student> { s20, s21, s22, s24, s25, s26 } };
+            Classroom cl4 = new Classroom { ClassroomId = 4, Name = "Third Grade", Description = "Η ταξη του 2019", Image = "grade_03.jpg", Teacher = t02, Students = new List<Student> { s30, s31, s32, s34, s35, s36, s27, s28, s29 } };
+            Classroom cl5 = new Classroom { ClassroomId = 5, Name = "Fourth Grade", Description = "Η ταξη του 2020", Image = "grade_04.jpg", Teacher = t03, Students = new List<Student> { s40, s41, s42, s44, s45, s46, s59 } };
+            Classroom cl6 = new Classroom { ClassroomId = 6, Name = "Fifth Grade", Description = "Η ταξη του 2020", Image = "grade_05.jpg", Teacher = t07, Students = new List<Student> { s37, s38, s39, s50, s51, s52, s60 } };
+            Classroom cl7 = new Classroom { ClassroomId = 7, Name = "Sixth Grade", Description = "Η ταξη του 2020", Image = "grade_06.jpg", Teacher = t04, Students = new List<Student> { s47, s48, s49, s53, s54, s55, s56, s57, s58 } };
 
 
             //Unecessary...School will Crerate Them
-            //context.ClassroomsDb.AddOrUpdate(x => x.ClassroomId, cl1);
-            //context.ClassroomsDb.AddOrUpdate(x => x.ClassroomId, cl2);
-            //context.ClassroomsDb.AddOrUpdate(x => x.ClassroomId, cl3);
-            //context.ClassroomsDb.AddOrUpdate(x => x.ClassroomId, cl4);
-            ////context.ClassroomsDb.AddOrUpdate(x => x.ClassroomId, cl5);//has errorr!!!! DONT RUN
-            //context.ClassroomsDb.AddOrUpdate(x => x.ClassroomId, cl6);
-            //context.ClassroomsDb.AddOrUpdate(x => x.ClassroomId, cl7);
+            context.ClassroomsDb.AddOrUpdate(x => x.ClassroomId, cl1);
+            context.ClassroomsDb.AddOrUpdate(x => x.ClassroomId, cl2);
+            context.ClassroomsDb.AddOrUpdate(x => x.ClassroomId, cl3);
+            context.ClassroomsDb.AddOrUpdate(x => x.ClassroomId, cl4);
+            //context.ClassroomsDb.AddOrUpdate(x => x.ClassroomId, cl5);//has errorr!!!! DONT RUN
+            context.ClassroomsDb.AddOrUpdate(x => x.ClassroomId, cl6);
+            context.ClassroomsDb.AddOrUpdate(x => x.ClassroomId, cl7);
             //context.SaveChanges();
 
 
@@ -312,11 +312,11 @@
 
             context.SchoolsDb.AddOrUpdate(sh01);
             context.SchoolsDb.AddOrUpdate(sh02);
-            //context.SchoolsDb.AddOrUpdate(sh03);//has error!!! DONT RUN
-            context.SchoolsDb.AddOrUpdate(sh04);
+            //context.schoolsdb.addorupdate(sh03);//has error!!! dont run
+            //context.SchoolsDb.AddOrUpdate(sh04);
 
             context.SaveChanges();
-         
+
 
         }
     }
