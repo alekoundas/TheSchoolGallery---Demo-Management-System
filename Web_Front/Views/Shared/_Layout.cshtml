@@ -20,11 +20,16 @@
 </head>
 <body>
 
-    <!-- NAVIGATION BAR -------------------------------------------------- -->
-    @Html.Partial("_Navigation_C")
+    <div class="steadybar">
+        <!-- STEADY BAR (login, register, cart, etc -------------------------- -->
+        @Html.Partial("_LoginPartial")
+    </div>
 
     <div class="oz-body-wrap">
-        <!-- MAIN BODY ------------------------------------------------------- -->
+        <!-- NAVIGATION BAR -------------------------------------------------- -->
+        @Html.Partial("_Navigation_B")
+
+        <!-- MAIN BODY --------------------------------------------------- -->
         @RenderBody()
     </div>
 

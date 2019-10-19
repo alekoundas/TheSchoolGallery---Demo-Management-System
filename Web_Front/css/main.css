@@ -45,9 +45,11 @@
 -------------------------------- */
 
 /*#region INITIAL*/
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab&display=swap');
+
 body {
     color: #777;
-    font-family: "Poppins",sans-serif;
+    font-family: 'Josefin Slab', serif;
     font-size: 14px;
     font-weight: 300;
     line-height: 1.5em;
@@ -105,7 +107,7 @@ a, a:focus, a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Poppins",sans-serif;
+    font-family: 'Josefin Slab', serif;
     color: #222;
     line-height: 1.5em;
     margin-bottom: 0;
@@ -116,7 +118,7 @@ h1, h2, h3, h4, h5, h6 {
 .h1, .h2, .h3, .h4, .h5, .h6 {
     margin-bottom: 0;
     margin-top: 0;
-    font-family: "Poppins",sans-serif;
+    font-family: 'Josefin Slab', serif;
     font-weight: 600;
     color: #222
 }
@@ -1838,25 +1840,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /*#endregion THIRD*/
 
-/* -------------------------------- 
 
-    INTERESTING
-
--------------------------------- */
-
-
-body {
-    position: relative
-}
-
-.default-header {
-    padding: 20px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9
-}
 
 
 /* -------------------------------- 
@@ -1867,12 +1851,25 @@ body {
 
 /*#region NAVBAR*/
 
+body {
+    position: relative
+}
+
+.default-header {
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9
+}
+
 .menu-bar {
     cursor: pointer
 }
 
     .menu-bar span {
-        color: #fff;
+        color: #222;
         font-size: 24px
     }
 
@@ -1882,11 +1879,11 @@ body {
 
 @media (max-width: 767px) {
     .main-menubar a {
-        color: #fff
+        color: #222
     }
 
         .main-menubar a:hover {
-            color: #fff
+            color: #222
         }
 }
 
@@ -1940,6 +1937,15 @@ nav a:hover {
     color: #ffaa62
 }
 /*#endregion NAVBAR*/
+
+/* -------------------------------- 
+
+    GENERAL
+
+-------------------------------- */
+
+/*#region GENERAL*/
+
 
 body {
     /*background-image: url(../images/white-paper-texture.jpg);
@@ -2173,6 +2179,7 @@ body {
         display: none
     }
 }
+/*#endregion GENERAL*/
 
 /* -------------------------------- 
 
@@ -2459,7 +2466,6 @@ body {
     z-index: 1
 }
 
-/*#endregion CONTACT*/
 
 .common-input {
     border: 1px solid #e5e8ad;
@@ -2481,6 +2487,7 @@ body {
     height: 150px;
     resize: none
 }
+/*#endregion CONTACT*/
 
 /* -------------------------------- 
 
@@ -2571,7 +2578,7 @@ footer {
             color: #fff
         }
 
-/*#endregion FOOTER*/
+
 
 .generic-header .menu-bar span {
     color: #777
@@ -2627,7 +2634,7 @@ footer {
 .elements-banner {
     color: #000 !important
 }
-
+/*#endregion FOOTER*/
 
 /*EDITS*/
 body {
@@ -2872,8 +2879,7 @@ i {
 
 -------------------------------- */
 
-/* Typography */
-
+/*#region Typography*/
 header {
     position: relative;
     width: 100%;
@@ -2932,3 +2938,14 @@ header {
     top: 50px;
 }
 
+/*#endregion Typography*/
+
+/* -------------------------------- 
+
+    MORE
+
+-------------------------------- */
+
+.steadybar{
+    margin:20px;
+}
