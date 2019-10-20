@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WebApi_Entities;
 using WebApi_Entities.Avatar;
+using WebApi_Entities.SignalR;
 
 namespace WebApi_Database
 {
@@ -25,5 +26,6 @@ namespace WebApi_Database
         public DbSet<Classroom> ClassroomsDb { get; set; }
         public DbSet<School> SchoolsDb { get; set; }
         public DbSet<Painting> PaintingsDb { get; set; }
+        public DbSet<MessageHistory> MessageHistoryDb { get; set; }
     }
 }

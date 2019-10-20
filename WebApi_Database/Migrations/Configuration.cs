@@ -92,68 +92,136 @@
             //context.TeacherDb.AddOrUpdate(x => x.TeacherId, t14);
             //context.SaveChanges();
 
+            // PAINTINGS ------------------------------------------------------------------------------->>  
+            Painting p01 = new Painting { ImageUrl = "painting_001.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p02 = new Painting { ImageUrl = "painting_002.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p03 = new Painting { ImageUrl = "painting_003.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p04 = new Painting { ImageUrl = "painting_004.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p05 = new Painting { ImageUrl = "painting_005.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p06 = new Painting { ImageUrl = "painting_006.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p07 = new Painting { ImageUrl = "painting_007.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p08 = new Painting { ImageUrl = "painting_008.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p09 = new Painting { ImageUrl = "painting_009.jpg", PaintingTitle = "I am Title", Price = 1 };
+
+            Painting p10 = new Painting { ImageUrl = "painting_010.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p11 = new Painting { ImageUrl = "painting_011.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p12 = new Painting { ImageUrl = "painting_012.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p13 = new Painting { ImageUrl = "painting_013.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p14 = new Painting { ImageUrl = "painting_014.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p15 = new Painting { ImageUrl = "painting_015.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p16 = new Painting { ImageUrl = "painting_016.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p17 = new Painting { ImageUrl = "painting_017.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p18 = new Painting { ImageUrl = "painting_018.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p19 = new Painting { ImageUrl = "painting_019.jpg", PaintingTitle = "I am Title", Price = 1 };
+
+            Painting p20 = new Painting { ImageUrl = "painting_020.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p21 = new Painting { ImageUrl = "painting_021.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p22 = new Painting { ImageUrl = "painting_022.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p23 = new Painting { ImageUrl = "painting_023.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p24 = new Painting { ImageUrl = "painting_024.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p25 = new Painting { ImageUrl = "painting_025.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p26 = new Painting { ImageUrl = "painting_026.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p27 = new Painting { ImageUrl = "painting_027.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p28 = new Painting { ImageUrl = "painting_028.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p29 = new Painting { ImageUrl = "painting_029.jpg", PaintingTitle = "I am Title", Price = 1 };
+
+            Painting p30 = new Painting { ImageUrl = "painting_030.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p31 = new Painting { ImageUrl = "painting_031.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p32 = new Painting { ImageUrl = "painting_032.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p33 = new Painting { ImageUrl = "painting_033.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p34 = new Painting { ImageUrl = "painting_034.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p35 = new Painting { ImageUrl = "painting_035.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p36 = new Painting { ImageUrl = "painting_036.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p37 = new Painting { ImageUrl = "painting_037.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p38 = new Painting { ImageUrl = "painting_038.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p39 = new Painting { ImageUrl = "painting_039.jpg", PaintingTitle = "I am Title", Price = 1 };
+
+            Painting p40 = new Painting { ImageUrl = "painting_040.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p41 = new Painting { ImageUrl = "painting_041.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p42 = new Painting { ImageUrl = "painting_042.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p43 = new Painting { ImageUrl = "painting_043.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p44 = new Painting { ImageUrl = "painting_044.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p45 = new Painting { ImageUrl = "painting_045.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p46 = new Painting { ImageUrl = "painting_046.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p47 = new Painting { ImageUrl = "painting_047.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p48 = new Painting { ImageUrl = "painting_048.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p49 = new Painting { ImageUrl = "painting_049.jpg", PaintingTitle = "I am Title", Price = 1 };
+
+            Painting p50 = new Painting { ImageUrl = "painting_050.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p51 = new Painting { ImageUrl = "painting_051.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p52 = new Painting { ImageUrl = "painting_052.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p53 = new Painting { ImageUrl = "painting_053.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p54 = new Painting { ImageUrl = "painting_054.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p55 = new Painting { ImageUrl = "painting_055.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p56 = new Painting { ImageUrl = "painting_056.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p57 = new Painting { ImageUrl = "painting_057.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p58 = new Painting { ImageUrl = "painting_058.jpg", PaintingTitle = "I am Title", Price = 1 };
+            Painting p59 = new Painting { ImageUrl = "painting_059.jpg", PaintingTitle = "I am Title", Price = 1 };
+
+            Painting p60 = new Painting { ImageUrl = "painting_060.jpg", PaintingTitle = "I am Title", Price = 1 };
+
 
             // STUDENTS ------------------------------------------------------------------------------->>  
-            Student s01 = new Student { StudentId = 01, FirstName = "James", LastName = "Hernandez", Age = 5, Avatar = a1 };
-            Student s02 = new Student { StudentId = 02, FirstName = "David", LastName = "Smith", Age = 5, Avatar = a1 };
-            Student s03 = new Student { StudentId = 03, FirstName = "Robert", LastName = "Rodriguez", Age = 5, Avatar = a1 };
-            Student s04 = new Student { StudentId = 04, FirstName = "Maria", LastName = "Garcia", Age = 5, Avatar = a1 };
-            Student s05 = new Student { StudentId = 05, FirstName = "Fumiko", LastName = "Koyama", Age = 5, Avatar = a1 };
-            Student s06 = new Student { StudentId = 06, FirstName = "Ryoya", LastName = "Urehara", Age = 5, Avatar = a1 };
-            Student s07 = new Student { StudentId = 07, FirstName = "Kim", LastName = "Yun", Age = 5, Avatar = a1 };
-            Student s08 = new Student { StudentId = 08, FirstName = "Fael", LastName = "Faery", Age = 5, Avatar = a1 };
-            Student s09 = new Student { StudentId = 09, FirstName = "Amanda", LastName = "Diamond", Age = 5, Avatar = a1 };
-            Student s10 = new Student { StudentId = 10, FirstName = "Michael", LastName = "Shumy", Age = 5, Avatar = a1 };
-            Student s11 = new Student { StudentId = 11, FirstName = "Will", LastName = "Smooth", Age = 6, Avatar = a1 };
-            Student s12 = new Student { StudentId = 12, FirstName = "Bob", LastName = "Sfougg", Age = 6, Avatar = a1 };
-            Student s13 = new Student { StudentId = 13, FirstName = "Jenny", LastName = "Ntouzi", Age = 6, Avatar = a1 };
-            Student s14 = new Student { StudentId = 14, FirstName = "Mathiew", LastName = "MacTrack", Age = 6, Avatar = a1 };
-            Student s15 = new Student { StudentId = 15, FirstName = "Mairy", LastName = "Pops", Age = 6, Avatar = a1 };
-            Student s16 = new Student { StudentId = 16, FirstName = "Triplos", LastName = "Kakos", Age = 6, Avatar = a1 };
-            Student s17 = new Student { StudentId = 17, FirstName = "Diplos", LastName = "Arithmos", Age = 6, Avatar = a1 };
-            Student s18 = new Student { StudentId = 18, FirstName = "Monos", LastName = "Erimos", Age = 6, Avatar = a1 };
-            Student s19 = new Student { StudentId = 19, FirstName = "Notis", LastName = "Sfakias", Age = 6, Avatar = a1 };
-            Student s20 = new Student { StudentId = 20, FirstName = "Lookia", LastName = "Kelaidoni", Age = 7, Avatar = a1 };
-            Student s21 = new Student { StudentId = 21, FirstName = "Mairy", LastName = "Dounia", Age = 7, Avatar = a1 };
-            Student s22 = new Student { StudentId = 22, FirstName = "Xristina", LastName = "Mama", Age = 7, Avatar = a1 };
-            Student s23 = new Student { StudentId = 23, FirstName = "Jenny", LastName = "Mpotsi", Age = 7, Avatar = a1 };
-            Student s24 = new Student { StudentId = 24, FirstName = "Zozo", LastName = "Markoulaki", Age = 7, Avatar = a1 };
-            Student s25 = new Student { StudentId = 25, FirstName = "Babis", LastName = "Lipsos", Age = 7, Avatar = a1 };
-            Student s26 = new Student { StudentId = 26, FirstName = "Volos", LastName = "Mpilias", Age = 6, Avatar = a1 };
-            Student s27 = new Student { StudentId = 27, FirstName = "Yiorgos", LastName = "Georgiou", Age = 7, Avatar = a1 };
-            Student s28 = new Student { StudentId = 28, FirstName = "Ioannis", LastName = "Xaros", Age = 7, Avatar = a1 };
-            Student s29 = new Student { StudentId = 29, FirstName = "Vaggelis", LastName = "Giortis", Age = 7, Avatar = a1 };
-            Student s30 = new Student { StudentId = 30, FirstName = "Artemis", LastName = "Matsas", Age = 8, Avatar = a1 };
-            Student s31 = new Student { StudentId = 31, FirstName = "Iosif", LastName = "Pateras", Age = 8, Avatar = a1 };
-            Student s32 = new Student { StudentId = 32, FirstName = "Kostas", LastName = "Karagkounis", Age = 8, Avatar = a1 };
-            Student s33 = new Student { StudentId = 33, FirstName = "Elias", LastName = "Apalou", Age = 8, Avatar = a1 };
-            Student s34 = new Student { StudentId = 34, FirstName = "Ektoras", LastName = "Limnios", Age = 8, Avatar = a1 };
-            Student s35 = new Student { StudentId = 35, FirstName = "Ifigeneia", LastName = "Grevena", Age = 8, Avatar = a1 };
-            Student s36 = new Student { StudentId = 36, FirstName = "Manolis", LastName = "Kairos", Age = 8, Avatar = a1 };
-            Student s37 = new Student { StudentId = 37, FirstName = "Giannis", LastName = "Xromas", Age = 9, Avatar = a1 };
-            Student s38 = new Student { StudentId = 38, FirstName = "Nikos", LastName = "Gkagkas", Age = 9, Avatar = a1 };
-            Student s39 = new Student { StudentId = 39, FirstName = "Yiorgos", LastName = "Dedes", Age = 9, Avatar = a1 };
-            Student s40 = new Student { StudentId = 40, FirstName = "Betty", LastName = "Mpantianou", Age = 9, Avatar = a1 };
-            Student s41 = new Student { StudentId = 41, FirstName = "Michalis", LastName = "Karydas", Age = 9, Avatar = a1 };
-            Student s42 = new Student { StudentId = 42, FirstName = "Rea Ifigeneia", LastName = "Chorman", Age = 9, Avatar = a1 };
-            Student s43 = new Student { StudentId = 43, FirstName = "Johnnys", LastName = "Perpatitis", Age = 8, Avatar = a1 };
-            Student s44 = new Student { StudentId = 44, FirstName = "Dimitris", LastName = "Lymperis", Age = 10, Avatar = a1 };
-            Student s45 = new Student { StudentId = 45, FirstName = "Filippas", LastName = "Mpitsis", Age = 8, Avatar = a1 };
-            Student s46 = new Student { StudentId = 46, FirstName = "Alexis", LastName = "Prothypos", Age = 8, Avatar = a1 };
-            Student s47 = new Student { StudentId = 47, FirstName = "Konstantinos", LastName = "Torinos", Age = 10, Avatar = a1 };
-            Student s48 = new Student { StudentId = 48, FirstName = "Maria", LastName = "Maraki", Age = 10, Avatar = a1 };
-            Student s49 = new Student { StudentId = 49, FirstName = "Katerina", LastName = "Vafeidi", Age = 10, Avatar = a1 };
-            Student s50 = new Student { StudentId = 50, FirstName = "Vaggelitsa", LastName = "Grylou", Age = 9, Avatar = a1 };
-            Student s51 = new Student { StudentId = 51, FirstName = "Hector", LastName = "Gatsos", Age = 9, Avatar = a1 };
-            Student s52 = new Student { StudentId = 52, FirstName = "Mike", LastName = "Lawry", Age = 9, Avatar = a1 };
-            Student s53 = new Student { StudentId = 53, FirstName = "Vanessa", LastName = "Smith", Age = 10, Avatar = a1 };
-            Student s54 = new Student { StudentId = 54, FirstName = "Maria", LastName = "Mpihi", Age = 10, Avatar = a1 };
-            Student s55 = new Student { StudentId = 55, FirstName = "Kostas", LastName = "Malamoutis", Age = 10, Avatar = a1 };
-            Student s56 = new Student { StudentId = 56, FirstName = "Yiannis", LastName = "Noaa", Age = 10, Avatar = a1 };
-            Student s57 = new Student { StudentId = 57, FirstName = "Kaori", LastName = "Koyama", Age = 10, Avatar = a1 };
-            Student s58 = new Student { StudentId = 58, FirstName = "Jessica", LastName = "Nian", Age = 10, Avatar = a1 };
-            Student s59 = new Student { StudentId = 59, FirstName = "Biki", LastName = "Valgeri", Age = 10, Avatar = a1 };
-            Student s60 = new Student { StudentId = 60, FirstName = "Ifigeneia", LastName = "Fotopoulou", Age = 11, Avatar = a1 };
+            Student s01 = new Student { StudentId = 01, Paintings = new List<Painting> { p01 }, FirstName = "James", LastName = "Hernandez", Age = 5, Avatar = a1 };
+            Student s02 = new Student { StudentId = 02, Paintings = new List<Painting> { p02 }, FirstName = "David", LastName = "Smith", Age = 5, Avatar = a1 };
+            Student s03 = new Student { StudentId = 03, Paintings = new List<Painting> { p03 }, FirstName = "Robert", LastName = "Rodriguez", Age = 5, Avatar = a1 };
+            Student s04 = new Student { StudentId = 04, Paintings = new List<Painting> { p04 }, FirstName = "Maria", LastName = "Garcia", Age = 5, Avatar = a1 };
+            Student s05 = new Student { StudentId = 05, Paintings = new List<Painting> { p05 }, FirstName = "Fumiko", LastName = "Koyama", Age = 5, Avatar = a1 };
+            Student s06 = new Student { StudentId = 06, Paintings = new List<Painting> { p06 }, FirstName = "Ryoya", LastName = "Urehara", Age = 5, Avatar = a1 };
+            Student s07 = new Student { StudentId = 07, Paintings = new List<Painting> { p07 }, FirstName = "Kim", LastName = "Yun", Age = 5, Avatar = a1 };
+            Student s08 = new Student { StudentId = 08, Paintings = new List<Painting> { p08 }, FirstName = "Fael", LastName = "Faery", Age = 5, Avatar = a1 };
+            Student s09 = new Student { StudentId = 09, Paintings = new List<Painting> { p09 }, FirstName = "Amanda", LastName = "Diamond", Age = 5, Avatar = a1 };
+            Student s10 = new Student { StudentId = 10, Paintings = new List<Painting> { p10 }, FirstName = "Michael", LastName = "Shumy", Age = 5, Avatar = a1 };
+            Student s11 = new Student { StudentId = 11, Paintings = new List<Painting> { p11 }, FirstName = "Will", LastName = "Smooth", Age = 6, Avatar = a1 };
+            Student s12 = new Student { StudentId = 12, Paintings = new List<Painting> { p12 }, FirstName = "Bob", LastName = "Sfougg", Age = 6, Avatar = a1 };
+            Student s13 = new Student { StudentId = 13, Paintings = new List<Painting> { p13 }, FirstName = "Jenny", LastName = "Ntouzi", Age = 6, Avatar = a1 };
+            Student s14 = new Student { StudentId = 14, Paintings = new List<Painting> { p14 }, FirstName = "Mathiew", LastName = "MacTrack", Age = 6, Avatar = a1 };
+            Student s15 = new Student { StudentId = 15, Paintings = new List<Painting> { p15 }, FirstName = "Mairy", LastName = "Pops", Age = 6, Avatar = a1 };
+            Student s16 = new Student { StudentId = 16, Paintings = new List<Painting> { p16 }, FirstName = "Triplos", LastName = "Kakos", Age = 6, Avatar = a1 };
+            Student s17 = new Student { StudentId = 17, Paintings = new List<Painting> { p17 }, FirstName = "Diplos", LastName = "Arithmos", Age = 6, Avatar = a1 };
+            Student s18 = new Student { StudentId = 18, Paintings = new List<Painting> { p18 }, FirstName = "Monos", LastName = "Erimos", Age = 6, Avatar = a1 };
+            Student s19 = new Student { StudentId = 19, Paintings = new List<Painting> { p19 }, FirstName = "Notis", LastName = "Sfakias", Age = 6, Avatar = a1 };
+            Student s20 = new Student { StudentId = 20, Paintings = new List<Painting> { p20 }, FirstName = "Lookia", LastName = "Kelaidoni", Age = 7, Avatar = a1 };
+            Student s21 = new Student { StudentId = 21, Paintings = new List<Painting> { p21 }, FirstName = "Mairy", LastName = "Dounia", Age = 7, Avatar = a1 };
+            Student s22 = new Student { StudentId = 22, Paintings = new List<Painting> { p22 }, FirstName = "Xristina", LastName = "Mama", Age = 7, Avatar = a1 };
+            Student s23 = new Student { StudentId = 23, Paintings = new List<Painting> { p23 }, FirstName = "Jenny", LastName = "Mpotsi", Age = 7, Avatar = a1 };
+            Student s24 = new Student { StudentId = 24, Paintings = new List<Painting> { p24 }, FirstName = "Zozo", LastName = "Markoulaki", Age = 7, Avatar = a1 };
+            Student s25 = new Student { StudentId = 25, Paintings = new List<Painting> { p25 }, FirstName = "Babis", LastName = "Lipsos", Age = 7, Avatar = a1 };
+            Student s26 = new Student { StudentId = 26, Paintings = new List<Painting> { p26 }, FirstName = "Volos", LastName = "Mpilias", Age = 6, Avatar = a1 };
+            Student s27 = new Student { StudentId = 27, Paintings = new List<Painting> { p27 }, FirstName = "Yiorgos", LastName = "Georgiou", Age = 7, Avatar = a1 };
+            Student s28 = new Student { StudentId = 28, Paintings = new List<Painting> { p28 }, FirstName = "Ioannis", LastName = "Xaros", Age = 7, Avatar = a1 };
+            Student s29 = new Student { StudentId = 29, Paintings = new List<Painting> { p29 }, FirstName = "Vaggelis", LastName = "Giortis", Age = 7, Avatar = a1 };
+            Student s30 = new Student { StudentId = 30, Paintings = new List<Painting> { p30 }, FirstName = "Artemis", LastName = "Matsas", Age = 8, Avatar = a1 };
+            Student s31 = new Student { StudentId = 31, Paintings = new List<Painting> { p31 }, FirstName = "Iosif", LastName = "Pateras", Age = 8, Avatar = a1 };
+            Student s32 = new Student { StudentId = 32, Paintings = new List<Painting> { p32 }, FirstName = "Kostas", LastName = "Karagkounis", Age = 8, Avatar = a1 };
+            Student s33 = new Student { StudentId = 33, Paintings = new List<Painting> { p33 }, FirstName = "Elias", LastName = "Apalou", Age = 8, Avatar = a1 };
+            Student s34 = new Student { StudentId = 34, Paintings = new List<Painting> { p34 }, FirstName = "Ektoras", LastName = "Limnios", Age = 8, Avatar = a1 };
+            Student s35 = new Student { StudentId = 35, Paintings = new List<Painting> { p35 }, FirstName = "Ifigeneia", LastName = "Grevena", Age = 8, Avatar = a1 };
+            Student s36 = new Student { StudentId = 36, Paintings = new List<Painting> { p36 }, FirstName = "Manolis", LastName = "Kairos", Age = 8, Avatar = a1 };
+            Student s37 = new Student { StudentId = 37, Paintings = new List<Painting> { p37 }, FirstName = "Giannis", LastName = "Xromas", Age = 9, Avatar = a1 };
+            Student s38 = new Student { StudentId = 38, Paintings = new List<Painting> { p38 }, FirstName = "Nikos", LastName = "Gkagkas", Age = 9, Avatar = a1 };
+            Student s39 = new Student { StudentId = 39, Paintings = new List<Painting> { p39 }, FirstName = "Yiorgos", LastName = "Dedes", Age = 9, Avatar = a1 };
+            Student s40 = new Student { StudentId = 40, Paintings = new List<Painting> { p40 }, FirstName = "Betty", LastName = "Mpantianou", Age = 9, Avatar = a1 };
+            Student s41 = new Student { StudentId = 41, Paintings = new List<Painting> { p41 }, FirstName = "Michalis", LastName = "Karydas", Age = 9, Avatar = a1 };
+            Student s42 = new Student { StudentId = 42, Paintings = new List<Painting> { p42 }, FirstName = "Rea Ifigeneia", LastName = "Chorman", Age = 9, Avatar = a1 };
+            Student s43 = new Student { StudentId = 43, Paintings = new List<Painting> { p43 }, FirstName = "Johnnys", LastName = "Perpatitis", Age = 8, Avatar = a1 };
+            Student s44 = new Student { StudentId = 44, Paintings = new List<Painting> { p44 }, FirstName = "Dimitris", LastName = "Lymperis", Age = 10, Avatar = a1 };
+            Student s45 = new Student { StudentId = 45, Paintings = new List<Painting> { p45 }, FirstName = "Filippas", LastName = "Mpitsis", Age = 8, Avatar = a1 };
+            Student s46 = new Student { StudentId = 46, Paintings = new List<Painting> { p46 }, FirstName = "Alexis", LastName = "Prothypos", Age = 8, Avatar = a1 };
+            Student s47 = new Student { StudentId = 47, Paintings = new List<Painting> { p47 }, FirstName = "Konstantinos", LastName = "Torinos", Age = 10, Avatar = a1 };
+            Student s48 = new Student { StudentId = 48, Paintings = new List<Painting> { p48 }, FirstName = "Maria", LastName = "Maraki", Age = 10, Avatar = a1 };
+            Student s49 = new Student { StudentId = 49, Paintings = new List<Painting> { p49 }, FirstName = "Katerina", LastName = "Vafeidi", Age = 10, Avatar = a1 };
+            Student s50 = new Student { StudentId = 50, Paintings = new List<Painting> { p50 }, FirstName = "Vaggelitsa", LastName = "Grylou", Age = 9, Avatar = a1 };
+            Student s51 = new Student { StudentId = 51, Paintings = new List<Painting> { p51 }, FirstName = "Hector", LastName = "Gatsos", Age = 9, Avatar = a1 };
+            Student s52 = new Student { StudentId = 52, Paintings = new List<Painting> { p52 }, FirstName = "Mike", LastName = "Lawry", Age = 9, Avatar = a1 };
+            Student s53 = new Student { StudentId = 53, Paintings = new List<Painting> { p53 }, FirstName = "Vanessa", LastName = "Smith", Age = 10, Avatar = a1 };
+            Student s54 = new Student { StudentId = 54, Paintings = new List<Painting> { p54 }, FirstName = "Maria", LastName = "Mpihi", Age = 10, Avatar = a1 };
+            Student s55 = new Student { StudentId = 55, Paintings = new List<Painting> { p55 }, FirstName = "Kostas", LastName = "Malamoutis", Age = 10, Avatar = a1 };
+            Student s56 = new Student { StudentId = 56, Paintings = new List<Painting> { p56 }, FirstName = "Yiannis", LastName = "Noaa", Age = 10, Avatar = a1 };
+            Student s57 = new Student { StudentId = 57, Paintings = new List<Painting> { p57 }, FirstName = "Kaori", LastName = "Koyama", Age = 10, Avatar = a1 };
+            Student s58 = new Student { StudentId = 58, Paintings = new List<Painting> { p58 }, FirstName = "Jessica", LastName = "Nian", Age = 10, Avatar = a1 };
+            Student s59 = new Student { StudentId = 59, Paintings = new List<Painting> { p59 }, FirstName = "Biki", LastName = "Valgeri", Age = 10, Avatar = a1 };
+            Student s60 = new Student { StudentId = 60, Paintings = new List<Painting> { p60 }, FirstName = "Ifigeneia", LastName = "Fotopoulou", Age = 11, Avatar = a1 };
 
             //Unecessary...Classroom will Crerate Them
 
@@ -210,73 +278,7 @@
             //context.SaveChanges();
 
 
-            // PAINTINGS ------------------------------------------------------------------------------->>  
-            Painting p01 = new Painting { ImageUrl = "painting_001.jpg", PaintingTitle = "I am Title", Price = 1, Student = s01 };
-            Painting p02 = new Painting { ImageUrl = "painting_002.jpg", PaintingTitle = "I am Title", Price = 1, Student = s02 };
-            Painting p03 = new Painting { ImageUrl = "painting_003.jpg", PaintingTitle = "I am Title", Price = 1, Student = s03 };
-            Painting p04 = new Painting { ImageUrl = "painting_004.jpg", PaintingTitle = "I am Title", Price = 1, Student = s04 };
-            Painting p05 = new Painting { ImageUrl = "painting_005.jpg", PaintingTitle = "I am Title", Price = 1, Student = s05 };
-            Painting p06 = new Painting { ImageUrl = "painting_006.jpg", PaintingTitle = "I am Title", Price = 1, Student = s06 };
-            Painting p07 = new Painting { ImageUrl = "painting_007.jpg", PaintingTitle = "I am Title", Price = 1, Student = s07 };
-            Painting p08 = new Painting { ImageUrl = "painting_008.jpg", PaintingTitle = "I am Title", Price = 1, Student = s08 };
-            Painting p09 = new Painting { ImageUrl = "painting_009.jpg", PaintingTitle = "I am Title", Price = 1, Student = s09 };
-
-            Painting p10 = new Painting { ImageUrl = "painting_010.jpg", PaintingTitle = "I am Title", Price = 1, Student = s10 };
-            Painting p11 = new Painting { ImageUrl = "painting_011.jpg", PaintingTitle = "I am Title", Price = 1, Student = s11 };
-            Painting p12 = new Painting { ImageUrl = "painting_012.jpg", PaintingTitle = "I am Title", Price = 1, Student = s12 };
-            Painting p13 = new Painting { ImageUrl = "painting_013.jpg", PaintingTitle = "I am Title", Price = 1, Student = s13 };
-            Painting p14 = new Painting { ImageUrl = "painting_014.jpg", PaintingTitle = "I am Title", Price = 1, Student = s14 };
-            Painting p15 = new Painting { ImageUrl = "painting_015.jpg", PaintingTitle = "I am Title", Price = 1, Student = s15 };
-            Painting p16 = new Painting { ImageUrl = "painting_016.jpg", PaintingTitle = "I am Title", Price = 1, Student = s16 };
-            Painting p17 = new Painting { ImageUrl = "painting_017.jpg", PaintingTitle = "I am Title", Price = 1, Student = s17 };
-            Painting p18 = new Painting { ImageUrl = "painting_018.jpg", PaintingTitle = "I am Title", Price = 1, Student = s18 };
-            Painting p19 = new Painting { ImageUrl = "painting_019.jpg", PaintingTitle = "I am Title", Price = 1, Student = s19 };
-
-            Painting p20 = new Painting { ImageUrl = "painting_020.jpg", PaintingTitle = "I am Title", Price = 1, Student = s20 };
-            Painting p21 = new Painting { ImageUrl = "painting_021.jpg", PaintingTitle = "I am Title", Price = 1, Student = s21 };
-            Painting p22 = new Painting { ImageUrl = "painting_022.jpg", PaintingTitle = "I am Title", Price = 1, Student = s22 };
-            Painting p23 = new Painting { ImageUrl = "painting_023.jpg", PaintingTitle = "I am Title", Price = 1, Student = s23 };
-            Painting p24 = new Painting { ImageUrl = "painting_024.jpg", PaintingTitle = "I am Title", Price = 1, Student = s24 };
-            Painting p25 = new Painting { ImageUrl = "painting_025.jpg", PaintingTitle = "I am Title", Price = 1, Student = s25 };
-            Painting p26 = new Painting { ImageUrl = "painting_026.jpg", PaintingTitle = "I am Title", Price = 1, Student = s26 };
-            Painting p27 = new Painting { ImageUrl = "painting_027.jpg", PaintingTitle = "I am Title", Price = 1, Student = s27 };
-            Painting p28 = new Painting { ImageUrl = "painting_028.jpg", PaintingTitle = "I am Title", Price = 1, Student = s28 };
-            Painting p29 = new Painting { ImageUrl = "painting_029.jpg", PaintingTitle = "I am Title", Price = 1, Student = s29 };
-
-            Painting p30 = new Painting { ImageUrl = "painting_030.jpg", PaintingTitle = "I am Title", Price = 1, Student = s30 };
-            Painting p31 = new Painting { ImageUrl = "painting_031.jpg", PaintingTitle = "I am Title", Price = 1, Student = s31 };
-            Painting p32 = new Painting { ImageUrl = "painting_032.jpg", PaintingTitle = "I am Title", Price = 1, Student = s32 };
-            Painting p33 = new Painting { ImageUrl = "painting_033.jpg", PaintingTitle = "I am Title", Price = 1, Student = s33 };
-            Painting p34 = new Painting { ImageUrl = "painting_034.jpg", PaintingTitle = "I am Title", Price = 1, Student = s34 };
-            Painting p35 = new Painting { ImageUrl = "painting_035.jpg", PaintingTitle = "I am Title", Price = 1, Student = s35 };
-            Painting p36 = new Painting { ImageUrl = "painting_036.jpg", PaintingTitle = "I am Title", Price = 1, Student = s36 };
-            Painting p37 = new Painting { ImageUrl = "painting_037.jpg", PaintingTitle = "I am Title", Price = 1, Student = s37 };
-            Painting p38 = new Painting { ImageUrl = "painting_038.jpg", PaintingTitle = "I am Title", Price = 1, Student = s38 };
-            Painting p39 = new Painting { ImageUrl = "painting_039.jpg", PaintingTitle = "I am Title", Price = 1, Student = s39 };
-
-            Painting p40 = new Painting { ImageUrl = "painting_040.jpg", PaintingTitle = "I am Title", Price = 1, Student = s40 };
-            Painting p41 = new Painting { ImageUrl = "painting_041.jpg", PaintingTitle = "I am Title", Price = 1, Student = s41 };
-            Painting p42 = new Painting { ImageUrl = "painting_042.jpg", PaintingTitle = "I am Title", Price = 1, Student = s42 };
-            Painting p43 = new Painting { ImageUrl = "painting_043.jpg", PaintingTitle = "I am Title", Price = 1, Student = s43 };
-            Painting p44 = new Painting { ImageUrl = "painting_044.jpg", PaintingTitle = "I am Title", Price = 1, Student = s44 };
-            Painting p45 = new Painting { ImageUrl = "painting_045.jpg", PaintingTitle = "I am Title", Price = 1, Student = s45 };
-            Painting p46 = new Painting { ImageUrl = "painting_046.jpg", PaintingTitle = "I am Title", Price = 1, Student = s46 };
-            Painting p47 = new Painting { ImageUrl = "painting_047.jpg", PaintingTitle = "I am Title", Price = 1, Student = s47 };
-            Painting p48 = new Painting { ImageUrl = "painting_048.jpg", PaintingTitle = "I am Title", Price = 1, Student = s48 };
-            Painting p49 = new Painting { ImageUrl = "painting_049.jpg", PaintingTitle = "I am Title", Price = 1, Student = s49 };
-
-            Painting p50 = new Painting { ImageUrl = "painting_050.jpg", PaintingTitle = "I am Title", Price = 1, Student = s50 };
-            Painting p51 = new Painting { ImageUrl = "painting_051.jpg", PaintingTitle = "I am Title", Price = 1, Student = s51 };
-            Painting p52 = new Painting { ImageUrl = "painting_052.jpg", PaintingTitle = "I am Title", Price = 1, Student = s52 };
-            Painting p53 = new Painting { ImageUrl = "painting_053.jpg", PaintingTitle = "I am Title", Price = 1, Student = s53 };
-            Painting p54 = new Painting { ImageUrl = "painting_054.jpg", PaintingTitle = "I am Title", Price = 1, Student = s54 };
-            Painting p55 = new Painting { ImageUrl = "painting_055.jpg", PaintingTitle = "I am Title", Price = 1, Student = s55 };
-            Painting p56 = new Painting { ImageUrl = "painting_056.jpg", PaintingTitle = "I am Title", Price = 1, Student = s56 };
-            Painting p57 = new Painting { ImageUrl = "painting_057.jpg", PaintingTitle = "I am Title", Price = 1, Student = s57 };
-            Painting p58 = new Painting { ImageUrl = "painting_058.jpg", PaintingTitle = "I am Title", Price = 1, Student = s58 };
-            Painting p59 = new Painting { ImageUrl = "painting_059.jpg", PaintingTitle = "I am Title", Price = 1, Student = s59 };
-
-            Painting p60 = new Painting { ImageUrl = "painting_060.jpg", PaintingTitle = "I am Title", Price = 1, Student = s60 };
+           
 
             // CLASSROOM ------------------------------------------------------------------------------->>  
             List<Student> slist = new List<Student> { s01, s02, s03, s04, s05, s06, s07, s08, s09, s13 };
@@ -290,14 +292,13 @@
 
 
             //Unecessary...School will Crerate Them
-            context.ClassroomsDb.AddOrUpdate(x => x.ClassroomId, cl1);
-            context.ClassroomsDb.AddOrUpdate(x => x.ClassroomId, cl2);
-            context.ClassroomsDb.AddOrUpdate(x => x.ClassroomId, cl3);
-            context.ClassroomsDb.AddOrUpdate(x => x.ClassroomId, cl4);
+            //context.ClassroomsDb.AddOrUpdate(x => x.ClassroomId, cl1);
+            //context.ClassroomsDb.AddOrUpdate(x => x.ClassroomId, cl2);
+            //context.ClassroomsDb.AddOrUpdate(x => x.ClassroomId, cl3);
+            //context.ClassroomsDb.AddOrUpdate(x => x.ClassroomId, cl4);
             //context.ClassroomsDb.AddOrUpdate(x => x.ClassroomId, cl5);//has errorr!!!! DONT RUN
-            context.ClassroomsDb.AddOrUpdate(x => x.ClassroomId, cl6);
-            context.ClassroomsDb.AddOrUpdate(x => x.ClassroomId, cl7);
-            //context.SaveChanges();
+            //context.ClassroomsDb.AddOrUpdate(x => x.ClassroomId, cl6);
+            //context.ClassroomsDb.AddOrUpdate(x => x.ClassroomId, cl7);
 
 
 
@@ -312,8 +313,8 @@
 
             context.SchoolsDb.AddOrUpdate(sh01);
             context.SchoolsDb.AddOrUpdate(sh02);
-            //context.schoolsdb.addorupdate(sh03);//has error!!! dont run
-            //context.SchoolsDb.AddOrUpdate(sh04);
+            //context.SchoolsDb.AddOrUpdate(sh03);//has error!!! DONT RUN
+            context.SchoolsDb.AddOrUpdate(sh04);
 
             context.SaveChanges();
 

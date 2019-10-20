@@ -49,6 +49,84 @@
     <script src="~/js/parallax.js"></script>
     <script src="~/js/typewriter.js"></script>
     <script src="~/js/main.js"></script>
+
+    @* Alex --> SignalR Scripts: *@
+    <script src="~/Scripts/jquery.signalR-2.2.2.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script>
+        $(function () {
+            // Reference the auto-generated proxy for the hub.
+            var chat = $.connection.chatHub;
+            // Create a function that the hub can call back to display messages.
+            chat.client.addNewMessageToPage = function (name, message) {
+                // Add the message to the page.
+                $('#discussion').append('<li><strong>' + htmlEncode(name)
+                    + '</strong>: ' + htmlEncode(message) + '</li>');
+            };
+
+
+
+            //Receive All Messages From Database So U Can Change Page And Dont Loose Messages
+            //With AJAX I Call A Controllers Action And Get A Result
+            $.ajax({
+                       type: "POST",
+                       url: '@Url.Action("GetMessage", "Master")',
+                       contentType: "application/json; charset=utf-8",                                
+                       dataType: "json",
+                        success: function (response)
+                        {
+                            response.forEach(function (data)
+                            {
+                                console.log(data);
+                                $('#discussion').append(data.Name + ":  " + data.Message);
+                                
+                            })
+                        },
+                       error: function(recData) { alert("Error While Loading Previous Messages"+recData); }
+                  });
+
+
+
+
+
+
+            // Set initial focus to message input box.
+            $('#message').focus();
+            // Start the connection.
+            $.connection.hub.start().done(function () {
+                $('#sendmessage').click(function () {
+
+
+
+                    //Send msg To Controller So It Can Be Saved To DB                  
+                    $.ajax({
+                                type: "GET",
+                                url: '@Url.Action("SaveMessage", "Master")',
+                                contentType: "application/json; charset=utf-8",
+                                data: { username: $('#username').val(), msg: $('#message').val() },
+                                dataType: "json",
+                                success: function (recData) { console.log(recData); },
+                                error: function() { alert('Error With Message Process'); }
+                           });
+
+
+                           
+
+
+                    // Call the Send method on the hub.
+                    chat.server.send($('#username').val(), $('#message').val());
+                    // Clear text box and reset focus for next comment.
+                    $('#message').val('').focus();
+                });
+            });
+        });
+        // This optional function html-encodes messages for display in the page.
+        function htmlEncode(value) {
+            var encodedValue = $('<div />').text(value).html();
+            return encodedValue;
+        }
+    </script>
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

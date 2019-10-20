@@ -8,6 +8,7 @@ namespace Web_Front
     {
         public void Configuration(IAppBuilder app)
         {
+            app.MapSignalR();//SignalR
             ConfigureAuth(app);
         }
     }

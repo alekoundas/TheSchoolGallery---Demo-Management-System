@@ -54,15 +54,15 @@ namespace Web_Front
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "356477281769369",
+               appSecret: "424764fd3523cf144ece18e6ba6b2442");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "1014210418853-iboab50ih0d36smg2urn0784lfthgf4l.apps.googleusercontent.com",
+                ClientSecret = "aB0OvZg2wYJe58Tz_v1sasdw"
+            });
         }
     }
 }

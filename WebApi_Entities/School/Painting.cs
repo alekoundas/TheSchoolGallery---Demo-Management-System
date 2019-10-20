@@ -16,14 +16,14 @@ namespace WebApi_Entities
 
         [Required(ErrorMessage = "You must name your Art.")]
         [MinLength(4, ErrorMessage = "Title must be longer")]
-        [MaxLength(18, ErrorMessage = "Title must be shorter")]
+        [MaxLength(50, ErrorMessage = "Title must be shorter")]
         public string PaintingTitle { get; set; }
 
         // Has One Student ------------------------------>>
         public  Student Student { get; set; }
 
         // Has A Price ------------------------------>>
-        public  int Price { get; set; }
+        public  double Price { get; set; }
 
         // Has Many Awards ------------------------------>>
         //public  ICollection<Award> Awards { get; set; }

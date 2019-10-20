@@ -12,7 +12,7 @@ using Web_Services.ApiMapping;
 
 namespace Web_Front.Controllers
 {
-    public class PaintingController : Controller
+    public class PaintingController : MasterController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         PaintingApiService PaintingServ = new PaintingApiService();
