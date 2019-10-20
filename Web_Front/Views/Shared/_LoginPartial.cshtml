@@ -15,12 +15,18 @@
 }
 else
 {
-    
-        <a href="@Url.Action("Login", "Account")"><img src="~/images/login.png" /> log in </a>
-        <a href="@Url.Action("Register", "Account")"><img src="~/images/register.png" /> register </a>
-    
+    // Log In / Register Buttons ------------------------------------------->>
+    <a href="@Url.Action("Login", "Account")"><img src="~/images/login.png" /> log in </a>
+    <a href="@Url.Action("Register", "Account")"><img src="~/images/register.png" /> register </a>
 
+    // Cart / Donations ---------------------------------------------------->>
+    <a href="@Url.Action("PayPalPayment", "PayPal")"><img src="~/images/cart.png" /> cart </a>
+    <a href="@Url.Action("PayPalPayment", "PayPal")"><img src="~/images/donation.png" /> donation </a>
+
+
+    // This are the Default 'Actionlinks'. I choose to work with 'Actions' so as to add Images.
     @*<li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>*@
-
     @*<li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>*@
+    @*@Html.ActionLink("Pay us bitch", "PayPalPayment", "PayPal")*@
+
 }

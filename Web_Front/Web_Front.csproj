@@ -234,12 +234,15 @@
     <Content Include="images\back.png" />
     <Content Include="images\banner.jpg" />
     <Content Include="images\blank.gif" />
+    <Content Include="images\cart.png" />
+    <Content Include="images\donation.png" />
     <Content Include="images\down-arrow.png" />
     <Content Include="images\fancybox_loading%402x.gif" />
     <Content Include="images\fancybox_loading.gif" />
     <Content Include="images\fancybox_overlay.png" />
     <Content Include="images\fancybox_sprite%402x.png" />
     <Content Include="images\fancybox_sprite.png" />
+    <Content Include="images\kid_brush.png" />
     <Content Include="images\loged.png" />
     <Content Include="images\login.png" />
     <Content Include="images\logo.png" />
@@ -385,6 +388,7 @@
     <Content Include="Views\School\Edit.cshtml" />
     <Content Include="Views\School\Index.cshtml" />
     <Content Include="Views\Shared\_Navigation_C.cshtml" />
+    <Content Include="Views\Account\_test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
