@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WebApi_Entities;
 using WebApi_Entities.Avatar;
+using WebApi_Entities.SignalR;
 
 namespace WebApi_Database
 {
@@ -22,8 +23,9 @@ namespace WebApi_Database
         public DbSet<AvatarClothes> AvatarClothesDb { get; set; }
         public DbSet<Student> StudentDb { get; set; }
         public DbSet<Teacher> TeacherDb { get; set; }
-        public DbSet<Classroom> Classrooms { get; set; }
-        public DbSet<School> Schools { get; set; }
-        public DbSet<Painting> Paintings { get; set; }
+        public DbSet<Classroom> ClassroomsDb { get; set; }
+        public DbSet<School> SchoolsDb { get; set; }
+        public DbSet<Painting> PaintingsDb { get; set; }
+        public DbSet<MessageHistory> MessageHistoryDb { get; set; }
     }
 }

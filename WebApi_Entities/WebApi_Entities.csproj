@@ -59,6 +59,7 @@
     <Compile Include="School\School.cs" />
     <Compile Include="School\Student.cs" />
     <Compile Include="School\Teacher.cs" />
+    <Compile Include="SignalR\MessageHistory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Goal\" />

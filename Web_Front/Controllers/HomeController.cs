@@ -13,8 +13,13 @@ using Web_DomainClasses.Entities.School;
 
 namespace Web_Front.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : MasterController
     {
+
+       
+
+
+
         public ActionResult Index()
         {
             return View();

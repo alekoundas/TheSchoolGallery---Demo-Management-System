@@ -53,6 +53,7 @@
     <Compile Include="Entities\School\School.cs" />
     <Compile Include="Entities\School\Student.cs" />
     <Compile Include="Entities\School\Teacher.cs" />
+    <Compile Include="Entities\SignalR\MessageHistory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="ApiMapping\AvatarApiService.cs" />
     <Compile Include="ApiMapping\ClassroomApiService.cs" />
+    <Compile Include="ApiMapping\MessageApiService.cs" />
     <Compile Include="ApiMapping\PaintingApiService.cs" />
     <Compile Include="ApiMapping\SchoolApiService.cs" />
     <Compile Include="ApiMapping\StudentApiService.cs" />

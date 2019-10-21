@@ -12,7 +12,7 @@ using Web_Services.ApiMapping;
 
 namespace Web_Front.Controllers
 {
-    public class StudentController : Controller
+    public class StudentController : MasterController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         StudentApiService StudentServ = new StudentApiService();
