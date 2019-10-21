@@ -3,53 +3,56 @@
 
 <div class="oz-body-wrap2">
 
-    <button id="paintBrushButton">HIT ME</button>
-
-    <div id="boxOne">
-        <div class="preloader"></div>
-        <header id="intro">
-            <div class="container">
-                <div class="table">
-                    <div class="header-text">
-                        <div class="row">
-                            <div class="col-md-12 text-center">
-                                <h3 style="color:#222" class="light white">Children Create ...</h3>
-                                <h1 class="white typed">The Blank Canvas Is the Beginning!</h1>
-                                <span class="typed-cursor">
-                                    <i class="fa fa-pencil" aria-hidden="true"></i>
-                                </span>
+    <div class="container-fluid">
+        <div id="boxOne">
+            <div class="preloader"></div>
+            <header id="intro">
+                    <div class="table">
+                        <div class="header-text">
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <h3 style="color:#222" class="light white">Children Create ...</h3>
+                                    <h1 class="white typed">The Blank Canvas Is the Beginning!</h1>
+                                    <span class="typed-cursor">
+                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <button id="paintBrushButton">
+                        <img src="~/images/kid_brush.png" alt="Alternate Text" />
+                        <figcaption>Click Me!</figcaption>
+                    </button>
+            </header>
+
+        </div>
+
+        <div id="boxTwo">
+
+                <div class="cd-background-wrapper">
+                    <figure class="cd-floating-background">
+                        <img id="para01" src="~/images/parallax/clouds_back.png">
+                        <img id="para02" src="~/images/parallax/clouds_middle.png">
+                        <img id="para03" src="~/images/parallax/clouds_front.png">
+                        <img id="para04" src="~/images/parallax/birds.png">
+                        <img id="para05" src="~/images/parallax/mountains_back.png">
+                        <img id="para06" src="~/images/parallax/mountains_middle.png">
+                        <img id="para07" src="~/images/parallax/mountains_front.png">
+                        <img id="para08" src="~/images/parallax/gallery_frame.png">
+                        <img id="para09" src="~/images/parallax/smoke.png">
+                        <img id="para10" src="~/images/parallax/gallery_paint.png">
+                        <img id="para11" src="~/images/parallax/gallery_boi.png">
+                        <img id="para12" src="~/images/parallax/front.png">
+                    </figure>
                 </div>
-            </div>
-        </header>
-    </div>
 
-
-    <div id="boxTwo">
-        <div class="container-fluid">
-            <div class="cd-background-wrapper">
-                <figure class="cd-floating-background">
-                    <img src="~/images/parallax/sun.png">
-                    <img src="~/images/parallax/clouds_back.png">
-                    <img src="~/images/parallax/clouds_middle.png">
-                    <img src="~/images/parallax/clouds_front.png">
-                    <img src="~/images/parallax/parallax_sbirds.png">
-                    <img src="~/images/parallax/mountains_back.png">
-                    <img src="~/images/parallax/mountains_middle.png">
-                    <img src="~/images/parallax/parallax_ribbons.png">
-                    <img src="~/images/parallax/mountains_front.png">
-                    <img src="~/images/parallax/parallax_ribbons2.png">
-                    <img src="~/images/parallax/trees_front_left.png">
-                    <img src="~/images/parallax/parallax_smoke.png">
-                    <img src="~/images/parallax/trees_front_right.png">
-                </figure>
-            </div>
         </div>
     </div>
 
 </div>
+
+
 
 @section Scripts {
     <script src="~/js/parallax.js"></script>

@@ -4,9 +4,9 @@
     ViewBag.Title = "Index";
 }
 
-<div class="col-md-12 text-center pt-20 pb-20">
+<div class="col-md-12 pt-20 pb-20">
     <h1>
-        <img style="height:100px; width:100%" src="~/images/banner.jpg" alt="Alternate Text" />
+        @*<img style="height:100px; width:100%" src="~/images/banner.jpg" alt="Alternate Text" />*@
         Paintings
     </h1>
 </div>
@@ -15,8 +15,13 @@
     <div class="container">
         <div class="row">
             <h2 class="col-md-6">
-                <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                @Html.ActionLink("Create New", "Create")
+
+                @if (User.IsInRole("admin"))
+                {
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    @Html.ActionLink("Create New", "Create")
+                }
+
             </h2>
             <div class="col-md-6">
                 @using (Html.BeginForm())
@@ -52,23 +57,31 @@
 <section class="feature-area pt-100 pb-100  relative">
     <div class="overlay overlay-bg"></div>
     <div class="container">
-        <div class="row">
+        <div class="row" >
             @foreach (var item in Model)
             {
                 <div class="col-lg-4 col-sm-6 align-items-stretch">
-                    <div class="single-feature">
+                    <div class="paintingcontainer">
                         <div class="painting">
-                            <img src="~/images/@Html.DisplayFor(modelItem => item.ImageUrl)" />
+                            <img src="~/images/paintings/@Html.DisplayFor(modelItem => item.ImageUrl)" />
                         </div>
-                        <div class="desc">
-                            <h2 class="text-uppercase">@Html.DisplayFor(modelItem => item.PaintingTitle) <br> By Yio Cho</h2>
-                            <p>
-                                @Html.DisplayFor(modelItem => item.Price)
+                        <div class="paintingdesc">
+                            <p>@Html.DisplayFor(modelItem => item.PaintingTitle) <hr /></p>
+                            <p>by Yio Cho</p>
+                            <p class="text-right">
+                                Cost: @Html.DisplayFor(modelItem => item.Price)
                             </p>
                         </div>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.PaintingId }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.PaintingId }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.PaintingId })
+
+                        @if (User.IsInRole("admin"))
+                        {
+                            <div>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.PaintingId }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.PaintingId }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.PaintingId })
+                            </div>
+                        }
+
                     </div>
                 </div>
             }

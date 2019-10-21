@@ -34,7 +34,7 @@
     </div>
 
     <!-- FOOTER AREA ----------------------------------------------------- -->
-    @Html.Partial("_Footer")
+    <div id="chat">@Html.Partial("_Footer")</div>
 
     <!-- JAVASCRIPTS ----------------------------------------------------- -->
     <script src="~/js/vendor/jquery-2.2.4.min.js"></script>
@@ -69,36 +69,29 @@
             //Receive All Messages From Database So U Can Change Page And Dont Loose Messages
             //With AJAX I Call A Controllers Action And Get A Result
             $.ajax({
-                       type: "POST",
-                       url: '@Url.Action("GetMessage", "Master")',
-                       contentType: "application/json; charset=utf-8",                                
-                       dataType: "json",
-                        success: function (response)
+                    type: "POST",
+                    url: '@Url.Action("GetMessage", "Master")',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response)
+                    {
+                        response.forEach(function (data)
                         {
-                            response.forEach(function (data)
-                            {
-                                console.log(data);
-                                $('#discussion').append(data.Name + ":  " + data.Message);
-                                
-                            })
-                        },
-                       error: function(recData) { alert("Error While Loading Previous Messages"+recData); }
-                  });
-
-
-
-
+                            console.log(data);
+                            $('#discussion').append("<li>" + data.Name + ":  " + data.Message + "</li><hr/>");
+                        })
+                    },
+                    error: function(recData) { alert("Error While Loading Previous Messages"+recData); }
+            });
 
 
             // Set initial focus to message input box.
-            $('#message').focus();
+            //$('#message').focus();
             // Start the connection.
             $.connection.hub.start().done(function () {
                 $('#sendmessage').click(function () {
 
-
-
-                    //Send msg To Controller So It Can Be Saved To DB                  
+                    //Send msg To Controller So It Can Be Saved To DB
                     $.ajax({
                                 type: "GET",
                                 url: '@Url.Action("SaveMessage", "Master")',
@@ -107,11 +100,7 @@
                                 dataType: "json",
                                 success: function (recData) { console.log(recData); },
                                 error: function() { alert('Error With Message Process'); }
-                           });
-
-
-                           
-
+                    });
 
                     // Call the Send method on the hub.
                     chat.server.send($('#username').val(), $('#message').val());

@@ -4,10 +4,9 @@
     ViewBag.Title = "Index";
 }
 
-<div class="col-md-12 text-center pt-20 pb-20">
+<div class="col-md-12 pt-20 pb-20">
     <h1>
-        <img style="height:100px; width:100%" src="~/images/banner.jpg" alt="Alternate Text" />
-
+        @*<img style="height:100px; width:100%" src="~/images/banner.jpg" alt="Alternate Text" />*@
         Students
     </h1>
 </div>
@@ -16,8 +15,13 @@
     <div class="container">
         <div class="row">
             <h2 class="col-md-6">
-                <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                @Html.ActionLink("Create New", "Create")
+
+                @if (User.IsInRole("admin"))
+                {
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    @Html.ActionLink("Create New", "Create")
+                }
+
             </h2>
             <div class="col-md-6">
                 @using (Html.BeginForm())
@@ -30,44 +34,51 @@
             </div>
         </div>
     </div>
-
 </div>
 <hr />
 
-<div>
-    <div class="container">
-        <div class="row fullscreen align-items-center justify-content-center">
 
+
+<section class="feature-area pt-100 pb-100  relative">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row">
             @foreach (var item in Model)
             {
-                <div class="banner-left col-lg-6">
-                    <img class="d-flex mx-auto img-fluid" src="~/images/banner.jpg" alt="">
-                </div>
-                <div class="col-lg-6">
-                    <div class="story-content">
-                        <h6 class="text-uppercase">From the School</h6>
-                        <h3>
-                            @Html.DisplayNameFor(model => model.FirstName): <span class="sp-1">@Html.DisplayFor(modelItem => item.FirstName)</span><br>
-                            @Html.DisplayNameFor(model => model.LastName): <span class="sp-2">@Html.DisplayFor(modelItem => item.LastName)</span>
-                        </h3>
+                <div class="col-lg-4 col-sm-8 align-items-stretch">
+                    <div class="paintingcontainer">
+                        <div class="painting">
+                            <img style="width:200px; border:none; box-shadow:none" src="~/images/Avatar/back_01.png" />
+                        </div>
+                        <div class="story-content paintingdesc">
+                            <p>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                                Star Artist
+                            </p>
+                            <h2>
+                                @Html.DisplayFor(modelItem => item.FirstName) <span class="sp-2">@Html.DisplayFor(modelItem => item.LastName)</span>
+                            </h2>
+                            <hr />
+                            <p class="text-right">
+                                @Html.DisplayNameFor(model => model.Age): <span class="sp-1">@Html.DisplayFor(modelItem => item.Age)</span><br>
+                            </p>
+                        </div>
 
-                        <h4>
-                            @Html.DisplayNameFor(model => model.Age): <span class="sp-1">@Html.DisplayFor(modelItem => item.Age)</span><br>
-                            <span class="sp-2">
+                        @if (User.IsInRole("admin"))
+                        {
+                            <div>
                                 @Html.ActionLink("Edit", "Edit", new { id = item.StudentId }) |
                                 @Html.ActionLink("Details", "Details", new { id = item.StudentId }) |
                                 @Html.ActionLink("Delete", "Delete", new { id = item.StudentId })
-                            </span>
-                        </h4>
+                            </div>
+                        }
+
                     </div>
                 </div>
-
             }
-
         </div>
     </div>
-</div>
-
+</section>
 
 
 
