@@ -2646,10 +2646,10 @@ footer {
     overflow: hidden;
     -webkit-perspective: 4000px;
     perspective: 4000px;
-    padding: 20px;
+    padding: 0px;
     border: 20px solid #fff;
     width: 100%;
-    min-height: 675px;
+    height: auto;
 }
 
 
@@ -2671,17 +2671,19 @@ footer {
 
     .cd-floating-background img {
         display: block;
-        width: 85%;
+        width: 92%;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         /* fixes a Firefox bug - images not correctly rendered*/
         background-color: rgba(255, 255, 255, 0.01);
+        left:-120px;
     }
 
 
         .cd-floating-background img:not(:first-child) {
             position: absolute;           
             top: 0;
+            
         }
 
 
@@ -2693,72 +2695,73 @@ footer {
         }
 
         .cd-floating-background img:nth-child(2) {
-            -webkit-transform: translateZ(-1600px);
-            -ms-transform: translateZ(-1600px);
-            transform: translateZ(-1600px);
-        }
-
-        .cd-floating-background img:nth-child(3) {
-            -webkit-transform: translateZ(-2000px);
-            -ms-transform: translateZ(-2000px);
-            transform: translateZ(-2000px);
-        }
-
-        .cd-floating-background img:nth-child(4) {
             -webkit-transform: translateZ(-1500px);
             -ms-transform: translateZ(-1500px);
             transform: translateZ(-1500px);
         }
 
-        .cd-floating-background img:nth-child(5) {
+        .cd-floating-background img:nth-child(3) {
+            -webkit-transform: translateZ(-1200px);
+            -ms-transform: translateZ(-1200px);
+            transform: translateZ(-1200px);
+        }
+
+        .cd-floating-background img:nth-child(4) {
             -webkit-transform: translateZ(-1000px);
             -ms-transform: translateZ(-1000px);
             transform: translateZ(-1000px);
         }
 
+        .cd-floating-background img:nth-child(5) {
+            -webkit-transform: translateZ(-700px);
+            -ms-transform: translateZ(-700px);
+            transform: translateZ(-700px);
+            top: 10px;
+        }
+
         .cd-floating-background img:nth-child(6) {
-            -webkit-transform: translateZ(-800px);
-            -ms-transform: translateZ(-800px);
-            transform: translateZ(-800px);
+            -webkit-transform: translateZ(-580px);
+            -ms-transform: translateZ(-580px);
+            transform: translateZ(-580px);
+            top: 20px;
         }
 
         .cd-floating-background img:nth-child(7) {
-            -webkit-transform: translateZ(-600px);
-            -ms-transform: translateZ(-600px);
-            transform: translateZ(-600px);
+            -webkit-transform: translateZ(-340px);
+            -ms-transform: translateZ(-340px);
+            transform: translateZ(-340px);
+            top:40px;
         }
 
         .cd-floating-background img:nth-child(8) {
-            -webkit-transform: translateZ(-400px);
-            -ms-transform: translateZ(-400px);
-            transform: translateZ(-400px);
-        }
-
-        .cd-floating-background img:nth-child(9) {
             -webkit-transform: translateZ(-200px);
             -ms-transform: translateZ(-200px);
             transform: translateZ(-200px);
         }
 
-        .cd-floating-background img:nth-child(10) {
+        .cd-floating-background img:nth-child(9) {
             -webkit-transform: translateZ(-100px);
             -ms-transform: translateZ(-100px);
             transform: translateZ(-100px);
         }
 
+        .cd-floating-background img:nth-child(10) {
+            -webkit-transform: translateZ(20px);
+            -ms-transform: translateZ(20px);
+            transform: translateZ(20px);
+        }
+
         .cd-floating-background img:nth-child(11) {
-            -webkit-transform: translateZ(-50px);
-            -ms-transform: translateZ(-50px);
-            transform: translateZ(-50px);
+            -webkit-transform: translateZ(100px);
+            -ms-transform: translateZ(100px);
+            transform: translateZ(100px);
         }
 
         .cd-floating-background img:nth-child(12) {
-            -webkit-transform: translateZ(-50px);
-            -ms-transform: translateZ(-50px);
-            transform: translateZ(-10px);
+            -webkit-transform: translateZ(200px);
+            -ms-transform: translateZ(200px);
+            transform: translateZ(200px);
         }
-
-
 
 .no-preserve-3d .cd-floating-background {
     /* we target browsers that don't support preserve-3d and show just a standard image - no effect visible */
