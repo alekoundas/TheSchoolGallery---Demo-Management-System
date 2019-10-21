@@ -2312,11 +2312,10 @@ body {
             font-size: 18px;
             font-weight: 600;
             margin-bottom: 10px;
-            letter-spacing: 2.5px
         }
 
         .feature-area .desc p {
-            color: #555
+            color: #f3efe9
         }
 
 .single-feature {
@@ -2495,10 +2494,8 @@ body {
 
 /*#region FOOTER*/
 footer {
-    background-image: url(../images/white-paper-texture.jpg);
-    background-repeat: repeat;
-    background-size: auto;
-    box-shadow: -3px -3px 18px rgba(0, 0, 0, 0.2);
+    background: #dddddd;
+    box-shadow: -3px -3px 18px rgba(0, 0, 0, 0.4);
 }
 
     footer .footer-nav li {
@@ -2557,7 +2554,7 @@ footer {
 }
 
     .footer-social a i {
-        color: #777;
+        color: #f3efe9;
         -webkit-transition: all 0.3s ease 0s;
         -moz-transition: all 0.3s ease 0s;
         -o-transition: all 0.3s ease 0s;
@@ -2573,13 +2570,13 @@ footer {
     }
 
         .footer-social a:hover i {
-            color: #fff
+            color: #f3efe9
         }
 
 
 
 .generic-header .menu-bar span {
-    color: #777
+    color: #f3efe9
 }
 
 .generic-header nav a {
@@ -2634,18 +2631,6 @@ footer {
 }
 /*#endregion FOOTER*/
 
-/*EDITS*/
-body {
-    /*background-image: url(../images/white-paper-texture.jpg);
-    background-repeat: repeat;
-    background-size: auto;*/
-    background-color: #f3efe9;
-}
-
-
-.painting img {
-    width: 100%;
-}
 
 /* -------------------------------- 
 
@@ -2654,20 +2639,17 @@ body {
 -------------------------------- */
 
 /*#region PARALLAX*/
-
-
 .cd-background-wrapper {
+    background-color: #fff;
     background-image: url(../images/parallax/sky.png);
-    background-repeat: repeat;
-    background-size: auto;
     position: relative;
     overflow: hidden;
     -webkit-perspective: 4000px;
     perspective: 4000px;
     padding: 20px;
     border: 20px solid #fff;
-    /*Important yparxei ena thema kapoies fores den fortwnei kala to parallax*/
-    min-height:800px;
+    width: 100%;
+    min-height: 675px;
 }
 
 
@@ -2683,12 +2665,13 @@ body {
 }
 
     .cd-floating-background.is-absolute {
+
         position: absolute;
     }
 
     .cd-floating-background img {
         display: block;
-        width: 100%;
+        width: 85%;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         /* fixes a Firefox bug - images not correctly rendered*/
@@ -2697,18 +2680,16 @@ body {
 
 
         .cd-floating-background img:not(:first-child) {
-            position: absolute;
+            position: absolute;           
             top: 0;
-            left: -160px;
         }
 
 
 
-
         .cd-floating-background img:first-child {
-            -webkit-transform: translateZ(-3000px);
-            -ms-transform: translateZ(-3000px);
-            transform: translateZ(-3000px);
+            -webkit-transform: translateZ(-2000px);
+            -ms-transform: translateZ(-2000px);
+            transform: translateZ(-2000px);
         }
 
         .cd-floating-background img:nth-child(2) {
@@ -2718,81 +2699,63 @@ body {
         }
 
         .cd-floating-background img:nth-child(3) {
-            -webkit-transform: translateZ(-1200px);
-            -ms-transform: translateZ(-1200px);
-            transform: translateZ(-1200px);
+            -webkit-transform: translateZ(-2000px);
+            -ms-transform: translateZ(-2000px);
+            transform: translateZ(-2000px);
         }
 
         .cd-floating-background img:nth-child(4) {
+            -webkit-transform: translateZ(-1500px);
+            -ms-transform: translateZ(-1500px);
+            transform: translateZ(-1500px);
+        }
+
+        .cd-floating-background img:nth-child(5) {
             -webkit-transform: translateZ(-1000px);
             -ms-transform: translateZ(-1000px);
             transform: translateZ(-1000px);
         }
 
-        .cd-floating-background img:nth-child(5) {
+        .cd-floating-background img:nth-child(6) {
             -webkit-transform: translateZ(-800px);
             -ms-transform: translateZ(-800px);
             transform: translateZ(-800px);
         }
 
-        .cd-floating-background img:nth-child(6) {
+        .cd-floating-background img:nth-child(7) {
             -webkit-transform: translateZ(-600px);
             -ms-transform: translateZ(-600px);
             transform: translateZ(-600px);
         }
 
-        .cd-floating-background img:nth-child(7) {
+        .cd-floating-background img:nth-child(8) {
             -webkit-transform: translateZ(-400px);
             -ms-transform: translateZ(-400px);
             transform: translateZ(-400px);
         }
 
-        .cd-floating-background img:nth-child(8) {
-            -webkit-transform: translateZ(-240px);
-            -ms-transform: translateZ(-240px);
-            transform: translateZ(-240px);
-        }
-
         .cd-floating-background img:nth-child(9) {
-            -webkit-transform: translateZ(-180px);
-            -ms-transform: translateZ(-180px);
-            transform: translateZ(-180px);
+            -webkit-transform: translateZ(-200px);
+            -ms-transform: translateZ(-200px);
+            transform: translateZ(-200px);
         }
 
         .cd-floating-background img:nth-child(10) {
-            -webkit-transform: translateZ(-140px);
-            -ms-transform: translateZ(-140px);
-            transform: translateZ(-140px);
-        }
-
-        .cd-floating-background img:nth-child(11) {
             -webkit-transform: translateZ(-100px);
             -ms-transform: translateZ(-100px);
             transform: translateZ(-100px);
         }
 
+        .cd-floating-background img:nth-child(11) {
+            -webkit-transform: translateZ(-50px);
+            -ms-transform: translateZ(-50px);
+            transform: translateZ(-50px);
+        }
+
         .cd-floating-background img:nth-child(12) {
-            -webkit-transform: translateZ(-60px);
-            -ms-transform: translateZ(-60px);
-            transform: translateZ(-60px);
-        }
-
-        .cd-floating-background img:nth-child(13) {
-            -webkit-transform: translateZ(-40px);
-            -ms-transform: translateZ(-40px);
-            transform: translateZ(-40px);
-        }
-
-        .cd-floating-background img:nth-child(14) {
-            -webkit-transform: translateZ(-20px);
-            -ms-transform: translateZ(-20px);
-            transform: translateZ(-20px);
-        }
-
-        .cd-floating-background img:nth-child(15) {
-            -webkit-transform: translateZ(0px);
-            -ms-transform: translateZ(0px);
-            transform: translateZ(0px);
+            -webkit-transform: translateZ(-50px);
+            -ms-transform: translateZ(-50px);
+            transform: translateZ(-10px);
         }
 
 
@@ -2801,11 +2764,6 @@ body {
     /* we target browsers that don't support preserve-3d and show just a standard image - no effect visible */
     position: relative;
 }
-
-
-
-
-
 
 
 
@@ -2828,11 +2786,11 @@ header {
 
     header .table {
         display: table;
-        height: 100%;
+        height: 20%;
     }
 
     header .container {
-        height: 50%;
+        height: 20%;
     }
 
     header .header-text {
@@ -2874,11 +2832,11 @@ header {
 }
 
 #paintBrushButton {
-    height:100px;
+    height:60px;
     display: block;
-    position: absolute;
-    bottom: 600px;
-    margin-left: 200px;
+    position: relative;
+    bottom: 0px;
+    margin-left: 50px;
 }
 
 /*#boxOne{
@@ -2954,6 +2912,22 @@ i {
     MORE
 
 -------------------------------- */
+
+/*EDITS*/
+body {
+    /*background-image: url(../images/white-paper-texture.jpg);
+    background-repeat: repeat;
+    background-size: auto;*/
+    background-color: #f3efe9;
+}
+
+
+
+
+.fa {
+    color: #ff6a00;
+}
+
 .steadybar {
     margin: 20px;
 }
@@ -2983,8 +2957,44 @@ i {
     }
 }
 
+/*PAINTINGS IMAGE*/
+.painting img {
+    width: 100%;
+    border: 10px solid #f3efe9;
+    box-shadow: 1px 1px 22px 14px rgba(0,0,0,0.1);
+}
 
+/*PAINTINGS DESCRIPTION*/
+.overlay {
+    box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
+}
 
+.paintingdesc {
+    color: #f3efe9;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin: 10px;
+}
+
+    .paintingdesc hr {
+        border: 1px dashed #f3efe9; 
+        margin: 0px;
+    }
+
+.paintingdesc p{
+    margin: 0px;
+}
+
+    .paintingdesc h2 {
+        color: #424242; 
+        margin: 0px;
+        text-shadow: -1px 1px #f3efe9;
+    }
+
+.paintingcontainer{
+    margin-bottom:80px;
+}
 
 /*#region INPUTS*/
 /*---------------------------------------------*/
@@ -3136,10 +3146,6 @@ iframe {
     text-align: center;
 }
 
-#Facebook{
-    background-image:url("~/images/login.png");
-}
-
 
 /*------------------------------------------------------------------
 [ Input ]*/
@@ -3154,6 +3160,8 @@ iframe {
         border-top: none;
     }
 
+
+
 .input100 {
     display: block;
     width: 100%;
@@ -3164,11 +3172,25 @@ iframe {
     line-height: 1.2;
 }
 
+.inputchat {
+    display: block;
+    width: 100%;
+    background: transparent;
+    font-family: OpenSans-Regular;
+    font-size: 15px;
+    color: #1f6b61;
+    line-height: 1;
+}
 
 /*---------------------------------------------*/
 input.input100 {
     height: 68px;
     padding: 0 25px 0 25px;
+}
+
+input.inputchat {
+    height: 38px;
+    padding: 0 15px 0 15px;
 }
 
 /*------------------------------------------------------------------

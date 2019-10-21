@@ -5,7 +5,7 @@
 <footer id="Chat" class="section-gap">
     <div class="container">
         <div class="row pt-60">
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-2 col-sm-2">
                 <div class="single-footer-widget">
                     <h6 class="text-uppercase mb-20">Site Navigation</h6>
                     <ul class="footer-nav">
@@ -21,45 +21,36 @@
             </div>
 
 
-            <div class="col-lg-6 col-sm-6">
-                <h6 class="text-uppercase mb-20">CHAT BOX</h6>
+            <div class="col-lg-8 col-sm-8">
+                <h6 class="text-uppercase mb-20" style="margin-left:20px">Chat</h6>
                 <form>
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Enter Your Message</label>
-                        @*<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>*@
-
-
-                        @* Alex Takes The Wheel Here! *@
                         <div class="container">
-                            <input type="text" id="username" placeholder="Set Name For Chat" />
-                            <br />
-                            <input type="text" id="message" />
-                            <input type="button" id="sendmessage" value="Send" />                           
-                            <ul id="discussion">
-                            </ul>
+                            <div class="wrap-input100">
+                                <input class="inputchat" type="text" id="username" placeholder="Set Name For Chat">
+                            </div>
+                            <div class="wrap-input100 rs1">
+                                <input class="input100" type="text" id="message">
+                                <span class="focus-input100-1"></span>
+                                <span class="focus-input100-2"></span>
+                            </div>
+                            <div class="container-login100-form-btn m-t-20">
+                                <button class="login100-form-btn" type="button" id="sendmessage" value="Send">
+                                    Chat
+                                </button>
+                            </div>
                         </div>
-                        @* aaaand crashes :p *@
+                        @* aaaand DOES NOT crashes :p *@
                     </div>
                 </form>
             </div>
 
 
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-2 col-sm-2">
                 <div class="single-footer-widget">
-                    <h6 class="text-uppercase mb-20">Quick About</h6>
-                    <p>
-                        Milame Edw gia mas ... periautologoume
-                    </p>
-                    <p>
-                        +00 012 6325 98 6542 <br>
-                        support@children.com
-                    </p>
-                    <div class="footer-social d-flex align-items-center">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-dribbble"></i></a>
-                        <a href="#"><i class="fa fa-behance"></i></a>
-                    </div>
+                    @*<h6 class="text-uppercase mb-20">Chat Box</h6>*@
+                    <ul id="discussion">
+                    </ul>
                 </div>
             </div>
         </div>
