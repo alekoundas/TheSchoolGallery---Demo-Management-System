@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebApi_Entities
+namespace WebApi_Entities.School
 {
     public class School
     {
@@ -38,5 +38,7 @@ namespace WebApi_Entities
 
         // Has many Classes -------------------------------->>
         public  ICollection<Classroom> Classroom { get; set; }
+        public object Teacher { get; set; }
+        public object Students { get; set; }
     }
 }

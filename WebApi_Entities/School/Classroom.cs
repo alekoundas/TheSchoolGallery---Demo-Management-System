@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebApi_Entities
+namespace WebApi_Entities.School
 {
 
     public class Classroom

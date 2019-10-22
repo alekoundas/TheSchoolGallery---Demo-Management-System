@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WebApi_Entities.Avatar;
 
-namespace WebApi_Entities
+namespace WebApi_Entities.School
 {
    public  class Student
     {
