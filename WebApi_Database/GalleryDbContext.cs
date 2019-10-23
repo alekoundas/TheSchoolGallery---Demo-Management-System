@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WebApi_Entities;
 using WebApi_Entities.Avatar;
+using WebApi_Entities.School;
 using WebApi_Entities.SignalR;
 
 namespace WebApi_Database

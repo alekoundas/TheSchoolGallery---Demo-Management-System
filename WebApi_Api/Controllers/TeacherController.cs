@@ -10,6 +10,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using WebApi_Database;
 using WebApi_Entities;
+using WebApi_Entities.School;
 
 namespace WebApi_Api.Controllers
 {
@@ -20,14 +21,14 @@ namespace WebApi_Api.Controllers
         // GET: api/Teacher
         public IQueryable<Teacher> GetTeacherDb()
         {
-            return db.TeacherDb.Include(x=>x.Classroom).Include(y => y.Avatar);
+            return db.TeacherDb.Include(x=>x.Classroom.Select(y=>y.Students)).Include(y => y.Avatar);
         }
 
         // GET: api/Teacher/5
         [ResponseType(typeof(Teacher))]
         public IHttpActionResult GetTeacher(int id)
         {
-            Teacher teacher = db.TeacherDb.Where(w=>w.TeacherId==id).Include(x => x.Classroom).Include(y=>y.Avatar).FirstOrDefault();
+            Teacher teacher = db.TeacherDb.Where(w=>w.TeacherId==id).Include(x => x.Classroom.Select(y => y.Students)).Include(y => y.Avatar).FirstOrDefault();
             if (teacher == null)
             {
                 return NotFound();

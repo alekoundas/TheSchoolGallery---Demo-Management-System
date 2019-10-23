@@ -9,6 +9,7 @@
     using System.Linq;
     using WebApi_Entities;
     using WebApi_Entities.Avatar;
+    using WebApi_Entities.School;
 
     internal sealed class Configuration : DbMigrationsConfiguration<WebApi_Database.GalleryDbContext>
     {

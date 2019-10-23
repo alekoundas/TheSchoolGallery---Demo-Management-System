@@ -10,6 +10,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using WebApi_Database;
 using WebApi_Entities;
+using WebApi_Entities.School;
 
 namespace WebApi_Api.Controllers
 {

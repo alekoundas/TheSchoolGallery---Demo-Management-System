@@ -36,6 +36,29 @@
     </div>
 </div>
 <hr />
+
+@* Test & epidixi oti to model exei TA PANTA *@
+
+@*@foreach (var school in Model)
+{
+    @school.Name
+    foreach (var classroom in school.Classroom)
+    {
+
+        @classroom.Name
+        @classroom.Teacher.FirstName
+        foreach (var student in classroom.Students)
+        {
+            @student.FirstName
+            foreach (var painting in student.Paintings)
+            {
+                @painting.Price
+            }
+        }
+
+    }
+}*@
+
 <section class="feature-area pt-100 pb-100  relative">
     <div class="overlay overlay-bg"></div>
     <div class="container">

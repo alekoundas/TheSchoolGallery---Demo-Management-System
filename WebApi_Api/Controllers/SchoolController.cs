@@ -9,7 +9,8 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using WebApi_Database;
-using WebApi_Entities;
+
+using WebApi_Entities.School;
 
 namespace WebApi_Api.Controllers
 {
@@ -20,14 +21,22 @@ namespace WebApi_Api.Controllers
         // GET: api/School
         public IQueryable<School> GetSchools()
         {
-            return db.SchoolsDb.Include(x=>x.Classroom);
+            return db.SchoolsDb
+                .Include(a => a.Classroom.Select(b => b.Students.Select(c => c.Paintings)))
+                .Include(d => d.Classroom.Select(e => e.Students.Select(f => f.Avatar)))
+                .Include(g => g.Classroom.Select(e => e.Teacher))
+                ;
         }
 
         // GET: api/School/5
         [ResponseType(typeof(School))]
         public IHttpActionResult GetSchool(int id)
         {
-            School school = db.SchoolsDb.Where(w=>w.SchoolId==id).Include(x => x.Classroom).FirstOrDefault();
+            School school = db.SchoolsDb.Where(w => w.SchoolId == id)
+                .Include(a => a.Classroom.Select(b => b.Students.Select(c => c.Paintings)))
+                .Include(d => d.Classroom.Select(e => e.Students.Select(f => f.Avatar)))
+                .Include(g => g.Classroom.Select(e => e.Teacher))
+                .FirstOrDefault();
             if (school == null)
             {
                 return NotFound();
