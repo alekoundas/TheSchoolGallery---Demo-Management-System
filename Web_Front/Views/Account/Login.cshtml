@@ -23,7 +23,7 @@
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
                                 // Old Input box in which the focus works ------------------------------------
-                                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                                @*<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
                                         <input class="input100" type="text" name="email" placeholder="Email">
                                         <span class="focus-input100-1"></span>
                                         <span class="focus-input100-2"></span>
@@ -36,10 +36,10 @@
                                         <span class="focus-input100-2"></span>
                                         @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
 
-                                    </div>
+                                    </div>*@
 
                                 // New MVC Input box in which the focus do not work ---------------------------
-                                @*<div class="wrap-input100">
+                                <div class="wrap-input100">
                                     @Html.TextBoxFor(m => m.Email, new { @class = "input100", placeholder = "Email" })
                                     @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                                     <span class="focus-input100-1"></span>
@@ -51,7 +51,7 @@
                                     @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                                     <span class="focus-input100-1"></span>
                                     <span class="focus-input100-2"></span>
-                                </div>*@
+                                </div>
 
                                 // SIGNIN BUTTON ----------------------------------------------------
                                 <div class="container-login100-form-btn m-t-20">

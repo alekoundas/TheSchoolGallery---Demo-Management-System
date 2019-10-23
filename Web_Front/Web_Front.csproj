@@ -260,6 +260,7 @@
     <Content Include="images\loged.png" />
     <Content Include="images\login.png" />
     <Content Include="images\logo.png" />
+    <Content Include="images\menu.png" />
     <Content Include="images\old-paper-texture.jpg" />
     <Content Include="images\paintings\painting_001.jpg" />
     <Content Include="images\paintings\painting_002.jpg" />
