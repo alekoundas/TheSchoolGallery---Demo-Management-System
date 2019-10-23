@@ -3122,15 +3122,7 @@ iframe {
     box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
 }
 
-.sideImage {
-    width: 200px;
-    height: 500px;
-    padding: 5px;
-    background: #fff;
-    overflow: hidden;
-    box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
-    border: 5px solid #fff;
-}
+
 
 
 
@@ -3400,3 +3392,28 @@ input.inputchat {
 }
 /*#endregion BUTTON/VAL*/
 
+.sideImage {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
+    border: 5px solid #fff;
+}
+
+.stackImages {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* -------------------------------- 
+
+    PARALLAX 2
+
+-------------------------------- */
+
+/*#region PARALLAX 2*/
+
+/*#endregion PARALLAX 2*/
