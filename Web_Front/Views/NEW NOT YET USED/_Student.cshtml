@@ -1,0 +1,77 @@
+﻿
+@model IEnumerable<Web_DomainClasses.Entities.School.Painting>
+
+@{
+    ViewBag.Title = "_Student";
+}
+
+<!-- TITLE ----------------------------------------------------------------------- -->
+<div class="col-md-12 pt-20 pb-20">
+    <h1>
+        Student (single one)
+    </h1>
+</div>
+
+<!-- SEARCH/SORT/PAGING ---------------------------------------------------------- -->
+<div class="feature-area pt-10 pb-10  relative">
+    <div class="container">
+        <div class="row">
+            <h2 class="col-md-6">
+
+                @if (User.IsInRole("admin"))
+                {
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    @Html.ActionLink("Create New", "Create")
+                }
+
+            </h2>
+            <div class="col-md-6">
+                @using (Html.BeginForm())
+                {
+                    <p>
+                        Find by Name: @Html.TextBox("SearchString")
+                        <input class="btn btn-large" type="submit" value="Search" />
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+
+</div>
+<hr />
+
+<!-- PAINTINGS ------------------------------------------------------------------- -->
+<section class="feature-area pt-100 pb-100  relative">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-sm-6 align-items-stretch">
+                    <div class="paintingcontainer">
+                        <div class="painting">
+                            <img src="~/images/paintings/@Html.DisplayFor(modelItem => item.ImageUrl)" />
+                        </div>
+                        <div class="paintingdesc">
+                            <p>@Html.DisplayFor(modelItem => item.PaintingTitle) <hr /></p>
+                            <p>by Yio Cho</p>
+                            <p class="text-right">
+                                Cost: @Html.DisplayFor(modelItem => item.Price)
+                            </p>
+                        </div>
+
+                        @if (User.IsInRole("admin"))
+                        {
+                            <div>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.PaintingId }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.PaintingId }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.PaintingId })
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
