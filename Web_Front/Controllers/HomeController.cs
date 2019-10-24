@@ -15,11 +15,6 @@ namespace Web_Front.Controllers
 {
     public class HomeController : MasterController
     {
-
-       
-
-
-
         public ActionResult Index()
         {
             return View();

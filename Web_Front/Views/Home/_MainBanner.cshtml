@@ -1,60 +1,105 @@
 ﻿    <!-- MAIN BANNER ----------------------------------------------------- -->
 <br />
 
-<div class="oz-body-wrap2">
 
+<div class="oz-body-wrap2">
     <div class="container-fluid">
-        <div id="boxOne">
-            <div class="preloader"></div>
-            <header id="intro">
-                    <div class="table">
-                        <div class="header-text">
-                            <div class="row">
-                                <div class="col-md-12 text-center">
-                                    <h3 style="color:#222" class="light white">Children Create ...</h3>
-                                    <h1 class="white typed">The Blank Canvas Is the Beginning!</h1>
-                                    <span class="typed-cursor">
-                                        <i style="font-size:28px" class="fa fa-pencil" aria-hidden="true"></i>
-                                    </span>
-                                </div>
-                            </div>
+        <div class="cd-background-wrapper">
+            <figure class="cd-floating-background">
+                <img id="para01" src="~/images/parallax/clouds_back.png">
+                <img id="para02" src="~/images/parallax/clouds_middle.png">
+                <img id="para03" src="~/images/parallax/clouds_front.png">
+                <img id="para04" src="~/images/parallax/birds.png">
+                <img id="para05" src="~/images/parallax/mountains_back.png">
+                <img id="para06" src="~/images/parallax/mountains_middle.png">
+                <img id="para07" src="~/images/parallax/mountains_front.png">
+                <img id="para08" src="~/images/parallax/gallery_frame.png">
+                <img id="para09" src="~/images/parallax/smoke.png">
+                <img id="para10" src="~/images/parallax/gallery_paint.png">
+                <img id="para11" src="~/images/parallax/gallery_boi.png">
+                <img id="para12" src="~/images/parallax/front.png">
+            </figure>
+        </div>
+    </div>
+</div>
+
+<div class="oz-body-wrap2">
+    <div class="container-fluid">
+        <div class="preloader"></div>
+        <header id="intro" style="height:400px">
+            <div class="table">
+                <div class="header-text">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h3 style="color:#222" class="light white">Children Create ...</h3>
+                            <h1 class="white typed">The Blank Canvas Is the Beginning!</h1>
+                            <span class="typed-cursor">
+                                <i style="font-size:28px" class="fa fa-pencil" aria-hidden="true"></i>
+                            </span>
                         </div>
                     </div>
-                    <button id="paintBrushButton">
-                        <img src="~/images/kid_brush.png" alt="Alternate Text" />
-                        <figcaption>Click Me!</figcaption>
-                    </button>
-            </header>
-
-        </div>
-
-        <div id="boxTwo">
-
-                <div class="cd-background-wrapper">
-                    <figure class="cd-floating-background">
-                        <img id="para01" src="~/images/parallax/clouds_back.png">
-                        <img id="para02" src="~/images/parallax/clouds_middle.png">
-                        <img id="para03" src="~/images/parallax/clouds_front.png">
-                        <img id="para04" src="~/images/parallax/birds.png">
-                        <img id="para05" src="~/images/parallax/mountains_back.png">
-                        <img id="para06" src="~/images/parallax/mountains_middle.png">
-                        <img id="para07" src="~/images/parallax/mountains_front.png">
-                        <img id="para08" src="~/images/parallax/gallery_frame.png">
-                        <img id="para09" src="~/images/parallax/smoke.png">
-                        <img id="para10" src="~/images/parallax/gallery_paint.png">
-                        <img id="para11" src="~/images/parallax/gallery_boi.png">
-                        <img id="para12" src="~/images/parallax/front.png">
-                    </figure>
                 </div>
+            </div>
+            <br />
+            <br />
+            <div class="row">
+                <button class="col-md-4" id="paintBrushButton">
+                    <img src="~/images/kid_brush.png" alt="Alternate Text" />
+                    <figcaption>Start Drawing</figcaption>
+                </button>
 
+                <canvas id="myCanvas" class="col-md-6 text-center"></canvas>
+
+            </div>
+        </header>
+    </div>
+
+    <div id="drawingCtrl">
+        <div class="row mx-0">
+            <div class="col px-0">
+                <button class="login100-form-btn" id="clearArea">Clear Area</button>
+            </div>
+            <div class="col px-0">
+                <div id="lineW" class="login100-form-btn">
+                    <span style="color:#ffffff; margin-right:20px;">Line width</span> : <select id="selWidth">
+                        <option value="1">1</option>
+                        <option value="3" selected="selected">3</option>
+                        <option value="5">5</option>
+                        <option value="7">7</option>
+                        <option value="9">9</option>
+                        <option value="11">11</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col px-0">
+                <div id="lineC" class="login100-form-btn">
+                    <span style="color:#ffffff; margin-right:20px;">Color</span> : <select id="selColor">
+                        <option value="black" selected="selected">black</option>
+                        <option value="blue">blue</option>
+                        <option value="red">red</option>
+                        <option value="green">green</option>
+                        <option value="yellow">yellow</option>
+                        <option value="gray">gray</option>
+                    </select>
+                </div>
+            </div>
         </div>
     </div>
 
+
 </div>
+
+
+
+
 
 
 
 @section Scripts {
     <script src="~/js/parallax.js"></script>
     <script src="~/js/typewriter.js"></script>
+
+
+
+
 }

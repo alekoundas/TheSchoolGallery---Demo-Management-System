@@ -3,7 +3,7 @@ $(document).ready(function(){
 
     // Window Load
     $(window).load(function () {
-        $('header').height($(window).height() + 80);
+        $('header').height($(window).height() - 200);
         $('section .cut').each(function () {
             if ($(this).hasClass('cut-top'))
                 $(this).css('border-right-width', $(this).parent().width() + "px");
@@ -17,16 +17,82 @@ $(document).ready(function(){
 
     });
 
+    // Edo to switching tou BANNER stin arxi (to engala gia tin wra)
     // BANNER ------------------------------------------------------->>
-    $('#boxTwo').hide();
-    // Swap Typing letters with Main Parallax Banner
+    //$('#boxTwo').hide();
+    //// Swap Typing letters with Main Parallax Banner
+    //$('#paintBrushButton').on('click',
+    //    function () {
+    //        $('#boxOne, #boxTwo').toggle(3200);
+    //        //$('#boxOne, #boxTwo').fadeToggle("slow", "linear");
+
+    //    }
+    //);
+
+    $("#drawingCtrl").hide(0);
+
     $('#paintBrushButton').on('click',
         function () {
-            $('#boxOne, #boxTwo').toggle(3200);
-            //$('#boxOne, #boxTwo').fadeToggle("slow", "linear");
-
+            $('#myCanvas').css('border-color', '#ff6a00')
+            InitThis();
+            $("#drawingCtrl").show(1000);
         }
     );
+
+    $('#clearArea').on('click',
+        function () {
+            clearArea();
+        }
+    );
+
+    // CANVAS DRAWING ----------------------------------------------->>
+    var mousePressed = false;
+    var lastX, lastY;
+    var ctx;
+
+    function InitThis() {
+        ctx = document.getElementById('myCanvas').getContext("2d");
+
+        $('#myCanvas').mousedown(function (e) {
+            mousePressed = true;
+            Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, false);
+        });
+
+        $('#myCanvas').mousemove(function (e) {
+            if (mousePressed) {
+                Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, true);
+            }
+        });
+
+        $('#myCanvas').mouseup(function (e) {
+            mousePressed = false;
+        });
+        $('#myCanvas').mouseleave(function (e) {
+            mousePressed = false;
+        });
+    }
+
+    function Draw(x, y, isDown) {
+        if (isDown) {
+            ctx.beginPath();
+            ctx.strokeStyle = $('#selColor').val();
+            ctx.lineWidth = $('#selWidth').val();
+            ctx.lineJoin = "round";
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(x, y);
+            ctx.closePath();
+            ctx.stroke();
+        }
+        lastX = x; lastY = y;
+    }
+
+    function clearArea() {
+        // Use the identity matrix while clearing the canvas
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    }
+    //--------------------------------------------------------------------<<
+
 
 
     "use strict";

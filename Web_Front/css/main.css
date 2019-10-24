@@ -3410,10 +3410,19 @@ input.inputchat {
 
 /* -------------------------------- 
 
-    PARALLAX 2
+    CANVAS
 
 -------------------------------- */
 
-/*#region PARALLAX 2*/
+/*#region CANVAS*/
 
-/*#endregion PARALLAX 2*/
+#myCanvas {
+    border: 8px dotted #808080;
+}
+
+#lineW, #lineC {
+    
+    color:#666666;
+}
+
+/*#endregion CANVAS*/
