@@ -16,11 +16,14 @@
         <div class="row">
             <h2 class="col-md-6">
 
-                @if (User.IsInRole("admin"))
+                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                @Html.ActionLink("Create New", "Create")
+
+                @*@if (User.IsInRole("admin"))
                 {
                     <i class="fa fa-plus-circle" aria-hidden="true"></i>
                     @Html.ActionLink("Create New", "Create")
-                }
+                }*@
 
             </h2>
             <div class="col-md-6">
@@ -73,14 +76,21 @@
                             </p>
                         </div>
 
-                        @if (User.IsInRole("admin"))
+                        <div>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.PaintingId }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.PaintingId }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.PaintingId })
+                        </div>
+
+
+                        @*@if (User.IsInRole("admin"))
                         {
                             <div>
                                 @Html.ActionLink("Edit", "Edit", new { id = item.PaintingId }) |
                                 @Html.ActionLink("Details", "Details", new { id = item.PaintingId }) |
                                 @Html.ActionLink("Delete", "Delete", new { id = item.PaintingId })
                             </div>
-                        }
+                        }*@
 
                     </div>
                 </div>

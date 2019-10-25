@@ -6,7 +6,6 @@
 
 <div class="col-md-12 pt-20 pb-20">
     <h1>
-        @*<img style="height:100px; width:100%" src="~/images/banner.jpg" alt="Alternate Text" />*@
         Schools Participating
     </h1>
 </div>
@@ -16,11 +15,14 @@
         <div class="row">
             <h2 class="col-md-6">
 
-                @if (User.IsInRole("admin"))
+                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                @Html.ActionLink("Create New", "Create")
+
+                @*@if (User.IsInRole("admin"))
                 {
                     <i class="fa fa-plus-circle" aria-hidden="true"></i>
                     @Html.ActionLink("Create New", "Create")
-                }
+                }*@
 
             </h2>
             <div class="col-md-6">
@@ -60,7 +62,7 @@
 }*@
 
 <section class="feature-area pt-100 pb-100  relative">
-    <div class="overlay overlay-bg"></div>
+    <div class="overlay overlay-bg2"></div>
     <div class="container">
         <div class="row">
             @foreach (var item in Model)
@@ -80,14 +82,20 @@
                             </ul>
                         </div>
 
-                        @if (User.IsInRole("admin"))
+                        <div>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.SchoolId }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.SchoolId }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.SchoolId })
+                        </div>
+
+                        @*@if (User.IsInRole("admin"))
                         {
                             <div>
                                 @Html.ActionLink("Edit", "Edit", new { id = item.SchoolId }) |
                                 @Html.ActionLink("Details", "Details", new { id = item.SchoolId }) |
                                 @Html.ActionLink("Delete", "Delete", new { id = item.SchoolId })
                             </div>
-                        }
+                        }*@
 
                     </div>
                 </div>

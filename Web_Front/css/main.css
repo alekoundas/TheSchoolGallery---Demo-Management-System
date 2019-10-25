@@ -1908,7 +1908,7 @@ nav {
         text-align: right;
         padding: 20px 0;
         z-index: 5;
-        background: #1f6b61
+        background: rgba(31, 107, 97, 0.40)
     }
 }
 
@@ -1932,7 +1932,8 @@ nav a {
 }
 
 nav a:hover {
-    color: #1f6b61
+    color: #1b443e;
+    text-shadow: 2px 2px 2px #a3dcd4;
 }
 /*#endregion NAVBAR*/
 
@@ -1975,7 +1976,7 @@ body {
 .oz-body-wrap2 {
     box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
     margin: 80px;
-    position: relative; 
+    position: relative;
     background-color: #fff;
 }
 
@@ -2399,7 +2400,7 @@ body {
 
 /* -------------------------------- 
 
-    CONTACT
+    CONTACT 
 
 -------------------------------- */
 
@@ -2412,23 +2413,20 @@ body {
     color: #fff
 }
 
-    .contact-area .overlay-bg {
-        background: rgba(9, 65, 39, 0.50);
+
+.contact-area h2 {
+    font-size: 36px;
+    font-weight: 100
+}
+
+    .contact-area h2 span {
+        font-weight: 600
     }
 
-    .contact-area h2 {
-        font-size: 36px;
-        font-weight: 100
-    }
-
-        .contact-area h2 span {
-            font-weight: 600
-        }
-
-    .contact-area p {
-        font-size: 14px;
-        font-weight: 300
-    }
+.contact-area p {
+    font-size: 14px;
+    font-weight: 300
+}
 
 .contact-form ::-webkit-input-placeholder {
     color: #fff;
@@ -2665,7 +2663,6 @@ footer {
 }
 
     .cd-floating-background.is-absolute {
-
         position: absolute;
     }
 
@@ -2676,14 +2673,13 @@ footer {
         backface-visibility: hidden;
         /* fixes a Firefox bug - images not correctly rendered*/
         background-color: rgba(255, 255, 255, 0.01);
-        left:-120px;
+        left: -120px;
     }
 
 
         .cd-floating-background img:not(:first-child) {
-            position: absolute;           
+            position: absolute;
             top: 0;
-            
         }
 
 
@@ -2730,7 +2726,7 @@ footer {
             -webkit-transform: translateZ(-340px);
             -ms-transform: translateZ(-340px);
             transform: translateZ(-340px);
-            top:40px;
+            top: 40px;
         }
 
         .cd-floating-background img:nth-child(8) {
@@ -2835,7 +2831,7 @@ header {
 }
 
 #paintBrushButton {
-    height:60px;
+    height: 60px;
     display: block;
     position: relative;
     bottom: 0px;
@@ -2859,7 +2855,6 @@ header {
 
 /*#region ADMIN NAVBAR*/
 #navbar {
-
 }
 
     #navbar .btn {
@@ -2924,9 +2919,6 @@ body {
     background-color: #f3efe9;
 }
 
-
-
-
 .fa {
     color: #ff6a00;
 }
@@ -2936,13 +2928,13 @@ body {
 }
 
 #loginForm {
-    width:100%;
+    width: 100%;
 }
 
 /*IMAGE CONTAINER FRAME*/
 .imagecontainer-wrap {
-    width:400px;
-    height:800px;
+    width: 400px;
+    height: 800px;
     box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
     margin: 50px;
     position: relative
@@ -2967,6 +2959,17 @@ body {
     box-shadow: 1px 1px 22px 14px rgba(0,0,0,0.1);
 }
 
+.painting2 img {
+    width: 100%;
+    border: 10px solid #f3efe9;
+    box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.2);
+}
+
+.deleteContainer img{
+    position:absolute;
+    height:100px;
+}
+
 /*PAINTINGS DESCRIPTION*/
 .overlay {
     box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
@@ -2981,22 +2984,22 @@ body {
 }
 
     .paintingdesc hr {
-        border: 1px dashed #f3efe9; 
+        border: 1px dashed #f3efe9;
         margin: 0px;
     }
 
-.paintingdesc p{
-    margin: 0px;
-}
+    .paintingdesc p {
+        margin: 0px;
+    }
 
     .paintingdesc h2 {
-        color: #424242; 
+        color: #424242;
         margin: 0px;
         text-shadow: -1px 1px #f3efe9;
     }
 
-.paintingcontainer{
-    margin-bottom:80px;
+.paintingcontainer {
+    margin-bottom: 80px;
 }
 
 /*#region INPUTS*/
@@ -3062,8 +3065,7 @@ iframe {
     border: none !important;
 }
 
-.checkbox{
-
+.checkbox {
 }
 
 
@@ -3091,7 +3093,7 @@ iframe {
 }
 
 
-/*//////////////////////////////////////////////////////////////////
+/*///////////(our colored backgrounds)////////////////////////////////////////////
 [ login ]*/
 
 .limiter {
@@ -3115,11 +3117,32 @@ iframe {
 }
 
 .wrap-login100 {
-    height: 500px;
+    height: auto;
+    min-height: 500px;
     padding: 25px;
     background: #fff;
     overflow: hidden;
     box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
+}
+
+.overlay-bg {
+    background: rgba(9, 65, 39, 0.50);
+}
+
+.overlay-bg2 {
+    background: rgba(50, 82, 169, 0.50);
+}
+
+.overlay-bg3 {
+    background: rgba(187, 140, 32, 0.50);
+}
+
+.overlay-bg4 {
+    background: rgba(170, 88, 46, 0.50);
+}
+
+.overlay-bg5 {
+    background: rgba(46, 100, 40, 0.50);
 }
 
 
@@ -3408,21 +3431,47 @@ input.inputchat {
     overflow: hidden;
 }
 
+#intro {
+    background-color: #f3efe9;
+}
+
+#paintBrushButton {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+
+    #paintBrushButton img {
+        -webkit-transform: rotate(deg) scale(1);
+        transform: rotate(-2deg) scale(1);
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+    }
+
+    #paintBrushButton:hover img {
+        -webkit-transform: rotate(8) scale(1.4);
+        rotate(8) scale(1.4);
+        transform: rotate(4deg) scale(1.4);
+    }
+
+
+    #paintBrushButton img {
+        height: 100px;
+    }
+
 /* -------------------------------- 
 
     CANVAS
 
 -------------------------------- */
-
 /*#region CANVAS*/
-
 #myCanvas {
     border: 8px dotted #808080;
 }
 
 #lineW, #lineC {
-    
-    color:#666666;
+    color: #666666;
 }
 
 /*#endregion CANVAS*/

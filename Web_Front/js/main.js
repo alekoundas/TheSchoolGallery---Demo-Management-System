@@ -31,11 +31,21 @@ $(document).ready(function(){
 
     $("#drawingCtrl").hide(0);
 
+    $('#paintBrushButton').mouseenter(function () {
+        $('figcaption').fadeOut(1000);
+    });
+
     $('#paintBrushButton').on('click',
         function () {
+            $('#intro').animate({
+                left: '-1200px'
+            }, '1000', function () {
+                $(this).hide(2000)
+            });
+            $('#paintingKid').fadeOut(1000);
             $('#myCanvas').css('border-color', '#ff6a00')
             InitThis();
-            $("#drawingCtrl").show(1000);
+            $("#drawingCtrl").show(2000);
         }
     );
 
@@ -193,7 +203,7 @@ $(document).ready(function(){
      });
 
 
-    //Little Prallaxing
+    //Little Prallaxing ----------------------------------------------->>
     var timeout;
     $('#p_container').mousemove(function (e) {
         if (timeout) clearTimeout(timeout);

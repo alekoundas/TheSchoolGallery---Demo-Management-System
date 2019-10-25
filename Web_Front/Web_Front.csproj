@@ -342,6 +342,7 @@
     <Content Include="images\parallax\sky.png" />
     <Content Include="images\parallax\smoke.png" />
     <Content Include="images\register.png" />
+    <Content Include="images\schoolspng.png" />
     <Content Include="images\white-paper-texture.jpg" />
     <Content Include="img\elements\disabled-check.png" />
     <Content Include="img\elements\disabled-radio.png" />
@@ -464,6 +465,9 @@
     <Content Include="Views\Shared\_Navigation_C.cshtml" />
     <Content Include="Views\Account\_test.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Error\404.cshtml" />
+    <Content Include="Views\Home\_Canvas.cshtml" />
+    <Content Include="Views\School\School_Individual.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
