@@ -73,14 +73,14 @@
                             </p>
                         </div>
 
-                        @if (User.IsInRole("admin"))
-                        {
+                        @*@if (User.IsInRole("admin"))
+                        {*@
                             <div>
                                 @Html.ActionLink("Edit", "Edit", new { id = item.PaintingId }) |
                                 @Html.ActionLink("Details", "Details", new { id = item.PaintingId }) |
                                 @Html.ActionLink("Delete", "Delete", new { id = item.PaintingId })
                             </div>
-                        }
+                        @* } *@
 
                     </div>
                 </div>

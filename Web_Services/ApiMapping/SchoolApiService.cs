@@ -2,6 +2,7 @@
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +32,6 @@ namespace Web_Services.ApiMapping
             //Desirialise Response(JSON) To Model
             List<School> SchoolList = new List<School>();
             SchoolList = JsonConvert.DeserializeObject<List<School>>(response);
-
             return SchoolList;
         }
 

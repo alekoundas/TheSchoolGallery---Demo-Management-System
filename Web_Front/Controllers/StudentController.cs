@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Web_DomainClasses.Entities.School;
+using Web_DomainClasses.ViewModels;
 using Web_Front.Models;
 using Web_Services.ApiMapping;
 
@@ -16,6 +17,8 @@ namespace Web_Front.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         StudentApiService StudentServ = new StudentApiService();
+        ClassroomApiService ClassroomServ = new ClassroomApiService();
+        SchoolApiService SchoolServ = new SchoolApiService();
 
         // GET: Student
         public ActionResult Index()
@@ -41,21 +44,32 @@ namespace Web_Front.Controllers
         // GET: Student/Create
         public ActionResult Create()
         {
-            return View();
+            StudentRegisterVM ViewModel = new StudentRegisterVM();
+            ViewModel.Schools = SchoolServ.GetSchools();
+            ViewModel.Classrooms = ClassroomServ.GetClassrooms();
+
+            var a = SchoolServ.GetSchools();
+            return View(ViewModel);
         }
 
         // POST: Student/Create      
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "StudentId,FirstName,LastName,Age")] Student student)
+        public ActionResult Create(StudentRegisterVM ViewModel)
         {
             if (ModelState.IsValid)
             {
-                StudentServ.CreateStudent(student);
+               //We Need To Set Instance of School and Classroom at Student To be Created!
+                ViewModel.Student.Classroom= ClassroomServ.GetClassroom(ViewModel.SelectedClassroomID);
+                ViewModel.Student.Classroom.School = SchoolServ.GetSchool(ViewModel.SelectedSchoolID);
+                //Create User
+                StudentServ.CreateStudent(ViewModel.Student);
                 return RedirectToAction("Index");
             }
-
-            return View(student);
+            //Refill Lists
+            ViewModel.Schools = SchoolServ.GetSchools();
+            ViewModel.Classrooms = ClassroomServ.GetClassrooms();
+            return View(ViewModel);
         }
 
         // GET: Student/Edit/5
