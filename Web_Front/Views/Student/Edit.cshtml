@@ -4,50 +4,232 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="container">
+            <br />
+            <br />
+            <div class="row">
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Student</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.StudentId)
+                <!-- Section - Avatar Result ------------------------------------------>
+                <div class="col-md-6 mx-auto text-center">
+                    <div class="wrap-Avatar">
+                        <div class="avatar_main">
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                            <div><img class="avatar_child" src="~/images/Avatar/back_01.png" /></div>
+                            <div><img class="avatar_child" src="~/images/Avatar/body_01.png" /></div>
+                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                        <img class="float-right" src="~/images/logoff.png" />
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    </div>
+                </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <!-- Section - Avatar Selection --------------------------------------->
+                <div class="col-md-6 mx-auto  text-center">
+                    <div class="wrap-Avatar">
+                        <div class="row mx-0">
+                            <div class="col px-0">
+                                <button class="login100-form-btn" id="BackgroundSelection">Back</button>
+                            </div>
+                            <div class="col px-0">
+                                <button class="login100-form-btn" id="BodySelection">Body</button>
+                            </div>
+                            <div class="col px-0">
+                                <button class="login100-form-btn" id="ClothSelection">Cloth</button>
+                            </div>
+                            <div class="col px-0">
+                                <button class="login100-form-btn" id="HairSelection">Hair</button>
+                            </div>
+
+                        </div>
+                        <br />
+                        <!-- SubSection - Background Images ----------------------------->
+                        <div id="Background_Items" class="row mx-0">
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/back_09.png" />
+                            </div>
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/back_08.png" />
+                            </div>
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/back_07.png" />
+                            </div>
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/back_06.png" />
+                            </div>
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/back_05.png" />
+                            </div>
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/back_04.png" />
+                            </div>
+
+                        </div>
+
+                        <!-- SubSection - Body Images ----------------------------->
+                        <div id="Body_Items" class="row mx-0">
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/body_01.png" />
+                            </div>
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/body_02.png" />
+                            </div>
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/body_03.png" />
+                            </div>
+
+
+                        </div>
+
+                        <!-- SubSection - Clothing Images ------------------------->
+                        <div id="Cloth_Items" class="row mx-0">
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/clothes_01.png" />
+                            </div>
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/clothes_02.png" />
+                            </div>
+
+
+                        </div>
+
+                        <!-- SubSection - Hair Styles Images ---------------------->
+                        <div id="Hair_Items" class="row mx-0">
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/hair_01.png" />
+                            </div>
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/hair_02.png" />
+                            </div>
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/hair_03.png" />
+                            </div>
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/hair_04.png" />
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Section - Student Details ---------------------------------------->
+                <div class="col-md-12 mx-auto">
+                    <div class="wrap-Avatar" style="color:#f3efe9">
+                        <div class="wrap-login100" >
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                <div class="wrap-avabox text-center">
+                                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "input100" } })
+                                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="wrap-avabox rs1 text-center">
+                                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "input100" } })
+                                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="wrap-avabox rs2 text-center">
+                                    @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "input100" } })
+                                    @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+                                </div>
+
+                                // SAVE BUTTON ----------------------------------------------------
+                                <div class="container-login100-form-btn m-t-20">
+                                    <input class="login100-form-btn" type="submit" value="Save" />
+                                </div>
+
+                                <section id="socialLoginForm" class="text-center">
+                                    <br />
+                                    <h3 style="color:#666666">Return</h3>
+                                    <hr />
+                                    <div>
+                                        <a href="@Url.Action("Index", "Student")"><img src="~/images/students.png" /> back to students </a>
+                                    </div>
+                                </section>
+
+                            }
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>
+
+
+@section scripts{
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        //function called when drag starts
+        function dragIt(theEvent) {
+            //tell the browser what to drag
+            theEvent.dataTransfer.setData("Text", theEvent.target.id);
+        }
+
+        //function called when element drops
+        function dropIt(theEvent) {
+            //get a reference to the element being dragged
+            var theData = theEvent.dataTransfer.getData("Text");
+            //get the element
+            var theDraggedElement = document.getElementById(theData);
+            //add it to the drop element
+            theEvent.target.appendChild(theDraggedElement);
+            //instruct the browser to allow the drop
+            theEvent.preventDefault();
+        }
+
+        // AVATAR BUTTONS
+        $("#BackgroundSelection").click(function (e) {
+            $("#Background_Items").show(88);
+            $("#Body_Items").hide(8);
+            $("#Cloth_Items").hide(8);
+            $("#Hair_Items").hide(8);
+        });
+
+        $("#BodySelection").click(function (e) {
+            $("#Background_Items").hide(8);
+            $("#Body_Items").show(88);
+            $("#Cloth_Items").hide(8);
+            $("#Hair_Items").hide(8);
+        });
+
+        $("#ClothSelection").click(function (e) {
+            $("#Background_Items").hide(8);
+            $("#Body_Items").hide(8);
+            $("#Cloth_Items").show(88);
+            $("#Hair_Items").hide(8);
+        });
+
+        $("#HairSelection").click(function (e) {
+            $("#Background_Items").hide(8);
+            $("#Body_Items").hide(8);
+            $("#Cloth_Items").hide(8);
+            $("#Hair_Items").show(88);
+        });
+    </script>
+
+
+}

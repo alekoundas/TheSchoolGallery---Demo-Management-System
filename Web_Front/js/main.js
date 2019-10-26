@@ -1,5 +1,5 @@
 
-$(document).ready(function(){
+$(document).ready(function () {
 
     // Window Load
     $(window).load(function () {
@@ -107,31 +107,31 @@ $(document).ready(function(){
 
     "use strict";
 
-	var window_width 	 = $(window).width(),
-	window_height 		 = window.innerHeight,
-	header_height 		 = $(".default-header").height(),
-	header_height_static = $(".site-header.static").outerHeight(),
-	fitscreen 			 = window_height - header_height;
+    var window_width = $(window).width(),
+        window_height = window.innerHeight,
+        header_height = $(".default-header").height(),
+        header_height_static = $(".site-header.static").outerHeight(),
+        fitscreen = window_height - header_height;
 
 
-	$(".fullscreen").css("height", window_height)
-	$(".fitscreen").css("height", fitscreen);
+    $(".fullscreen").css("height", window_height)
+    $(".fitscreen").css("height", fitscreen);
 
-     
-     // -------   Active Mobile Menu-----//
 
-    $(".menu-bar").on('click', function(e){
+    // -------   Active Mobile Menu-----//
+
+    $(".menu-bar").on('click', function (e) {
         e.preventDefault();
         $("nav").toggleClass('hide');
         $("span", this).toggleClass("lnr-menu lnr-cross");
         $(".main-menu").addClass('mobile-menu');
     });
-     
+
     $('select').niceSelect();
     $('.img-pop-up').magnificPopup({
         type: 'image',
-        gallery:{
-        enabled:true
+        gallery: {
+            enabled: true
         }
     });
 
@@ -142,15 +142,15 @@ $(document).ready(function(){
         time: 1000
     });
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#mc_embed_signup').find('form').ajaxChimp();
-    });      
+    });
     // -------   Mail Send ajax
 
-     $(document).ready(function() {
+    $(document).ready(function () {
 
 
-       // Video lightbox
+        // Video lightbox
 
         $('.play-btn').magnificPopup({
             disableOn: 700,
@@ -162,15 +162,15 @@ $(document).ready(function(){
         });
 
 
-      //  testimonail carusel
+        //  testimonail carusel
 
         $('.active-bottle-carousel').owlCarousel({
-            items:1,
-            loop:true,
+            items: 1,
+            loop: true,
             nav: false,
             autoplay: true,
-            autoplayTimeout:3000,
-            autoplayHoverPause:true
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true
         });
 
         var form = $('#myForm'); // contact form
@@ -178,7 +178,7 @@ $(document).ready(function(){
         var alert = $('.alert-msg'); // alert div for show alert message
 
         // form submit event
-        form.on('submit', function(e) {
+        form.on('submit', function (e) {
             e.preventDefault(); // prevent default form submit
 
             $.ajax({
@@ -186,21 +186,21 @@ $(document).ready(function(){
                 type: 'POST', // form submit method get/post
                 dataType: 'html', // request type html/json/xml
                 data: form.serialize(), // serialize form data
-                beforeSend: function() {
+                beforeSend: function () {
                     alert.fadeOut();
                     submit.html('Sending....'); // change submit button text
                 },
-                success: function(data) {
+                success: function (data) {
                     alert.html(data).fadeIn(); // fade in response data
                     form.trigger('reset'); // reset form
                     submit.attr("style", "display: none !important");; // reset submit button text
                 },
-                error: function(e) {
+                error: function (e) {
                     console.log(e)
                 }
             });
         });
-     });
+    });
 
 
     //Little Prallaxing ----------------------------------------------->>
@@ -230,10 +230,9 @@ $(document).ready(function(){
     }
 
 
+    
 
 
 
 
-
-
- });
+});

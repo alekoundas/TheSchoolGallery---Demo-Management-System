@@ -5,12 +5,11 @@
     {
         @Html.AntiForgeryToken()
 
-        <ul class="nav navbar-nav list-inline">
-            <li>
-                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-            </li>
-            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-        </ul>
+
+        @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+        <a href="@Url.Action("Profile", "Profile")"><img src="~/images/loged.png" /></a>
+        <a href="javascript:document.getElementById('logoutForm').submit()"><img src="~/images/logoff.png" />log off</a>
+
     }
 }
 else

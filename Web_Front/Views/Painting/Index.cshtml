@@ -6,11 +6,9 @@
 
 <div class="col-md-12 pt-20 pb-20">
     <h1>
-        @*<img style="height:100px; width:100%" src="~/images/banner.jpg" alt="Alternate Text" />*@
         Paintings
     </h1>
 </div>
-<hr />
 <div class="feature-area pt-10 pb-10  relative">
     <div class="container">
         <div class="row">
@@ -41,22 +39,6 @@
 </div>
 <hr />
 
-@*<table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PaintingTitle)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th></th>
-        </tr>
-
-    </table>*@
-
 <section class="feature-area pt-100 pb-100  relative">
     <div class="overlay overlay-bg"></div>
     <div class="container">
@@ -65,32 +47,34 @@
             {
                 <div class="col-lg-4 col-sm-6 align-items-stretch">
                     <div class="paintingcontainer">
-                        <div class="painting">
-                            <img src="~/images/paintings/@Html.DisplayFor(modelItem => item.ImageUrl)" />
+                        <div class="wrap-Painting">
+                            <div class="painting">
+                                <img src="~/images/paintings/@Html.DisplayFor(modelItem => item.ImageUrl)" />
+                            </div>
+                            <br />
+                            <div class="paintingdesc">
+                                <h4>@Html.DisplayFor(modelItem => item.PaintingTitle) </h4>
+                                <hr />
+                                <h4>by @Html.DisplayFor(modelItem => item.Student.FirstName) @Html.DisplayFor(modelItem => item.Student.LastName) </h4>
+                                <p class="text-right">
+                                    Cost: @Html.DisplayFor(modelItem => item.Price)
+                                </p>
+                            </div>
                         </div>
-                        <div class="paintingdesc">
-                            <p>@Html.DisplayFor(modelItem => item.PaintingTitle) <hr /></p>
-                            <p>by Yio Cho</p>
-                            <p class="text-right">
-                                Cost: @Html.DisplayFor(modelItem => item.Price)
-                            </p>
-                        </div>
-
                         <div>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.PaintingId }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.PaintingId }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.PaintingId })
+                            <a style="color:#f3efe9" href="@Url.Action("Edit", "Painting", new { id = item.PaintingId })"><img src="~/images/edit.png" /> edit </a>
+                            <a style="color:#f3efe9" href="@Url.Action("Details", "Painting", new { id = item.PaintingId })"><img src="~/images/details.png" /> details </a>
+                            <a style="color:#f3efe9" href="@Url.Action("Delete", "Painting", new { id = item.PaintingId })"><img src="~/images/delete.png" /> delete </a>
                         </div>
-
 
                         @*@if (User.IsInRole("admin"))
-                        {
-                            <div>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.PaintingId }) |
-                                @Html.ActionLink("Details", "Details", new { id = item.PaintingId }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.PaintingId })
-                            </div>
-                        }*@
+        {
+            <div>
+                @Html.ActionLink("Edit", "Edit", new { id = item.PaintingId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.PaintingId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.PaintingId })
+            </div>
+        }*@
 
                     </div>
                 </div>
