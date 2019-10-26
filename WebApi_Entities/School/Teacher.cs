@@ -13,14 +13,8 @@ namespace WebApi_Entities.School
 
         public int TeacherId { get; set; }
 
-        [Required(ErrorMessage = "Everybody has a Name")]
-        [MinLength(2, ErrorMessage = "Name must be longer")]
-        [MaxLength(12, ErrorMessage = "Name must be shorter")]
         public string FirstName { get; set; }
 
-        [Required(ErrorMessage = "Everybody has a Surname")]
-        [MinLength(2, ErrorMessage = "Surname must be longer")]
-        [MaxLength(12, ErrorMessage = "Surname must be shorter")]
         public string LastName { get; set; }
 
         // Has one Avatar ---------------------------------->>
@@ -28,6 +22,6 @@ namespace WebApi_Entities.School
 
         // Has one Class ----------------------------------->>
 
-        public ICollection<Classroom> Classroom { get; set; } 
+        public ICollection<Classroom> Classrooms { get; set; } 
     }
 }

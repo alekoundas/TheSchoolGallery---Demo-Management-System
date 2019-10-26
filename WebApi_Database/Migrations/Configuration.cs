@@ -22,6 +22,19 @@
         {
 
 
+            //                                                                      //
+            //              SOS UNCOMENT EVERYTHING BELOW ONLY ONCE !!!             //
+            //                                                                      //            
+
+
+
+
+
+
+
+
+
+
             //                   Avatar Background                    \\
             AvatarBackground b01 = new AvatarBackground { ImageUrl = "back_01.png" };
             AvatarBackground b02 = new AvatarBackground { ImageUrl = "back_02.png" };
@@ -279,7 +292,7 @@
             //context.SaveChanges();
 
 
-           
+
 
             // CLASSROOM ------------------------------------------------------------------------------->>  
             List<Student> slist = new List<Student> { s01, s02, s03, s04, s05, s06, s07, s08, s09, s13 };

@@ -16,15 +16,9 @@ namespace WebApi_Entities.School
 
         // The Class Image
         public string Image { get; set; }
-
-        [Required(ErrorMessage = "A Class has a Name")]
-        [MinLength(2, ErrorMessage = "Name must be longer")]
-        [MaxLength(50, ErrorMessage = "Name must be shorter")]
+  
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "Describe the Class")]
-        [MinLength(5, ErrorMessage = "You have to say more.")]
-        [MaxLength(50, ErrorMessage = "You have said too much.")]
         public string Description { get; set; }
 
         // Has many Students ------------------------------>>

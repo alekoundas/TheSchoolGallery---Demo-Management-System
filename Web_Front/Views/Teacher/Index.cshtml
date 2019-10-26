@@ -18,11 +18,11 @@
         <div class="row">
             <h2 class="col-md-6">
 
-                @if (User.IsInRole("admin"))
-                {
+                @*@if (User.IsInRole("admin"))
+                {*@
                     <i class="fa fa-plus-circle" aria-hidden="true"></i>
                     @Html.ActionLink("Create New", "Create")
-                }
+                @*}*@
 
             </h2>
             <div class="col-md-6">
@@ -59,14 +59,14 @@
                             </ul>
                         </div>
 
-                        @if (User.IsInRole("admin"))
-                        {
+                        @*@if (User.IsInRole("admin"))
+                        {*@
                             <div>
                                 @Html.ActionLink("Edit", "Edit", new { id = item.TeacherId }) |
                                 @Html.ActionLink("Details", "Details", new { id = item.TeacherId }) |
                                 @Html.ActionLink("Delete", "Delete", new { id = item.TeacherId })
                             </div>
-                        }
+                        @*}*@
 
                     </div>
                 </div>

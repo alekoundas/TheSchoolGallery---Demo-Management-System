@@ -16,22 +16,21 @@ namespace Web_DomainClasses.Entities.School
 
         [Required(ErrorMessage = "A School has a Name")]
         [MinLength(2, ErrorMessage = "Name must be longer")]
-        [MaxLength(18, ErrorMessage = "Name must be shorter")]
+        [MaxLength(50, ErrorMessage = "Name must be shorter")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "A City has a Name")]
         [MinLength(5, ErrorMessage = "City Name must be longer")]
-        [MaxLength(18, ErrorMessage = "City Name must be shorter")]
+        [MaxLength(50, ErrorMessage = "City Name must be shorter")]
         public string City { get; set; }
 
         [Required(ErrorMessage = "You have to give an Adress")]
         [MinLength(2, ErrorMessage = "Adress must be longer")]
-        [MaxLength(18, ErrorMessage = "Adress must be shorter")]
+        [MaxLength(50, ErrorMessage = "Adress must be shorter")]
         public string Adress { get; set; }
 
         [Display(Name = "Telephone")]
-        [DataType(DataType.PhoneNumber)]
-        public int Tel { get; set; }
+        public long Tel { get; set; }
 
         // Has many Goals ---------------------------------->>
         //public virtual ICollection<Goal> Goals { get; set; }

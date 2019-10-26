@@ -10,12 +10,12 @@ namespace Web_DomainClasses.Entities.School
 
         [Required(ErrorMessage = "Everybody has a Name")]
         [MinLength(2, ErrorMessage = "Name must be longer")]
-        [MaxLength(12, ErrorMessage = "Name must be shorter")]
+        [MaxLength(50, ErrorMessage = "Name must be shorter")]
         public string FirstName { get; set; }
 
         [Required(ErrorMessage = "Everybody has a Surname")]
         [MinLength(2, ErrorMessage = "Surname must be longer")]
-        [MaxLength(12, ErrorMessage = "Surname must be shorter")]
+        [MaxLength(50, ErrorMessage = "Surname must be shorter")]
         public string LastName { get; set; }
 
         // Has one Avatar ---------------------------------->>
@@ -23,6 +23,6 @@ namespace Web_DomainClasses.Entities.School
 
         // Has one Class ----------------------------------->>
 
-        public ICollection<Classroom> Classroom { get; set; } 
+        public ICollection<Classroom> Classrooms { get; set; } 
     }
 }

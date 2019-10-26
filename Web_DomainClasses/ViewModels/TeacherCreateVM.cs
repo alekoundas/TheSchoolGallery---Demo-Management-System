@@ -7,12 +7,10 @@ using Web_DomainClasses.Entities.School;
 
 namespace Web_DomainClasses.ViewModels
 {
-   public class StudentRegisterVM
+    public class TeacherCreateVM
     {
-        public Student Student { get; set; }
-        public int SelectedSchoolID { get; set; }
-        public ICollection<School> Schools { get; set; }
+        public Teacher Teacher { get; set; }
         public int SelectedClassroomID { get; set; }
-        public ICollection<Classroom> Classrooms { get; set; }
+        public ICollection<Classroom> Classrooms { get; set; } 
     }
 }

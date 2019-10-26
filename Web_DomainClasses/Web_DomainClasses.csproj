@@ -55,7 +55,9 @@
     <Compile Include="Entities\School\Teacher.cs" />
     <Compile Include="Entities\SignalR\MessageHistory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\StudentRegisterVM.cs" />
+    <Compile Include="ViewModels\ClassroomCreateVM.cs" />
+    <Compile Include="ViewModels\StudentCreateVM.cs" />
+    <Compile Include="ViewModels\TeacherCreateVM.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

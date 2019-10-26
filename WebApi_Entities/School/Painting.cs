@@ -13,10 +13,6 @@ namespace WebApi_Entities.School
 
         // The Painting Image
         public string ImageUrl { get; set; }
-
-        [Required(ErrorMessage = "You must name your Art.")]
-        [MinLength(4, ErrorMessage = "Title must be longer")]
-        [MaxLength(50, ErrorMessage = "Title must be shorter")]
         public string PaintingTitle { get; set; }
 
         // Has One Student ------------------------------>>

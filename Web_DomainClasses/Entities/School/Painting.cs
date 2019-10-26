@@ -16,7 +16,7 @@ namespace Web_DomainClasses.Entities.School
 
         [Required(ErrorMessage = "You must name your Art.")]
         [MinLength(4, ErrorMessage = "Title must be longer")]
-        [MaxLength(18, ErrorMessage = "Title must be shorter")]
+        [MaxLength(50, ErrorMessage = "Title must be shorter")]
         public string PaintingTitle { get; set; }
 
         // Has One Student ------------------------------>>

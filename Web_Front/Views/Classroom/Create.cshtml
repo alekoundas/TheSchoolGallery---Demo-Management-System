@@ -1,4 +1,4 @@
-﻿@model Web_DomainClasses.Entities.School.Classroom
+﻿@model Web_DomainClasses.ViewModels.ClassroomCreateVM
 
 @{
     ViewBag.Title = "Create";
@@ -13,50 +13,75 @@
             <div class="row">
                 <div class="col-md-8 mx-auto">
                     <div class="wrap-login100">
-                        <form class="login100-form validate-form">
-                            <span class="login100-form-title p-b-33">
-                                Create New Painting Class
-                            </span>
 
-                            @using (Html.BeginForm())
-                            {
+                        <span class="login100-form-title p-b-33">
+                            Create New Painting Class
+                        </span>
 
-                                @Html.AntiForgeryToken()
-                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @using (Html.BeginForm())
+                        {
 
-                                <div class="wrap-input100">
-                                    @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "input100", placeholder = "Image" } })
-                                    @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                                    <span class="focus-input100-1"></span>
-                                    <span class="focus-input100-2"></span>
-                                </div>
+                            <div class="wrap-input100">
+                                @Html.EditorFor(model => model.Classroom.Image, new { htmlAttributes = new { @class = "input100", placeholder = "Image" } })
+                                @Html.ValidationMessageFor(model => model.Classroom.Image, "", new { @class = "text-danger" })
 
-                                <div class="wrap-input100">
-                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "input100", placeholder = "Name" } })
-                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                <span class="focus-input100-1"></span>
+                                <span class="focus-input100-2"></span>
+                            </div>
 
-                                    <span class="focus-input100-1"></span>
-                                    <span class="focus-input100-2"></span>
-                                </div>
+                            <div class="wrap-input100">
+                                @Html.EditorFor(model => model.Classroom.Name, new { htmlAttributes = new { @class = "input100", placeholder = "Name" } })
+                                @Html.ValidationMessageFor(model => model.Classroom.Name, "", new { @class = "text-danger" })
 
-                                <div class="wrap-input100">
-                                    @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "input100", placeholder = "Description" } })
-                                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                                <span class="focus-input100-1"></span>
+                                <span class="focus-input100-2"></span>
+                            </div>
 
-                                    <span class="focus-input100-1"></span>
-                                    <span class="focus-input100-2"></span>
-                                </div>
+                            <div class="wrap-input100">
+                                @Html.EditorFor(model => model.Classroom.Description, new { htmlAttributes = new { @class = "input100", placeholder = "Description" } })
+                                @Html.ValidationMessageFor(model => model.Classroom.Description, "", new { @class = "text-danger" })
+
+                                <span class="focus-input100-1"></span>
+                                <span class="focus-input100-2"></span>
+                            </div>
 
 
-                                <div class="container-login100-form-btn m-t-20">
-                                    <input class="login100-form-btn" type="submit" value="Create" />
-                                </div>
-                                <br />
-                                <hr />
-                            }
 
-                        </form>
+
+                            //Its Me Mario!
+                            @Html.LabelFor(model => model.Schools, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                            <select name="SelectedSchoolID">
+                                @for (int i = 0; i < Model.Schools.Count; i++)
+                                {
+                                    <option value="@Model.Schools.ElementAt(i).SchoolId">@Model.Schools.ElementAt(i).Name</option>
+                                }
+                            </select>
+
+
+                            @Html.LabelFor(model => model.Teachers, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                            <select name="SelectedTeacherID">
+                                @for (int i = 0; i < Model.Teachers.Count; i++)
+                                {
+                                    <option value="@Model.Teachers.ElementAt(i).TeacherId">@Model.Teachers.ElementAt(i).FirstName @Model.Teachers.ElementAt(i).LastName</option>
+                                }
+                            </select>
+
+
+
+
+                            <div class="container-login100-form-btn m-t-20">
+                                <input class="login100-form-btn" type="submit" value="Create" />
+                            </div>
+                            <br />
+                            <hr />
+                        }
+
+
                     </div>
                 </div>
 

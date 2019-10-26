@@ -44,7 +44,7 @@ namespace Web_Front.Controllers
         // GET: Student/Create
         public ActionResult Create()
         {
-            StudentRegisterVM ViewModel = new StudentRegisterVM();
+            StudentCreateVM ViewModel = new StudentCreateVM();
             ViewModel.Schools = SchoolServ.GetSchools();
             ViewModel.Classrooms = ClassroomServ.GetClassrooms();
 
@@ -55,7 +55,7 @@ namespace Web_Front.Controllers
         // POST: Student/Create      
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(StudentRegisterVM ViewModel)
+        public ActionResult Create(StudentCreateVM ViewModel)
         {
             if (ModelState.IsValid)
             {

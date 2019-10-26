@@ -13,7 +13,7 @@ namespace Web_DomainClasses.Entities.School
 
         [Required(ErrorMessage = "A Class has a Name")]
         [MinLength(2, ErrorMessage = "Name must be longer")]
-        [MaxLength(18, ErrorMessage = "Name must be shorter")]
+        [MaxLength(50, ErrorMessage = "Name must be shorter")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Describe the Class")]

@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Web_DomainClasses.Entities.School;
+using Web_DomainClasses.ViewModels;
 using Web_Front.Models;
 using Web_Services.ApiMapping;
 
@@ -15,12 +16,14 @@ namespace Web_Front.Controllers
     public class ClassroomController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        ClassroomApiService ClassroomServ = new ClassroomApiService();
+        ClassroomApiService ServiceClassroom = new ClassroomApiService();
+        SchoolApiService ServiceSchool = new SchoolApiService();
+        TeacherApiService ServiceTeacher = new TeacherApiService();
 
         // GET: Classroom
         public ActionResult Index()
         {
-            return View(ClassroomServ.GetClassrooms());
+            return View(ServiceClassroom.GetClassrooms());
         }
 
         // GET: Classroom/Details/5
@@ -30,7 +33,7 @@ namespace Web_Front.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Classroom classroom = ClassroomServ.GetClassroom(id);
+            Classroom classroom = ServiceClassroom.GetClassroom(id);
             if (classroom == null)
             {
                 return HttpNotFound();
@@ -41,21 +44,26 @@ namespace Web_Front.Controllers
         // GET: Classroom/Create
         public ActionResult Create()
         {
-            return View();
+            ClassroomCreateVM ViewModel = new ClassroomCreateVM();
+            ViewModel.Schools = ServiceSchool.GetSchools();
+            ViewModel.Teachers = ServiceTeacher.GetTeachers();
+            return View(ViewModel);
         }
 
         // POST: Classroom/Create       
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ClassroomId,Image,Name,Description")] Classroom classroom)
+        public ActionResult Create(ClassroomCreateVM ViewModel)
         {
             if (ModelState.IsValid)
             {
-                ClassroomServ.CreateClassroom(classroom);
+                ViewModel.Classroom.School = ServiceSchool.GetSchool(ViewModel.SelectedSchoolID); 
+                ViewModel.Classroom.Teacher = ServiceTeacher.GetTeacher(ViewModel.SelectedTeacherID); 
+                ServiceClassroom.CreateClassroom(ViewModel.Classroom);
                 return RedirectToAction("Index");
             }
-
-            return View(classroom);
+            ViewModel.Schools = ServiceSchool.GetSchools();
+            return View(ViewModel.Classroom);
         }
 
         // GET: Classroom/Edit/5
@@ -65,7 +73,7 @@ namespace Web_Front.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Classroom classroom = ClassroomServ.GetClassroom(id);
+            Classroom classroom = ServiceClassroom.GetClassroom(id);
             if (classroom == null)
             {
                 return HttpNotFound();
@@ -80,7 +88,7 @@ namespace Web_Front.Controllers
         {
             if (ModelState.IsValid)
             {
-                ClassroomServ.EditClassroom(classroom);
+                ServiceClassroom.EditClassroom(classroom);
                 return RedirectToAction("Index");
             }
             return View(classroom);
@@ -93,7 +101,7 @@ namespace Web_Front.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Classroom classroom = ClassroomServ.GetClassroom(id);
+            Classroom classroom = ServiceClassroom.GetClassroom(id);
             if (classroom == null)
             {
                 return HttpNotFound();
@@ -106,7 +114,7 @@ namespace Web_Front.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ClassroomServ.DeleteClassroom(id);
+            ServiceClassroom.DeleteClassroom(id);
             return RedirectToAction("Index");
         }
 

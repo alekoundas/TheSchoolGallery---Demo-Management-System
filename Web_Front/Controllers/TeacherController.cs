@@ -15,13 +15,13 @@ namespace Web_Front.Controllers
     public class TeacherController : MasterController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        TeacherApiService TeacherServ = new TeacherApiService();
+        TeacherApiService ServiceTeacher = new TeacherApiService();
 
 
         // GET: Teacher
         public ActionResult Index()
         {
-            return View(TeacherServ.GetTeachers());
+            return View(ServiceTeacher.GetTeachers());
         }
 
 
@@ -34,7 +34,7 @@ namespace Web_Front.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Teacher teacher = TeacherServ.GetTeacher(id);
+            Teacher teacher = ServiceTeacher.GetTeacher(id);
             if (teacher == null)
             {
                 return HttpNotFound();
@@ -47,6 +47,7 @@ namespace Web_Front.Controllers
         // GET: Teacher/Create
         public ActionResult Create()
         {
+
             return View();
         }
 
@@ -59,7 +60,7 @@ namespace Web_Front.Controllers
         {
             if (ModelState.IsValid)
             {
-                TeacherServ.CreateTeacher(teacher);
+                ServiceTeacher.CreateTeacher(teacher);
                 return RedirectToAction("Index");
             }
 
@@ -73,7 +74,7 @@ namespace Web_Front.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Teacher teacher = TeacherServ.GetTeacher(id);
+            Teacher teacher = ServiceTeacher.GetTeacher(id);
             if (teacher == null)
             {
                 return HttpNotFound();
@@ -88,7 +89,7 @@ namespace Web_Front.Controllers
         {
             if (ModelState.IsValid)
             {
-                TeacherServ.EditTeacher(teacher);
+                ServiceTeacher.EditTeacher(teacher);
                 return RedirectToAction("Index");
 
             }
@@ -102,7 +103,7 @@ namespace Web_Front.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Teacher teacher = TeacherServ.GetTeacher(id);
+            Teacher teacher = ServiceTeacher.GetTeacher(id);
             if (teacher == null)
             {
                 return HttpNotFound();
@@ -115,7 +116,7 @@ namespace Web_Front.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            TeacherServ.DeleteTeacher(id);
+            ServiceTeacher.DeleteTeacher(id);
             return RedirectToAction("Index");
         }
 
