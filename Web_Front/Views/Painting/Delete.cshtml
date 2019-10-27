@@ -4,7 +4,6 @@
     ViewBag.Title = "Delete";
 }
 
-
 <div class="limiter">
     <div class="container-login100">
         <div class="container">
@@ -25,10 +24,10 @@
                             <div class="painting2 text-center">
                                 <img style="width:250px" src="~/images/paintings/@Html.DisplayFor(model => model.ImageUrl)" />
                             </div>
-                            <div style="color:#4a4a4a" class="paintingdesc">
-                                <p>@Html.DisplayFor(model => model.PaintingTitle) <hr /></p>
-                                <p class="text-right">
-                                    Cost: @Html.DisplayFor(model => model.Price)
+                            <div style="color:#4a4a4a; margin-top:20px" class="studentdesc  text-center">
+                                <p>@Html.DisplayFor(model => model.PaintingTitle)<hr /></p>
+                                <p class="text-center">
+                                    (◞‸◟；)
                                 </p>
                             </div>
                         </div>
@@ -59,11 +58,11 @@
             </div>
         </div>
 
-        <section id="socialLoginForm">
-            <h3 class="text-center" style="color:white">Return</h3>
+        <section>
+            <h3 class="text-center"  style="color:#f3efe9">Return</h3>
             <hr />
             <div class="container-login100-form-btn m-t-20">
-                <a href="@Url.Action("Index", "Painting")"><img src="~/images/menu.png" /> back to paintings </a>
+                <a  style="color:#f3efe9" href="@Url.Action("Index", "Painting")"><img src="~/images/menu.png" /> back to paintings </a>
             </div>
         </section>
 
