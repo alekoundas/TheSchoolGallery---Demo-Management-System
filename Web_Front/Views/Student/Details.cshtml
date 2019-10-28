@@ -11,127 +11,9 @@
             <br />
             <div class="row">
 
-                <!-- Section - Avatar ------------------------------------------>
-                <div class="col-md-6 mx-auto text-center">
-                    <div class="wrap-Avatar">
-                        <div class="avatar_main" id="place1" ondrop="dropIt(event);" ondragover="event.preventDefault();">
-
-                            <div><img class="avatar_child" src="~/images/Avatar/back_01.png" /></div>
-                            <div><img class="avatar_child" src="~/images/Avatar/body_01.png" /></div>
-                        </div>
-
-                        <img class="float-right" src="~/images/logoff.png" />
-
-                    </div>
-                </div>
-
-                <!-- Section - Avatar Selection --------------------------------------->
-                <div class="col-md-6 mx-auto  text-center">
-                    <div class="wrap-Avatar">
-                        <div class="row mx-0">
-                            <div class="col px-0">
-                                <button class="login100-form-btn" id="BackgroundSelection">Back</button>
-                            </div>
-                            <div class="col px-0">
-                                <button class="login100-form-btn" id="BodySelection">Body</button>
-                            </div>
-                            <div class="col px-0">
-                                <button class="login100-form-btn" id="ClothSelection">Cloth</button>
-                            </div>
-                            <div class="col px-0">
-                                <button class="login100-form-btn" id="HairSelection">Hair</button>
-                            </div>
-
-                        </div>
-                        <br />
-                        <!-- SubSection - Background Images ----------------------------->
-                        <div id="Background_Items" class="row mx-0">
-
-                            <div class="col-6 px-0 avatar_selection">
-                                <img src="~/images/Avatar/back_09.png" />
-                            </div>
-
-                            <div class="col-6 px-0 avatar_selection">
-                                <img src="~/images/Avatar/back_08.png" />
-                            </div>
-
-                            <div class="col-6 px-0 avatar_selection">
-                                <img src="~/images/Avatar/back_07.png" />
-                            </div>
-
-                            <div class="col-6 px-0 avatar_selection">
-                                <img src="~/images/Avatar/back_06.png" />
-                            </div>
-
-                            <div class="col-6 px-0 avatar_selection">
-                                <img src="~/images/Avatar/back_05.png" />
-                            </div>
-
-                            <div class="col-6 px-0 avatar_selection">
-                                <img src="~/images/Avatar/back_04.png" />
-                            </div>
-
-                        </div>
-
-                        <!-- SubSection - Body Images ----------------------------->
-                        <div id="Body_Items" class="row mx-0">
-
-                            <div class="col-6 px-0 avatar_selection">
-                                <img src="~/images/Avatar/body_01.png" />
-                            </div>
-
-                            <div class="col-6 px-0 avatar_selection">
-                                <img src="~/images/Avatar/body_02.png" />
-                            </div>
-
-                            <div class="col-6 px-0 avatar_selection">
-                                <img src="~/images/Avatar/body_03.png" />
-                            </div>
-
-
-                        </div>
-
-                        <!-- SubSection - Clothing Images ------------------------->
-                        <div id="Cloth_Items" class="row mx-0">
-
-                            <div class="col-6 px-0 avatar_selection">
-                                <img src="~/images/Avatar/clothes_01.png" />
-                            </div>
-
-                            <div class="col-6 px-0 avatar_selection">
-                                <img src="~/images/Avatar/clothes_02.png" />
-                            </div>
-
-
-                        </div>
-
-                        <!-- SubSection - Hair Styles Images ---------------------->
-                        <div id="Hair_Items" class="row mx-0">
-
-                            <div class="col-6 px-0 avatar_selection">
-                                <img src="~/images/Avatar/hair_01.png" />
-                            </div>
-
-                            <div class="col-6 px-0 avatar_selection">
-                                <img src="~/images/Avatar/hair_02.png" />
-                            </div>
-
-                            <div class="col-6 px-0 avatar_selection">
-                                <img src="~/images/Avatar/hair_03.png" />
-                            </div>
-
-                            <div class="col-6 px-0 avatar_selection">
-                                <img src="~/images/Avatar/hair_04.png" />
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-
-
                 <!-- Section - Student Details ---------------------------------------->
                 <div class="col-md-12 mx-auto text-center">
+
                     <div class="paintingcontainer">
                         <div class="studentdesc">
                             <h3>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h3>
@@ -139,69 +21,93 @@
                             <h4 style="color:white">@Html.DisplayNameFor(model => model.Age): @Html.DisplayFor(model => model.Age)</h4>
                         </div>
                         <br />
+                    </div>
+                </div>
+
+                <!-- Section - Avatar ------------------------------------------>
+                <div class="col-md-4 mx-auto">
+                    <div class="wrap-studentAvatar">
+                        <img src="~/images/Avatar/back_05.png" />
+                    </div>
+                </div>
+
+                <!-- Section - Teacher/School --------------------------------------->
+                <div class="col-md-12 mx-auto text-center">
+                    <div lass="paintingcontainer">
+                        <h3>@Html.DisplayFor(model => model.Classroom.Teacher.FirstName) @Html.DisplayFor(model => model.Classroom.Teacher.FirstName)</h3>
+                        <hr />
+                        <h3>@Html.DisplayFor(model => model.Classroom.School.Name)</h3>
+                        <h3>@Html.DisplayFor(model => model.Classroom.School.City)</h3>
+                    </div>
+                </div>
+
+
+                <!-- Section - PAINTINGS ---------------------------------------->
+                <div class="col-md-12 mx-auto text-center">
+                        @foreach (var item in Model.Paintings)
+                        {
+                            <div class="col-lg-4 col-sm-6 align-items-stretch">
+                                <div class="paintingcontainer">
+                                    <div class="wrap-Painting">
+                                        <div class="painting">
+                                            <img src="~/images/paintings/@Html.DisplayFor(modelItem => item.ImageUrl)" />
+                                        </div>
+                                        <br />
+                                        <div class="paintingdesc">
+                                            <h4 class="text-center">@Html.DisplayFor(modelItem => item.PaintingTitle) </h4>
+                                            <br />
+                                            <hr />
+                                            <h5 class="text-right">
+                                                Suggested Donation: @Html.DisplayFor(modelItem => item.Price) <i class="fa fa-eur" aria-hidden="true"></i>
+                                            </h5>
+                                            <a href="#"><img class="float-right" src="~/images/cart.png" /></a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                </div>
+
+
+                <!-- Section - Links ---------------------------------------->
+                <div class="col-md-12 mx-auto text-center">
+                    <div class="paintingcontainer">
+                        <hr />
+                        <br />
                         <div>
-                            <a  style="color:#f3efe9" href="@Url.Action("Index", "Student")"><img src="~/images/students.png" /> back to student </a>
-                            <a  style="color:#f3efe9" href="@Url.Action("Edit", "Student", new { id = Model.StudentId })"><img src="~/images/register.png" /> edit student </a>
+                            <a style="color:#f3efe9" href="@Url.Action("Index", "Student")"><img src="~/images/students.png" /> back to student </a>
+                            <a style="color:#f3efe9" href="@Url.Action("Edit", "Student", new { id = Model.StudentId })"><img src="~/images/register.png" /> edit student </a>
                         </div>
                     </div>
                 </div>
+
+
+
+
+
+
             </div>
         </div>
-
-
-
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
 
 @section scripts{
     <script>
 
-        //function called when drag starts
-        function dragIt(theEvent) {
-            //tell the browser what to drag
-            theEvent.dataTransfer.setData("Text", theEvent.target.id);
-        }
 
-        //function called when element drops
-        function dropIt(theEvent) {
-            //get a reference to the element being dragged
-            var theData = theEvent.dataTransfer.getData("Text");
-            //get the element
-            var theDraggedElement = document.getElementById(theData);
-            //add it to the drop element
-            theEvent.target.appendChild(theDraggedElement);
-            //instruct the browser to allow the drop
-            theEvent.preventDefault();
-        }
 
-        // AVATAR BUTTONS
-        $("#BackgroundSelection").click(function (e) {
-            $("#Background_Items").show(88);
-            $("#Body_Items").hide(8);
-            $("#Cloth_Items").hide(8);
-            $("#Hair_Items").hide(8);
-        });
-
-        $("#BodySelection").click(function (e) {
-            $("#Background_Items").hide(8);
-            $("#Body_Items").show(88);
-            $("#Cloth_Items").hide(8);
-            $("#Hair_Items").hide(8);
-        });
-
-        $("#ClothSelection").click(function (e) {
-            $("#Background_Items").hide(8);
-            $("#Body_Items").hide(8);
-            $("#Cloth_Items").show(88);
-            $("#Hair_Items").hide(8);
-        });
-
-        $("#HairSelection").click(function (e) {
-            $("#Background_Items").hide(8);
-            $("#Body_Items").hide(8);
-            $("#Cloth_Items").hide(8);
-            $("#Hair_Items").show(88);
-        });
     </script>
 
 

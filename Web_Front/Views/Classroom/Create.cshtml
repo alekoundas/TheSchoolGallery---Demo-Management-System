@@ -8,104 +8,96 @@
     <div class="container-login100">
         <div class="container">
             <br />
+            <h2 class="text-center" style="color:#f3efe9;"> Create new Classroom</h2>
+            <hr />
             <br />
-            <br />
-            <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <div class="wrap-login100">
+            @using (Html.BeginForm())
+            {
+                <div class="row">
 
-                        <span class="login100-form-title p-b-33">
-                            Create New Painting Class
-                        </span>
+                    <!-- Section - Classroom Details ---------------------------------------->
+                    <div class="col-md-8 mx-auto">
+                        <div class="wrap-Avatar" style="color:#f3efe9">
+                            <div class="wrap-login100">
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                        @using (Html.BeginForm())
-                        {
-
-                            @Html.AntiForgeryToken()
-                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-                            <div class="wrap-input100">
-                                @Html.EditorFor(model => model.Classroom.Image, new { htmlAttributes = new { @class = "input100", placeholder = "Image" } })
-                                @Html.ValidationMessageFor(model => model.Classroom.Image, "", new { @class = "text-danger" })
-
-                                <span class="focus-input100-1"></span>
-                                <span class="focus-input100-2"></span>
+                                <div class="wrap-avabox text-center">
+                                    @Html.EditorFor(model => model.Classroom.Image, new { htmlAttributes = new { @class = "input100", placeholder = "Image" } })
+                                    @Html.ValidationMessageFor(model => model.Classroom.Image, "", new { @class = "text-danger" })
+                                </div>
+                                <p style="color:#909090">Image File</p>
+                                <div class="wrap-avabox text-center">
+                                    @Html.EditorFor(model => model.Classroom.Name, new { htmlAttributes = new { @class = "input100", placeholder = "Name" } })
+                                    @Html.ValidationMessageFor(model => model.Classroom.Name, "", new { @class = "text-danger" })
+                                </div>
+                                <p style="color:#909090">Name</p>
+                                <div class="wrap-avabox text-center">
+                                    @Html.EditorFor(model => model.Classroom.Description, new { htmlAttributes = new { @class = "input100", placeholder = "Description" } })
+                                    @Html.ValidationMessageFor(model => model.Classroom.Description, "", new { @class = "text-danger" })
+                                </div>
+                                <p style="color:#909090">Description</p>
                             </div>
+                        </div>
+                    </div>
 
-                            <div class="wrap-input100">
-                                @Html.EditorFor(model => model.Classroom.Name, new { htmlAttributes = new { @class = "input100", placeholder = "Name" } })
-                                @Html.ValidationMessageFor(model => model.Classroom.Name, "", new { @class = "text-danger" })
+                    @*Create Something side Parallax*@
+                    <div class="col-md-4 mx-auto">
 
-                                <span class="focus-input100-1"></span>
-                                <span class="focus-input100-2"></span>
+
+                        @*Create Something side Parallax*@
+                        <div class="sideImage" id="p_container">
+                            <img class="stackImages" src="~/images/parallax/Portrait_base_01.png">
+                            <img style="bottom:-20px" class="stackImages_corr P_child" id="slidetwo" src="~/images/parallax/Portrait_hand_02.png">
+                            <img style="bottom:0px" class="stackImages p_child" id="slideone" src="~/images/parallax/Portrait_body_02.png">
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-12 mx-auto">
+                        <div class="row mx-0">
+                            <div class="col px-0">
+                                <div id="lineW" class="login100-form-btn">
+                                    <span style="color:#ffffff; margin-right:20px;">@Html.LabelFor(model => model.Schools, htmlAttributes: new { @class = "text-center" })</span> :
+                                    <select name="SelectedSchoolID" id="selWidth">
+                                        @for (int i = 0; i < Model.Schools.Count; i++)
+                                        {
+                                            <option value="@Model.Schools.ElementAt(i).SchoolId">@Model.Schools.ElementAt(i).Name</option>
+                                        }
+                                    </select>
+                                </div>
                             </div>
-
-                            <div class="wrap-input100">
-                                @Html.EditorFor(model => model.Classroom.Description, new { htmlAttributes = new { @class = "input100", placeholder = "Description" } })
-                                @Html.ValidationMessageFor(model => model.Classroom.Description, "", new { @class = "text-danger" })
-
-                                <span class="focus-input100-1"></span>
-                                <span class="focus-input100-2"></span>
+                            <div class="col px-0">
+                                <div id="lineC" class="login100-form-btn">
+                                    <span style="color:#ffffff; margin-right:20px;">@Html.LabelFor(model => model.Teachers, htmlAttributes: new { @class = "text-center" })</span> :
+                                    <select name="SelectedTeacherID" id="selColor">
+                                        @for (int i = 0; i < Model.Teachers.Count; i++)
+                                        {
+                                            <option value="@Model.Teachers.ElementAt(i).TeacherId">@Model.Teachers.ElementAt(i).FirstName @Model.Teachers.ElementAt(i).LastName</option>
+                                        }
+                                    </select>
+                                </div>
                             </div>
+                        </div>
 
+                        <div class="container-login100-form-btn m-t-20">
+                            <input class="login100-form-btn" type="submit" value="Create" />
+                        </div>
 
-
-
-                            //Its Me Mario!
-                            @Html.LabelFor(model => model.Schools, htmlAttributes: new { @class = "control-label col-md-2" })
-
-                            <select name="SelectedSchoolID">
-                                @for (int i = 0; i < Model.Schools.Count; i++)
-                                {
-                                    <option value="@Model.Schools.ElementAt(i).SchoolId">@Model.Schools.ElementAt(i).Name</option>
-                                }
-                            </select>
-
-
-                            @Html.LabelFor(model => model.Teachers, htmlAttributes: new { @class = "control-label col-md-2" })
-
-                            <select name="SelectedTeacherID">
-                                @for (int i = 0; i < Model.Teachers.Count; i++)
-                                {
-                                    <option value="@Model.Teachers.ElementAt(i).TeacherId">@Model.Teachers.ElementAt(i).FirstName @Model.Teachers.ElementAt(i).LastName</option>
-                                }
-                            </select>
-
-
-
-
-                            <div class="container-login100-form-btn m-t-20">
-                                <input class="login100-form-btn" type="submit" value="Create" />
-                            </div>
+                        <section id="socialLoginForm" class="text-center">
                             <br />
                             <hr />
-                        }
-
-
+                            <div id="dark_back_C">
+                                <a href="@Url.Action("Index", "Classroom")"><img src="~/images/schoolspng.png" /> back to class </a>
+                            </div>
+                        </section>
                     </div>
+
                 </div>
-
-                <div class="col-md-3 mx-auto">
-                    <div class="sideImage" id="p_container">
-                        <img class="stackImages" src="~/images/parallax/Portrait_base_01.png">
-                        <img style="bottom:0px" class="stackImages p_child" id="slideone" src="~/images/parallax/Portrait_body_01.png">
-                        <img style="bottom:0px" class="stackImages P_child" id="slidetwo" src="~/images/parallax/Portrait_hand_01.png">
-                    </div>
-                </div>
-
-
-            </div>
+            }
         </div>
-
-        <section id="socialLoginForm">
-            <h3 class="text-center" style="color:white">Return</h3>
-            <hr />
-            <div class="container-login100-form-btn m-t-20">
-                <a href="@Url.Action("Index", "Classroom")"><img src="~/images/schoolspng.png" /> back to class </a>
-            </div>
-        </section>
-
     </div>
 </div>
+
 
 

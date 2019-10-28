@@ -53,12 +53,16 @@
                             </div>
                             <br />
                             <div class="paintingdesc">
-                                <h4>@Html.DisplayFor(modelItem => item.PaintingTitle) </h4>
+                                <h4 class="text-center">@Html.DisplayFor(modelItem => item.PaintingTitle) </h4>
+                                <br />
+
+                                @*LINK TO STUDENT MAIN PAGE*@
+                                <a href="@Url.Action("Details", "Student", new { id = item.PaintingId })">by @Html.DisplayFor(modelItem => item.Student.FirstName) @Html.DisplayFor(modelItem => item.Student.LastName) </a>
                                 <hr />
-                                <h4>by @Html.DisplayFor(modelItem => item.Student.FirstName) @Html.DisplayFor(modelItem => item.Student.LastName) </h4>
-                                <p class="text-right">
-                                    Cost: @Html.DisplayFor(modelItem => item.Price)
-                                </p>
+
+                                <h5 class="text-right">
+                                    Suggested Donation: @Html.DisplayFor(modelItem => item.Price) <i class="fa fa-eur" aria-hidden="true"></i>
+                                </h5>
                                 <a href="#"><img class="float-right" src="~/images/cart.png" /></a>
 
                             </div>
