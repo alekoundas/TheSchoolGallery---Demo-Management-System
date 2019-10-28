@@ -4,130 +4,95 @@
     ViewBag.Title = "Create";
 }
 
-<div class="limiter">
-    <div class="container-login100">
-        <div class="container">
-            <br />
-            <br />
-            <div class="row">
+<h2>Create</h2>
 
-                <div class="col-md-4">
-                    <div class="wrap-Avatar2">
-                        <div>
-                            @*AVATAR HERE*@
-                            <img src="~/images/Avatar/back_07.png" />
-                        </div>
-                    </div>
-                </div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
 
+    <div class="form-horizontal">
+        <h4>Student</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Student.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Student.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Student.FirstName, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-                <!-- Section - Student Credentials ---------------------------------------->
-                <div class="col-md-8">
-                    <div class="wrap-Info" style="color:#f3efe9">
-                        <div class="wrap-loginInfo">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Student.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Student.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Student.LastName, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-                            @using (Html.BeginForm())
-                            {
-                                @Html.AntiForgeryToken()
-                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-                                <div class="wrap-avabox text-center">
-                                    @Html.EditorFor(model => model.Student.FirstName, new { htmlAttributes = new { @class = "input100", placeholder = "First Name" } })
-                                    @Html.ValidationMessageFor(model => model.Student.FirstName, "", new { @class = "text-danger" })
-                                </div>
-
-                                <div class="wrap-avabox rs1 text-center">
-                                    @Html.EditorFor(model => model.Student.LastName, new { htmlAttributes = new { @class = "input100", placeholder = "Last Name" } })
-                                    @Html.ValidationMessageFor(model => model.Student.LastName, "", new { @class = "text-danger" })
-                                </div>
-
-                                <div class="wrap-avabox rs2 text-center">
-                                    @Html.EditorFor(model => model.Student.Age, new { htmlAttributes = new { @class = "input100", placeholder = "Age" } })
-                                    @Html.ValidationMessageFor(model => model.Student.Age, "", new { @class = "text-danger" })
-                                </div>
-                            }
-                        </div>
-                    </div>
-
-                </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Student.Age, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Student.Age, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Student.Age, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
 
-                <!-- Section - Student Lists ---------------------------------------------->
-                <div class="col-md-12 mx-auto">
-                    <div class="wrap-Info" style="color:#f3efe9">
-                        <div class="wrap-loginInfo">
+        @* Alex TheBuilder: Classrooms  Drop Down List (αργοτερα θα γινει με ajax η ανανεωση αναμεσα στις 2 λιστες)  *@
+        <div class="form-group">
+            <div class="col-md-10">
+
+                @*//School Dropdown*@
+                @Html.LabelFor(model => model.Schools, htmlAttributes: new { @class = "control-label col-md-2" })
+                <select name="SelectedSchoolID" id="SelectedSchoolID" onchange="UpdateClassroomDropDown()">
+                    @for (int i = 0; i < Model.Schools.Count; i++)
+                    {
+                        <option value="@Model.Schools.ElementAt(i).SchoolId">@Model.Schools.ElementAt(i).Name</option>
+                    }
+                </select>
 
 
-                            @using (Html.BeginForm())
-                            {
-                                <div class="row mx-0">
-
-                                    <div class="col px-0 alexdrop">
-                                        <div class="login100-form-btn">
-                                            @Html.LabelFor(model => model.Classrooms, htmlAttributes: new { @class = "input100" })
-
-                                            <select name="SelectedClassroomID">
-                                                @for (int i = 0; i < Model.Classrooms.Count; i++)
-                                                {
-                                                    <option value="@Model.Classrooms.ElementAt(i).ClassroomId">@Model.Classrooms.ElementAt(i).Name</option>
-
-                                                }
-
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="col px-0">
-                                        <div class="login100-form-btn">
-                                            @Html.LabelFor(model => model.Schools, htmlAttributes: new { @class = "input100" })
-
-                                            <select name="SelectedSchoolID">
-                                                @for (int i = 0; i < Model.Schools.Count; i++)
-                                                {
-                                                    <option value="@Model.Schools.ElementAt(i).SchoolId">@Model.Schools.ElementAt(i).Name</option>
-                                                }
-
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="container-login100-form-btn m-t-20">
-                                    <input class="login100-form-btn" type="submit" value="Save" />
-                                </div>
-
-                                <section id="socialLoginForm" class="text-center">
-                                    <br />
-                                    <h3 style="color:#666666">Return</h3>
-                                    <hr />
-                                    <div>
-                                        <a href="@Url.Action("Index", "Student")"><img src="~/images/students.png" /> back to students </a>
-                                    </div>
-                                </section>
+                @* Classroom Dropdown *@
+                @Html.LabelFor(model => model.Classrooms, htmlAttributes: new { @class = "control-label col-md-2" })
+              <div id="ClassroomDropdown"></div>         
+                        
+            </div>
 
 
+        </div>
 
-
-
-                            }
-
-
-
-
-
-                        </div>
-                    </div>
-                </div>
-
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
 </div>
 
+<script>
+    function UpdateClassroomDropDown() {
+        var DropdownVal = $('#SelectedSchoolID').val();   
+        console.log(DropdownVal);
+        $.ajax({    
+        datatype: "text/plain",
+        type: "POST",
+        url: '/Student/UpdateDropDownList/?SchoolID='+DropdownVal,
+        cache: false,
+            success: function (data) {
+                console.log(data);
+                $('#ClassroomDropdown').html(data);
+            }
+        });
+
+
+    }
+</script>
 
 
 
-
-
-
-
+@*//@Url.Action("UpdateDropDownList")*@

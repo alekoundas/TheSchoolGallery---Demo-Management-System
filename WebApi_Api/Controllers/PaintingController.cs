@@ -21,14 +21,14 @@ namespace WebApi_Api.Controllers
         // GET: api/Painting
         public IQueryable<Painting> GetPaintings()
         {
-            return db.PaintingsDb;
+            return db.PaintingsDb.Include(x=>x.Student);
         }
 
         // GET: api/Painting/5
         [ResponseType(typeof(Painting))]
         public IHttpActionResult GetPainting(int id)
         {
-            Painting painting = db.PaintingsDb.Find(id);
+            Painting painting = db.PaintingsDb.Where(y => y.PaintingId==id).Include(x => x.Student).FirstOrDefault();
             if (painting == null)
             {
                 return NotFound();
@@ -40,7 +40,7 @@ namespace WebApi_Api.Controllers
         // PUT: api/Painting/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutPainting(int id, Painting painting)
-        {
+        {   
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);

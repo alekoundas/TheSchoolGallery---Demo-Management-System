@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -17,8 +18,8 @@ namespace Web_Front.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         StudentApiService StudentServ = new StudentApiService();
-        ClassroomApiService ClassroomServ = new ClassroomApiService();
-        SchoolApiService SchoolServ = new SchoolApiService();
+        ClassroomApiService ServiceClassroom = new ClassroomApiService();
+        SchoolApiService ServiceSchool = new SchoolApiService();
 
         // GET: Student
         public ActionResult Index()
@@ -41,16 +42,38 @@ namespace Web_Front.Controllers
             return View(student);
         }
 
+
+
         // GET: Student/Create
         public ActionResult Create()
         {
             StudentCreateVM ViewModel = new StudentCreateVM();
-            ViewModel.Schools = SchoolServ.GetSchools();
-            ViewModel.Classrooms = ClassroomServ.GetClassrooms();
+            ViewModel.Schools = ServiceSchool.GetSchools();
+            ViewModel.Classrooms = ServiceClassroom.GetClassrooms();
 
-            var a = SchoolServ.GetSchools();
+            var a = ServiceSchool.GetSchools();
             return View(ViewModel);
         }
+
+        /// <summary>
+        /// Returns Partial View Of A List Of Classrooms Based On Selected School 
+        /// </summary>
+        /// <param name="SchoolID"></param>
+        /// <returns>List<Classroom></returns>
+        public PartialViewResult UpdateDropDownList(int? SchoolID)
+        {
+
+            List<Classroom> ClassroomList = ServiceSchool.GetSchool(SchoolID).Classroom.ToList();
+
+           
+            //(PartialView Name, Database List)
+            return PartialView("_CreateAjaxDropdown", ClassroomList);
+        }
+
+
+
+
+
 
         // POST: Student/Create      
         [HttpPost]
@@ -60,15 +83,15 @@ namespace Web_Front.Controllers
             if (ModelState.IsValid)
             {
                //We Need To Set Instance of School and Classroom at Student To be Created!
-                ViewModel.Student.Classroom= ClassroomServ.GetClassroom(ViewModel.SelectedClassroomID);
-                ViewModel.Student.Classroom.School = SchoolServ.GetSchool(ViewModel.SelectedSchoolID);
+                ViewModel.Student.Classroom= ServiceClassroom.GetClassroom(ViewModel.SelectedClassroomID);
+                ViewModel.Student.Classroom.School = ServiceSchool.GetSchool(ViewModel.SelectedSchoolID);
                 //Create User
                 StudentServ.CreateStudent(ViewModel.Student);
                 return RedirectToAction("Index");
             }
             //Refill Lists
-            ViewModel.Schools = SchoolServ.GetSchools();
-            ViewModel.Classrooms = ClassroomServ.GetClassrooms();
+            ViewModel.Schools = ServiceSchool.GetSchools();
+            ViewModel.Classrooms = ServiceClassroom.GetClassrooms();
             return View(ViewModel);
         }
 
