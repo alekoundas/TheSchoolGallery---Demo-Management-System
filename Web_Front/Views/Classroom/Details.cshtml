@@ -8,29 +8,71 @@
     <div class="container-login100">
         <div class="container">
             <br />
-            <h2 class="text-center" style="color:#f3efe9;"> Class in Detail</h2>
-            <hr />
             <br />
             <div class="row">
-                <!-- Section - School Details ---------------------------------------->
+
+                <!-- Section - Class Details ---------------------------------------->
                 <div class="col-md-12 mx-auto text-center">
+
                     <div class="paintingcontainer">
-                        <div class="Schooldesc">
+                        <div class="studentdesc">
                             <h3>@Html.DisplayFor(model => model.Name)</h3>
-                            <hr />
-
-                            <h4>
-                                @Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)
-                            </h4>
+                            <hr style="border-bottom:2px dotted" />
+                            <h4>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</h4>
                         </div>
+                    </div>
+                </div>
 
-                        <br />
-                        <br />
+                <!-- Section - Teacher/School --------------------------------------->
+                <div class="col-md-12 mx-auto text-center">
+                    <div Class="dottedFrame">
+                        <h3>Class Teacher : @Html.DisplayFor(model => model.Teacher.FirstName) @Html.DisplayFor(model => model.Teacher.LastName)</h3>
                         <hr />
 
-                        <div dark_back_C>
-                            <a style="color:#f3efe9" href="@Url.Action("Index", "Classroom")"><img src="~/images/schoolspng.png" /> back to class </a>
-                            <a style="color:#f3efe9" href="@Url.Action("Edit", "Classroom", new { id = Model.ClassroomId })"><img src="~/images/menu.png" /> edit class </a>
+                        @*LINK TO SCHOOL DETAIL PAGE*@
+                        <a style="color:#f3efe9; font-size:24px;" href="@Url.Action("Details", "School", new { id = Model.ClassroomId })"> @Html.DisplayFor(model => model.School.Name) </a>
+
+                        <h4>@Html.DisplayFor(model => model.School.City)</h4>
+                    </div>
+                </div>
+
+
+                <!-- Section - STUDENTS ---------------------------------------->
+                <div class="container">
+                    <div class="row">
+
+                        @foreach (var item in Model.Students)
+                        {
+                            <div class="col-lg-4 col-sm-6 align-items-stretch">
+                                <div class="paintingcontainer">
+                                    <div class="wrap-Painting">
+                                        <div class="painting">
+                                            @*AVATAR*@
+                                            @Html.DisplayFor(modelItem => item.Avatar)
+                                        </div>
+                                        <br />
+                                        <div class="paintingdesc text-center">
+                                            @*LINK TO STUDENT MAIN PAGE*@
+                                            <a href="@Url.Action("Details", "Student", new { id = item.StudentId })">by @Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName) </a>
+                                            <hr />
+                                            <p class="text-center">
+                                                <i class="fa fa-child" aria-hidden="true"></i> Age: @Html.DisplayFor(modelItem => item.Age)
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <!-- Section - Links ---------------------------------------->
+                <div class="col-md-12 mx-auto text-center">
+                    <div class="paintingcontainer">
+                        <hr />
+                        <br />
+                        <div>
+                            <a style="color:#f3efe9" href="@Url.Action("Details", "Student", new { id = Model.ClassroomId })"><img src="~/images/loged.png" /> back to student </a>
                         </div>
                     </div>
                 </div>
@@ -38,3 +80,5 @@
         </div>
     </div>
 </div>
+
+

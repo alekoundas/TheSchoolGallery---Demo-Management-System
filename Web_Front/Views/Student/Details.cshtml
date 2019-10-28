@@ -17,10 +17,9 @@
                     <div class="paintingcontainer">
                         <div class="studentdesc">
                             <h3>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h3>
-                            <hr />
+                            <hr style="border-bottom:2px dotted" />
                             <h4 style="color:white">@Html.DisplayNameFor(model => model.Age): @Html.DisplayFor(model => model.Age)</h4>
                         </div>
-                        <br />
                     </div>
                 </div>
 
@@ -33,17 +32,20 @@
 
                 <!-- Section - Teacher/School --------------------------------------->
                 <div class="col-md-12 mx-auto text-center">
-                    <div lass="paintingcontainer">
+                    <div lass="dottedFramenoH">
                         <h3>@Html.DisplayFor(model => model.Classroom.Teacher.FirstName) @Html.DisplayFor(model => model.Classroom.Teacher.LastName)</h3>
                         <hr />
-                        <h3>@Html.DisplayFor(model => model.Classroom.School.Name)</h3>
+                        @*LINK TO SCHOOL DETAIL PAGE*@
+                        <a style="color:#f3efe9; font-size:24px;" href="@Url.Action("Details", "School", new { id = Model.StudentId })"> @Html.DisplayFor(model => model.Classroom.School.Name) </a>
                         <h3>@Html.DisplayFor(model => model.Classroom.School.City)</h3>
                     </div>
                 </div>
 
 
                 <!-- Section - PAINTINGS ---------------------------------------->
-                <div class="col-md-12 mx-auto text-center">
+
+                <div class="container">
+                    <div class="row">
                         @foreach (var item in Model.Paintings)
                         {
                             <div class="col-lg-4 col-sm-6 align-items-stretch">
@@ -60,6 +62,7 @@
                                             <h5 class="text-center">
                                                 Suggested Donation: @Html.DisplayFor(modelItem => item.Price) <i class="fa fa-eur" aria-hidden="true"></i>
                                             </h5>
+
                                             <a href="#"><img class="float-right" src="~/images/cart.png" /></a>
 
                                         </div>
@@ -67,6 +70,7 @@
                                 </div>
                             </div>
                         }
+                    </div>
                 </div>
 
 
@@ -76,8 +80,8 @@
                         <hr />
                         <br />
                         <div>
-                            <a style="color:#f3efe9" href="@Url.Action("Index", "Student")"><img src="~/images/students.png" /> back to student </a>
-                            <a style="color:#f3efe9" href="@Url.Action("Edit", "Student", new { id = Model.StudentId })"><img src="~/images/register.png" /> edit student </a>
+                            <a style="color:#f3efe9" href="@Url.Action("Index", "Painting")"><img src="~/images/menu.png" /> back to paintings </a>
+                            @*<a style="color:#f3efe9" href="@Url.Action("Edit", "Student", new { id = Model.StudentId })"><img src="~/images/register.png" /> edit student </a>*@
                         </div>
                     </div>
                 </div>
