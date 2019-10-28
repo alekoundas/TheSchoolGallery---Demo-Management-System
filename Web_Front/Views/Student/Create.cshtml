@@ -10,7 +10,6 @@
             <br />
             <br />
             <div class="row">
-
                 <div class="col-md-4">
                     <div class="wrap-Avatar2">
                         <div>
@@ -20,14 +19,13 @@
                     </div>
                 </div>
 
-
                 <!-- Section - Student Credentials ---------------------------------------->
                 <div class="col-md-8">
                     <div class="wrap-Info" style="color:#f3efe9">
                         <div class="wrap-loginInfo">
-
                             @using (Html.BeginForm())
                             {
+
                                 @Html.AntiForgeryToken()
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
@@ -45,50 +43,33 @@
                                     @Html.EditorFor(model => model.Student.Age, new { htmlAttributes = new { @class = "input100", placeholder = "Age" } })
                                     @Html.ValidationMessageFor(model => model.Student.Age, "", new { @class = "text-danger" })
                                 </div>
-                            }
-                        </div>
-                    </div>
 
-                </div>
+                                <div class="col px-0 alexdrop">
+                                    <div class="login100-form-btn">
+                                        @Html.LabelFor(model => model.Classrooms, htmlAttributes: new { @class = "input100" })
 
+                                        <select name="SelectedClassroomID">
+                                            @for (int i = 0; i < Model.Classrooms.Count; i++)
+                                            {
+                                                <option value="@Model.Classrooms.ElementAt(i).ClassroomId">@Model.Classrooms.ElementAt(i).Name</option>
 
-                <!-- Section - Student Lists ---------------------------------------------->
-                <div class="col-md-12 mx-auto">
-                    <div class="wrap-Info" style="color:#f3efe9">
-                        <div class="wrap-loginInfo">
+                                            }
 
-
-                            @using (Html.BeginForm())
-                            {
-                                <div class="row mx-0">
-
-                                    <div class="col px-0 alexdrop">
-                                        <div class="login100-form-btn">
-                                            @Html.LabelFor(model => model.Classrooms, htmlAttributes: new { @class = "input100" })
-
-                                            <select name="SelectedClassroomID">
-                                                @for (int i = 0; i < Model.Classrooms.Count; i++)
-                                                {
-                                                    <option value="@Model.Classrooms.ElementAt(i).ClassroomId">@Model.Classrooms.ElementAt(i).Name</option>
-
-                                                }
-
-                                            </select>
-                                        </div>
+                                        </select>
                                     </div>
+                                </div>
 
-                                    <div class="col px-0">
-                                        <div class="login100-form-btn">
-                                            @Html.LabelFor(model => model.Schools, htmlAttributes: new { @class = "input100" })
+                                <div class="col px-0">
+                                    <div class="login100-form-btn">
+                                        @Html.LabelFor(model => model.Schools, htmlAttributes: new { @class = "input100" })
 
-                                            <select name="SelectedSchoolID">
-                                                @for (int i = 0; i < Model.Schools.Count; i++)
-                                                {
-                                                    <option value="@Model.Schools.ElementAt(i).SchoolId">@Model.Schools.ElementAt(i).Name</option>
-                                                }
+                                        <select name="SelectedSchoolID">
+                                            @for (int i = 0; i < Model.Schools.Count; i++)
+                                            {
+                                                <option value="@Model.Schools.ElementAt(i).SchoolId">@Model.Schools.ElementAt(i).Name</option>
+                                            }
 
-                                            </select>
-                                        </div>
+                                        </select>
                                     </div>
                                 </div>
 
@@ -96,29 +77,18 @@
                                     <input class="login100-form-btn" type="submit" value="Save" />
                                 </div>
 
-                                <section id="socialLoginForm" class="text-center">
-                                    <br />
-                                    <h3 style="color:#666666">Return</h3>
-                                    <hr />
-                                    <div>
-                                        <a href="@Url.Action("Index", "Student")"><img src="~/images/students.png" /> back to students </a>
-                                    </div>
-                                </section>
-
-
-
-
-
                             }
-
-
-
-
+                            <section id="socialLoginForm" class="text-center">
+                                <br />
+                                <hr />
+                                <div id="light_back_C">
+                                    <a href="@Url.Action("Index", "Student")"><img src="~/images/students.png" /> back to students </a>
+                                </div>
+                            </section>
 
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

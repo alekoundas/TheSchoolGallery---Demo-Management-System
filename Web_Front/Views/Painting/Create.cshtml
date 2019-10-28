@@ -4,85 +4,79 @@
     ViewBag.Title = "Create";
 }
 
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="container">
+                <br />
+                <br />
+                <h2 style="color:#f3efe9;">Create new Painting</h2>
+                <hr />
+                <div class="row">
 
-<div class="limiter">
-    <div class="container-login100">
-        <div class="container">
-            <br />
-            <br />
-            <br />
-            <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <div class="wrap-login100">
-                        <form class="login100-form validate-form">
-                            <span class="login100-form-title p-b-33">
-                                Create New Painting
-                            </span>
+                    <!-- Section - Student Details ---------------------------------------->
+                    <div class="col-md-8 mx-auto">
+                        <div class="wrap-Avatar" style="color:#f3efe9">
+                            <div class="wrap-login100">
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    @Html.HiddenFor(model => model.PaintingId)
 
-                            @using (Html.BeginForm())
-                            {
+                                    <div class="wrap-avabox text-center">
+                                        @Html.EditorFor(model => model.ImageUrl, new { htmlAttributes = new { @class = "input100", placeholder="set Image" } })
+                                        @Html.ValidationMessageFor(model => model.ImageUrl, "", new { @class = "text-danger" })
+                                    </div>
+                                    <p style="color:#909090">Image File</p>
+                                    <div class="wrap-avabox text-center">
+                                        @Html.EditorFor(model => model.PaintingTitle, new { htmlAttributes = new { @class = "input100", placeholder="set Title" } })
+                                        @Html.ValidationMessageFor(model => model.PaintingTitle, "", new { @class = "text-danger" })
+                                    </div>
+                                    <p style="color:#909090">Title</p>
+                                    <div class="wrap-avabox text-center">
+                                        @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "input100", placeholder="set Price" } })
+                                        @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                                    </div>
+                                    <p style="color:#909090">Price</p>
 
-                                @Html.AntiForgeryToken()
-                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    // SAVE BUTTON ----------------------------------------------------
+                                    <div class="container-login100-form-btn m-t-20">
+                                        <input class="login100-form-btn" type="submit" value="Save" />
+                                    </div>
 
-                                <div class="wrap-input100">
-                                    @Html.EditorFor(model => model.ImageUrl, new { htmlAttributes = new { @class = "input100", placeholder = "Image" } })
-                                    @Html.ValidationMessageFor(model => model.ImageUrl, "", new { @class = "text-danger" })
+                                }
+                            </div>
+                        </div>
 
-                                    <span class="focus-input100-1"></span>
-                                    <span class="focus-input100-2"></span>
-                                </div>
+                    </div>
 
-                                <div class="wrap-input100">
-                                    @Html.EditorFor(model => model.PaintingTitle, new { htmlAttributes = new { @class = "input100", placeholder = "PaintingTitle" } })
-                                    @Html.ValidationMessageFor(model => model.PaintingTitle, "", new { @class = "text-danger" })
-
-                                    <span class="focus-input100-1"></span>
-                                    <span class="focus-input100-2"></span>
-                                </div>
-
-                                <div class="wrap-input100">
-                                    @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "input100", placeholder = "Price" } })
-                                    @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
-
-                                    <span class="focus-input100-1"></span>
-                                    <span class="focus-input100-2"></span>
-                                </div>
+                    <div class="col-md-4 mx-auto">
+                        <div class="sideImage" id="p_container">
+                            <img style="right:20px; bottom:200px; border:4px solid #bababa; width:80%; box-shadow:1px 1px 20px 10px rgba(0,0,0,0.1);" class="stackImages P_child" id="slidetwo" src="~/images/white-paper-texture.jpg">
+                            <img style="left:10px; bottom:20px; width:100px" class="stackImages p_child" id="slideone" src="~/images/kid_brush.png">
+                        </div>
+                    </div>
 
 
-                                <div class="container-login100-form-btn m-t-20">
-                                    <input class="login100-form-btn" type="submit" value="Create" />
-                                </div>
-                                <br />
-                                <hr />
-                            }
+                    <!-- Section - Student Details ---------------------------------------->
+                    <div class="col-md-12 mx-auto">
 
-                        </form>
+                        <section id="socialLoginForm" class="text-center">
+                            <br />
+                            <hr />
+                            <div id="dark_back_C">
+                                <a href="@Url.Action("Index", "Painting")"><img src="~/images/menu.png" /> back to paintings </a>
+                            </div>
+                        </section>
+
+
                     </div>
                 </div>
-
-                <div class="col-md-3 mx-auto">
-                    <div class="sideImage" id="p_container">
-                        <img class="stackImages" src="~/images/parallax/Portrait_base_01.png">
-                        <img style="bottom:0px" class="stackImages p_child" id="slideone" src="~/images/parallax/Portrait_body_01.png">
-                        <img style="bottom:0px" class="stackImages P_child" id="slidetwo" src="~/images/parallax/Portrait_hand_01.png">
-                    </div>
-                </div>
-
-
             </div>
         </div>
-
-        <section id="socialLoginForm">
-            <h3 class="text-center" style="color:white">Return</h3>
-            <hr />
-            <div class="container-login100-form-btn m-t-20">
-                <a href="@Url.Action("Index", "Painting")"><img src="~/images/menu.png" /> back to paintings </a>
-            </div>
-        </section>
-
     </div>
-</div>
+
+
 
 
 

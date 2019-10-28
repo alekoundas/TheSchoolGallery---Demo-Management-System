@@ -5,25 +5,15 @@
 }
 
 
-
 <div class="col-md-12 pt-20 pb-20">
-    <h1>
-        @*<img style="height:100px; width:100%" src="~/images/banner.jpg" alt="Alternate Text" />*@
-        Teachers
-    </h1>
+    <h1 style="color:#f3efe9;">Teachers</h1>
 </div>
-<hr />
 <div class="feature-area pt-10 pb-10  relative">
     <div class="container">
         <div class="row">
             <h2 class="col-md-6">
-
-                @if (User.IsInRole("admin"))
-                {
-                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                    @Html.ActionLink("Create New", "Create")
-                }
-
+                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                @Html.ActionLink("Create New", "Create")
             </h2>
             <div class="col-md-6">
                 @using (Html.BeginForm())
@@ -37,36 +27,31 @@
         </div>
     </div>
 </div>
-<hr />
 
 <section class="feature-area pt-100 pb-100  relative">
     <div class="overlay overlay-bg"></div>
     <div class="container">
         <div class="row">
+
             @foreach (var item in Model)
             {
-                <div class="col-lg-12 col-sm-12 align-items-stretch">
+                <div class="col-12 align-items-stretch">
                     <div class="paintingcontainer">
-                        <div class="painting">
-                            <img src="~/images/schools/Avatar" />
-                        </div>
-                        <div class="paintingdesc">
-                            <p>@Html.DisplayFor(modelItem => item.FirstName)  @Html.DisplayFor(modelItem => item.LastName) </p>
-                            <hr />
-                            <p>super teacher</p>
-                            <ul class="text-right">
-                                
-                            </ul>
-                        </div>
-
-                        @if (User.IsInRole("admin"))
-                        {
-                            <div>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.TeacherId }) |
-                                @Html.ActionLink("Details", "Details", new { id = item.TeacherId }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.TeacherId })
+                        <div class="wrap-School">
+                            <br />
+                            <div class="Schooldesc">
+                                <h3>@Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)</h3>
+                                <hr />
+                                <ul class="text-right">
+                                    <li> Oti allo Info exei o mpagasas</li>
+                                </ul>
                             </div>
-                        }
+                        </div>
+                        <div>
+                            <a style="color:#f3efe9" href="@Url.Action("Edit", "Teacher", new { id = item.TeacherId })"><img src="~/images/edit.png" /> edit </a>
+                            <a style="color:#f3efe9" href="@Url.Action("Details", "Teacher", new { id = item.TeacherId })"><img src="~/images/details.png" /> details </a>
+                            <a style="color:#f3efe9" href="@Url.Action("Delete", "Teacher", new { id = item.TeacherId })"><img src="~/images/delete.png" /> delete </a>
+                        </div>
 
                     </div>
                 </div>
@@ -74,6 +59,7 @@
         </div>
     </div>
 </section>
+
 
 
 

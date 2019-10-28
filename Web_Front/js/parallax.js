@@ -82,6 +82,91 @@ jQuery(document).ready(function($){
 	}
 });
 
+jQuery(document).ready(function ($) {
+    //define store some initial variables
+    var halfWindowH = $(window).height() * 0.5,
+        halfWindowW = $(window).width() * 0.5,
+        //define a max rotation value (X and Y axises)
+        maxRotationY = 5,
+        maxRotationX = 3,
+        aspectRatio;
+
+    //detect if hero <img> has been loaded and evaluate its aspect-ratio
+    $('.cd-floating-background2').find('img').eq(0).load(function () {
+        aspectRatio = $(this).width() / $(this).height();
+        if ($('html').hasClass('preserve-3d')) initBackground();
+    }).each(function () {
+        //check if image was previously load - if yes, trigger load event
+        if (this.complete) $(this).load();
+    });
+
+    //detect mouse movement
+    $('.cd-background-wrapper2').each(function () {
+        $(this).on('mousemove', function (event) {
+            var wrapperOffsetTop = $(this).offset().top;
+            if ($('html').hasClass('preserve-3d')) {
+                window.requestAnimationFrame(function () {
+                    moveBackground(event, wrapperOffsetTop);
+                });
+            }
+        });
+    });
+
+    //on resize - adjust .cd-background-wrapper and .cd-floating-background dimentions and position
+    $(window).on('resize', function () {
+        if ($('html').hasClass('preserve-3d')) {
+            window.requestAnimationFrame(function () {
+                halfWindowH = $(window).height() * 0.5,
+                    halfWindowW = $(window).width() * 0.5;
+                initBackground();
+            });
+        } else {
+            $('.cd-background-wrapper2').attr('style', '');
+            $('.cd-floating-background2').attr('style', '').removeClass('is-absolute');
+        }
+    });
+
+    function initBackground() {
+        var wrapperHeight = Math.ceil(halfWindowW * 2 / aspectRatio),
+            proportions = (maxRotationY > maxRotationX) ? 1.1 / (Math.sin(Math.PI / 2 - maxRotationY * Math.PI / 180)) : 1.1 / (Math.sin(Math.PI / 2 - maxRotationX * Math.PI / 180)),
+            newImageWidth = Math.ceil(halfWindowW * 2 * proportions),
+            newImageHeight = Math.ceil(newImageWidth / aspectRatio),
+            newLeft = halfWindowW - newImageWidth / 2,
+            newTop = (wrapperHeight - newImageHeight) / 2;
+
+        //set an height for the .cd-background-wrapper
+        $('.cd-background-wrapper2').css({
+            'height': wrapperHeight,
+        });
+        //set dimentions and position of the .cd-background-wrapper		
+        $('.cd-floating-background2').addClass('is-absolute').css({
+            'left': newLeft,
+            'top': newTop,
+            'width': newImageWidth,
+        });
+    }
+
+    function moveBackground(event, topOffset) {
+        var rotateY = ((-event.pageX + halfWindowW) / halfWindowW) * maxRotationY,
+            yPosition = event.pageY - topOffset,
+            rotateX = ((yPosition - halfWindowH) / halfWindowH) * maxRotationX;
+
+        if (rotateY > maxRotationY) rotateY = maxRotationY;
+        if (rotateY < -maxRotationY) rotateY = -maxRotationY;
+        if (rotateX > maxRotationX) rotateX = maxRotationX;
+        if (rotateX < -maxRotationX) rotateX = -maxRotationX;
+
+        $('.cd-floating-background2').css({
+            '-moz-transform': 'rotateX(' + rotateX + 'deg' + ') rotateY(' + rotateY + 'deg' + ') translateZ(0)',
+            '-webkit-transform': 'rotateX(' + rotateX + 'deg' + ') rotateY(' + rotateY + 'deg' + ') translateZ(0)',
+            '-ms-transform': 'rotateX(' + rotateX + 'deg' + ') rotateY(' + rotateY + 'deg' + ') translateZ(0)',
+            '-o-transform': 'rotateX(' + rotateX + 'deg' + ') rotateY(' + rotateY + 'deg' + ') translateZ(0)',
+            'transform': 'rotateX(' + rotateX + 'deg' + ') rotateY(' + rotateY + 'deg' + ') translateZ(0)',
+        });
+    }
+});
+
+
 
 /* 	Detect "transform-style: preserve-3d" support, or update csstransforms3d for IE10 ? #762
 	https://github.com/Modernizr/Modernizr/issues/762 */

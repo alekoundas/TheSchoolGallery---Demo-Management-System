@@ -4,39 +4,41 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="container">
+                <br />
+                <br />
+                <div class="row">
 
-<div>
-    <h4>Painting</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ImageUrl)
-        </dt>
+                    <!-- Section - Paintings ------------------------------------------>
+                    <div class="col-md-6 mx-auto text-center">
+                        <div class="wrap-Avatar">
+                            <div class="avatar_main" id="place1" ondrop="dropIt(event);" ondragover="event.preventDefault();">
+                                <div><img class="avatar_child" src="~/images/paintings/@Html.DisplayFor(model => model.ImageUrl)" /></div>                               
+                            </div>
+                            <img class="float-right" src="~/images/logoff.png" />
+                        </div>
+                    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.ImageUrl)
-        </dd>
+                    <!-- Section - Student Details ---------------------------------------->
+                    <div class="col-md-12 mx-auto text-center">
+                        <div class="paintingcontainer">
+                            <div class="studentdesc">
+                                <h3>@Html.DisplayFor(model => model.PaintingTitle)</h3>
+                                <hr />
+                                <h4 style="color:white">@Html.DisplayNameFor(model => model.Price):@Html.DisplayFor(model => model.Price)</h4>
+                            </div>
+                            <br />
+                            <div>
+                                <a style="color:#f3efe9" href="@Url.Action("Index", "Painting")"><img src="~/images/menu.png" /> back to paintings </a>
+                                <a style="color:#f3efe9" href="@Url.Action("Edit", "Painting", new { id = Model.PaintingId })"><img src="~/images/menu.png" /> edit painting </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PaintingTitle)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PaintingTitle)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PaintingId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

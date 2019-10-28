@@ -4,31 +4,38 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="container">
+            <br />
+            <h2 class="text-center" style="color:#f3efe9;"> Teacher in Detail</h2>
+            <hr />
+            <br />
+            <div class="row">
+                <!-- Section - School Details ---------------------------------------->
+                <div class="col-md-12 mx-auto text-center">
+                    <div class="paintingcontainer">
+                        <div class="Schooldesc">
+                            <h3>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h3>
+                            <hr />
 
-<div>
-    <h4>Teacher</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
+                            <h4>
+                                @Html.DisplayNameFor(model => model.Classroom): @Html.DisplayFor(model => model.Classroom)
+                            </h4>
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
+                        <br />
+                        <br />
+                        <hr />
 
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
-
-    </dl>
+                        <div dark_back_C>
+                            <a style="color:#f3efe9" href="@Url.Action("Index", "Teacher")"><img src="~/images/students.png" /> back to teachers </a>
+                            <a style="color:#f3efe9" href="@Url.Action("Edit", "Teacher", new { id = Model.TeacherId })"><img src="~/images/menu.png" /> edit teacher </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.TeacherId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+

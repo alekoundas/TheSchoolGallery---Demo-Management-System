@@ -4,50 +4,80 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="container">
+            <br />
+            <h2 class="text-center" style="color:#f3efe9;"> edit Painting</h2>
+            <hr />
+            <br />
+            <div class="row">
+                <!-- Section - Paintings ------------------------------------------>
+                <div class="col-md-6 mx-auto text-center">
+                    <div class="wrap-Avatar">
+                        <div class="avatar_main" id="place1" ondrop="dropIt(event);" ondragover="event.preventDefault();">
+                            <div><img class="avatar_child" src="~/images/paintings/@Html.DisplayFor(model => model.ImageUrl)" /></div>
+                        </div>
+                        <img class="float-right" src="~/images/logoff.png" />
+                    </div>
+                </div>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Painting</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.PaintingId)
+                <!-- Section - Student Details ---------------------------------------->
+                <div class="col-md-6 mx-auto">
+                    <div class="wrap-Avatar" style="color:#f3efe9">
+                        <div class="wrap-login100">
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(model => model.PaintingId)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ImageUrl, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ImageUrl, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ImageUrl, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                                <div class="wrap-avabox text-center">
+                                    @Html.EditorFor(model => model.ImageUrl, new { htmlAttributes = new { @class = "input100" } })
+                                    @Html.ValidationMessageFor(model => model.ImageUrl, "", new { @class = "text-danger" })
+                                </div>
+                                <p style="color:#909090">Image File</p>
+                                <div class="wrap-avabox text-center">
+                                    @Html.EditorFor(model => model.PaintingTitle, new { htmlAttributes = new { @class = "input100" } })
+                                    @Html.ValidationMessageFor(model => model.PaintingTitle, "", new { @class = "text-danger" })
+                                </div>
+                                <p style="color:#909090">Title</p>
+                                <div class="wrap-avabox text-center">
+                                    @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "input100" } })
+                                    @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                                </div>
+                                <p style="color:#909090">Price</p>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PaintingTitle, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PaintingTitle, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PaintingTitle, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                                // SAVE BUTTON ----------------------------------------------------
+                                <div class="container-login100-form-btn m-t-20">
+                                    <input class="login100-form-btn" type="submit" value="Save" />
+                                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                            }
+                        </div>
+                    </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+
+                <!-- Section - Student Details ---------------------------------------->
+                <div class="col-md-12 mx-auto">
+
+                    <section id="socialLoginForm" class="text-center">
+                        <br />
+                        <hr />
+                        <div id="dark_back_C">
+                            <a href="@Url.Action("Index", "Painting")"><img src="~/images/menu.png" /> back to paintings </a>
+                        </div>
+                    </section>
+
+
+                </div>
             </div>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

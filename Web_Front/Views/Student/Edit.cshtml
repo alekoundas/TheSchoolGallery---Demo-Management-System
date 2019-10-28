@@ -8,6 +8,8 @@
     <div class="container-login100">
         <div class="container">
             <br />
+            <h2 class="text-center" style="color:#f3efe9;"> edit Student</h2>
+            <hr />
             <br />
             <div class="row">
 
@@ -132,7 +134,7 @@
                 <!-- Section - Student Details ---------------------------------------->
                 <div class="col-md-12 mx-auto">
                     <div class="wrap-Avatar" style="color:#f3efe9">
-                        <div class="wrap-login100" >
+                        <div class="wrap-login100">
                             @using (Html.BeginForm())
                             {
                                 @Html.AntiForgeryToken()
@@ -160,8 +162,6 @@
 
                                 <section id="socialLoginForm" class="text-center">
                                     <br />
-                                    <h3 style="color:#666666">Return</h3>
-                                    <hr />
                                     <div>
                                         <a href="@Url.Action("Index", "Student")"><img src="~/images/students.png" /> back to students </a>
                                     </div>

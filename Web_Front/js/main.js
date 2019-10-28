@@ -212,9 +212,12 @@ $(document).ready(function () {
     });
 
     function callParallax(e) {
-        parallaxIt(e, '#slideone', 60);
-        parallaxIt(e, '#slidetwo', 62);
-        parallaxIt(e, '.p_child', 30);
+        parallaxIt(e, '#slideone', 20);
+        parallaxIt(e, '#slidetwo', 40);
+        parallaxIt(e, '#slidethree', 50);
+        parallaxIt(e, '#slidefour', 60);
+        parallaxIt(e, '#slidefive', 70);
+        parallaxIt(e, '.p_child', 20);
     }
 
     function parallaxIt(e, target, movement) {
