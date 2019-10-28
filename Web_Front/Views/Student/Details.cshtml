@@ -34,7 +34,7 @@
                 <!-- Section - Teacher/School --------------------------------------->
                 <div class="col-md-12 mx-auto text-center">
                     <div lass="paintingcontainer">
-                        <h3>@Html.DisplayFor(model => model.Classroom.Teacher.FirstName) @Html.DisplayFor(model => model.Classroom.Teacher.FirstName)</h3>
+                        <h3>@Html.DisplayFor(model => model.Classroom.Teacher.FirstName) @Html.DisplayFor(model => model.Classroom.Teacher.LastName)</h3>
                         <hr />
                         <h3>@Html.DisplayFor(model => model.Classroom.School.Name)</h3>
                         <h3>@Html.DisplayFor(model => model.Classroom.School.City)</h3>
@@ -57,7 +57,7 @@
                                             <h4 class="text-center">@Html.DisplayFor(modelItem => item.PaintingTitle) </h4>
                                             <br />
                                             <hr />
-                                            <h5 class="text-right">
+                                            <h5 class="text-center">
                                                 Suggested Donation: @Html.DisplayFor(modelItem => item.Price) <i class="fa fa-eur" aria-hidden="true"></i>
                                             </h5>
                                             <a href="#"><img class="float-right" src="~/images/cart.png" /></a>
