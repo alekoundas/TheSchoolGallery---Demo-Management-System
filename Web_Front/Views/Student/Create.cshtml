@@ -40,31 +40,28 @@
 
 
         @* Alex TheBuilder: Classrooms  Drop Down List (αργοτερα θα γινει με ajax η ανανεωση αναμεσα στις 2 λιστες)  *@
-    <div class="form-group">
-        @Html.LabelFor(model => model.Classrooms, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="form-group">
+            <div class="col-md-10">
 
-        <div class="col-md-10">
-            <select name="SelectedClassroomID">
-                @for (int i = 0; i < Model.Classrooms.Count; i++)
-                {
-                    <option value="@Model.Classrooms.ElementAt(i).ClassroomId">@Model.Classrooms.ElementAt(i).Name</option>
+                @*//School Dropdown*@
+                @Html.LabelFor(model => model.Schools, htmlAttributes: new { @class = "control-label col-md-2" })
+                <select name="SelectedSchoolID" id="SelectedSchoolID" onchange="UpdateClassroomDropDown()">
+                    @for (int i = 0; i < Model.Schools.Count; i++)
+                    {
+                        <option value="@Model.Schools.ElementAt(i).SchoolId">@Model.Schools.ElementAt(i).Name</option>
+                    }
+                </select>
 
-                }
 
-            </select>
+                @* Classroom Dropdown *@
+                @Html.LabelFor(model => model.Classrooms, htmlAttributes: new { @class = "control-label col-md-2" })
+              <div id="ClassroomDropdown"></div>         
+                        
+            </div>
+
+
         </div>
-        @* Alex TheBuilder: Schools  Drop Down List (αργοτερα θα γινει με ajax η ανανεωση αναμεσα στις 2 λιστες)  *@
-        @Html.LabelFor(model => model.Schools, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <select name="SelectedSchoolID">
-                @for (int i = 0; i < Model.Schools.Count; i++)
-                {
-                    <option value="@Model.Schools.ElementAt(i).SchoolId">@Model.Schools.ElementAt(i).Name</option>
-                }
 
-            </select>
-        </div>
-    </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
@@ -76,3 +73,26 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+<script>
+    function UpdateClassroomDropDown() {
+        var DropdownVal = $('#SelectedSchoolID').val();   
+        console.log(DropdownVal);
+        $.ajax({    
+        datatype: "text/plain",
+        type: "POST",
+        url: '/Student/UpdateDropDownList/?SchoolID='+DropdownVal,
+        cache: false,
+            success: function (data) {
+                console.log(data);
+                $('#ClassroomDropdown').html(data);
+            }
+        });
+
+
+    }
+</script>
+
+
+
+@*//@Url.Action("UpdateDropDownList")*@

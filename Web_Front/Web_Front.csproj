@@ -468,6 +468,7 @@
     <Content Include="Views\Error\404.cshtml" />
     <Content Include="Views\Home\_Canvas.cshtml" />
     <Content Include="Views\School\School_Individual.cshtml" />
+    <Content Include="Views\Student\_CreateAjaxDropdown.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

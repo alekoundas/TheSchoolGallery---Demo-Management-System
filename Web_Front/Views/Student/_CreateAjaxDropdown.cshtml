@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Web_DomainClasses.Entities.School.Classroom>
+
+<select name="SelectedClassroomID" id="SelectedClassroomID">
+
+    @for (int i = 0; i < Model.Count(); i++)
+    {
+        <option value="@Model.ElementAt(i).ClassroomId">@Model.ElementAt(i).Name</option>
+
+    }
+</select>
