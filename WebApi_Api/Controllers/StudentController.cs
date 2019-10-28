@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RefactorThis.GraphDiff;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -72,6 +73,12 @@ namespace WebApi_Api.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        /// <summary>
+        /// Makes Use Of GraphDiff Library in order to add Student Without Creating Dublicates
+        /// in Database Based On Relations 
+        /// </summary>
+        /// <param name="student"></param>
+        /// <returns></returns>
         // POST: api/Student
         [ResponseType(typeof(Student))]
         public IHttpActionResult PostStudent(Student student)
@@ -80,8 +87,8 @@ namespace WebApi_Api.Controllers
             {
                 return BadRequest(ModelState);
             }
-
-            db.StudentDb.Add(student);
+            //from GraphDiff
+            db.UpdateGraph(student);
             db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = student.StudentId }, student);

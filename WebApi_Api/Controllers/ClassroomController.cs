@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RefactorThis.GraphDiff;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -92,7 +93,7 @@ namespace WebApi_Api.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.ClassroomsDb.Add(classroom);
+            db.UpdateGraph(classroom);
             db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = classroom.ClassroomId }, classroom);
