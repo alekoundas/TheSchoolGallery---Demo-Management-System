@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RefactorThis.GraphDiff;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -80,8 +81,7 @@ namespace WebApi_Api.Controllers
             {
                 return BadRequest(ModelState);
             }
-
-            db.PaintingsDb.Add(painting);
+            db.UpdateGraph(painting);
             db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = painting.PaintingId }, painting);
