@@ -5,25 +5,14 @@
 }
 
 <div class="col-md-12 pt-20 pb-20">
-    <h1>
-        Schools Participating
-    </h1>
+    <h1 style="color:#f3efe9;">Schools Participating</h1>
 </div>
-<hr />
 <div class="feature-area pt-10 pb-10  relative">
     <div class="container">
         <div class="row">
             <h2 class="col-md-6">
-
                 <i class="fa fa-plus-circle" aria-hidden="true"></i>
                 @Html.ActionLink("Create New", "Create")
-
-                @*@if (User.IsInRole("admin"))
-                {
-                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                    @Html.ActionLink("Create New", "Create")
-                }*@
-
             </h2>
             <div class="col-md-6">
                 @using (Html.BeginForm())
@@ -37,65 +26,57 @@
         </div>
     </div>
 </div>
-<hr />
-
-@* Test & epidixi oti to model exei TA PANTA *@
-
-@*@foreach (var school in Model)
-{
-    @school.Name
-    foreach (var classroom in school.Classroom)
-    {
-
-        @classroom.Name
-        @classroom.Teacher.FirstName
-        foreach (var student in classroom.Students)
-        {
-            @student.FirstName
-            foreach (var painting in student.Paintings)
-            {
-                @painting.Price
-            }
-        }
-
-    }
-}*@
 
 <section class="feature-area pt-100 pb-100  relative">
-    <div class="overlay overlay-bg2"></div>
+    <div class="overlay overlay-bg"></div>
     <div class="container">
         <div class="row">
             @foreach (var item in Model)
             {
-                <div class="col-lg-12 col-sm-12 align-items-stretch">
-                    <div class="paintingcontainer">
-                        <div class="painting">
-                            <img src="~/images/schools/@Html.DisplayFor(modelItem => item.Image)" />
-                        </div>
-                        <div class="paintingdesc">
-                            <h2>@Html.DisplayFor(modelItem => item.Name) </h2>
-                            <hr />
-                            <p>@Html.DisplayFor(modelItem => item.City)</p>
-                            <ul class="text-right">
-                                <li>Address: @Html.DisplayFor(modelItem => item.Adress)</li>
-                                <li>Tel: @Html.DisplayFor(modelItem => item.Tel)</li>
-                            </ul>
-                        </div>
+                <div class="col-12 align-items-stretch">
 
-                        <div>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.SchoolId }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.SchoolId }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.SchoolId })
-                        </div>
-
-                        @*@if (User.IsInRole("admin"))
-                        {
-                            <div>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.SchoolId }) |
-                                @Html.ActionLink("Details", "Details", new { id = item.SchoolId }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.SchoolId })
+                    @*PARALLAXING SCHOOL IMAGES*@
+                    <div class="oz-body-wrap2">
+                        <div class="container-fluid">
+                            <div class="cd-background-wrapper">
+                                <figure class="cd-floating-background">
+                                    <h1 class="text-center">@Html.DisplayFor(modelItem => item.Name)</h1>
+                                    <img style="top:60px" class="stackImages p_child" src="~/images/parallax/School_Parallax_back_01.png">
+                                    <img style="top:40px" class="stackImages P_child" src="~/images/parallax/School_Parallax_mount_02.png">
+                                    <img style="top:20px" class="stackImages p_child" src="~/images/parallax/School_Parallax_mount_01.png">
+                                    <img style="top:80px" class="stackImages p_child" src="~/images/parallax/School_Parallax_school.png">
+                                </figure>
                             </div>
-                        }*@
+                        </div>
+                    </div>
+
+
+                    <div class="paintingcontainer">
+                        <div class="wrap-School">
+                            <div class="painting text-center">
+                                @*IMAGE*@
+                                @*<img class="schoolBanner" src="~/images/schools/@Html.DisplayFor(modelItem => item.Image)" />*@
+
+                            </div>
+                            <br />
+                            <div class="Schooldesc">
+                                <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+                                <hr />
+
+                                <ul class="text-right">
+                                    <li>City: @Html.DisplayFor(modelItem => item.City)</li>
+                                    <li>Address: @Html.DisplayFor(modelItem => item.Adress)</li>
+                                    <li>Tel: @Html.DisplayFor(modelItem => item.Tel)</li>
+                                </ul>
+
+
+                            </div>
+                        </div>
+                        <div>
+                            <a style="color:#f3efe9" href="@Url.Action("Edit", "School", new { id = item.SchoolId })"><img src="~/images/edit.png" /> edit </a>
+                            <a style="color:#f3efe9" href="@Url.Action("Details", "School", new { id = item.SchoolId })"><img src="~/images/details.png" /> details </a>
+                            <a style="color:#f3efe9" href="@Url.Action("Delete", "School", new { id = item.SchoolId })"><img src="~/images/delete.png" /> delete </a>
+                        </div>
 
                     </div>
                 </div>

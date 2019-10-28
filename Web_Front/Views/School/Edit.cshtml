@@ -4,66 +4,79 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="container">
+            <br />
+            <h2 class="text-center" style="color:#f3efe9;"> edit School</h2>
+            <hr />
+            <br />
+            <div class="row">
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>School</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.SchoolId)
+                <!-- Section - School Details ---------------------------------------->
+                <div class="col-md-8 mx-auto">
+                    <div class="wrap-Avatar" style="color:#f3efe9">
+                        <div class="wrap-login100">
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                                <div class="wrap-avabox text-center">
+                                    @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "input100" } })
+                                    @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                                </div>
+                                <p style="color:#909090">Image File</p>
+                                <div class="wrap-avabox text-center">
+                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "input100" } })
+                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                </div>
+                                <p style="color:#909090">Name</p>
+                                <div class="wrap-avabox text-center">
+                                    @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "input100" } })
+                                    @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+                                </div>
+                                <p style="color:#909090">City</p>
+                                <div class="wrap-avabox text-center">
+                                    @Html.EditorFor(model => model.Adress, new { htmlAttributes = new { @class = "input100" } })
+                                    @Html.ValidationMessageFor(model => model.Adress, "", new { @class = "text-danger" })
+                                </div>
+                                <p style="color:#909090">Address</p>
+                                <div class="wrap-avabox text-center">
+                                    @Html.EditorFor(model => model.Tel, new { htmlAttributes = new { @class = "input100" } })
+                                    @Html.ValidationMessageFor(model => model.Tel, "", new { @class = "text-danger" })
+                                </div>
+                                <p style="color:#909090">Telephone</p>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                                // SAVE BUTTON ----------------------------------------------------
+                                <div class="container-login100-form-btn m-t-20">
+                                    <input class="login100-form-btn" type="submit" value="Save" />
+                                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                            }
+                        </div>
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Adress, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Adress, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Adress, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Tel, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Tel, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Tel, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                <!-- Section - Student Details ---------------------------------------->
+                <div class="col-md-12 mx-auto">
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                    <section id="socialLoginForm" class="text-center">
+                        <br />
+                        <hr />
+                        <div id="dark_back_C">
+                            <a href="@Url.Action("Index", "School")"><img src="~/images/schoolspng.png" /> back to schools </a>
+                        </div>
+                    </section>
+
+
+                </div>
             </div>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

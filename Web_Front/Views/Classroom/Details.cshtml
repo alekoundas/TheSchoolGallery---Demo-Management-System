@@ -4,39 +4,37 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="container">
+            <br />
+            <h2 class="text-center" style="color:#f3efe9;"> Class in Detail</h2>
+            <hr />
+            <br />
+            <div class="row">
+                <!-- Section - School Details ---------------------------------------->
+                <div class="col-md-12 mx-auto text-center">
+                    <div class="paintingcontainer">
+                        <div class="Schooldesc">
+                            <h3>@Html.DisplayFor(model => model.Name)</h3>
+                            <hr />
 
-<div>
-    <h4>Classroom</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
+                            <h4>
+                                @Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)
+                            </h4>
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Image)
-        </dd>
+                        <br />
+                        <br />
+                        <hr />
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-    </dl>
+                        <div dark_back_C>
+                            <a style="color:#f3efe9" href="@Url.Action("Index", "Classroom")"><img src="~/images/schoolspng.png" /> back to class </a>
+                            <a style="color:#f3efe9" href="@Url.Action("Edit", "Classroom", new { id = Model.ClassroomId })"><img src="~/images/menu.png" /> edit class </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ClassroomId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

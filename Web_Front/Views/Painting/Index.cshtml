@@ -4,11 +4,12 @@
     ViewBag.Title = "Index";
 }
 
-<div class="col-md-12 pt-20 pb-20">
-    <h1>
-        Paintings
-    </h1>
-</div>
+
+<!-- SECOND BANNER ----------------------------------------------------- -->
+@Html.Partial("_SecondBanner")
+
+
+
 <div class="feature-area pt-10 pb-10  relative">
     <div class="container">
         <div class="row">
@@ -18,10 +19,10 @@
                 @Html.ActionLink("Create New", "Create")
 
                 @*@if (User.IsInRole("admin"))
-                {
-                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                    @Html.ActionLink("Create New", "Create")
-                }*@
+                    {
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                        @Html.ActionLink("Create New", "Create")
+                    }*@
 
             </h2>
             <div class="col-md-6">
@@ -37,12 +38,11 @@
     </div>
 
 </div>
-<hr />
 
 <section class="feature-area pt-100 pb-100  relative">
     <div class="overlay overlay-bg"></div>
     <div class="container">
-        <div class="row" >
+        <div class="row">
             @foreach (var item in Model)
             {
                 <div class="col-lg-4 col-sm-6 align-items-stretch">
@@ -59,6 +59,8 @@
                                 <p class="text-right">
                                     Cost: @Html.DisplayFor(modelItem => item.Price)
                                 </p>
+                                <a href="#"><img class="float-right" src="~/images/cart.png" /></a>
+
                             </div>
                         </div>
                         <div>
@@ -66,15 +68,6 @@
                             <a style="color:#f3efe9" href="@Url.Action("Details", "Painting", new { id = item.PaintingId })"><img src="~/images/details.png" /> details </a>
                             <a style="color:#f3efe9" href="@Url.Action("Delete", "Painting", new { id = item.PaintingId })"><img src="~/images/delete.png" /> delete </a>
                         </div>
-
-                        @*@if (User.IsInRole("admin"))
-        {
-            <div>
-                @Html.ActionLink("Edit", "Edit", new { id = item.PaintingId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.PaintingId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.PaintingId })
-            </div>
-        }*@
 
                     </div>
                 </div>
