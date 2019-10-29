@@ -218,11 +218,6 @@
     <Content Include="css\owl.carousel.css" />
     <Content Include="css\parallaxStyle.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\elegant-theme-line.svg" />
-    <Content Include="fonts\flexslider-icon.svg" />
-    <Content Include="fonts\fontawesome-webfont.svg" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="fonts\Linearicons-Free.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="images\Avatar\back_01.png" />
@@ -391,21 +386,6 @@
     <Content Include="js\waypoints.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="fonts\elegant-theme-line.eot" />
-    <Content Include="fonts\elegant-theme-line.ttf" />
-    <Content Include="fonts\elegant-theme-line.woff" />
-    <Content Include="fonts\flexslider-icon.eot" />
-    <Content Include="fonts\flexslider-icon.ttf" />
-    <Content Include="fonts\flexslider-icon.woff" />
-    <Content Include="fonts\fontawesome-webfont.eot" />
-    <Content Include="fonts\fontawesome-webfont.ttf" />
-    <Content Include="fonts\fontawesome-webfont.woff" />
-    <Content Include="fonts\fontawesome-webfont.woff2" />
-    <Content Include="fonts\FontAwesome.otf" />
-    <Content Include="fonts\Linearicons-Free.eot" />
-    <Content Include="fonts\Linearicons-Free.ttf" />
-    <Content Include="fonts\Linearicons-Free.woff" />
-    <Content Include="fonts\Linearicons-Free.woff2" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -499,10 +479,6 @@
     <Folder Include="Views\Paypal\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />

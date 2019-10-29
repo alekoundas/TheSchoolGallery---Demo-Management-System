@@ -45,11 +45,11 @@
 -------------------------------- */
 
 /*#region INITIAL*/
-@import url('https://fonts.googleapis.com/css?family=Josefin+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Arvo&display=swap');
 
 body {
     color: #777;
-    font-family: 'Josefin Slab', serif;
+    font-family: 'Arvo', serif;
     font-size: 14px;
     font-weight: 300;
     line-height: 1.5em;
@@ -107,7 +107,7 @@ a, a:focus, a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Josefin Slab', serif;
+    font-family: 'Arvo', serif;
     color: #222;
     line-height: 1.5em;
     margin-bottom: 0;
@@ -118,7 +118,7 @@ h1, h2, h3, h4, h5, h6 {
 .h1, .h2, .h3, .h4, .h5, .h6 {
     margin-bottom: 0;
     margin-top: 0;
-    font-family: 'Josefin Slab', serif;
+    font-family: 'Arvo', serif;
     font-weight: 600;
     color: #222
 }
@@ -4000,5 +4000,11 @@ section hr {
 }
 
 /*#endregion DETAILING*/
+
+/* -------------------------------- 
+
+    MODAL
+
+-------------------------------- */
 
 
