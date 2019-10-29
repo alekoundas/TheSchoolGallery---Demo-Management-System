@@ -17,17 +17,11 @@ $(document).ready(function () {
 
     });
 
-    // Edo to switching tou BANNER stin arxi (to engala gia tin wra)
-    // BANNER ------------------------------------------------------->>
-    //$('#boxTwo').hide();
-    //// Swap Typing letters with Main Parallax Banner
-    //$('#paintBrushButton').on('click',
-    //    function () {
-    //        $('#boxOne, #boxTwo').toggle(3200);
-    //        //$('#boxOne, #boxTwo').fadeToggle("slow", "linear");
 
-    //    }
-    //);
+    
+
+
+
 
     $("#drawingCtrl").hide(0);
 

@@ -8,15 +8,15 @@
 
         @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
         <a href="@Url.Action("Profile", "Profile")"><img src="~/images/loged.png" /></a>
-        <a href="javascript:document.getElementById('logoutForm').submit()"><img src="~/images/logoff.png" />log off</a>
+        <a href="javascript:document.getElementById('logoutForm').submit()"><img id="iconBtn" src="~/images/UIcons/logoff.png" />log off</a>
 
     }
 }
 else
 {
     // Log In / Register Buttons ------------------------------------------->>
-    <a href="@Url.Action("Login", "Account")"><img src="~/images/login.png" /> log in </a>
-    <a href="@Url.Action("Register", "Account")"><img src="~/images/register.png" /> register </a>
+    <a href="@Url.Action("Login", "Account")"><img id="iconBtn" src="~/images/UIcons/login.png" /> log in </a>
+    <a href="@Url.Action("Register", "Account")"><img id="iconBtn" src="~/images/UIcons/register.png" /> register </a>
 
     // Cart / Donations ---------------------------------------------------->>
     <a href="@Url.Action("Index", "PayPal")"><img src="~/images/cart.png" /> cart </a>
