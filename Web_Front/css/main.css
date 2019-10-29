@@ -3791,6 +3791,14 @@ input.inputchat {
 
 /*#endregion COLORING*/
 
+/* -------------------------------- 
+
+    DETAILING
+
+-------------------------------- */
+
+/*#region DETAILING*/
+
 .wrap-Avatar {
     position: relative;
     height: auto;
@@ -3963,3 +3971,34 @@ section hr {
 .wrap-studentAvatar img {
     width:100%;
 }
+
+#colorChanging h3 {
+    color: #5c5c5c;
+    /*animation of color change application [strong]*/
+    -webkit-animation: Color_Change_Strong 180s infinite;
+    animation: Color_Change_Strong 120s infinite;
+    animation-delay: 6s;
+    -webkit-transition-timing-function: ease-in;
+}
+
+#colorChanging h4 {
+    color: #5c5c5c;
+    /*animation of color change application [strong]*/
+    -webkit-animation: Color_Change_Strong 180s infinite;
+    animation: Color_Change_Strong 120s infinite;
+    animation-delay: 6s;
+    -webkit-transition-timing-function: ease-in;
+}
+
+#colorChanging h5 {
+    color: #5c5c5c;
+    /*animation of color change application [strong]*/
+    -webkit-animation: Color_Change_Strong 180s infinite;
+    animation: Color_Change_Strong 120s infinite;
+    animation-delay: 6s;
+    -webkit-transition-timing-function: ease-in;
+}
+
+/*#endregion DETAILING*/
+
+

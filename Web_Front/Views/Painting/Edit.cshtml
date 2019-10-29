@@ -18,7 +18,7 @@
                         <div class="avatar_main" id="place1" ondrop="dropIt(event);" ondragover="event.preventDefault();">
                             <div><img class="avatar_child" src="~/images/paintings/@Html.DisplayFor(model => model.ImageUrl)" /></div>
                         </div>
-                        <img class="float-right" src="~/images/logoff.png" />
+                        <img id="iconBtn" class="float-right" src="~/images/UIcons/logoff.png" />
                     </div>
                 </div>
 
@@ -66,7 +66,7 @@
                         <br />
                         <hr />
                         <div id="dark_back_C">
-                            <a href="@Url.Action("Index", "Painting")"><img src="~/images/menu.png" /> back to paintings </a>
+                            <a href="@Url.Action("Index", "Painting")"><img id="iconBtn" src="~/images/UIcons/paintings.png" /> back to paintings </a>
                         </div>
                     </section>
 

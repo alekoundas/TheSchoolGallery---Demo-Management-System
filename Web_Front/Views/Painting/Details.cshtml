@@ -17,7 +17,6 @@
                             <div class="avatar_main" id="place1" ondrop="dropIt(event);" ondragover="event.preventDefault();">
                                 <div><img class="avatar_child" src="~/images/paintings/@Html.DisplayFor(model => model.ImageUrl)" /></div>                               
                             </div>
-                            <img class="float-right" src="~/images/logoff.png" />
                         </div>
                     </div>
 
@@ -31,8 +30,8 @@
                             </div>
                             <br />
                             <div>
-                                <a style="color:#f3efe9" href="@Url.Action("Index", "Painting")"><img src="~/images/menu.png" /> back to paintings </a>
-                                <a style="color:#f3efe9" href="@Url.Action("Edit", "Painting", new { id = Model.PaintingId })"><img src="~/images/menu.png" /> edit painting </a>
+                                <a style="color:#f3efe9" href="@Url.Action("Index", "Painting")"><img id="iconBtn" src="~/images/UIcons/paintings_off.png" /> back to paintings </a>
+                                <a style="color:#f3efe9" href="@Url.Action("Edit", "Painting", new { id = Model.PaintingId })"><img id="iconBtn" src="~/images/UIcons/paintings_off.png" /> edit painting </a>
                             </div>
                         </div>
                     </div>
