@@ -63,7 +63,7 @@
                                 <h5 class="text-right">
                                     Suggested Donation: @Html.DisplayFor(modelItem => item.Price) <i class="fa fa-eur" aria-hidden="true"></i>
                                 </h5>
-                                <a href="#"><img class="float-right" src="~/images/cart.png" /></a>
+                                <a href="@Url.Action("AddToCart", "Paypal", new { PaintingID = item.PaintingId })"><img class="float-right" src="~/images/cart.png" /></a>
 
                             </div>
                         </div>

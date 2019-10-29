@@ -31,11 +31,12 @@ namespace Web_DomainClasses.Entities.School
 
         [Display(Name = "Telephone")]
         public long Tel { get; set; }
+        public string PlaceId { get; set; }
 
         // Has many Goals ---------------------------------->>
         //public virtual ICollection<Goal> Goals { get; set; }
 
         // Has many Classes -------------------------------->>
-        public  ICollection<Classroom> Classroom { get; set; }
+        public ICollection<Classroom> Classroom { get; set; }
     }
 }

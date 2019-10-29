@@ -65,18 +65,24 @@
                                 <span class="focus-input100-2"></span>
                             </div>
 
+
+
+                            @* <Google Maps Start Here>  *@
+
+                            <div id="gmap" style="width:100%;height:400px;"></div> @*The Map Will Be Displayed*@
+                            <input name='start' id='origin-input' class='form-control' type='text' placeholder='Ορίστε Τοποθεσια'> @*Input With AutoComplete From GoogleAPI*@
+                            <input type="text" name="PlaceId" id="PlaceId" value="" hidden /> @*this Will Hold The Value Of Place So Controller Can Save it To DB*@
+
+                            @* </Google Maps Start Here> *@
+
+
                             <div class="container-login100-form-btn m-t-20">
                                 <input class="login100-form-btn" type="submit" value="Create" />
                             </div>
                             <br />
                             <hr />
                         }
-                        @* <Google Maps Start Here>  *@
 
-                        <div id="gmap" style="width:100%;height:400px;"></div>
-                        <input name='start' id='origin-input' class='form-control' type='text' placeholder='Ορίστε Τοποθεσια'>
-
-                        @* </Google Maps Start Here> *@
 
                     </div>
                 </div>
@@ -98,7 +104,6 @@
             <hr />
             <div class="container-login100-form-btn m-t-20">
                 <a href="@Url.Action("Index", "School")"><img src="~/images/schoolspng.png" /> back to schools </a>
-
                 @*@Html.ActionLink("Back to List", "Index")*@
             </div>
         </section>
@@ -154,25 +159,26 @@
 
 
                 //First
-                // me.directionsDisplay.setDirections(response);
+                me.directionsDisplay.setDirections(response);
+                $('#PlaceId').attr("value",response.geocoded_waypoints[0].place_id);
                 //bounds = new google.maps.LatLngBounds();
 
-                var service = new google.maps.places.PlacesService(map);
-                service.getDetails({
-                    placeId: response.geocoded_waypoints[0].place_id
-                }, function (result, status) {
-                    var marker = new google.maps.Marker({
-                        map: map,
-                        place: {
-                            placeId: result.place_id,
-                            location: result.geometry.location
-                        }
-                    });
+                //var service = new google.maps.places.PlacesService(map);
+                //service.getDetails({
+                //    placeId: response.geocoded_waypoints[0].place_id
+                //}, function (result, status) {
+                //    var marker = new google.maps.Marker({
+                //        map: map,
+                //        place: {
+                //            placeId: result.place_id,
+                //            location: result.geometry.location
+                //        }
+                //    });
 
-                    //loc = new google.maps.LatLng(marker.position.lat(), marker.position.lng());
-                    //bounds.extend(loc);
+                //    //loc = new google.maps.LatLng(marker.position.lat(), marker.position.lng());
+                //    //bounds.extend(loc);
 
-                });
+                //});
                 //map.fitBounds(bounds);
                 //map.panToBounds(bounds);
                 //console.log(response.geocoded_waypoints[0].place_id);

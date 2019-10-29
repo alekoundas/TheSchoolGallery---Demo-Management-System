@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,9 @@ namespace WebApi_Entities.School
         public  Avatar.Avatar Avatar { get; set; }
 
         // Has one Class ----------------------------------->>
-        public  Classroom Classroom { get; set; }
+        [ForeignKey("ClassroomFK")]
+        public Classroom Classroom { get; set; }
+
+        public int ClassroomFK { get; set; }
     }
 }

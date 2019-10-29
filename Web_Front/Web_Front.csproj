@@ -469,11 +469,11 @@
     <Content Include="Views\Home\_Canvas.cshtml" />
     <Content Include="Views\School\School_Individual.cshtml" />
     <Content Include="Views\Student\_CreateAjaxDropdown.cshtml" />
+    <Content Include="Views\Paypal\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="images\schools\" />
-    <Folder Include="Views\Paypal\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

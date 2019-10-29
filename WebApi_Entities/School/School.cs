@@ -21,12 +21,13 @@ namespace WebApi_Entities.School
         public string Adress { get; set; }
 
         public long Tel { get; set; }
+        public string PlaceId { get; set; }
 
         // Has many Goals ---------------------------------->>
         //public virtual ICollection<Goal> Goals { get; set; }
 
         // Has many Classes -------------------------------->>
-        public  ICollection<Classroom> Classroom { get; set; }
+        public ICollection<Classroom> Classroom { get; set; }
         public object Teacher { get; set; }
         public object Students { get; set; }
     }

@@ -87,8 +87,13 @@ namespace WebApi_Api.Controllers
             {
                 return BadRequest(ModelState);
             }
+
             //from GraphDiff
-            db.UpdateGraph(student);
+            student.ClassroomFK = student.Classroom.ClassroomId;
+            student.Classroom = null;
+
+
+            db.StudentDb.Add(student);
             db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = student.StudentId }, student);

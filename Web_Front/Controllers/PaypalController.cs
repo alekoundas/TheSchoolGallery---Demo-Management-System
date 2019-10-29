@@ -5,16 +5,45 @@ using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Web_DomainClasses.Entities.School;
 using Web_Front.Models.Paypal;
+using Web_Services.ApiMapping;
 
 namespace Web_Front.Controllers
 {
     public class PayPalController : MasterController
+
     {
+        PaintingApiService ServicePainting = new PaintingApiService();
         // GET: PayPal
         public ActionResult Index()
         {
-            return View();
+            List<Item> CartList = Session["CartList"] as List<Item>;
+            return View("Index", CartList);
+        }
+
+
+        public ActionResult AddToCart(int PaintingID)
+        {
+            //List<Item> CartList = Session["CartList"] as List<Item>;
+            List<Item> CartList = Session["CartList"] as List<Item>;
+
+            if (CartList == null)
+            {
+                CartList = new List<Item>();
+            }
+            Painting painting = ServicePainting.GetPainting(PaintingID);
+            Item item = new Item()
+            {
+                name = painting.PaintingTitle.ToString(),
+                currency = "USD",
+                price = painting.Price.ToString(),
+                quantity = "1",
+                sku = "sku"
+            };
+            CartList.Add(item);
+            Session["CartList"] = CartList;
+            return View("Index", CartList);
         }
 
         public ActionResult PayPalPayment()
@@ -25,20 +54,18 @@ namespace Web_Front.Controllers
                 string payerId = Request.Params["PayerID"];
                 if (string.IsNullOrEmpty(payerId))
                 {
+                    //Get Items From Session Storage
                     var itemList = new ItemList()
                     {
-                        items = new List<Item>()
-                    {
-                        new Item()
-                        {
-                            name = "Item Name",
-                            currency = "USD",
-                            price = "15",
-                            quantity = "5",
-                            sku = "sku"
-                        }
-                    }
+                        items = Session["CartList"] as List<Item>
                     };
+
+                    //Return To Cart If He Doest Have Anything In Cart
+                    if (itemList.items==null)
+                    {
+                        return View("Index");
+                    }
+
 
                     var payer = new Payer() { payment_method = "paypal" };
 
@@ -53,15 +80,15 @@ namespace Web_Front.Controllers
 
                     var details = new Details()
                     {
-                        tax = "15",
-                        shipping = "10",
-                        subtotal = "75"
+                        tax = "0",
+                        shipping = "0",
+                        subtotal = itemList.items.Select(x => int.Parse(x.price)).Sum().ToString()
                     };
 
                     var amount = new Amount()
                     {
                         currency = "USD",
-                        total = "100.00", // Total must be equal to sum of shipping, tax and subtotal.
+                        total = itemList.items.Select(x => int.Parse(x.price)).Sum().ToString(), // Total must be equal to sum of shipping, tax and subtotal.
                         details = details
                     };
 
@@ -127,7 +154,8 @@ namespace Web_Front.Controllers
                 return View("FailureView");
             }
 
-
+            //Empty Session Storage From Cart Items On Success Payment
+            Session["CartList"] = null;
             //on successful payment, show success page to user.
             return View("SuccessView");
         }
