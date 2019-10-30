@@ -475,7 +475,6 @@
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Error\404.cshtml" />
     <Content Include="Views\Home\_Canvas.cshtml" />
-    <Content Include="Views\School\School_Individual.cshtml" />
     <Content Include="Views\Student\_CreateAjaxDropdown.cshtml" />
     <Content Include="Views\Painting\_Index_Admin.cshtml" />
     <Content Include="Views\Painting\_Index_Guest.cshtml" />

@@ -4,95 +4,142 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="container">
+            <br />
+            <h2 class="text-center" style="color:#f3efe9;"> Create new Student</h2>
+            <hr />
+            <br />
+            @using (Html.BeginForm())
+            {
+                <div class="row">
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+                    <!-- Section - Student Details ---------------------------------------->
+                    <div class="col-md-8 mx-auto">
+                        <div class="wrap-Avatar" style="color:#f3efe9">
+                            <div class="wrap-login100">
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-    <div class="form-horizontal">
-        <h4>Student</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Student.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Student.FirstName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Student.FirstName, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                                <div class="wrap-avabox text-center">
+                                    @Html.EditorFor(model => model.Student.FirstName, new { htmlAttributes = new { @class = "input100", placeholder = "First Name" } })
+                                    @Html.ValidationMessageFor(model => model.Student.FirstName, "", new { @class = "text-danger" })
+                                </div>
+                                <p style="color:#909090">First Name</p>
+                                <div class="wrap-avabox text-center">
+                                    @Html.EditorFor(model => model.Student.LastName, new { htmlAttributes = new { @class = "input100", placeholder = "Last Name" } })
+                                    @Html.ValidationMessageFor(model => model.Student.LastName, "", new { @class = "text-danger" })
+                                </div>
+                                <p style="color:#909090">Last Name</p>
+                                <div class="wrap-avabox text-center">
+                                    @Html.EditorFor(model => model.Student.Age, new { htmlAttributes = new { @class = "input100", placeholder = "Age" } })
+                                    @Html.ValidationMessageFor(model => model.Student.Age, "", new { @class = "text-danger" })
+                                </div>
+                                <p style="color:#909090">Student's Age</p>
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Student.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Student.LastName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Student.LastName, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    @*Create Something side Parallax*@
+                    <div class="col-md-4 mx-auto">
+                        <div class="sideImage" id="p_container">
+                            <img class="stackImages" src="~/images/parallax/Portrait_base_01.png">
+                            <img style="bottom:-20px" class="stackImages_corr P_child" id="slidetwo" src="~/images/parallax/Portrait_hand_02.png">
+                            <img style="bottom:0px" class="stackImages p_child" id="slideone" src="~/images/parallax/Portrait_body_02.png">
+                        </div>
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Student.Age, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Student.Age, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Student.Age, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    <div class="col-md-12 mx-auto">
+
+                        @* [TA PEIRAKSA yiocho] *@
+                        @*O--------------------------------------------------------------------------------------O*@
+                        @*//School Dropdown*@
+                        <div class="row mx-0">
+                            <div class="col px-0">
+                                <div id="lineW" class="login100-form-btn">
+                                    <span style="color:#ffffff; margin-right:20px;">@Html.LabelFor(model => model.Schools, htmlAttributes: new { @class = "text-center" })</span> :
+                                    <select name="SelectedSchoolID" id="SelectedSchoolID" onchange="UpdateClassroomDropDown()">
+                                        @for (int i = 0; i < Model.Schools.Count; i++)
+                                        {
+                                            <option value="@Model.Schools.ElementAt(i).SchoolId">@Model.Schools.ElementAt(i).Name</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            @* Classroom Dropdown *@
+
+                            <div class="col px-0">
+                                <div id="lineC" class="login100-form-btn">
+                                    <span style="color:#ffffff; margin-right:20px;">@Html.LabelFor(model => model.Classrooms, htmlAttributes: new { @class = "text-center" })</span> :
+
+                                    @*palios kodikas me swsti morfopoiisi*@
+                                    @*<div id="ClassroomDropdown">
+                                            <select name="SelectedSchoolID" id="SelectedSchoolID" onchange="UpdateClassroomDropDown()">
+                                                @for (int i = 0; i < Model.Schools.Count; i++)
+                                                {
+                                                    <option value="@Model.Schools.ElementAt(i).SchoolId">@Model.Schools.ElementAt(i).Name</option>
+                                                }
+                                            </select>
+                                        </div>*@
+
+                                    @*Alex*@
+                                    <div name="SelectedSchoolID" id="SelectedSchoolID" onchange="UpdateClassroomDropDown()">
 
 
-        @* Alex TheBuilder: Classrooms  Drop Down List (αργοτερα θα γινει με ajax η ανανεωση αναμεσα στις 2 λιστες)  *@
-        <div class="form-group">
-            <div class="col-md-10">
+                                        <div id="ClassroomDropdown">   </div>
 
-                @*//School Dropdown*@
-                @Html.LabelFor(model => model.Schools, htmlAttributes: new { @class = "control-label col-md-2" })
-                <select name="SelectedSchoolID" id="SelectedSchoolID" onchange="UpdateClassroomDropDown()">
-                    @for (int i = 0; i < Model.Schools.Count; i++)
-                    {
-                        <option value="@Model.Schools.ElementAt(i).SchoolId">@Model.Schools.ElementAt(i).Name</option>
-                    }
-                </select>
+                                    </div>
 
 
-                @* Classroom Dropdown *@
-                @Html.LabelFor(model => model.Classrooms, htmlAttributes: new { @class = "control-label col-md-2" })
-              <div id="ClassroomDropdown"></div>         
-                        
-            </div>
+                                </div>
+                            </div>
+                        </div>
+                        @*O--------------------------------------------------------------------------------------O*@
 
+                        <br />
+                        <div class="container-login100-form-btn m-t-20">
+                            <input class="login100-form-btn" type="submit" value="Create" />
+                        </div>
 
-        </div>
+                        <section id="socialLoginForm" class="text-center">
+                            <br />
+                            <hr />
+                            <div id="dark_back_C">
+                                <a href="@Url.Action("Index", "Student")"><img id="iconBtn" src="~/images/UIcons/login.png" /> back to students </a>
+                            </div>
+                        </section>
+                    </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+                </div>
+            }
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>
 
-<script>
-    function UpdateClassroomDropDown() {
-        var DropdownVal = $('#SelectedSchoolID').val();   
-        console.log(DropdownVal);
-        $.ajax({    
-        datatype: "text/plain",
-        type: "POST",
-        url: '/Student/UpdateDropDownList/?SchoolID='+DropdownVal,
-        cache: false,
-            success: function (data) {
-                console.log(data);
-                $('#ClassroomDropdown').html(data);
-            }
-        });
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        function UpdateClassroomDropDown() {
+            var DropdownVal = $('#SelectedSchoolID').val();
+            console.log(DropdownVal);
+            $.ajax({
+                datatype: "text/plain",
+                type: "POST",
+                url: '/Student/UpdateDropDownList/?SchoolID=' + DropdownVal,
+                cache: false,
+                success: function (data) {
+                    console.log(data);
+                    $('#ClassroomDropdown').html(data);
+                }
+            });
 
 
-    }
-</script>
+        }
+    </script>
 
-
+}
 
 @*//@Url.Action("UpdateDropDownList")*@

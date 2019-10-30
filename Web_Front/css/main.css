@@ -1863,7 +1863,11 @@ body {
 }
 
 .menu-bar {
-    cursor: pointer
+    width:56px;
+    height:56px;
+    cursor: pointer;
+    border: 2px dotted #f3efe9;
+    border-radius:50%;
 }
 
     .menu-bar span {
@@ -3114,11 +3118,6 @@ body {
     margin: 0px;
 }
 
-.Schooldesc h2, h3 {
-    color: #f3efe9;
-    margin: 0px;
-    text-shadow: -1px 1px #424242;
-}
 
 /*#region INPUTS*/
 /*---------------------------------------------*/
@@ -3242,7 +3241,7 @@ iframe {
     height: auto;
     min-height: 500px;
     padding: 25px;
-    background: #fff;
+    background: #f3efe9;
     overflow: hidden;
     box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
 }
@@ -3270,6 +3269,7 @@ iframe {
     width: 100%;
     position: relative;
     background-color: #fff;
+    border: 1px dotted #f3efe9;
 }
 
     .wrap-input100.rs1 {
@@ -3912,6 +3912,7 @@ section hr {
 }
 
 #emojiis {
+    color: #4a4a4a;
     /*animation of color change application [strong]*/
     -webkit-animation: Color_Change_Strong 180s infinite;
     animation: Color_Change_Strong 120s infinite;
@@ -3954,9 +3955,10 @@ section hr {
     border: 2px dotted #f3efe9;
 }
 
-    .sideFrame h1, h2, h3, h4, h5 {
-        color: #f3efe9;
-    }
+.sideFrame h1, h2, h3, h4, h5 {
+    color: #f3efe9;
+    text-shadow: none;
+}
 
 .wrap-studentAvatar {
     position: relative;
@@ -4005,7 +4007,7 @@ section hr {
     text-shadow: none;
 }
 
-.paintingInfoD h4, .paintingInfoD h5, .paintingInfoD hr, .paintingInfoD a {
+.paintingInfoD h2,.paintingInfoD h4, .paintingInfoD h5, .paintingInfoD hr, .paintingInfoD a {
     color: #5c5c5c;
     text-shadow: none;
 }

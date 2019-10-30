@@ -14,50 +14,50 @@
             <div class="row">
                 <div class="col-md-8 mx-auto">
                     <div class="wrap-login100">
-                       
-                            <span class="login100-form-title p-b-33">
-                                Create New Painting
-                            </span>
 
-                            @using (Html.BeginForm())
-                            {
+                        <span class="login100-form-title p-b-33">
+                            Create New Painting
+                        </span>
 
-                                @Html.AntiForgeryToken()
-                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @using (Html.BeginForm())
+                        {
 
-                                <div class="wrap-input100">
-                                    @Html.EditorFor(model => model.ImageUrl, new { htmlAttributes = new { @class = "input100", placeholder = "Image" } })
-                                    @Html.ValidationMessageFor(model => model.ImageUrl, "", new { @class = "text-danger" })
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                                    <span class="focus-input100-1"></span>
-                                    <span class="focus-input100-2"></span>
-                                </div>
+                            <div class="wrap-input100">
+                                @Html.EditorFor(model => model.ImageUrl, new { htmlAttributes = new { @class = "input100", placeholder = "Image" } })
+                                @Html.ValidationMessageFor(model => model.ImageUrl, "", new { @class = "text-danger" })
 
-                                <div class="wrap-input100">
-                                    @Html.EditorFor(model => model.PaintingTitle, new { htmlAttributes = new { @class = "input100", placeholder = "PaintingTitle" } })
-                                    @Html.ValidationMessageFor(model => model.PaintingTitle, "", new { @class = "text-danger" })
+                                <span class="focus-input100-1"></span>
+                                <span class="focus-input100-2"></span>
+                            </div>
 
-                                    <span class="focus-input100-1"></span>
-                                    <span class="focus-input100-2"></span>
-                                </div>
+                            <div class="wrap-input100">
+                                @Html.EditorFor(model => model.PaintingTitle, new { htmlAttributes = new { @class = "input100", placeholder = "PaintingTitle" } })
+                                @Html.ValidationMessageFor(model => model.PaintingTitle, "", new { @class = "text-danger" })
 
-                                <div class="wrap-input100">
-                                    @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "input100", placeholder = "Price" } })
-                                    @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                                <span class="focus-input100-1"></span>
+                                <span class="focus-input100-2"></span>
+                            </div>
 
-                                    <span class="focus-input100-1"></span>
-                                    <span class="focus-input100-2"></span>
-                                </div>
+                            <div class="wrap-input100">
+                                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "input100", placeholder = "Price" } })
+                                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+
+                                <span class="focus-input100-1"></span>
+                                <span class="focus-input100-2"></span>
+                            </div>
 
 
-                                <div class="container-login100-form-btn m-t-20">
-                                    <input class="login100-form-btn" type="submit" value="Create" />
-                                </div>
-                                <br />
-                                <hr />
-                            }
+                            <div class="container-login100-form-btn m-t-20">
+                                <input class="login100-form-btn" type="submit" value="Create" />
+                            </div>
+                            <br />
+                            <hr />
+                        }
 
-                      
+
                     </div>
                 </div>
 
@@ -85,7 +85,9 @@
 </div>
 
 
-
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
 
 
 

@@ -43,15 +43,11 @@
 
                     @*Create Something side Parallax*@
                     <div class="col-md-4 mx-auto">
-
-
-                        @*Create Something side Parallax*@
                         <div class="sideImage" id="p_container">
                             <img class="stackImages" src="~/images/parallax/Portrait_base_01.png">
                             <img style="bottom:-20px" class="stackImages_corr P_child" id="slidetwo" src="~/images/parallax/Portrait_hand_02.png">
                             <img style="bottom:0px" class="stackImages p_child" id="slideone" src="~/images/parallax/Portrait_body_02.png">
                         </div>
-
                     </div>
 
                     <div class="col-md-12 mx-auto">
@@ -100,4 +96,6 @@
 </div>
 
 
-
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

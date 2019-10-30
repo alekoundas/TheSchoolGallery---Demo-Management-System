@@ -50,29 +50,29 @@
                         {
                             <div class="col-lg-4 col-sm-6 align-items-stretch">
                                 <div class="paintingcontainer">
-                                    <div class="wrap-Painting">
+                                    <div style="height:500px; min-height:450px;" class="dottedFrame">
                                         <div class="painting">
                                             <img src="~/images/paintings/@Html.DisplayFor(modelItem => item.ImageUrl)" />
                                         </div>
                                         <br />
                                         <div class="paintingdesc">
-                                            <h4 class="text-center">@Html.DisplayFor(modelItem => item.PaintingTitle) </h4>
-                                            <br />
-                                            <hr />
-                                            <h5 class="text-center">
-                                                Suggested Donation: @Html.DisplayFor(modelItem => item.Price) <i class="fa fa-eur" aria-hidden="true"></i>
-                                            </h5>
-
-                                            <a href="#"><img id="iconBtn" class="float-right" src="~/images/UIcons/cart_off.png" /></a>
+                                            <div class="paintingInfo">
+                                                <h4>@Html.DisplayFor(modelItem => item.PaintingTitle) </h4>
+                                                <hr />
+                                                <h5 class="text-right">
+                                                    Suggested Donation:  <span style="font-size:24px; font-weight:800;" class="fa"> @Html.DisplayFor(modelItem => item.Price)</span><i class="fa fa-eur" aria-hidden="true"></i>
+                                                </h5>
+                                                <a href="#"><img class="float-right" src="~/images/UIcons/cart_off.png" /></a>
+                                            </div>
 
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         }
                     </div>
                 </div>
-
 
                 <!-- Section - Links ---------------------------------------->
                 <div class="col-md-12 mx-auto text-center">

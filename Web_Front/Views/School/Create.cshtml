@@ -10,107 +10,93 @@
         <div class="container">
             <br />
             <br />
+            <h2 class="text-center" style="color:#f3efe9;"> Create new School</h2>
+            <hr />
             <br />
-            <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <div class="wrap-login100">
+            @using (Html.BeginForm())
+            {
+                <div class="row">
 
-                        <span class="login100-form-title p-b-33">
-                            Create New School
-                        </span>
+                    <!-- Section - School Details ---------------------------------------->
+                    <div class="col-md-8 mx-auto">
+                        <div class="wrap-Avatar" style="color:#f3efe9">
+                            <div class="wrap-login100">
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                        @using (Html.BeginForm())
-                        {
+                                <div class="wrap-avabox text-center">
+                                    @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "input100", placeholder = "Image" } })
+                                    @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                                </div>
+                                <p style="color:#909090">Image File</p>
+                                <div class="wrap-avabox text-center">
+                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "input100", placeholder = "Name" } })
+                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                </div>
+                                <p style="color:#909090">Name</p>
+                                <div class="wrap-avabox text-center">
+                                    @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "input100", placeholder = "City" } })
+                                    @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+                                </div>
+                                <p style="color:#909090">City</p>
+                                <div class="wrap-avabox text-center">
+                                    @Html.EditorFor(model => model.Adress, new { htmlAttributes = new { @class = "input100", placeholder = "Address" } })
+                                    @Html.ValidationMessageFor(model => model.Adress, "", new { @class = "text-danger" })
+                                </div>
+                                <p style="color:#909090">Address</p>
+                                <div class="wrap-avabox text-center">
+                                    @Html.EditorFor(model => model.Tel, new { htmlAttributes = new { @class = "input100", placeholder = "Telephone" } })
+                                    @Html.ValidationMessageFor(model => model.Tel, "", new { @class = "text-danger" })
+                                </div>
+                                <p style="color:#909090">Telephone</p>
 
-                            @Html.AntiForgeryToken()
-                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-                            <div class="wrap-input100">
-                                @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "input100", placeholder = "Image" } })
-                                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
-
-                                <span class="focus-input100-1"></span>
-                                <span class="focus-input100-2"></span>
                             </div>
+                        </div>
+                    </div>
 
-                            <div class="wrap-input100">
-                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "input100", placeholder = "Name" } })
-                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    @*Create Something side Parallax*@
+                    <div class="col-md-4 mx-auto">
+                        <div class="sideImage" id="p_container">
+                            <img class="stackImages" src="~/images/parallax/Portrait_base_01.png">
+                            <img style="bottom:-20px" class="stackImages_corr P_child" id="slidetwo" src="~/images/parallax/Portrait_hand_02.png">
+                            <img style="bottom:0px" class="stackImages p_child" id="slideone" src="~/images/parallax/Portrait_body_02.png">
+                        </div>
+                    </div>
 
-                                <span class="focus-input100-1"></span>
-                                <span class="focus-input100-2"></span>
-                            </div>
+                    <div class="col-md-12 mx-auto">
 
-                            <div class="wrap-input100">
-                                @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "input100", placeholder = "City" } })
-                                @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+                        @* <Google Maps Start Here>  *@
 
-                                <span class="focus-input100-1"></span>
-                                <span class="focus-input100-2"></span>
-                            </div>
-
-                            <div class="wrap-input100">
-                                @Html.EditorFor(model => model.Adress, new { htmlAttributes = new { @class = "input100", placeholder = "Address" } })
-                                @Html.ValidationMessageFor(model => model.Adress, "", new { @class = "text-danger" })
-
-                                <span class="focus-input100-1"></span>
-                                <span class="focus-input100-2"></span>
-                            </div>
-
-                            <div class="wrap-input100">
-                                @Html.EditorFor(model => model.Tel, new { htmlAttributes = new { @class = "input100", placeholder = "Telephone" } })
-                                @Html.ValidationMessageFor(model => model.Tel, "", new { @class = "text-danger" })
-
-                                <span class="focus-input100-1"></span>
-                                <span class="focus-input100-2"></span>
-                            </div>
-
-
-
-                            @* <Google Maps Start Here>  *@
-
+                        <div class="sideFrame">
                             <div id="gmap" style="width:100%;height:400px;"></div> @*The Map Will Be Displayed*@
-                            <input name='start' id='origin-input' class='form-control' type='text' placeholder='Ορίστε Τοποθεσια'> @*Input With AutoComplete From GoogleAPI*@
+                            <input name='start' id='origin-input' class='input100' type='text' placeholder='Give School Location'> @*Input With AutoComplete From GoogleAPI*@
                             <input type="text" name="PlaceId" id="PlaceId" value="" hidden /> @*this Will Hold The Value Of Place So Controller Can Save it To DB*@
+                        </div>
+                        @* </Google Maps Start Here> *@
 
-                            @* </Google Maps Start Here> *@
 
+                        <br />
+                        <div class="container-login100-form-btn m-t-20">
+                            <input class="login100-form-btn" type="submit" value="Create" />
+                        </div>
 
-                            <div class="container-login100-form-btn m-t-20">
-                                <input class="login100-form-btn" type="submit" value="Create" />
-                            </div>
+                        <section id="socialLoginForm" class="text-center">
                             <br />
                             <hr />
-                        }
-
+                            <div id="dark_back_C">
+                                <a href="@Url.Action("Index", "School")"><img id="iconBtn" src="~/images/UIcons/schools_off.png" /> back to schools </a>
+                            </div>
+                        </section>
 
                     </div>
+
                 </div>
-
-                <div class="col-md-3 mx-auto">
-                    <div class="sideImage" id="p_container">
-                        <img class="stackImages" src="~/images/parallax/Portrait_base_01.png">
-                        <img style="bottom:0px" class="stackImages p_child" id="slideone" src="~/images/parallax/Portrait_body_01.png">
-                        <img style="bottom:0px" class="stackImages P_child" id="slidetwo" src="~/images/parallax/Portrait_hand_01.png">
-                    </div>
-                </div>
-
-
-            </div>
+            }
         </div>
-
-        <section id="socialLoginForm">
-            <h3 class="text-center" style="color:white">Return</h3>
-            <hr />
-            <div class="container-login100-form-btn m-t-20">
-                <a href="@Url.Action("Index", "School")"><img id="iconBtn" src="~/images/UIcons/schools_off.png" /> back to schools </a>
-
-                @*@Html.ActionLink("Back to List", "Index")*@
-            </div>
-        </section>
-
     </div>
 </div>
+
+
 
 @*                            BETA GMAPS API                                        *@
 
@@ -118,7 +104,90 @@
 
 
     function initMap() {
-        map = new google.maps.Map(document.getElementById('gmap'), { zoom: 8, center: { lat: 37.983810, lng: 23.727539 } });
+        var map = new google.maps.Map(document.getElementById('gmap'), {
+            center: { lat: 40.674, lng: -73.945 },
+            zoom: 12,
+            styles: [
+                { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
+                { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },
+                { elementType: 'labels.text.fill', stylers: [{ color: '#746855' }] },
+                {
+                    featureType: 'administrative.locality',
+                    elementType: 'labels.text.fill',
+                    stylers: [{ color: '#d59563' }]
+                },
+                {
+                    featureType: 'poi',
+                    elementType: 'labels.text.fill',
+                    stylers: [{ color: '#d59563' }]
+                },
+                {
+                    featureType: 'poi.park',
+                    elementType: 'geometry',
+                    stylers: [{ color: '#263c3f' }]
+                },
+                {
+                    featureType: 'poi.park',
+                    elementType: 'labels.text.fill',
+                    stylers: [{ color: '#6b9a76' }]
+                },
+                {
+                    featureType: 'road',
+                    elementType: 'geometry',
+                    stylers: [{ color: '#38414e' }]
+                },
+                {
+                    featureType: 'road',
+                    elementType: 'geometry.stroke',
+                    stylers: [{ color: '#212a37' }]
+                },
+                {
+                    featureType: 'road',
+                    elementType: 'labels.text.fill',
+                    stylers: [{ color: '#9ca5b3' }]
+                },
+                {
+                    featureType: 'road.highway',
+                    elementType: 'geometry',
+                    stylers: [{ color: '#746855' }]
+                },
+                {
+                    featureType: 'road.highway',
+                    elementType: 'geometry.stroke',
+                    stylers: [{ color: '#1f2835' }]
+                },
+                {
+                    featureType: 'road.highway',
+                    elementType: 'labels.text.fill',
+                    stylers: [{ color: '#f3d19c' }]
+                },
+                {
+                    featureType: 'transit',
+                    elementType: 'geometry',
+                    stylers: [{ color: '#2f3948' }]
+                },
+                {
+                    featureType: 'transit.station',
+                    elementType: 'labels.text.fill',
+                    stylers: [{ color: '#d59563' }]
+                },
+                {
+                    featureType: 'water',
+                    elementType: 'geometry',
+                    stylers: [{ color: '#17263c' }]
+                },
+                {
+                    featureType: 'water',
+                    elementType: 'labels.text.fill',
+                    stylers: [{ color: '#515c6d' }]
+                },
+                {
+                    featureType: 'water',
+                    elementType: 'labels.text.stroke',
+                    stylers: [{ color: '#17263c' }]
+                }
+            ]
+        });
         new AutocompleteDirectionsHandler(map);
     }
     function AutocompleteDirectionsHandler(map) {
@@ -161,7 +230,7 @@
 
                 //First
                 me.directionsDisplay.setDirections(response);
-                $('#PlaceId').attr("value",response.geocoded_waypoints[0].place_id);
+                $('#PlaceId').attr("value", response.geocoded_waypoints[0].place_id);
                 //bounds = new google.maps.LatLngBounds();
 
                 //var service = new google.maps.places.PlacesService(map);
@@ -188,3 +257,7 @@
     };
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCucoJw77Lpe1D97ZE4Nin_yakyZ_npPgs&libraries=places&callback=initMap" async defer></script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
