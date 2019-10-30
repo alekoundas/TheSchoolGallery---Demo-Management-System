@@ -217,12 +217,8 @@
     <Content Include="css\nice-select.css" />
     <Content Include="css\owl.carousel.css" />
     <Content Include="css\parallaxStyle.css" />
+    <Content Include="css\pfold.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\elegant-theme-line.svg" />
-    <Content Include="fonts\flexslider-icon.svg" />
-    <Content Include="fonts\fontawesome-webfont.svg" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="fonts\Linearicons-Free.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="images\Avatar\back_01.png" />
@@ -255,6 +251,7 @@
     <Content Include="images\fancybox_sprite%402x.png" />
     <Content Include="images\fancybox_sprite.png" />
     <Content Include="images\kid_brush.png" />
+    <Content Include="images\noise.png" />
     <Content Include="images\paintings\painting_001.jpg" />
     <Content Include="images\paintings\painting_002.jpg" />
     <Content Include="images\paintings\painting_003.jpg" />
@@ -317,6 +314,7 @@
     <Content Include="images\paintings\painting_060.jpg" />
     <Content Include="images\paintings\painting_061.jpg" />
     <Content Include="images\paintings\painting_062.jpg" />
+    <Content Include="images\paper.jpg" />
     <Content Include="images\parallax\birds.png" />
     <Content Include="images\parallax\clouds_back.png" />
     <Content Include="images\parallax\clouds_front.png" />
@@ -379,7 +377,9 @@
     <Content Include="js\jquery.counterup.min.js" />
     <Content Include="js\jquery.magnific-popup.min.js" />
     <Content Include="js\jquery.nice-select.min.js" />
+    <Content Include="js\jquery.pfold.js" />
     <Content Include="js\main.js" />
+    <Content Include="js\modernizr.custom.79639.js" />
     <Content Include="js\owl.carousel.min.js" />
     <Content Include="js\parallax.js" />
     <Content Include="js\pgwslider.min.js" />
@@ -391,21 +391,6 @@
     <Content Include="js\waypoints.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="fonts\elegant-theme-line.eot" />
-    <Content Include="fonts\elegant-theme-line.ttf" />
-    <Content Include="fonts\elegant-theme-line.woff" />
-    <Content Include="fonts\flexslider-icon.eot" />
-    <Content Include="fonts\flexslider-icon.ttf" />
-    <Content Include="fonts\flexslider-icon.woff" />
-    <Content Include="fonts\fontawesome-webfont.eot" />
-    <Content Include="fonts\fontawesome-webfont.ttf" />
-    <Content Include="fonts\fontawesome-webfont.woff" />
-    <Content Include="fonts\fontawesome-webfont.woff2" />
-    <Content Include="fonts\FontAwesome.otf" />
-    <Content Include="fonts\Linearicons-Free.eot" />
-    <Content Include="fonts\Linearicons-Free.ttf" />
-    <Content Include="fonts\Linearicons-Free.woff" />
-    <Content Include="fonts\Linearicons-Free.woff2" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -492,17 +477,15 @@
     <Content Include="Views\Home\_Canvas.cshtml" />
     <Content Include="Views\School\School_Individual.cshtml" />
     <Content Include="Views\Student\_CreateAjaxDropdown.cshtml" />
-    <Content Include="Views\Paypal\Index.cshtml" />
+    <Content Include="Views\Painting\_Index_Admin.cshtml" />
+    <Content Include="Views\Painting\_Index_Guest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="images\schools\" />
+    <Folder Include="Views\Paypal\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />

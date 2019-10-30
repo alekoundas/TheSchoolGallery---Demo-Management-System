@@ -1,4 +1,4 @@
-/*#region INITIALISERS*/
+﻿/*#region INITIALISERS*/
 
 ::-moz-selection {
     background-color: #ffaa62;
@@ -45,11 +45,11 @@
 -------------------------------- */
 
 /*#region INITIAL*/
-@import url('https://fonts.googleapis.com/css?family=Josefin+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Arvo&display=swap');
 
 body {
     color: #777;
-    font-family: 'Josefin Slab', serif;
+    font-family: 'Arvo', serif;
     font-size: 14px;
     font-weight: 300;
     line-height: 1.5em;
@@ -107,7 +107,7 @@ a, a:focus, a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Josefin Slab', serif;
+    font-family: 'Arvo', serif;
     color: #222;
     line-height: 1.5em;
     margin-bottom: 0;
@@ -118,7 +118,7 @@ h1, h2, h3, h4, h5, h6 {
 .h1, .h2, .h3, .h4, .h5, .h6 {
     margin-bottom: 0;
     margin-top: 0;
-    font-family: 'Josefin Slab', serif;
+    font-family: 'Arvo', serif;
     font-weight: 600;
     color: #222
 }
@@ -3080,7 +3080,8 @@ body {
 }
 
 .paintingcontainer {
-    margin-bottom: 80px;
+    margin-bottom: 100px;
+    padding:20px;
 }
 
 .wrap-Painting {
@@ -3999,6 +4000,31 @@ section hr {
     -webkit-transition-timing-function: ease-in;
 }
 
+.paintingInfo h4, .paintingInfo h5, .paintingInfo hr, .paintingInfo a {
+    color: #f3efe9;
+    text-shadow: none;
+}
+
+.paintingInfoD h4, .paintingInfoD h5, .paintingInfoD hr, .paintingInfoD a {
+    color: #5c5c5c;
+    text-shadow: none;
+}
+
+.paintingInfo {
+
+    margin-bottom: 20px;
+}
+
 /*#endregion DETAILING*/
+
+/* -------------------------------- 
+
+    MODAL
+
+-------------------------------- */
+
+
+
+
 
 

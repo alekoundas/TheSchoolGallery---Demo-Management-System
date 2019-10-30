@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="~/css/magnific-popup.css">
     <link rel="stylesheet" href="~/css/bootstrap.css">
     <link rel="stylesheet" href="~/css/animate.css">
+    <link rel="stylesheet" href="~/css/pfold.css" />
     <link rel="stylesheet" href="~/css/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
@@ -50,7 +51,41 @@
     <script src="~/js/waypoints.min.js"></script>
     <script src="~/js/parallax.js"></script>
     <script src="~/js/typewriter.js"></script>
+    <script src="~/js/modernizr.custom.79639.js"></script>
+    <script src="~/js/jquery.pfold.js"></script>
     <script src="~/js/main.js"></script>
+
+    @*MODAL POWER ---------------------------------------->> *@
+    <script>
+        $(function () {
+            // say we want to have only one item opened at one moment
+            var opened = false;
+            $('#grid > div.uc-container').each(function (i) {
+                var $item = $(this), direction;
+                switch (i) {
+                    case 0: direction = ['right', 'bottom']; break;
+                    case 1: direction = ['left', 'bottom']; break;
+                    case 2: direction = ['right', 'top']; break;
+                    case 3: direction = ['left', 'top']; break;
+                }
+                var pfold = $item.pfold({
+                    folddirection: direction,
+                    speed: 300,
+                    onEndFolding: function () { opened = false; },
+                });
+                $item.find('#openit').on('click', function () {
+
+                    if (!opened) {
+                        opened = true;
+                        pfold.unfold();
+                    }
+                }).end().find('#closeit').on('click', function () {
+                    pfold.fold();
+                });
+            });
+        });
+    </script>
+
 
     @* Alex --> SignalR Scripts: *@
     <script src="~/Scripts/jquery.signalR-2.2.2.min.js"></script>
