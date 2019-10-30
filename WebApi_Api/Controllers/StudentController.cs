@@ -88,7 +88,6 @@ namespace WebApi_Api.Controllers
                 return BadRequest(ModelState);
             }
 
-            //from GraphDiff
             student.ClassroomFK = student.Classroom.ClassroomId;
             student.Classroom = null;
 

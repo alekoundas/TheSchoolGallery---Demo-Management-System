@@ -28,7 +28,7 @@ namespace WebApi_Entities.School
 
         // Has many Classes -------------------------------->>
         public ICollection<Classroom> Classroom { get; set; }
-        public object Teacher { get; set; }
-        public object Students { get; set; }
+        //public object Teacher { get; set; }
+        //public object Students { get; set; }
     }
 }

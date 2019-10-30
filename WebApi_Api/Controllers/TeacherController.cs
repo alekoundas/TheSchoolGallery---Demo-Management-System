@@ -21,14 +21,14 @@ namespace WebApi_Api.Controllers
         // GET: api/Teacher
         public IQueryable<Teacher> GetTeacherDb()
         {
-            return db.TeacherDb.Include(x=>x.Classrooms.Select(y=>y.Students)).Include(y => y.Avatar);
+            return db.TeacherDb.Include(x=>x.Classrooms.Select(y=>y.Students));
         }
 
         // GET: api/Teacher/5
         [ResponseType(typeof(Teacher))]
         public IHttpActionResult GetTeacher(int id)
         {
-            Teacher teacher = db.TeacherDb.Where(w=>w.TeacherId==id).Include(x => x.Classrooms.Select(y => y.Students)).Include(y => y.Avatar).FirstOrDefault();
+            Teacher teacher = db.TeacherDb.Where(w=>w.TeacherId==id).Include(x => x.Classrooms.Select(y => y.Students)).FirstOrDefault();
             if (teacher == null)
             {
                 return NotFound();

@@ -93,7 +93,14 @@ namespace WebApi_Api.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.UpdateGraph(classroom);
+           
+
+
+            classroom.SchoolFK = classroom.School.SchoolId;
+            classroom.TeacherFK = classroom.Teacher.TeacherId;
+            classroom.Teacher = null;
+            classroom.School = null;
+            db.ClassroomsDb.Add(classroom);
             db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = classroom.ClassroomId }, classroom);

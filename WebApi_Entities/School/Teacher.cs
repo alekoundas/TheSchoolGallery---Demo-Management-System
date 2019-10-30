@@ -8,20 +8,13 @@ using System.Threading.Tasks;
 
 namespace WebApi_Entities.School
 {
-   public  class Teacher
+    public class Teacher
     {
-
         public int TeacherId { get; set; }
-
         public string FirstName { get; set; }
-
         public string LastName { get; set; }
 
-        // Has one Avatar ---------------------------------->>
-        public  Avatar.Avatar Avatar { get; set; }
-
-        // Has one Class ----------------------------------->>
-
-        public ICollection<Classroom> Classrooms { get; set; } 
+        // Has many Class ----------------------------------->>
+        public ICollection<Classroom> Classrooms { get; set; }
     }
 }

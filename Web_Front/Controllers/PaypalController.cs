@@ -25,9 +25,10 @@ namespace Web_Front.Controllers
 
         public ActionResult AddToCart(int PaintingID)
         {
-            //List<Item> CartList = Session["CartList"] as List<Item>;
             List<Item> CartList = Session["CartList"] as List<Item>;
 
+
+            //Check if Session Was Empty
             if (CartList == null)
             {
                 CartList = new List<Item>();
@@ -39,8 +40,12 @@ namespace Web_Front.Controllers
                 currency = "USD",
                 price = painting.Price.ToString(),
                 quantity = "1",
-                sku = "sku"
+                sku = "sku",
             };
+            if(CartList.Any(x=>x.name== item.name && x.price == item.price))
+            {
+                Debug.WriteLine("");
+            }
             CartList.Add(item);
             Session["CartList"] = CartList;
             return View("Index", CartList);

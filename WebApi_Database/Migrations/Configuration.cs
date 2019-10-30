@@ -74,20 +74,20 @@
             //context.SaveChanges();
 
             // TEACHER ------------------------------------------------------------------------------->>  
-            Teacher t01 = new Teacher { TeacherId = 01, FirstName = "Mpampis", LastName = "Sougias", Avatar = a1 };
-            Teacher t02 = new Teacher { TeacherId = 02, FirstName = "Maria", LastName = "Omorfi", Avatar = a1 };
-            Teacher t03 = new Teacher { TeacherId = 03, FirstName = "Nikolas", LastName = "Tipotas", Avatar = a1 };
-            Teacher t04 = new Teacher { TeacherId = 04, FirstName = "Dioni", LastName = "Marka", Avatar = a1 };
-            Teacher t05 = new Teacher { TeacherId = 05, FirstName = "Yioo", LastName = "Choo", Avatar = a1 };
-            Teacher t06 = new Teacher { TeacherId = 06, FirstName = "Alex", LastName = "Laeder", Avatar = a1 };
-            Teacher t07 = new Teacher { TeacherId = 07, FirstName = "Josef", LastName = "Josefou", Avatar = a1 };
-            Teacher t08 = new Teacher { TeacherId = 08, FirstName = "Vaggelis", LastName = "Maxairas", Avatar = a1 };
-            Teacher t09 = new Teacher { TeacherId = 09, FirstName = "Nikolas", LastName = "Fonias", Avatar = a1 };
-            Teacher t10 = new Teacher { TeacherId = 10, FirstName = "Afroditi", LastName = "Koukla", Avatar = a1 };
-            Teacher t11 = new Teacher { TeacherId = 11, FirstName = "Jessica", LastName = "Bearit", Avatar = a1 };
-            Teacher t12 = new Teacher { TeacherId = 12, FirstName = "Kostas", LastName = "Ntounias", Avatar = a1 };
-            Teacher t13 = new Teacher { TeacherId = 13, FirstName = "Giannis", LastName = "Mpampinis", Avatar = a1 };
-            Teacher t14 = new Teacher { TeacherId = 14, FirstName = "Alex", LastName = "Smith", Avatar = a1 };
+            Teacher t01 = new Teacher { TeacherId = 01, FirstName = "Mpampis", LastName = "Sougias" };
+            Teacher t02 = new Teacher { TeacherId = 02, FirstName = "Maria", LastName = "Omorfi" };
+            Teacher t03 = new Teacher { TeacherId = 03, FirstName = "Nikolas", LastName = "Tipotas"};
+            Teacher t04 = new Teacher { TeacherId = 04, FirstName = "Dioni", LastName = "Marka" };
+            Teacher t05 = new Teacher { TeacherId = 05, FirstName = "Yioo", LastName = "Choo" };
+            Teacher t06 = new Teacher { TeacherId = 06, FirstName = "Alex", LastName = "Laeder" };
+            Teacher t07 = new Teacher { TeacherId = 07, FirstName = "Josef", LastName = "Josefou" };
+            Teacher t08 = new Teacher { TeacherId = 08, FirstName = "Vaggelis", LastName = "Maxairas"};
+            Teacher t09 = new Teacher { TeacherId = 09, FirstName = "Nikolas", LastName = "Fonias" };
+            Teacher t10 = new Teacher { TeacherId = 10, FirstName = "Afroditi", LastName = "Koukla"};
+            Teacher t11 = new Teacher { TeacherId = 11, FirstName = "Jessica", LastName = "Bearit" };
+            Teacher t12 = new Teacher { TeacherId = 12, FirstName = "Kostas", LastName = "Ntounias" };
+            Teacher t13 = new Teacher { TeacherId = 13, FirstName = "Giannis", LastName = "Mpampinis" };
+            Teacher t14 = new Teacher { TeacherId = 14, FirstName = "Alex", LastName = "Smith" };
 
             //Unecessary...Classroom will Crerate Them
             //context.TeacherDb.AddOrUpdate(x => x.TeacherId, t01);
