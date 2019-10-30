@@ -1,0 +1,98 @@
+﻿@model IEnumerable<Web_DomainClasses.Entities.School.Painting>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<!-- SECOND BANNER ----------------------------------------------------- -->
+@Html.Partial("_SecondBanner")
+
+<div class="feature-area pt-10 pb-10  relative">
+    <div class="container">
+        <div class="row">
+            <h2 class="col-md-6">
+
+                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                @Html.ActionLink("Create New", "Create")
+
+            </h2>
+            <div class="col-md-6">
+                @using (Html.BeginForm())
+                {
+                    <p>
+                        Find by Name: @Html.TextBox("SearchString")
+                        <input class="btn btn-large" type="submit" value="Search" />
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<section class="feature-area pt-100 pb-100  relative">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-sm-6 align-items-stretch">
+                    <div class="paintingcontainer">
+                        <div>
+                            <div class="paintingInfo">
+                                <h3>@Html.DisplayFor(modelItem => item.PaintingTitle) </h3>
+                                <a href="@Url.Action("Details", "Student", new { id = item.PaintingId })">by @Html.DisplayFor(modelItem => item.Student.FirstName) @Html.DisplayFor(modelItem => item.Student.LastName) </a>
+                                <a href="#"><img class="float-right" src="~/images/UIcons/cart_off.png" /></a>
+                                <hr />
+                                <h5 class="text-right">
+                                    Suggested Donation:  
+                                    <span style="font-size:24px; font-weight:800;" class="fa"> @Html.DisplayFor(modelItem => item.Price)</span>
+                                    <i class="fa fa-eur" aria-hidden="true"></i>
+                                    
+                                </h5>
+                            </div>
+
+                            <div class="painting" id="grid">
+                                <div class="uc-container">
+
+
+                                    <div class="uc-initial-content">
+                                        <img id="openit" src="~/images/paintings/@Html.DisplayFor(modelItem => item.ImageUrl)" />
+                                    </div>
+
+                                    <div class="uc-final-content">
+                                        <img id="closeit" src="~/images/paintings/@Html.DisplayFor(modelItem => item.ImageUrl)" />
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+@section scripts{
+
+    <script>
+
+
+
+
+    </script>
+
+
+}
+

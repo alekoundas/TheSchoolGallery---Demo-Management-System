@@ -1,4 +1,4 @@
-/*#region INITIALISERS*/
+﻿/*#region INITIALISERS*/
 
 ::-moz-selection {
     background-color: #ffaa62;
@@ -3080,7 +3080,8 @@ body {
 }
 
 .paintingcontainer {
-    margin-bottom: 80px;
+    margin-bottom: 100px;
+    padding:20px;
 }
 
 .wrap-Painting {
@@ -3999,6 +4000,21 @@ section hr {
     -webkit-transition-timing-function: ease-in;
 }
 
+.paintingInfo h4, .paintingInfo h5, .paintingInfo hr, .paintingInfo a {
+    color: #f3efe9;
+    text-shadow: none;
+}
+
+.paintingInfoD h4, .paintingInfoD h5, .paintingInfoD hr, .paintingInfoD a {
+    color: #5c5c5c;
+    text-shadow: none;
+}
+
+.paintingInfo {
+
+    margin-bottom: 20px;
+}
+
 /*#endregion DETAILING*/
 
 /* -------------------------------- 
@@ -4006,5 +4022,9 @@ section hr {
     MODAL
 
 -------------------------------- */
+
+
+
+
 
 
