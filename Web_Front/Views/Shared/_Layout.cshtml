@@ -23,7 +23,7 @@
 </head>
 <body>
 
-    <div class="steadybar">
+    <div class="fixed-top pl-10">
         <!-- STEADY BAR (login, register, cart, etc -------------------------- -->
         @Html.Partial("_LoginPartial")
     </div>
@@ -34,6 +34,7 @@
 
         <!-- MAIN BODY --------------------------------------------------- -->
         @RenderBody()
+        
     </div>
 
     <!-- FOOTER AREA ----------------------------------------------------- -->
@@ -78,9 +79,11 @@
                     if (!opened) {
                         opened = true;
                         pfold.unfold();
+                        $("#Whitted").fadeIn(1200);
                     }
                 }).end().find('#closeit').on('click', function () {
                     pfold.fold();
+                    $("#Whitted").fadeOut(888);
                 });
             });
         });

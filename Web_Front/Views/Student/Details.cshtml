@@ -4,7 +4,7 @@
     ViewBag.Title = "Details";
 }
 
-<div class="limiter">
+<div style="background-color:#f3efe9;"  class="limiter">
     <div class="container-login100">
         <div class="container">
             <br />
@@ -13,7 +13,6 @@
 
                 <!-- Section - Student Details ---------------------------------------->
                 <div class="col-md-12 mx-auto text-center">
-
                     <div class="paintingcontainer">
                         <div class="studentdesc">
                             <h3>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h3>
@@ -43,36 +42,48 @@
 
 
                 <!-- Section - PAINTINGS ---------------------------------------->
-
-                <div class="container">
-                    <div class="row">
-                        @foreach (var item in Model.Paintings)
-                        {
-                            <div class="col-lg-4 col-sm-6 align-items-stretch">
-                                <div class="paintingcontainer">
-                                    <div style="height:500px; min-height:450px;" class="dottedFrame">
-                                        <div class="painting">
-                                            <img src="~/images/paintings/@Html.DisplayFor(modelItem => item.ImageUrl)" />
-                                        </div>
-                                        <br />
-                                        <div class="paintingdesc">
-                                            <div class="paintingInfo">
-                                                <h4>@Html.DisplayFor(modelItem => item.PaintingTitle) </h4>
+                <section class="feature-area pt-100 pb-100  relative">
+                    <div class="container">
+                        <div class="row">
+                            @foreach (var item in Model.Paintings)
+                            {
+                                <div class="col-lg-12 align-items-stretch">
+                                    <div class="paintingcontainer">
+                                        <div>
+                                            <div class="paintingInfoD">
+                                                <h3>@Html.DisplayFor(modelItem => item.PaintingTitle) </h3>
+                                                <a href="@Url.Action("Details", "Student", new { id = item.PaintingId })">by @Html.DisplayFor(modelItem => item.Student.FirstName) @Html.DisplayFor(modelItem => item.Student.LastName) </a>
+                                                <a href="@Url.Action("AddToCart", "Paypal", new { PaintingID = item.PaintingId })"><img class="float-right" src="~/images/UIcons/cart_off.png" /></a>
                                                 <hr />
                                                 <h5 class="text-right">
-                                                    Suggested Donation:  <span style="font-size:24px; font-weight:800;" class="fa"> @Html.DisplayFor(modelItem => item.Price)</span><i class="fa fa-eur" aria-hidden="true"></i>
+                                                    Suggested Donation:
+                                                    <span style="font-size:24px; font-weight:800;" class="fa"> @Html.DisplayFor(modelItem => item.Price)</span>
+                                                    <i class="fa fa-eur" aria-hidden="true"></i>
+
                                                 </h5>
-                                                <a href="#"><img class="float-right" src="~/images/UIcons/cart_off.png" /></a>
                                             </div>
 
+                                            <div class="painting" id="grid">
+                                                <div class="uc-container">
+
+
+                                                    <div class="uc-initial-content">
+                                                        <img id="openit" src="~/images/paintings/@Html.DisplayFor(modelItem => item.ImageUrl)" />
+                                                    </div>
+
+                                                    <div class="uc-final-content">
+                                                        <img id="closeit" src="~/images/paintings/@Html.DisplayFor(modelItem => item.ImageUrl)" />
+                                                    </div>
+
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-
                                 </div>
-                            </div>
-                        }
+                            }
+                        </div>
                     </div>
-                </div>
+                </section>
 
                 <!-- Section - Links ---------------------------------------->
                 <div class="col-md-12 mx-auto text-center">
@@ -80,14 +91,17 @@
                         <hr />
                         <br />
                         <div>
-                            <a style="color:#f3efe9" href="@Url.Action("Index", "Painting")"><img id="iconBtn" src="~/images/UIcons/paintings_off.png" /> back to paintings </a>
+                            <a style="color:#f3efe9" href="@Url.Action("Index", "Painting")"><img id="iconBtn" src="~/images/UIcons/paintings_off.png" /> paintings </a>
+                            <a style="color:#f3efe9" href="@Url.Action("Index", "Student")"><img id="iconBtn" src="~/images/UIcons/students_off.png" /> students </a>
+                            <a style="color:#f3efe9" href="@Url.Action("Details", "Classroom", new { id = Model.StudentId })"><img id="iconBtn" src="~/images/UIcons/schools_off.png" /> class </a>
                             @*<a style="color:#f3efe9" href="@Url.Action("Edit", "Student", new { id = Model.StudentId })"><img src="~/images/register.png" /> edit student </a>*@
                         </div>
                     </div>
                 </div>
 
 
-
+                @*When MODAL, white out the background ------------------------------>> *@
+                <div id="Whitted"></div>
 
 
 

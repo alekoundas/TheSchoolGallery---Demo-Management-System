@@ -13,70 +13,72 @@
 
                 <div class="col-md-8 mx-auto">
                     <div class="wrap-login100">
-                            <span class="login100-form-title p-b-33">
-                                @ViewBag.Title.
-                            </span>
-                            @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                            {
-                                @Html.AntiForgeryToken()
-                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                <hr />
-                                <h5 class="text-center">Create a new account.</h5>
+                        <span class="login100-form-title p-b-33">
+                            @ViewBag.Title.
+                        </span>
+                        <hr />
+                        <br />
+                        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                                <div class="wrap-input100">
-                                    <span class="focus-input100-1"></span>
-                                    <span class="focus-input100-2"></span>
-                                    @Html.TextBoxFor(m => m.Email, new { @class = "input100", placeholder = "Email" })
-                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                                </div>
+                            <h5 class="text-center">Create a new account.</h5>
 
-                                <div class="wrap-input100 rs1">
-                                    <span class="focus-input100-1"></span>
-                                    <span class="focus-input100-2"></span>
-                                    @Html.PasswordFor(m => m.Password, new { @class = "input100", placeholder = "Password" })
-                                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                                </div>
-
-                                <div class="wrap-input100 rs2">
-                                    <span class="focus-input100-1"></span>
-                                    <span class="focus-input100-2"></span>
-                                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "input100", placeholder = "Password" })
-                                    @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
-                                </div>
-
-
-                                // Original MVC -------------->>
-                                @*<div class="wrap-input100">
-                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email" })
+                            <div class="wrap-input100">
+                                <span class="focus-input100-1"></span>
+                                <span class="focus-input100-2"></span>
+                                @Html.TextBoxFor(m => m.Email, new { @class = "input100", placeholder = "Email" })
                                 @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                             </div>
 
                             <div class="wrap-input100 rs1">
-                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })
+                                <span class="focus-input100-1"></span>
+                                <span class="focus-input100-2"></span>
+                                @Html.PasswordFor(m => m.Password, new { @class = "input100", placeholder = "Password" })
                                 @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                             </div>
 
-                            <div class="wrap-input100">
-                                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Confirm Password" })
+                            <div class="wrap-input100 rs2">
+                                <span class="focus-input100-1"></span>
+                                <span class="focus-input100-2"></span>
+                                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "input100", placeholder = "Password" })
                                 @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
-                            </div>*@
-
-                                // REGISTER BUTTON ----------------------------------------------------
-                                <div class="container-login100-form-btn m-t-20">
-                                    <input class="login100-form-btn" type="submit" value="Register" />
-                                </div>
-
-                                // Original MVC -------------->>
-                                @*<div class="form-group">
-                                <div class="col-md-offset-2 col-md-10">
-                                    <input type="submit" value="Log in" class="btn btn-default" />
-                                </div>
                             </div>
-                            <p>
-                                @Html.ActionLink("Register as a new user", "Register")
-                            </p>*@
 
-                            }
+
+                            // Original MVC -------------->>
+                            @*<div class="wrap-input100">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email" })
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="wrap-input100 rs1">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="wrap-input100">
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Confirm Password" })
+                @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+            </div>*@
+
+                            // REGISTER BUTTON ----------------------------------------------------
+                            <div class="container-login100-form-btn m-t-20">
+                                <input class="login100-form-btn" type="submit" value="Register" />
+                            </div>
+
+                            // Original MVC -------------->>
+                            @*<div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Log in" class="btn btn-default" />
+                </div>
+            </div>
+            <p>
+                @Html.ActionLink("Register as a new user", "Register")
+            </p>*@
+
+                        }
                     </div>
                 </div>
 

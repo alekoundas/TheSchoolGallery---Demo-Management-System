@@ -29,7 +29,8 @@
                         <hr />
 
                         <div dark_back_C>
-                            <a style="color:#f3efe9" href="@Url.Action("Index", "Teacher")"><img id="iconBtn" src="~/images/UIcons/students_off.png" /> back to teachers </a>
+                            <a style="color:#f3efe9" href="@Url.Action("Index", "Teacher")"><img id="iconBtn" src="~/images/UIcons/students_off.png" /> teachers </a>
+                            <a style="color:#f3efe9" href="@Url.Action("Details", "Classroom", new { id = Model.TeacherId })"><img id="iconBtn" src="~/images/UIcons/schools_off.png" /> class </a>
                             <a style="color:#f3efe9" href="@Url.Action("Edit", "Teacher", new { id = Model.TeacherId })"><img id="iconBtn" src="~/images/UIcons/edit_off.png" /> edit teacher </a>
                         </div>
                     </div>

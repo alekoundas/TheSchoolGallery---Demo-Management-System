@@ -253,6 +253,7 @@
     <Content Include="images\fancybox_sprite.png" />
     <Content Include="images\kid_brush.png" />
     <Content Include="images\noise.png" />
+    <Content Include="images\paintings\painting_000.jpg" />
     <Content Include="images\paintings\painting_001.jpg" />
     <Content Include="images\paintings\painting_002.jpg" />
     <Content Include="images\paintings\painting_003.jpg" />
@@ -315,6 +316,18 @@
     <Content Include="images\paintings\painting_060.jpg" />
     <Content Include="images\paintings\painting_061.jpg" />
     <Content Include="images\paintings\painting_062.jpg" />
+    <Content Include="images\paintings\painting_063.jpg" />
+    <Content Include="images\paintings\painting_064.jpg" />
+    <Content Include="images\paintings\painting_065.jpg" />
+    <Content Include="images\paintings\painting_066.jpg" />
+    <Content Include="images\paintings\painting_067.jpg" />
+    <Content Include="images\paintings\painting_068.jpg" />
+    <Content Include="images\paintings\painting_069.jpg" />
+    <Content Include="images\paintings\painting_070.jpg" />
+    <Content Include="images\paintings\painting_071.jpg" />
+    <Content Include="images\paintings\painting_072.jpg" />
+    <Content Include="images\paintings\painting_073.jpg" />
+    <Content Include="images\paintings\painting_074.jpg" />
     <Content Include="images\paper.jpg" />
     <Content Include="images\parallax\birds.png" />
     <Content Include="images\parallax\clouds_back.png" />
@@ -328,6 +341,7 @@
     <Content Include="images\parallax\mountains_front.png" />
     <Content Include="images\parallax\mountains_middle.png" />
     <Content Include="images\parallax\Painting_Parallax_Background.jpg" />
+    <Content Include="images\parallax\people16.png" />
     <Content Include="images\parallax\Portrait_base_01.png" />
     <Content Include="images\parallax\Portrait_base_02.jpg" />
     <Content Include="images\parallax\Portrait_body_01.png" />

@@ -5,9 +5,9 @@
     {
         @Html.AntiForgeryToken()
 
-
+        <a href="@Url.Action("Profile", "Profile")"><img src="~/images/UIcons/loged.png" /></a>
         @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-        <a href="@Url.Action("Profile", "Profile")"><img src="~/images/loged.png" /></a>
+
         <a href="javascript:document.getElementById('logoutForm').submit()"><img id="iconBtn" src="~/images/UIcons/logoff.png" />log off</a>
 
     }
@@ -15,12 +15,12 @@
 else
 {
     // Log In / Register Buttons ------------------------------------------->>
-    <a href="@Url.Action("Login", "Account")"><img id="iconBtn" src="~/images/UIcons/login.png" /> log in </a>
-    <a href="@Url.Action("Register", "Account")"><img id="iconBtn" src="~/images/UIcons/register.png" /> register </a>
+    <a style="color:#5c5c5c; text-shadow:1px 1px 1px #f3efe9;" href="@Url.Action("Login", "Account")"><img id="iconBtn" src="~/images/UIcons/login.png" /> log in </a>
+    <a style="color:#5c5c5c; text-shadow:1px 1px 1px #f3efe9;" href="@Url.Action("Register", "Account")"><img id="iconBtn" src="~/images/UIcons/register.png" /> register </a>
 
     // Cart / Donations ---------------------------------------------------->>
-    <a href="@Url.Action("Index", "PayPal")"><img src="~/images/cart.png" /> cart </a>
-    <a href="@Url.Action("PayPalPayment", "PayPal")"><img src="~/images/donation.png" /> donation </a>
+    <a style="color:#5c5c5c; text-shadow:1px 1px 1px #f3efe9;" href="@Url.Action("Index", "PayPal")"><img src="~/images/UIcons/cart_off.png" /> cart </a>
+    <a style="color:#5c5c5c; text-shadow:1px 1px 1px #f3efe9;" href="@Url.Action("PayPalPayment", "PayPal")"><img src="~/images/UIcons/donation_off.png" /> donation </a>
 
 
     // This are the Default 'Actionlinks'. I choose to work with 'Actions' so as to add Images.
