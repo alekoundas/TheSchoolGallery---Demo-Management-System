@@ -1,7 +1,10 @@
-﻿namespace Web_DomainClasses.Entities.Avatar
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Web_DomainClasses.Entities.Avatar
 {
     public class AvatarHair
     {
+        [ForeignKey("Avatar")]
 
         public int AvatarHairId { get; set; }
 

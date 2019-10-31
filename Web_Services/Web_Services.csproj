@@ -48,7 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiMapping\AvatarApiService.cs" />
+    <Compile Include="ApiMapping\Avatars\AvatarApiService.cs" />
+    <Compile Include="ApiMapping\Avatars\BackgroundApiService.cs" />
+    <Compile Include="ApiMapping\Avatars\BodyApiService.cs" />
+    <Compile Include="ApiMapping\Avatars\ClothingApiService.cs" />
+    <Compile Include="ApiMapping\Avatars\HairApiService.cs" />
     <Compile Include="ApiMapping\ClassroomApiService.cs" />
     <Compile Include="ApiMapping\MessageApiService.cs" />
     <Compile Include="ApiMapping\PaintingApiService.cs" />

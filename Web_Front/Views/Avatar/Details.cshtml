@@ -1,0 +1,58 @@
+﻿@model Web_DomainClasses.Entities.Avatar.Avatar
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Avatar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Background.ImageUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Background.ImageUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Body.ImageUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Body.ImageUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Clothes.ImageUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clothes.ImageUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hair.ImageUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hair.ImageUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AvatarId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

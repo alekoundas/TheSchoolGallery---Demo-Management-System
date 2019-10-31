@@ -51,7 +51,7 @@
     <Compile Include="Avatar\Avatar.cs" />
     <Compile Include="Avatar\AvatarBackground.cs" />
     <Compile Include="Avatar\AvatarBody.cs" />
-    <Compile Include="Avatar\AvatarClothes.cs" />
+    <Compile Include="Avatar\AvatarClothing.cs" />
     <Compile Include="Avatar\AvatarHair.cs" />
     <Compile Include="School\Classroom.cs" />
     <Compile Include="School\Painting.cs" />

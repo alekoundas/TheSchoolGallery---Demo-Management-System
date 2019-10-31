@@ -1,0 +1,79 @@
+﻿@model Web_DomainClasses.ViewModels.AvatarCreateVM
+
+
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Avatar</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+
+
+
+        @* Background Select *@
+        @Html.LabelFor(model => model.Avatar.Background, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <select  name="SelectedBackgroundID" id="SelectedBackgroundID">
+                @foreach (var Background in Model.AvatarBackgrounds)
+                {
+                    <option value="@Background.AvatarBackgroundId">@Background.ImageUrl</option>
+                }
+
+            </select>
+        </div>
+
+
+        @* Hair Select *@
+        @Html.LabelFor(model => model.Avatar.Hair, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <select name="SelectedHairID" id="SelectedHairID">
+                @foreach (var Hair in Model.AvatarHairs)
+                {
+                    <option value="@Hair.AvatarHairId">@Hair.ImageUrl</option>
+                }
+
+            </select>
+        </div>
+
+
+        @* Body Select *@
+        @Html.LabelFor(model => model.Avatar.Body, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <select name="SelectedBodyID" id="SelectedBodyID">
+                @foreach (var Body in Model.AvatarBodys)
+                {
+                    <option value="@Body.AvatarBodyId">@Body.ImageUrl</option>
+                }
+
+            </select>
+        </div>
+
+        @* Clothing Select *@
+        @Html.LabelFor(model => model.Avatar.Clothing, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <select name="SelectedClothingID" id="SelectedClothingID">
+                @foreach (var Clothing in Model.AvatarClothings)
+                {
+                    <option value="@Clothing.AvatarClothingId">@Clothing.ImageUrl</option>
+                }
+
+            </select>
+        </div>
+
+
+    </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+

@@ -22,16 +22,6 @@
         {
 
 
-            //                                                                      //
-            //              SOS UNCOMENT EVERYTHING BELOW ONLY ONCE !!!             //
-            //                                                                      //            
-
-
-
-
-
-
-
 
 
 
@@ -45,7 +35,6 @@
             AvatarBackground b07 = new AvatarBackground { ImageUrl = "back_07.png" };
             AvatarBackground b08 = new AvatarBackground { ImageUrl = "back_08.png" };
             AvatarBackground b09 = new AvatarBackground { ImageUrl = "back_09.png" };
-            List<AvatarBackground> blist = new List<AvatarBackground> { b01, b02, b03, b04, b05, b06, b07, b08, b09 };
 
             //                    Avatar Hair                        \\
             AvatarHair h01 = new AvatarHair { ImageUrl = "hair_01.png" };
@@ -54,36 +43,41 @@
             AvatarHair h04 = new AvatarHair { ImageUrl = "hair_04.png" };
             AvatarHair h05 = new AvatarHair { ImageUrl = "hair_05.png" };
             AvatarHair h06 = new AvatarHair { ImageUrl = "hair_06.png" };
-            List<AvatarHair> hlist = new List<AvatarHair> { h01, h02, h03, h04, h05, h06 };
 
             //                    Avatar Body                        \\
             AvatarBody bd01 = new AvatarBody { ImageUrl = "body_01.png" };
             AvatarBody bd02 = new AvatarBody { ImageUrl = "body_02.png" };
             AvatarBody bd03 = new AvatarBody { ImageUrl = "body_03.png" };
-            List<AvatarBody> bdlist = new List<AvatarBody> { bd01, bd02, bd03 };
 
             //                   Avatar Clothes                         \\
-            AvatarClothes c01 = new AvatarClothes { ImageUrl = "clothes_01.png" };
-            AvatarClothes c02 = new AvatarClothes { ImageUrl = "clothes_02.png" };
-            List<AvatarClothes> clist = new List<AvatarClothes> { c01, c02 };
+            AvatarClothing c01 = new AvatarClothing { ImageUrl = "clothes_01.png" };
+            AvatarClothing c02 = new AvatarClothing { ImageUrl = "clothes_02.png" };
 
             // AVATAR ------------------------------------------------------------------------------->>  
-            Avatar a1 = new Avatar { Backgrounds = blist, Hairs = hlist, Bodys = bdlist, Clothes = clist };
+            Avatar a1 = new Avatar { Background = b01, Hair = h01, Body = bd01, Clothing = c01 };
+            Avatar a2 = new Avatar { Background = b02, Hair = h02, Body = bd02, Clothing = c02 };
+            Avatar a3 = new Avatar { Background = b03, Hair = h03, Body = bd03, Clothing = c01 };
+            Avatar a4 = new Avatar { Background = b04, Hair = h04, Body = bd02, Clothing = c02 };
+            Avatar a5 = new Avatar { Background = b05, Hair = h05, Body = bd01, Clothing = c01 };
 
             context.AvatarDb.AddOrUpdate(x => x.Title, a1);
+            context.AvatarDb.AddOrUpdate(x => x.Title, a2);
+            context.AvatarDb.AddOrUpdate(x => x.Title, a3);
+            context.AvatarDb.AddOrUpdate(x => x.Title, a4);
+            context.AvatarDb.AddOrUpdate(x => x.Title, a5);
             //context.SaveChanges();
 
             // TEACHER ------------------------------------------------------------------------------->>  
             Teacher t01 = new Teacher { TeacherId = 01, FirstName = "Mpampis", LastName = "Sougias" };
             Teacher t02 = new Teacher { TeacherId = 02, FirstName = "Maria", LastName = "Omorfi" };
-            Teacher t03 = new Teacher { TeacherId = 03, FirstName = "Nikolas", LastName = "Tipotas"};
+            Teacher t03 = new Teacher { TeacherId = 03, FirstName = "Nikolas", LastName = "Tipotas" };
             Teacher t04 = new Teacher { TeacherId = 04, FirstName = "Dioni", LastName = "Marka" };
             Teacher t05 = new Teacher { TeacherId = 05, FirstName = "Yioo", LastName = "Choo" };
             Teacher t06 = new Teacher { TeacherId = 06, FirstName = "Alex", LastName = "Laeder" };
             Teacher t07 = new Teacher { TeacherId = 07, FirstName = "Josef", LastName = "Josefou" };
-            Teacher t08 = new Teacher { TeacherId = 08, FirstName = "Vaggelis", LastName = "Maxairas"};
+            Teacher t08 = new Teacher { TeacherId = 08, FirstName = "Vaggelis", LastName = "Maxairas" };
             Teacher t09 = new Teacher { TeacherId = 09, FirstName = "Nikolas", LastName = "Fonias" };
-            Teacher t10 = new Teacher { TeacherId = 10, FirstName = "Afroditi", LastName = "Koukla"};
+            Teacher t10 = new Teacher { TeacherId = 10, FirstName = "Afroditi", LastName = "Koukla" };
             Teacher t11 = new Teacher { TeacherId = 11, FirstName = "Jessica", LastName = "Bearit" };
             Teacher t12 = new Teacher { TeacherId = 12, FirstName = "Kostas", LastName = "Ntounias" };
             Teacher t13 = new Teacher { TeacherId = 13, FirstName = "Giannis", LastName = "Mpampinis" };

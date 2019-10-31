@@ -17,11 +17,13 @@ namespace WebApi_Database
         {
 
         }
+
+
         public DbSet<Avatar> AvatarDb { get; set; }
         public DbSet<AvatarBackground> AvatarBackgroundDb { get; set; }
         public DbSet<AvatarHair> AvatarHairDb { get; set; }
         public DbSet<AvatarBody> AvatarBodyDb { get; set; }
-        public DbSet<AvatarClothes> AvatarClothesDb { get; set; }
+        public DbSet<AvatarClothing> AvatarClothingDb { get; set; }
         public DbSet<Student> StudentDb { get; set; }
         public DbSet<Teacher> TeacherDb { get; set; }
         public DbSet<Classroom> ClassroomsDb { get; set; }

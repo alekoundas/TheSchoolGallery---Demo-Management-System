@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Web_DomainClasses.Entities.Avatar.Avatar>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Background.ImageUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Body.ImageUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clothes.ImageUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hair.ImageUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Background.ImageUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Body.ImageUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Clothes.ImageUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hair.ImageUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AvatarId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AvatarId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AvatarId })
+        </td>
+    </tr>
+}
+
+</table>

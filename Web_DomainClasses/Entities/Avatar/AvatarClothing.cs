@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Web_DomainClasses.Entities.Avatar
 {
-    public class AvatarClothes
+    public class AvatarClothing
     {
-        public int AvatarClothesId { get; set; }
+        [ForeignKey("Avatar")]
+        public int AvatarClothingId { get; set; }
 
         // The Clothes Variation Images
         public string ImageUrl { get; set; }

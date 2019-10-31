@@ -86,7 +86,7 @@ namespace Web_Services.ApiMapping
             //Create Client
             RestClient client = new RestClient(Url + "/" + Student.StudentId);
 
-            //Build A Request For The Api    PUT
+            //Build A Request For The Api    POST
             RestRequest request = new RestRequest(Method.POST);
             request.AddJsonBody(Student);
             //Execute Request
@@ -104,7 +104,7 @@ namespace Web_Services.ApiMapping
             //Create Client
             RestClient client = new RestClient(Url + "/" + id);
 
-            //Build A Request For The Api    PUT
+            //Build A Request For The Api    DELETE
             RestRequest request = new RestRequest(Method.DELETE);
 
             //Execute Request
