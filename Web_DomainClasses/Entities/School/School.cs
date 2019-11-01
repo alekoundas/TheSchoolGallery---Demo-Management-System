@@ -11,9 +11,6 @@ namespace Web_DomainClasses.Entities.School
     {
         public int SchoolId { get; set; }
 
-        // The School Image
-        public string Image { get; set; }
-
         [Required(ErrorMessage = "A School has a Name")]
         [MinLength(2, ErrorMessage = "Name must be longer")]
         [MaxLength(50, ErrorMessage = "Name must be shorter")]

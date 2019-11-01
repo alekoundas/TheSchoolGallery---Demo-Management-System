@@ -84,7 +84,7 @@ namespace Web_Front.Controllers
         // POST: Classroom/Edit/5       
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ClassroomId,Image,Name,Description")] Classroom classroom)
+        public ActionResult Edit([Bind(Include = "ClassroomId,TeacherFK,SchoolFK,Image,Name,Description")] Classroom classroom)
         {
             if (ModelState.IsValid)
             {

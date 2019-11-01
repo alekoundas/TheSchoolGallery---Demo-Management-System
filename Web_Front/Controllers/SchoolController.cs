@@ -47,7 +47,7 @@ namespace Web_Front.Controllers
         // POST: School/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "SchoolId,Image,Name,City,Adress,Tel,PlaceId")] School school)
+        public ActionResult Create([Bind(Include = "SchoolId,Name,City,Adress,Tel,PlaceId")] School school)
         {
             if (ModelState.IsValid)
             {
@@ -77,7 +77,7 @@ namespace Web_Front.Controllers
        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "SchoolId,Image,Name,City,Adress,Tel")] School school)
+        public ActionResult Edit([Bind(Include = "SchoolId,Name,City,Adress,Tel")] School school)
         {
             if (ModelState.IsValid)
             {

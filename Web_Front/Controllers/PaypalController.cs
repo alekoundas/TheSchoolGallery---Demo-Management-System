@@ -51,6 +51,12 @@ namespace Web_Front.Controllers
             return View("Index", CartList);
         }
 
+        public ActionResult ClearCart()
+        {
+            Session["CartList"] = null;           
+            return View("Index", new List<Item>());
+        }
+
         public ActionResult PayPalPayment()
         {
             try

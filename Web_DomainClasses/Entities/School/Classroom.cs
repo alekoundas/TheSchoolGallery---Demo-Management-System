@@ -1,5 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Web_DomainClasses.Entities.School
 {
@@ -25,9 +30,13 @@ namespace Web_DomainClasses.Entities.School
         public ICollection<Student> Students { get; set; }
 
         // Has one Teacher ---------------------------------->>
+        [ForeignKey("TeacherFK")]
         public Teacher Teacher { get; set; }
+        public int TeacherFK { get; set; }
 
         // Has one School ---------------------------------->>
+        [ForeignKey("SchoolFK")]
         public School School { get; set; }
+        public int SchoolFK { get; set; }
     }
 }

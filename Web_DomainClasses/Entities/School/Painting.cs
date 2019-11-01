@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,16 +14,17 @@ namespace Web_DomainClasses.Entities.School
 
         // The Painting Image
         public string ImageUrl { get; set; }
-
         [Required(ErrorMessage = "You must name your Art.")]
         [MinLength(4, ErrorMessage = "Title must be longer")]
         [MaxLength(50, ErrorMessage = "Title must be shorter")]
         public string PaintingTitle { get; set; }
 
         // Has One Student ------------------------------>>
-        public  Student Student { get; set; }
+        [ForeignKey("StudentFK")]
+        public Student Student { get; set; }
+        public int StudentFK { get; set; }
 
-        // Has Many Prices ------------------------------>>
+        // Has A Price ------------------------------>>
         public double Price { get; set; }
 
         // Has Many Awards ------------------------------>>

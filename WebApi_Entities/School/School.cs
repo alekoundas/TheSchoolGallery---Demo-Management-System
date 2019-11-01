@@ -12,8 +12,6 @@ namespace WebApi_Entities.School
         public int SchoolId { get; set; }
 
         // The School Image
-        public string Image { get; set; }
-
         public string Name { get; set; }
 
         public string City { get; set; }

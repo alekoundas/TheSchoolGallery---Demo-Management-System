@@ -117,89 +117,89 @@
             //context.SaveChanges();
 
             // PAINTINGS ------------------------------------------------------------------------------->>  
-            Painting p00 = new Painting { ImageUrl = "painting_000.jpg", PaintingTitle = "No Painting", Price = 0 };
+            Painting p00 = new Painting { ImageUrl = "painting_000.jpg", Price = 1, PaintingTitle = "No Painting" };
 
-            Painting p01 = new Painting { ImageUrl = "painting_001.jpg", PaintingTitle = "Fall", Price = 1 };
-            Painting p02 = new Painting { ImageUrl = "painting_002.jpg", PaintingTitle = "Fall Again", Price = 1 };
-            Painting p03 = new Painting { ImageUrl = "painting_003.jpg", PaintingTitle = "Old China", Price = 1 };
-            Painting p04 = new Painting { ImageUrl = "painting_004.jpg", PaintingTitle = "Old China", Price = 1 };
-            Painting p05 = new Painting { ImageUrl = "painting_005.jpg", PaintingTitle = "Red Panda", Price = 1 };
-            Painting p06 = new Painting { ImageUrl = "painting_006.jpg", PaintingTitle = "90 Degrees", Price = 1 };
-            Painting p07 = new Painting { ImageUrl = "painting_007.jpg", PaintingTitle = "Rouster", Price = 1 };
-            Painting p08 = new Painting { ImageUrl = "painting_008.jpg", PaintingTitle = "Lake Xu", Price = 1 };
-            Painting p09 = new Painting { ImageUrl = "painting_009.jpg", PaintingTitle = "Bird", Price = 1 };
+            Painting p01 = new Painting { ImageUrl = "painting_001.jpg", Price = 1, PaintingTitle = "Fall" };
+            Painting p02 = new Painting { ImageUrl = "painting_002.jpg", Price = 1, PaintingTitle = "Fall Again" };
+            Painting p03 = new Painting { ImageUrl = "painting_003.jpg", Price = 1, PaintingTitle = "Old China" };
+            Painting p04 = new Painting { ImageUrl = "painting_004.jpg", Price = 1, PaintingTitle = "Old China" };
+            Painting p05 = new Painting { ImageUrl = "painting_005.jpg", Price = 1, PaintingTitle = "Red Panda" };
+            Painting p06 = new Painting { ImageUrl = "painting_006.jpg", Price = 1, PaintingTitle = "90 Degrees" };
+            Painting p07 = new Painting { ImageUrl = "painting_007.jpg", Price = 1, PaintingTitle = "Rouster" };
+            Painting p08 = new Painting { ImageUrl = "painting_008.jpg", Price = 1, PaintingTitle = "Lake Xu" };
+            Painting p09 = new Painting { ImageUrl = "painting_009.jpg", Price = 1, PaintingTitle = "Bird" };
 
-            Painting p10 = new Painting { ImageUrl = "painting_010.jpg", PaintingTitle = "Lake Tai", Price = 1 };
-            Painting p11 = new Painting { ImageUrl = "painting_011.jpg", PaintingTitle = "Outside Table", Price = 1 };
-            Painting p12 = new Painting { ImageUrl = "painting_012.jpg", PaintingTitle = "Birdies", Price = 1 };
-            Painting p13 = new Painting { ImageUrl = "painting_013.jpg", PaintingTitle = "Lake Side", Price = 1 };
-            Painting p14 = new Painting { ImageUrl = "painting_014.jpg", PaintingTitle = "Village", Price = 1 };
-            Painting p15 = new Painting { ImageUrl = "painting_015.jpg", PaintingTitle = "Outside", Price = 1 };
-            Painting p16 = new Painting { ImageUrl = "painting_016.jpg", PaintingTitle = "Bottles", Price = 1 };
-            Painting p17 = new Painting { ImageUrl = "painting_017.jpg", PaintingTitle = "Taiger", Price = 1 };
-            Painting p18 = new Painting { ImageUrl = "painting_018.jpg", PaintingTitle = "Gafild", Price = 1 };
-            Painting p19 = new Painting { ImageUrl = "painting_019.jpg", PaintingTitle = "Spotty", Price = 1 };
+            Painting p10 = new Painting { ImageUrl = "painting_010.jpg", Price = 1, PaintingTitle = "Lake Tai" };
+            Painting p11 = new Painting { ImageUrl = "painting_011.jpg", Price = 1, PaintingTitle = "Outside Table" };
+            Painting p12 = new Painting { ImageUrl = "painting_012.jpg", Price = 1, PaintingTitle = "Birdies" };
+            Painting p13 = new Painting { ImageUrl = "painting_013.jpg", Price = 1, PaintingTitle = "Lake Side" };
+            Painting p14 = new Painting { ImageUrl = "painting_014.jpg", Price = 1, PaintingTitle = "Village" };
+            Painting p15 = new Painting { ImageUrl = "painting_015.jpg", Price = 1, PaintingTitle = "Outside" };
+            Painting p16 = new Painting { ImageUrl = "painting_016.jpg", Price = 1, PaintingTitle = "Bottles" };
+            Painting p17 = new Painting { ImageUrl = "painting_017.jpg", Price = 1, PaintingTitle = "Taiger" };
+            Painting p18 = new Painting { ImageUrl = "painting_018.jpg", Price = 1, PaintingTitle = "Gafild" };
+            Painting p19 = new Painting { ImageUrl = "painting_019.jpg", Price = 1, PaintingTitle = "Spotty" };
 
-            Painting p20 = new Painting { ImageUrl = "painting_020.jpg", PaintingTitle = "Jacky", Price = 1 };
-            Painting p21 = new Painting { ImageUrl = "painting_021.jpg", PaintingTitle = "Boofy", Price = 1 };
-            Painting p22 = new Painting { ImageUrl = "painting_022.jpg", PaintingTitle = "Spark", Price = 1 };
-            Painting p23 = new Painting { ImageUrl = "painting_023.jpg", PaintingTitle = "Cat at Window", Price = 1 };
-            Painting p24 = new Painting { ImageUrl = "painting_024.jpg", PaintingTitle = "Kitchen", Price = 1 };
-            Painting p25 = new Painting { ImageUrl = "painting_025.jpg", PaintingTitle = "Kitchen", Price = 1 };
-            Painting p26 = new Painting { ImageUrl = "painting_026.jpg", PaintingTitle = "Bottles", Price = 1 };
-            Painting p27 = new Painting { ImageUrl = "painting_027.jpg", PaintingTitle = "Village Celebration", Price = 1 };
-            Painting p28 = new Painting { ImageUrl = "painting_028.jpg", PaintingTitle = "Blue Mist", Price = 1 };
-            Painting p29 = new Painting { ImageUrl = "painting_029.jpg", PaintingTitle = "Under Water", Price = 1 };
+            Painting p20 = new Painting { ImageUrl = "painting_020.jpg", Price = 1, PaintingTitle = "Jacky" };
+            Painting p21 = new Painting { ImageUrl = "painting_021.jpg", Price = 1, PaintingTitle = "Boofy" };
+            Painting p22 = new Painting { ImageUrl = "painting_022.jpg", Price = 1, PaintingTitle = "Spark" };
+            Painting p23 = new Painting { ImageUrl = "painting_023.jpg", Price = 1, PaintingTitle = "Cat at Window" };
+            Painting p24 = new Painting { ImageUrl = "painting_024.jpg", Price = 1, PaintingTitle = "Kitchen" };
+            Painting p25 = new Painting { ImageUrl = "painting_025.jpg", Price = 1, PaintingTitle = "Kitchen" };
+            Painting p26 = new Painting { ImageUrl = "painting_026.jpg", Price = 1, PaintingTitle = "Bottles" };
+            Painting p27 = new Painting { ImageUrl = "painting_027.jpg", Price = 1, PaintingTitle = "Village Celebration" };
+            Painting p28 = new Painting { ImageUrl = "painting_028.jpg", Price = 1, PaintingTitle = "Blue Mist" };
+            Painting p29 = new Painting { ImageUrl = "painting_029.jpg", Price = 1, PaintingTitle = "Under Water"};
 
-            Painting p30 = new Painting { ImageUrl = "painting_030.jpg", PaintingTitle = "Mountain Home", Price = 1 };
-            Painting p31 = new Painting { ImageUrl = "painting_031.jpg", PaintingTitle = "Flowers", Price = 1 };
-            Painting p32 = new Painting { ImageUrl = "painting_032.jpg", PaintingTitle = "Pastel Flowers", Price = 1 };
-            Painting p33 = new Painting { ImageUrl = "painting_033.jpg", PaintingTitle = "Green", Price = 1 };
-            Painting p34 = new Painting { ImageUrl = "painting_034.jpg", PaintingTitle = "I made a Mess", Price = 1 };
-            Painting p35 = new Painting { ImageUrl = "painting_035.jpg", PaintingTitle = "Our Cow", Price = 1 };
-            Painting p36 = new Painting { ImageUrl = "painting_036.jpg", PaintingTitle = "Snoopy", Price = 1 };
-            Painting p37 = new Painting { ImageUrl = "painting_037.jpg", PaintingTitle = "Old man Li", Price = 1 };
-            Painting p38 = new Painting { ImageUrl = "painting_038.jpg", PaintingTitle = "Villagers", Price = 1 };
-            Painting p39 = new Painting { ImageUrl = "painting_039.jpg", PaintingTitle = "Suburbs", Price = 1 };
+            Painting p30 = new Painting { ImageUrl = "painting_030.jpg", Price = 1, PaintingTitle = "Mountain Home" };
+            Painting p31 = new Painting { ImageUrl = "painting_031.jpg", Price = 1, PaintingTitle = "Flowers" };
+            Painting p32 = new Painting { ImageUrl = "painting_032.jpg", Price = 1, PaintingTitle = "Pastel Flowers" };
+            Painting p33 = new Painting { ImageUrl = "painting_033.jpg", Price = 1, PaintingTitle = "Green" };
+            Painting p34 = new Painting { ImageUrl = "painting_034.jpg", Price = 1, PaintingTitle = "I made a Mess" };
+            Painting p35 = new Painting { ImageUrl = "painting_035.jpg", Price = 1, PaintingTitle = "Our Cow" };
+            Painting p36 = new Painting { ImageUrl = "painting_036.jpg", Price = 1, PaintingTitle = "Snoopy" };
+            Painting p37 = new Painting { ImageUrl = "painting_037.jpg", Price = 1, PaintingTitle = "Old man Li" };
+            Painting p38 = new Painting { ImageUrl = "painting_038.jpg", Price = 1, PaintingTitle = "Villagers" };
+            Painting p39 = new Painting { ImageUrl = "painting_039.jpg", Price = 1, PaintingTitle = "Suburbs" };
 
-            Painting p40 = new Painting { ImageUrl = "painting_040.jpg", PaintingTitle = "Villagers", Price = 1 };
-            Painting p41 = new Painting { ImageUrl = "painting_041.jpg", PaintingTitle = "Villagers", Price = 1 };
-            Painting p42 = new Painting { ImageUrl = "painting_042.jpg", PaintingTitle = "Valley", Price = 1 };
-            Painting p43 = new Painting { ImageUrl = "painting_043.jpg", PaintingTitle = "One Brush", Price = 1 };
-            Painting p44 = new Painting { ImageUrl = "painting_044.jpg", PaintingTitle = "Blue Wet", Price = 1 };
-            Painting p45 = new Painting { ImageUrl = "painting_045.jpg", PaintingTitle = "I Broke my Pen", Price = 1 };
-            Painting p46 = new Painting { ImageUrl = "painting_046.jpg", PaintingTitle = "Pattern", Price = 1 };
-            Painting p47 = new Painting { ImageUrl = "painting_047.jpg", PaintingTitle = "Trees", Price = 1 };
-            Painting p48 = new Painting { ImageUrl = "painting_048.jpg", PaintingTitle = "Ma Favorit", Price = 1 };
-            Painting p49 = new Painting { ImageUrl = "painting_049.jpg", PaintingTitle = "War is Bad", Price = 1 };
+            Painting p40 = new Painting { ImageUrl = "painting_040.jpg", Price = 1, PaintingTitle = "Villagers" };
+            Painting p41 = new Painting { ImageUrl = "painting_041.jpg", Price = 1, PaintingTitle = "Villagers" };
+            Painting p42 = new Painting { ImageUrl = "painting_042.jpg", Price = 1, PaintingTitle = "Valley" };
+            Painting p43 = new Painting { ImageUrl = "painting_043.jpg", Price = 1, PaintingTitle = "One Brush" };
+            Painting p44 = new Painting { ImageUrl = "painting_044.jpg", Price = 1, PaintingTitle = "Blue Wet" };
+            Painting p45 = new Painting { ImageUrl = "painting_045.jpg", Price = 1, PaintingTitle = "I Broke my Pen" };
+            Painting p46 = new Painting { ImageUrl = "painting_046.jpg", Price = 1, PaintingTitle = "Pattern" };
+            Painting p47 = new Painting { ImageUrl = "painting_047.jpg", Price = 1, PaintingTitle = "Trees" };
+            Painting p48 = new Painting { ImageUrl = "painting_048.jpg", Price = 1, PaintingTitle = "Ma Favorit" };
+            Painting p49 = new Painting { ImageUrl = "painting_049.jpg", Price = 1, PaintingTitle = "War is Bad" };
 
-            Painting p50 = new Painting { ImageUrl = "painting_050.jpg", PaintingTitle = "War is Bad", Price = 1 };
-            Painting p51 = new Painting { ImageUrl = "painting_051.jpg", PaintingTitle = "War is Bad", Price = 1 };
-            Painting p52 = new Painting { ImageUrl = "painting_052.jpg", PaintingTitle = "El Esdi", Price = 1 };
-            Painting p53 = new Painting { ImageUrl = "painting_053.jpg", PaintingTitle = "Ellen Sdee", Price = 1 };
-            Painting p54 = new Painting { ImageUrl = "painting_054.jpg", PaintingTitle = "Eles Dee", Price = 1 };
-            Painting p55 = new Painting { ImageUrl = "painting_055.jpg", PaintingTitle = "Sea", Price = 1 };
-            Painting p56 = new Painting { ImageUrl = "painting_056.jpg", PaintingTitle = "Sleeping Birds", Price = 1 };
-            Painting p57 = new Painting { ImageUrl = "painting_057.jpg", PaintingTitle = "My Home", Price = 1 };
-            Painting p58 = new Painting { ImageUrl = "painting_058.jpg", PaintingTitle = "Fishy", Price = 1 };
-            Painting p59 = new Painting { ImageUrl = "painting_059.jpg", PaintingTitle = "Fishy", Price = 1 };
+            Painting p50 = new Painting { ImageUrl = "painting_050.jpg", Price = 1, PaintingTitle = "War is Bad" };
+            Painting p51 = new Painting { ImageUrl = "painting_051.jpg", Price = 1, PaintingTitle = "War is Bad" };
+            Painting p52 = new Painting { ImageUrl = "painting_052.jpg", Price = 1, PaintingTitle = "El Esdi" };
+            Painting p53 = new Painting { ImageUrl = "painting_053.jpg", Price = 1, PaintingTitle = "Ellen Sdee" };
+            Painting p54 = new Painting { ImageUrl = "painting_054.jpg", Price = 1, PaintingTitle = "Eles Dee" };
+            Painting p55 = new Painting { ImageUrl = "painting_055.jpg", Price = 1, PaintingTitle = "Sea" };
+            Painting p56 = new Painting { ImageUrl = "painting_056.jpg", Price = 1, PaintingTitle = "Sleeping Birds" };
+            Painting p57 = new Painting { ImageUrl = "painting_057.jpg", Price = 1, PaintingTitle = "My Home" };
+            Painting p58 = new Painting { ImageUrl = "painting_058.jpg", Price = 1, PaintingTitle = "Fishy" };
+            Painting p59 = new Painting { ImageUrl = "painting_059.jpg", Price = 1, PaintingTitle = "Fishy" };
 
-            Painting p60 = new Painting { ImageUrl = "painting_060.jpg", PaintingTitle = "My Village", Price = 1 };
-            Painting p61 = new Painting { ImageUrl = "painting_061.jpg", PaintingTitle = "Home", Price = 1 };
-            Painting p62 = new Painting { ImageUrl = "painting_062.jpg", PaintingTitle = "Fish", Price = 1 };
-            Painting p63 = new Painting { ImageUrl = "painting_063.jpg", PaintingTitle = "Pasxalitsa", Price = 1 };
-            Painting p64 = new Painting { ImageUrl = "painting_064.jpg", PaintingTitle = "Stary Sky", Price = 1 };
-            Painting p65 = new Painting { ImageUrl = "painting_065.jpg", PaintingTitle = "Stary Sky", Price = 1 };
-            Painting p66 = new Painting { ImageUrl = "painting_066.jpg", PaintingTitle = "Neberhood", Price = 1 };
-            Painting p67 = new Painting { ImageUrl = "painting_067.jpg", PaintingTitle = "Neiberhood", Price = 1 };
-            Painting p68 = new Painting { ImageUrl = "painting_068.jpg", PaintingTitle = "Birdy", Price = 1 };
-            Painting p69 = new Painting { ImageUrl = "painting_069.jpg", PaintingTitle = "Neberhoud", Price = 1 };
+            Painting p60 = new Painting { ImageUrl = "painting_060.jpg", Price = 1, PaintingTitle = "My Village" };
+            Painting p61 = new Painting { ImageUrl = "painting_061.jpg", Price = 1, PaintingTitle = "Home" };
+            Painting p62 = new Painting { ImageUrl = "painting_062.jpg", Price = 1, PaintingTitle = "Fish" };
+            Painting p63 = new Painting { ImageUrl = "painting_063.jpg", Price = 1, PaintingTitle = "Pasxalitsa", };
+            Painting p64 = new Painting { ImageUrl = "painting_064.jpg", Price = 1, PaintingTitle = "Stary Sky" };
+            Painting p65 = new Painting { ImageUrl = "painting_065.jpg", Price = 1, PaintingTitle = "Stary Sky" };
+            Painting p66 = new Painting { ImageUrl = "painting_066.jpg", Price = 1, PaintingTitle = "Neberhood" };
+            Painting p67 = new Painting { ImageUrl = "painting_067.jpg", Price = 1, PaintingTitle = "Neiberhood" };
+            Painting p68 = new Painting { ImageUrl = "painting_068.jpg", Price = 1, PaintingTitle = "Birdy" };
+            Painting p69 = new Painting { ImageUrl = "painting_069.jpg", Price = 1, PaintingTitle = "Neberhoud" };
 
-            Painting p70 = new Painting { ImageUrl = "painting_070.jpg", PaintingTitle = "Neiberhud", Price = 1 };
-            Painting p71 = new Painting { ImageUrl = "painting_071.jpg", PaintingTitle = "Moon Home", Price = 1 };
-            Painting p72 = new Painting { ImageUrl = "painting_072.jpg", PaintingTitle = "Mai Tri", Price = 1 };
-            Painting p73 = new Painting { ImageUrl = "painting_073.jpg", PaintingTitle = "Mi Tree", Price = 1 };
-            Painting p74 = new Painting { ImageUrl = "painting_074.jpg", PaintingTitle = "Ma Tri", Price = 1 };
+            Painting p70 = new Painting { ImageUrl = "painting_070.jpg", Price = 1, PaintingTitle = "Neiberhud" };
+            Painting p71 = new Painting { ImageUrl = "painting_071.jpg", Price = 1, PaintingTitle = "Moon Home" };
+            Painting p72 = new Painting { ImageUrl = "painting_072.jpg", Price = 1, PaintingTitle = "Mai Tri" };
+            Painting p73 = new Painting { ImageUrl = "painting_073.jpg", Price = 1, PaintingTitle = "Mi Tree" };
+            Painting p74 = new Painting { ImageUrl = "painting_074.jpg", Price = 1, PaintingTitle = "Ma Tri" };
 
 
 
@@ -360,10 +360,10 @@
 
 
             // SCHOOLS ------------------------------------------------------------------------------->>  
-            School sh01 = new School { Name = "The Lindle School", City = "London", Adress = "59 Picabou Str. SQ9 DZ8 London", Tel = 2109299999, Image = "school_01.jpg", Classroom = new List<Classroom> { cl1, cl2 } };
-            School sh02 = new School { Name = "Little People", City = "Hangzhou", Adress = "156 XiWu", Tel = 210896542, Image = "school_02.jpg", Classroom = new List<Classroom> { cl3, cl4 } };
-            School sh03 = new School { Name = "Nipio", City = "Limnos", Adress = "27 Hroon Str. TK81100 Myrina", Tel = 2109788888, Image = "school_03.jpg", Classroom = new List<Classroom> { cl5, cl6 } };
-            School sh04 = new School { Name = "Faliro School of Arts", City = "Athens", Adress = "56 Agiou Alexandrou TK17561 P.Faliro", Tel = 2106822222, Image = "school_04.jpg", Classroom = new List<Classroom> { cl7 } };
+            School sh01 = new School { Name = "The Lindle School", City = "London", Adress = "59 Picabou Str. SQ9 DZ8 London", Tel = 2109299999, Classroom = new List<Classroom> { cl1, cl2 } };
+            School sh02 = new School { Name = "Little People", City = "Hangzhou", Adress = "156 XiWu", Tel = 210896542, Classroom = new List<Classroom> { cl3, cl4 } };
+            School sh03 = new School { Name = "Nipio", City = "Limnos", Adress = "27 Hroon Str. TK81100 Myrina", Tel = 2109788888, Classroom = new List<Classroom> { cl5, cl6 } };
+            School sh04 = new School { Name = "Faliro School of Arts", City = "Athens", Adress = "56 Agiou Alexandrou TK17561 P.Faliro", Tel = 2106822222, Classroom = new List<Classroom> { cl7 } };
 
 
 

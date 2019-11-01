@@ -113,7 +113,7 @@ namespace Web_Front.Controllers
         // POST: Student/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "StudentId,FirstName,LastName,Age")] Student student)
+        public ActionResult Edit([Bind(Include = "StudentId,AvatarFK,ClassroomFK,FirstName,LastName,Age")] Student student)
         {
             if (ModelState.IsValid)
             {

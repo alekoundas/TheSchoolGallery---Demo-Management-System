@@ -26,18 +26,24 @@ namespace WebApi_Api.Controllers
                 .Include(a => a.School)
                 .Include(b => b.Teacher)
                 .Include(c => c.Students.Select(d => d.Paintings))
-                .Include(e => e.Students.Select(f => f.Avatar));
+                .Include(e => e.Students.Select(f => f.Avatar.Background))
+                .Include(g => g.Students.Select(h => h.Avatar.Hair))
+                .Include(i => i.Students.Select(j => j.Avatar.Body))
+                .Include(k => k.Students.Select(l => l.Avatar.Clothing));
         }
 
         // GET: api/Classroom/5
         [ResponseType(typeof(Classroom))]
         public IHttpActionResult GetClassroom(int id)
         {
-            Classroom classroom = db.ClassroomsDb.Where(w=>w.ClassroomId == id)
+            Classroom classroom = db.ClassroomsDb.Where(a=>a.ClassroomId == id)
                 .Include(a => a.School)
                 .Include(b => b.Teacher)
                 .Include(c => c.Students.Select(d => d.Paintings))
-                .Include(e => e.Students.Select(f => f.Avatar))
+                .Include(e => e.Students.Select(f => f.Avatar.Background))
+                .Include(g => g.Students.Select(h => h.Avatar.Hair))
+                .Include(i => i.Students.Select(j => j.Avatar.Body))
+                .Include(k => k.Students.Select(l => l.Avatar.Clothing))
                 .FirstOrDefault();
 
 

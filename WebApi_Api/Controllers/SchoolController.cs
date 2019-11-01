@@ -23,9 +23,12 @@ namespace WebApi_Api.Controllers
         public IQueryable<School> GetSchools()
         {
             return db.SchoolsDb
-                .Include(a => a.Classroom.Select(b => b.Students.Select(c => c.Paintings)))
-                .Include(d => d.Classroom.Select(e => e.Students.Select(f => f.Avatar)))
-                .Include(g => g.Classroom.Select(e => e.Teacher))
+                .Include(b => b.Classroom.Select(c => c.Students.Select(d => d.Paintings)))
+                .Include(e => e.Classroom.Select(f => f.Students.Select(g => g.Avatar.Background)))
+                .Include(h => h.Classroom.Select(i => i.Students.Select(j => j.Avatar.Hair)))
+                .Include(k => k.Classroom.Select(l => l.Students.Select(m => m.Avatar.Body)))
+                .Include(n => n.Classroom.Select(o => o.Students.Select(p => p.Avatar.Clothing)))
+                .Include(q => q.Classroom.Select(r => r.Teacher))
                 ;
         }
 
@@ -33,10 +36,13 @@ namespace WebApi_Api.Controllers
         [ResponseType(typeof(School))]
         public IHttpActionResult GetSchool(int id)
         {
-            School school = db.SchoolsDb.Where(w => w.SchoolId == id)
-                .Include(a => a.Classroom.Select(b => b.Students.Select(c => c.Paintings)))
-                .Include(d => d.Classroom.Select(e => e.Students.Select(f => f.Avatar)))
-                .Include(g => g.Classroom.Select(e => e.Teacher))
+            School school = db.SchoolsDb.Where(a => a.SchoolId == id)
+                .Include(b => b.Classroom.Select(c => c.Students.Select(d => d.Paintings)))
+                .Include(e => e.Classroom.Select(f => f.Students.Select(g => g.Avatar.Background)))
+                .Include(h => h.Classroom.Select(i => i.Students.Select(j => j.Avatar.Hair)))
+                .Include(k => k.Classroom.Select(l => l.Students.Select(m => m.Avatar.Body)))
+                .Include(n => n.Classroom.Select(o => o.Students.Select(p => p.Avatar.Clothing)))
+                .Include(q => q.Classroom.Select(r => r.Teacher))
                 .FirstOrDefault();
             if (school == null)
             {

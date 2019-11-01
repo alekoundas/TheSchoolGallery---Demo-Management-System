@@ -22,11 +22,16 @@
                                 @Html.AntiForgeryToken()
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                                <div class="wrap-avabox text-center">
-                                    @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "input100" } })
-                                    @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
-                                </div>
-                                <p style="color:#909090">Image File</p>
+                                //DONT REMOVE IT KEEPS THE ID
+                                @Html.HiddenFor(model => model.SchoolId)
+
+
+                                //Had To Be Removed
+                                @*<div class="wrap-avabox text-center">
+                @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "input100" } })
+                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+            </div>
+            <p style="color:#909090">Image File</p>*@
                                 <div class="wrap-avabox text-center">
                                     @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "input100" } })
                                     @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })

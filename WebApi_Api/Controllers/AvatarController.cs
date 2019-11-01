@@ -27,7 +27,13 @@ namespace WebApi_Api.Controllers
         public IQueryable<Avatar> GetAvatar()
         {
 
-            return db.AvatarDb.Include(x => x.Background).Include(y => y.Hair).Include(z => z.Body).Include(a => a.Clothing);
+            return db.AvatarDb
+                .Include(b => b.Background)
+                .Include(c => c.Hair)
+                .Include(d => d.Body)
+                .Include(e => e.Clothing)
+                .Include(f => f.Students.Select(g=>g.Classroom.School))
+                .Include(h => h.Students.Select(i=>i.Paintings));
         }
 
         // GET: api/Avatar/5
@@ -36,9 +42,13 @@ namespace WebApi_Api.Controllers
         {
 
             Avatar avatar = db.AvatarDb
-                .Where(w => w.AvatarId == id)
-                .Include(x => x.Background).Include(y => y.Hair)
-                .Include(z => z.Body).Include(a => a.Clothing)
+                .Where(a => a.AvatarId == id)
+                .Include(b => b.Background)
+                .Include(c => c.Hair)
+                .Include(d => d.Body)
+                .Include(e => e.Clothing)
+                .Include(f => f.Students.Select(g => g.Classroom.School))
+                .Include(h => h.Students.Select(i => i.Paintings))
                 .FirstOrDefault();
 
 

@@ -42,7 +42,7 @@ namespace Web_Services.ApiMapping.Avatars
             request.AddJsonBody(Avatar);
             var response = client.Execute(request).Content;
 
-            Avatar Avatars = JsonConvert.DeserializeObject<Avatar>(response);
+            //Avatar Avatars = JsonConvert.DeserializeObject<Avatar>(response);
         }
 
 

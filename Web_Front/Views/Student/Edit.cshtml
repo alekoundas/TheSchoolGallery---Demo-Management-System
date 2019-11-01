@@ -139,6 +139,11 @@
                             {
                                 @Html.AntiForgeryToken()
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(model => model.StudentId)
+                                @Html.HiddenFor(model => model.ClassroomFK)
+                                @Html.HiddenFor(model => model.AvatarFK)
+
+
 
                                 <div class="wrap-avabox text-center">
                                     @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "input100" } })

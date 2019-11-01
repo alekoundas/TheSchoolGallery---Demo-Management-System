@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Web_DomainClasses.Entities.School
 {
@@ -24,9 +25,14 @@ namespace Web_DomainClasses.Entities.School
         public  ICollection<Painting> Paintings { get; set; }
 
         // Has one Avatar ---------------------------------->>
-        public  Avatar.Avatar Avatar { get; set; }
+        [ForeignKey("AvatarFK")]
+        public Avatar.Avatar Avatar { get; set; }
+        public int AvatarFK { get; set; }
 
         // Has one Class ----------------------------------->>
-        public  Classroom Classroom { get; set; }
+        [ForeignKey("ClassroomFK")]
+        public Classroom Classroom { get; set; }
+
+        public int ClassroomFK { get; set; }
     }
 }

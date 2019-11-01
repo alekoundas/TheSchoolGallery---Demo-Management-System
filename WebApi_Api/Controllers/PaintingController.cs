@@ -22,35 +22,43 @@ namespace WebApi_Api.Controllers
         // GET: api/Painting
         public IQueryable<Painting> GetPaintings()
         {
-            return db.PaintingsDb.Include(x=>x.Student);
+            return db.PaintingsDb
+                .Include(b => b.Student.Avatar.Background)
+                .Include(c => c.Student.Avatar.Hair)
+                .Include(d => d.Student.Avatar.Body)
+                .Include(e => e.Student.Avatar.Clothing)
+                .Include(f => f.Student.Classroom.School);
         }
 
         // GET: api/Painting/5
         [ResponseType(typeof(Painting))]
         public IHttpActionResult GetPainting(int id)
         {
-            Painting painting = db.PaintingsDb.Where(y => y.PaintingId==id).Include(x => x.Student).FirstOrDefault();
-            if (painting == null)
-            {
-                return NotFound();
-            }
+            Painting painting = db.PaintingsDb
+                .Where(a => a.PaintingId == id)
+                .Include(b => b.Student.Avatar.Background)
+                .Include(c => c.Student.Avatar.Hair)
+                .Include(d => d.Student.Avatar.Body)
+                .Include(e => e.Student.Avatar.Clothing)
+                .Include(f => f.Student.Classroom.School)
+                .FirstOrDefault();
 
+
+            if (painting == null)           
+                return NotFound();
+            
             return Ok(painting);
         }
 
         // PUT: api/Painting/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutPainting(int id, Painting painting)
-        {   
+        {
             if (!ModelState.IsValid)
-            {
                 return BadRequest(ModelState);
-            }
 
             if (id != painting.PaintingId)
-            {
                 return BadRequest();
-            }
 
             db.Entry(painting).State = EntityState.Modified;
 

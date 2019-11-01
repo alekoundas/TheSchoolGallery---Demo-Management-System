@@ -22,14 +22,29 @@ namespace WebApi_Api.Controllers
         // GET: api/Student
         public IQueryable<Student> GetStudentDb()
         {
-            return db.StudentDb.Include(x => x.Avatar).Include(y => y.Classroom).Include(z => z.Paintings);
+            return db.StudentDb
+                .Include(x => x.Avatar.Background)
+                .Include(x => x.Avatar.Hair)
+                .Include(x => x.Avatar.Body)
+                .Include(x => x.Avatar.Clothing)
+                .Include(y => y.Classroom.School)
+                .Include(z => z.Paintings);
         }
 
         // GET: api/Student/5
         [ResponseType(typeof(Student))]
         public IHttpActionResult GetStudent(int id)
         {
-            Student student = db.StudentDb.Where(w => w.StudentId == id).Include(x => x.Avatar).Include(y => y.Classroom).Include(z => z.Paintings).FirstOrDefault() ;
+            Student student = db.StudentDb
+                .Where(w => w.StudentId == id)
+                .Include(x => x.Avatar.Background)
+                .Include(x => x.Avatar.Hair)
+                .Include(x => x.Avatar.Body)
+                .Include(x => x.Avatar.Clothing)
+                .Include(y => y.Classroom.School)
+                .Include(z => z.Paintings)
+                .FirstOrDefault();
+
             if (student == null)
             {
                 return NotFound();
