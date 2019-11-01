@@ -4,54 +4,191 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Background.ImageUrl)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Body.ImageUrl)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Clothing.ImageUrl)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Hair.ImageUrl)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th></th>
-    </tr>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="container">
+            <br />
+            <h2 class="text-center" style="color:#f3efe9;"> edit Student</h2>
+            <hr />
+            <br />
+            <div class="row">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Background.ImageUrl)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Body.ImageUrl)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Clothing.ImageUrl)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Hair.ImageUrl)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.AvatarId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.AvatarId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AvatarId })
-        </td>
-    </tr>
+                @foreach (var item in Model)
+                {
+                    <!-- Section - Avatar Result ------------------------------------------>
+                    <div class="col-md-6 mx-auto text-center">
+                        <div class="wrap-Avatar">
+                            <div class="avatar_main">
+
+                                <div><img class="avatar_child" src="~/images/Avatar/@Html.DisplayFor(modelItem => item.Background.ImageUrl)" /></div>
+                                <div><img class="avatar_child" src="~/images/Avatar/@Html.DisplayFor(modelItem => item.Body.ImageUrl)" /></div>
+                            </div>
+
+                            <img class="float-right" src="~/images/logoff.png" />
+
+                        </div>
+                    </div>
+                }
+
+                <!-- Section - Avatar Selection --------------------------------------->
+                <div class="col-md-6 mx-auto  text-center">
+                    <div class="wrap-Avatar">
+                        <div class="row mx-0">
+                            <div class="col px-0">
+                                <button class="login100-form-btn" id="BackgroundSelection">Back</button>
+                            </div>
+                            <div class="col px-0">
+                                <button class="login100-form-btn" id="BodySelection">Body</button>
+                            </div>
+                            <div class="col px-0">
+                                <button class="login100-form-btn" id="ClothSelection">Cloth</button>
+                            </div>
+                            <div class="col px-0">
+                                <button class="login100-form-btn" id="HairSelection">Hair</button>
+                            </div>
+
+                        </div>
+                        <br />
+                        <!-- SubSection - Background Images ----------------------------->
+                        <div id="Background_Items" class="row mx-0">
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/back_09.png" />
+                            </div>
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/back_08.png" />
+                            </div>
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/back_07.png" />
+                            </div>
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/back_06.png" />
+                            </div>
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/back_05.png" />
+                            </div>
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/back_04.png" />
+                            </div>
+
+                        </div>
+
+                        <!-- SubSection - Body Images ----------------------------->
+                        <div id="Body_Items" class="row mx-0">
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/body_01.png" />
+                            </div>
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/body_02.png" />
+                            </div>
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/body_03.png" />
+                            </div>
+
+
+                        </div>
+
+                        <!-- SubSection - Clothing Images ------------------------->
+                        <div id="Cloth_Items" class="row mx-0">
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/clothes_01.png" />
+                            </div>
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/clothes_02.png" />
+                            </div>
+
+
+                        </div>
+
+                        <!-- SubSection - Hair Styles Images ---------------------->
+                        <div id="Hair_Items" class="row mx-0">
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/hair_01.png" />
+                            </div>
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/hair_02.png" />
+                            </div>
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/hair_03.png" />
+                            </div>
+
+                            <div class="col-6 px-0 avatar_selection">
+                                <img src="~/images/Avatar/hair_04.png" />
+                            </div>
+
+                        </div>
+                        <!-- Section - Student Details ---------------------------------------->
+                        @*@Html.ActionLink("Edit", "Edit", new { id = item.AvatarId }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.AvatarId }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.AvatarId })*@
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        // AVATAR BUTTONS
+        $("#BackgroundSelection").click(function (e) {
+            $("#Background_Items").show(88);
+            $("#Body_Items").hide(8);
+            $("#Cloth_Items").hide(8);
+            $("#Hair_Items").hide(8);
+        });
+
+        $("#BodySelection").click(function (e) {
+            $("#Background_Items").hide(8);
+            $("#Body_Items").show(88);
+            $("#Cloth_Items").hide(8);
+            $("#Hair_Items").hide(8);
+        });
+
+        $("#ClothSelection").click(function (e) {
+            $("#Background_Items").hide(8);
+            $("#Body_Items").hide(8);
+            $("#Cloth_Items").show(88);
+            $("#Hair_Items").hide(8);
+        });
+
+        $("#HairSelection").click(function (e) {
+            $("#Background_Items").hide(8);
+            $("#Body_Items").hide(8);
+            $("#Cloth_Items").hide(8);
+            $("#Hair_Items").show(88);
+        });
+    </script>
+
+
 }
 
-</table>
+
+@*@Html.DisplayNameFor(model => model.Background.ImageUrl)
+
+    @Html.DisplayNameFor(model => model.Body.ImageUrl)
+
+    @Html.DisplayNameFor(model => model.Clothes.ImageUrl)
+
+    @Html.DisplayNameFor(model => model.Hair.ImageUrl)
+
+    @Html.DisplayNameFor(model => model.Title)*@
