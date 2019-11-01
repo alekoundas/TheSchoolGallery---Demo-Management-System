@@ -70,16 +70,29 @@
             </div>
         </div>
 
-
-        <div class="col-md-12 mx-auto">
-            <section id="socialLoginForm" class="text-center">
-                <br />
-                <hr />
-                <div id="dark_back_C">
-                    <a href="@Url.Action("PayPalPayment", "PayPal")"><img id="iconBtn" src="~/images/UIcons/cart.png" /> Purchase </a>
-                    <a href="@Url.Action("ClearCart", "PayPal")"><img id="iconBtn" src="~/images/UIcons/cart.png" /> Clear Cart </a>
+        <!-- Section - Links ---------------------------------------->
+        <div style="height:180px;" class="container col-6">
+            <hr />
+            <br />
+            <div class="row">
+                <div class="btn_contain1 col">
+                    <div class="btn_child_norm1">
+                        <a href="@Url.Action("PayPalPayment", "PayPal")"><img src="~/images/UIcons/cart_off.png" /></a>
+                    </div>
+                    <div class="btn_child_live1">
+                        <a style="color:#f3efe9" href="@Url.Action("PayPalPayment", "PayPal")"><img src="~/images/UIcons/cart.png" /> Purchase </a>
+                    </div>
                 </div>
-            </section>
+
+                <div class="btn_contain2 col">
+                    <div class="btn_child_norm2">
+                        <a href="@Url.Action("ClearCart", "PayPal")"><img src="~/images/UIcons/cart_off.png" /></a>
+                    </div>
+                    <div class="btn_child_live2">
+                        <a style="color:#f3efe9" href="@Url.Action("ClearCart", "PayPal")"><img src="~/images/UIcons/delete.png" /> clear cart </a>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>

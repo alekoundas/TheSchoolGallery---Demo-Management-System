@@ -18,11 +18,18 @@ $(document).ready(function () {
     });
 
 
-    
+    // nav shield on scroll --------------------------------------->>
+    $("#Whitted_nav").hide();
+    $(".overlay-bg").hover(function () {
+
+        $("#Whitted_nav").show(1888);
 
 
 
+    });
 
+
+    // BRING THE CANVAS ------------------------------------------->>
     $("#drawingCtrl").hide(0);
 
     $('#paintBrushButton').mouseenter(function () {
@@ -227,7 +234,7 @@ $(document).ready(function () {
     }
 
 
-    
+
 
 
 

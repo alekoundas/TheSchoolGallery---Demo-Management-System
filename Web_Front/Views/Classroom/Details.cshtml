@@ -47,14 +47,17 @@
 
                         @foreach (var item in Model.Students)
                         {
+                            <!-- Section - Avatar ------------------------------------------>
                             <div class="col-md-4 mx-auto">
-                                <div style="width:300px; height:300px;" class="wrap-studentAvatar">
+                                <div style="width:300px; height:300px;" class="wrap-studentAvatar Mama_Avatar">
                                     @*AVATAR HERE ------------------------------------------------------>>*@
-                                    @*<img style="min-height:200px;" src="~/images/Avatar/back_06.png" />*@
-                                    <img style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(modelItem => item.Avatar.Background.ImageUrl)" />
+                                    <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(modelItem => item.Avatar.Background.ImageUrl)" />
+                                    <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(modelItem => item.Avatar.Body.ImageUrl)" />
+                                    <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(modelItem => item.Avatar.Clothing.ImageUrl)" />
+                                    <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(modelItem => item.Avatar.Hair.ImageUrl)" />
+
                                 </div>
                             </div>
-
 
 
                             <div class="col-lg-8 col-sm-6 align-items-stretch">
@@ -79,12 +82,17 @@
                 </div>
 
                 <!-- Section - Links ---------------------------------------->
-                <div class="col-md-12 mx-auto text-center">
-                    <div class="paintingcontainer">
-                        <hr />
-                        <br />
-                        <div>
-                            <a style="color:#f3efe9" href="@Url.Action("Details", "School", new { id = Model.ClassroomId })"><img id="iconBtn" src="~/images/UIcons/schools_off.png" /> school </a>
+                <div style="height:180px;" class="container col-6 align-self-center">
+                    <hr />
+                    <br />
+                    <div class="row">
+                        <div class="btn_contain3 col">
+                            <div class="btn_child_norm3">
+                                <a href="@Url.Action("Details", "School", new { id = Model.ClassroomId })"><img src="~/images/UIcons/schools_off.png" /></a>
+                            </div>
+                            <div class="btn_child_live3">
+                                <a style="color:#f3efe9" href="@Url.Action("Details", "School", new { id = Model.ClassroomId })"><img src="~/images/UIcons/schoolspng.png" /> go to schools </a>
+                            </div>
                         </div>
                     </div>
                 </div>
