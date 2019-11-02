@@ -12,12 +12,14 @@ using Web_Services.ApiMapping;
 
 namespace Web_Front.Controllers
 {
+    [Authorize]
     public class PaintingController : MasterController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         PaintingApiService PaintingServ = new PaintingApiService();
 
         // GET: Painting
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View(PaintingServ.GetPaintings());

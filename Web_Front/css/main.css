@@ -68,48 +68,6 @@ a, a:focus, a:hover {
     background: #f9f9ff
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Arvo', serif;
-    color: #222;
-    line-height: 1.5em;
-    margin-bottom: 0;
-    margin-top: 0;
-    font-weight: 500
-}
-
-.h1, .h2, .h3, .h4, .h5, .h6 {
-    margin-bottom: 0;
-    margin-top: 0;
-    font-family: 'Arvo', serif;
-    font-weight: 600;
-    color: #222
-}
-
-h1, .h1 {
-    font-size: 36px
-}
-
-h2, .h2 {
-    font-size: 30px
-}
-
-h3, .h3 {
-    font-size: 24px
-}
-
-h4, .h4 {
-    font-size: 18px
-}
-
-h5, .h5 {
-    font-size: 16px
-}
-
-h6, .h6 {
-    font-size: 14px;
-    color: #222
-}
-
 td, th {
     border-radius: 0px
 }
@@ -735,7 +693,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .typography h1, .typography h2, .typography h3, .typography h4, .typography h5, .typography h6 {
-    color: #777
+    color: #4a4a4a;
 }
 
 .button-area {
@@ -2597,7 +2555,6 @@ footer {
         top: 50px;
         left: 150px;
         color: #fff;
-        text-shadow: 2px 2px 2px #383838;
     }
 
     .cd-floating-background img:not(:first-child) {
@@ -3043,11 +3000,7 @@ body {
     margin: 0px;
 }
 
-.paintingdesc h1, h2, h3, h4, h5 {
-    color: #424242;
-    margin: 0px;
-    text-shadow: -1px 1px #f3efe9;
-}
+
 
 .paintingcontainer {
     margin-bottom: 100px;
@@ -3896,6 +3849,17 @@ section hr {
     border: 15px solid #f3efe9;
 }
 
+.sideFrameD {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding:15px;
+    background: #f3efe9;
+    overflow: hidden;
+    box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
+    border: 15px solid #dbd7d1;
+}
+
 .dottedFramenoH {
     position: relative;
     width: 100%;
@@ -3929,6 +3893,7 @@ section hr {
     overflow: hidden;
     box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
     border: 2px dotted #5c5c5c;
+    transition-duration: 1s;
 }
 
 .dottedFrameDark2 {
@@ -3940,11 +3905,18 @@ section hr {
     overflow: hidden;
     box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
     border: 2px dotted #5c5c5c;
+    transition-duration: 1s;
 }
 
-.sideFrame h1, h2, h3, h4, h5 {
+.sideFrame h1, .sideFrame h2, .sideFrame h3, .sideFrame h4, .sideFrame h5 {
     color: #f3efe9;
     text-shadow: none;
+}
+
+.sideFrameD h1, .sideFrameD h2, .sideFrameD h3, .sideFrameD h4, .sideFrameD h5 {
+    color: #5c5c5c;
+    text-shadow: none;
+    margin-bottom:2px;
 }
 
 .wrap-studentAvatar {
@@ -3989,7 +3961,7 @@ section hr {
     -webkit-transition-timing-function: ease-in;
 }
 
-.paintingInfo h4, .paintingInfo h5, .paintingInfo hr, .paintingInfo a {
+.paintingInfo h4, .paintingInfo h5, .paintingInfo hr, .paintingInfo li, .paintingInfo a {
     color: #f3efe9;
     text-shadow: none;
 }
@@ -4002,6 +3974,13 @@ section hr {
 .paintingInfo {
     margin-bottom: 20px;
 }
+
+h1, h2, h3, h4, h5 {
+    color: #f3efe9;
+    margin: 0px;
+    /*text-shadow: -1px 1px #f3efe9*/;
+}
+
 
 /*#endregion DETAILING*/
 
@@ -4017,15 +3996,24 @@ section hr {
 
 
 #Whitted_nav {
-    display: block;
-    position: absolute;
-    top: 0px;
+    position: fixed;
+    top: -100px;
     left: 0px;
     width: 100%;
     height: 70px;
-    background-color: rgba(243, 239, 233, 0.60);
     z-index: -1;
+    opacity:0;
+    background-color: rgba(243, 239, 233, 0.50);
+    box-shadow: 3px 3px 18px rgba(0, 0, 0, 0.4);
 }
+
+
+    #Whitted_nav.fixed {
+        background-color: rgba(243, 239, 233, 0.50);
+        box-shadow: 3px 3px 18px rgba(0, 0, 0, 0.4);
+    }
+
+
 
 #Whitted {
     display: none;
@@ -4082,4 +4070,13 @@ section hr {
     left: 0px;
     width: 100%;
     height: 100%;
+}
+
+.dottedsurr {
+    border: 1px dotted rgba(64, 64, 64, 0.20);
+}
+
+.isThisLink:hover {
+    border: 4px dotted #f3efe9;
+    transition-duration: 1s;
 }

@@ -18,15 +18,19 @@ $(document).ready(function () {
     });
 
 
-    // nav shield on scroll --------------------------------------->>
-    $("#Whitted_nav").hide();
-    $(".overlay-bg").hover(function () {
+    // Header Scroll  --------------------------------------------->>
+    $(window).on('scroll', function () {
+        var scroll = $(window).scrollTop();
 
-        $("#Whitted_nav").show(1888);
-
-
-
+        if (scroll >= 180) {
+            $("#Whitted_nav").animate({
+                top: "0px",
+                opacity: 1
+            }, 1888);
+        }
     });
+
+
 
 
     // BRING THE CANVAS ------------------------------------------->>

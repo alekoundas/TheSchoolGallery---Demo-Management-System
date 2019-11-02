@@ -13,6 +13,7 @@ using Web_Services.ApiMapping;
 
 namespace Web_Front.Controllers
 {
+    [Authorize]
     public class ClassroomController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

@@ -10,10 +10,14 @@
 <div class="feature-area pt-10 pb-10  relative">
     <div class="container">
         <div class="row">
-            <h2 class="col-md-6">
-                <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                @Html.ActionLink("Create New", "Create")
-            </h2>
+            @if (User.IsInRole("Admin"))
+            {
+                <!-- ADMIN VIEW ----------------------------------------------------- -->
+                <h2 class="col-md-6">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    @Html.ActionLink("Create New", "Create")
+                </h2>
+            }
             <div class="col-md-6">
                 @using (Html.BeginForm())
                 {
@@ -27,56 +31,68 @@
     </div>
 </div>
 
+<!-- SECOND BANNER ----------------------------------------------------- -->
+@Html.Partial("_SchoolMapLocations")
+
 <section class="feature-area pt-100 pb-100  relative">
     <div class="overlay overlay-bg"></div>
     <div class="container">
         <div class="row">
             @foreach (var item in Model)
             {
-                <div class="col-12 align-items-stretch">
-
-                    @*PARALLAXING SCHOOL IMAGES*@
-                    <div class="oz-body-wrap2">
-                        <div class="container-fluid">
-                            <div class="cd-background-wrapper">
-                                <figure class="cd-floating-background">
-                                    <h1 class="text-center">@Html.DisplayFor(modelItem => item.Name)</h1>
-                                    <img style="top:60px" class="stackImages p_child" src="~/images/parallax/School_Parallax_back_01.png">
-                                    <img style="top:40px" class="stackImages P_child" src="~/images/parallax/School_Parallax_mount_02.png">
-                                    <img style="top:20px" class="stackImages p_child" src="~/images/parallax/School_Parallax_mount_01.png">
-                                    <img style="top:80px" class="stackImages p_child" src="~/images/parallax/School_Parallax_school.png">
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="paintingcontainer">
-                        <div class="wrap-School">
-                            <div class="painting text-center">
-                                @*IMAGE*@
-                                @*<img class="schoolBanner" src="~/images/schools/@Html.DisplayFor(modelItem => item.Image)" />*@
-
-                            </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 align-items-stretch">
+                    <div class="dottedsurr">
+                        <div class="dottedFrameDark2 isThisLink">
                             <br />
-                            <div class="Schooldesc">
-                                <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
-                                <hr />
+                            <a href="@Url.Action("Details", "School", new { id = item.SchoolId })">
+                                <div class="Schooldesc">
+                                    <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+                                    <hr />
+                                    <ul class="text-right paintingInfo">
+                                        <li>City: @Html.DisplayFor(modelItem => item.City)</li>
+                                        <li>Address: @Html.DisplayFor(modelItem => item.Adress)</li>
+                                        <li>Tel: @Html.DisplayFor(modelItem => item.Tel)</li>
+                                    </ul>
+                                </div>
+                            </a>
+                        </div>
 
-                                <ul class="text-right">
-                                    <li>City: @Html.DisplayFor(modelItem => item.City)</li>
-                                    <li>Address: @Html.DisplayFor(modelItem => item.Adress)</li>
-                                    <li>Tel: @Html.DisplayFor(modelItem => item.Tel)</li>
-                                </ul>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <!-- Section - Links ---------------------------------------->
+                            <div style="height:180px;" class="container col-12">
+                                <br />
+                                <div class="row">
+                                    <div class="btn_contain1 col">
+                                        <div class="btn_child_norm1">
+                                            <a href="@Url.Action("Edit", "School", new { id = item.SchoolId })"><img src="~/images/UIcons/edit_off.png" /></a>
+                                        </div>
+                                        <div class="btn_child_live1">
+                                            <a style="color:#f3efe9" href="@Url.Action("Edit", "School", new { id = item.SchoolId })"><img src="~/images/UIcons/edit.png" /> edit </a>
+                                        </div>
+                                    </div>
 
+                                    <div class="btn_contain2 col">
+                                        <div class="btn_child_norm2">
+                                            <a href="@Url.Action("Details", "School", new { id = item.SchoolId })"><img src="~/images/UIcons/details_off.png" /></a>
+                                        </div>
+                                        <div class="btn_child_live2">
+                                            <a style="color:#f3efe9" href="@Url.Action("Details", "School", new { id = item.SchoolId })"><img src="~/images/UIcons/details.png" /> details </a>
+                                        </div>
+                                    </div>
 
+                                    <div class="btn_contain3 col">
+                                        <div class="btn_child_norm3">
+                                            <a href="@Url.Action("Delete", "School", new { id = item.SchoolId })"><img src="~/images/UIcons/delete_off.png" /></a>
+                                        </div>
+                                        <div class="btn_child_live3">
+                                            <a style="color:#f3efe9" href="@Url.Action("Delete", "School", new { id = item.SchoolId })"><img src="~/images/UIcons/delete.png" /> delete </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <a style="color:#f3efe9" href="@Url.Action("Edit", "School", new { id = item.SchoolId })"><img id="iconBtn" src="~/images/UIcons/edit_off.png" /> edit </a>
-                            <a style="color:#f3efe9" href="@Url.Action("Details", "School", new { id = item.SchoolId })"><img id="iconBtn" src="~/images/UIcons/details_off.png" /> details </a>
-                            <a style="color:#f3efe9" href="@Url.Action("Delete", "School", new { id = item.SchoolId })"><img id="iconBtn" src="~/images/UIcons/delete_off.png"/> delete </a>
-                        </div>
+                        }
+
 
                     </div>
                 </div>

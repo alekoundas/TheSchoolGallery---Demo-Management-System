@@ -18,6 +18,8 @@
                         <span class="login100-form-title p-b-33">
                             Create New Painting
                         </span>
+                        <br />
+                        <br />
 
                         @using (Html.BeginForm())
                         {
@@ -53,8 +55,7 @@
                             <div class="container-login100-form-btn m-t-20">
                                 <input class="login100-form-btn" type="submit" value="Create" />
                             </div>
-                            <br />
-                            <hr />
+
                         }
 
 
@@ -74,7 +75,7 @@
 
 
         <!-- Section - Links ---------------------------------------->
-        <div class="col-md-12 mx-auto text-center">
+        <div class="col-md-12 mx-auto">
             <div class="paintingcontainer">
                 <hr />
                 <br />
@@ -84,7 +85,7 @@
                                 <a href="@Url.Action("Index", "Painting")"><img src="~/images/UIcons/paintings_off.png" /></a>
                             </div>
                             <div class="btn_child_live1">
-                                <a style="color:#f3efe9" href="@Url.Action("Index", "Painting")"><img src="~/images/UIcons/paintings.png" /> go to paintings </a>
+                                <a style="color:#f3efe9" href="@Url.Action("Index", "Painting")"><img src="~/images/UIcons/paintings.png" /> paintings </a>
                             </div>
                         </div>
                 </div>

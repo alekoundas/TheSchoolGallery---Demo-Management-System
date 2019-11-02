@@ -13,8 +13,10 @@ using Web_DomainClasses.Entities.School;
 
 namespace Web_Front.Controllers
 {
+    [Authorize]
     public class HomeController : MasterController
     {
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View();

@@ -11,12 +11,6 @@
 <div class="feature-area pt-10 pb-10  relative">
     <div class="container">
         <div class="row">
-            <h2 class="col-md-6">
-
-                <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                @Html.ActionLink("Create New", "Create")
-
-            </h2>
             <div class="col-md-6">
                 @using (Html.BeginForm())
                 {
@@ -37,71 +31,65 @@
         <div class="row">
             @foreach (var item in Model)
             {
-                <div class="col-lg-4 col-sm-6 align-items-stretch">
+                <div class="col-lg-4 col-sm-6 align-items-stretch dottedsurr">
                     <div class="paintingcontainer">
-                        <div>
-                            <div class="paintingInfo">
-                                <div class="row">
-                                    <!-- Section - Avatar ------------------------------------------>
-                                    <div class="col">
-                                        <a href="@Url.Action("Details", "Student", new { id = item.StudentFK })">
-                                            <div style="width:80px; height:80px; border:4px dotted #e5e2dd" class="wrap-studentAvatar Mama_Avatar">
-                                                @*AVATAR HERE ------------------------------------------------------>>*@
-                                                <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(modelItem => item.Student.Avatar.Background.ImageUrl)" />
-                                                <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(modelItem => item.Student.Avatar.Body.ImageUrl)" />
-                                                <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(modelItem => item.Student.Avatar.Clothing.ImageUrl)" />
-                                                <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(modelItem => item.Student.Avatar.Hair.ImageUrl)" />
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <!-- Student - Link ------------------------------------------>
-                                    <div class="col">
-                                        <h3>@Html.DisplayFor(modelItem => item.PaintingTitle) </h3>
-                                        <hr />
-                                        <a href="@Url.Action("Details", "Student", new { id = item.StudentFK })">
-                                            by @Html.DisplayFor(modelItem => item.Student.FirstName) @Html.DisplayFor(modelItem => item.Student.LastName)
-                                        </a>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!-- PAINTING ------------------------------------------>
-                            <div class="painting" id="grid">
-                                <div class="uc-container">
-                                    <div class="uc-initial-content">
-                                        <img id="openit" src="~/images/paintings/@Html.DisplayFor(modelItem => item.ImageUrl)" />
-                                    </div>
-
-                                    <div class="uc-final-content">
-                                        <img id="closeit" src="~/images/paintings/@Html.DisplayFor(modelItem => item.ImageUrl)" />
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- PAINTING end------------------------------------------>
-                            <br />
-                            <div class="btn_contain1">
-                                <div class="row">
-                                    <div class="col">
-                                        <!-- CART ------------------------------------------>
-                                        <div class="btn_child_norm1">
-                                            <a href="@Url.Action("AddToCart", "Paypal", new { PaintingID = item.PaintingId })"><img class="cart_btn" src="~/images/UIcons/cart_off.png" /></a>
+                        <div class="paintingInfo">
+                            <div class="row">
+                                <!-- Section - Avatar ------------------------------------------>
+                                <div class="col">
+                                    <a href="@Url.Action("Details", "Student", new { id = item.StudentFK })">
+                                        <div style="width:80px; height:80px; border:4px dotted #e5e2dd" class="wrap-studentAvatar Mama_Avatar">
+                                            @*AVATAR HERE ------------------------------------------------------>>*@
+                                            <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(modelItem => item.Student.Avatar.Background.ImageUrl)" />
+                                            <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(modelItem => item.Student.Avatar.Body.ImageUrl)" />
+                                            <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(modelItem => item.Student.Avatar.Clothing.ImageUrl)" />
+                                            <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(modelItem => item.Student.Avatar.Hair.ImageUrl)" />
                                         </div>
-                                        <div class="btn_child_live1">
-                                            <a style="color:#f3efe9" href="@Url.Action("AddToCart", "Paypal", new { PaintingID = item.PaintingId })"><img class="cart_btn_hidden" src="~/images/UIcons/cart.png" />add to cart</a>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <!-- Price ------------------------------------------>
-                                        <h5 class="text-right">
-                                            Donate:
-                                            <span style="font-size:24px; font-weight:800;" class="fa"> @Html.DisplayFor(modelItem => item.Price)</span>
-                                            <i class="fa fa-eur" aria-hidden="true"></i>
-                                        </h5>
-                                    </div>
-
+                                    </a>
+                                </div>
+                                <!-- Student - Link ------------------------------------------>
+                                <div class="col">
+                                    <h3>@Html.DisplayFor(modelItem => item.PaintingTitle) </h3>
+                                    <hr />
+                                    <a href="@Url.Action("Details", "Student", new { id = item.StudentFK })">
+                                        by @Html.DisplayFor(modelItem => item.Student.FirstName) @Html.DisplayFor(modelItem => item.Student.LastName)
+                                    </a>
                                 </div>
                             </div>
-
+                        </div>
+                        <!-- PAINTING ------------------------------------------>
+                        <div class="painting" id="grid">
+                            <div class="uc-container">
+                                <div class="uc-initial-content">
+                                    <img id="openit" src="~/images/paintings/@Html.DisplayFor(modelItem => item.ImageUrl)" />
+                                </div>
+                                <div class="uc-final-content">
+                                    <img id="closeit" src="~/images/paintings/@Html.DisplayFor(modelItem => item.ImageUrl)" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- PAINTING end------------------------------------------>
+                        <br />
+                        <div class="btn_contain1">
+                            <div class="row">
+                                <div class="col">
+                                    <!-- CART ------------------------------------------>
+                                    <div class="btn_child_norm1">
+                                        <a href="@Url.Action("AddToCart", "Paypal", new { PaintingID = item.PaintingId })"><img class="cart_btn" src="~/images/UIcons/cart_off.png" /></a>
+                                    </div>
+                                    <div class="btn_child_live1">
+                                        <a style="color:#f3efe9" href="@Url.Action("AddToCart", "Paypal", new { PaintingID = item.PaintingId })"><img class="cart_btn_hidden" src="~/images/UIcons/cart.png" />add to cart</a>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <!-- Price ------------------------------------------>
+                                    <h5 class="text-right">
+                                        Donate:
+                                        <span style="font-size:24px; font-weight:800;" class="fa"> @Html.DisplayFor(modelItem => item.Price)</span>
+                                        <i class="fa fa-eur" aria-hidden="true"></i>
+                                    </h5>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

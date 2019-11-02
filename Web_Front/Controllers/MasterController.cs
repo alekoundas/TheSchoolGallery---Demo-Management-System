@@ -14,6 +14,7 @@ using System.Net;
 
 namespace Web_Front.Controllers
 {
+    [Authorize]
     //Every Controller Inherits Controller and SignalR Logic From MasterController
     public class MasterController : Controller
     {
@@ -37,6 +38,7 @@ namespace Web_Front.Controllers
 
 
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult GetMessage()
         {
 

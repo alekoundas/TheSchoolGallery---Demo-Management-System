@@ -4,11 +4,19 @@
     ViewBag.Title = "Index";
 }
 
+@if (User.IsInRole("Admin"))
+{
+    <!-- ADMIN VIEW ----------------------------------------------------- -->
+    @Html.Partial("_Index_Admin")
+}
+else
+{
+    <!-- GUEST VIEW ----------------------------------------------------- -->
+    @Html.Partial("_Index_Guest")
+}
 
-<!-- ADMIN VIEW ----------------------------------------------------- -->
-@*@Html.Partial("_Index_Admin")*@
 
-<!-- GUEST VIEW ----------------------------------------------------- -->
-@Html.Partial("_Index_Guest")
+
+
 
 

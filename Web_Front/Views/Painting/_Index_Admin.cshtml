@@ -58,16 +58,45 @@
                                     <a href="@Url.Action("Details", "Student", new { id = item.PaintingId })">by @Html.DisplayFor(modelItem => item.Student.FirstName) @Html.DisplayFor(modelItem => item.Student.LastName) </a>
                                     <hr />
                                     <h5 class="text-right">
-                                        Suggested Donation:  <span style="font-size:24px; font-weight:800;" class="fa"> @Html.DisplayFor(modelItem => item.Price)</span><i class="fa fa-eur" aria-hidden="true"></i>
+                                        Donation:  <span style="font-size:24px; font-weight:800;" class="fa"> @Html.DisplayFor(modelItem => item.Price)</span><i class="fa fa-eur" aria-hidden="true"></i>
                                     </h5>
                                 </div>
 
                             </div>
                         </div>
-                        <div>
-                            <a style="color:#f3efe9" href="@Url.Action("Edit", "Painting", new { id = item.PaintingId })"><img src="~/images/UIcons/edit_off.png"/> edit </a>
-                            <a style="color:#f3efe9" href="@Url.Action("Details", "Painting", new { id = item.PaintingId })"><img src="~/images/UIcons/details_off.png" /> details </a>
-                            <a style="color:#f3efe9" href="@Url.Action("Delete", "Painting", new { id = item.PaintingId })"><img src="~/images/UIcons/delete_off.png" /> delete </a>
+
+                        <!-- Section - Links ---------------------------------------->
+                        <div style="height:180px;" class="container col-12">
+                            <hr />
+                            <br />
+                            <div class="row">
+                                <div class="btn_contain1 col">
+                                    <div class="btn_child_norm1">
+                                        <a href="@Url.Action("Edit", "Painting", new { id = item.PaintingId })"><img src="~/images/UIcons/edit_off.png" /></a>
+                                    </div>
+                                    <div class="btn_child_live1">
+                                        <a style="color:#f3efe9" href="@Url.Action("Edit", "Painting", new { id = item.PaintingId })"><img src="~/images/UIcons/edit.png" /> edit </a>
+                                    </div>
+                                </div>
+
+                                <div class="btn_contain2 col">
+                                    <div class="btn_child_norm2">
+                                        <a href="@Url.Action("Details", "Painting", new { id = item.PaintingId })"><img src="~/images/UIcons/details_off.png" /></a>
+                                    </div>
+                                    <div class="btn_child_live2">
+                                        <a style="color:#f3efe9" href="@Url.Action("Details", "Painting", new { id = item.PaintingId })"><img src="~/images/UIcons/details.png" /> details </a>
+                                    </div>
+                                </div>
+
+                                <div class="btn_contain3 col">
+                                    <div class="btn_child_norm3">
+                                        <a href="@Url.Action("Delete", "Painting", new { id = item.PaintingId })"><img src="~/images/UIcons/delete_off.png" /></a>
+                                    </div>
+                                    <div class="btn_child_live3">
+                                        <a style="color:#f3efe9" href="@Url.Action("Delete", "Painting", new { id = item.PaintingId })"><img src="~/images/UIcons/delete.png" /> delete </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                     </div>

@@ -13,6 +13,7 @@ using Web_Services.ApiMapping.Avatars;
 
 namespace Web_Front.Controllers
 {
+    [Authorize]
     public class AvatarController : Controller
     {
         AvatarApiService ServiceAvatar = new AvatarApiService();
