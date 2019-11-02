@@ -79,6 +79,31 @@ namespace Web_Front.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        // Custom Fields ---------------->>
+        [Display(Name = "Nickname")]
+        [StringLength(20, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
+        public string Nickname { get; set; }
+
+        [Display(Name = "Profile Photo")]
+        public string Photo { get; set; }
+
+        [Display(Name = "Country")]
+        [StringLength(20, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
+        public string Country { get; set; }
+
+        [Display(Name = "City")]
+        [StringLength(20, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
+        public string City { get; set; }
+
+        [Display(Name = "Address")]
+        [StringLength(120, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        public string Address { get; set; }
+
+        [Display(Name = "Phone Number")]
+        [Range(8, 10, ErrorMessage = "Tel must have a range of 8 to 10 digits.")]
+        public long Telephone { get; set; }
+
     }
 
     public class ResetPasswordViewModel

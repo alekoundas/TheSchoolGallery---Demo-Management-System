@@ -24,27 +24,52 @@
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
                             <h5 class="text-center">Create a new account.</h5>
-
+                            
                             <div class="wrap-input100">
-                                <span class="focus-input100-1"></span>
-                                <span class="focus-input100-2"></span>
+                                @Html.TextBoxFor(m => m.Nickname, new { @class = "input100", placeholder = "Email" })
+                                @Html.ValidationMessageFor(m => m.Nickname, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="wrap-input100 rs1">
                                 @Html.TextBoxFor(m => m.Email, new { @class = "input100", placeholder = "Email" })
                                 @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                             </div>
 
                             <div class="wrap-input100 rs1">
-                                <span class="focus-input100-1"></span>
-                                <span class="focus-input100-2"></span>
                                 @Html.PasswordFor(m => m.Password, new { @class = "input100", placeholder = "Password" })
                                 @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                             </div>
 
                             <div class="wrap-input100 rs2">
-                                <span class="focus-input100-1"></span>
-                                <span class="focus-input100-2"></span>
                                 @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "input100", placeholder = "Password" })
                                 @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
                             </div>
+
+                            // Custom Added------------------------------>>
+                            <div class="wrap-input100 rs2">
+                                @Html.TextBoxFor(m => m.Country, new { @class = "input100", placeholder = "Country" })
+                                @Html.ValidationMessageFor(m => m.Country, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="wrap-input100 rs2">
+                                @Html.TextBoxFor(m => m.City, new { @class = "input100", placeholder = "City" })
+                                @Html.ValidationMessageFor(m => m.City, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="wrap-input100 rs2">
+                                @Html.TextBoxFor(m => m.Address, new { @class = "input100", placeholder = "Address" })
+                                @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+                            </div>
+
+                            @*<div class="wrap-input100 rs2">
+                                @Html.TextBoxFor(m => m.Telephone, new { @class = "input100", placeholder = "Telephone Number" })
+                                @Html.ValidationMessageFor(m => m.Telephone, "", new { @class = "text-danger" })
+                            </div>*@
+
+                            @*<div class="wrap-input100 rs2">
+                                @Html.TextBoxFor(m => m.Photo, new { @class = "input100", placeholder = "Photo" })
+                                @Html.ValidationMessageFor(m => m.Photo, "", new { @class = "text-danger" })
+                            </div>*@
 
                             // REGISTER BUTTON ----------------------------------------------------
                             <div class="container-login100-form-btn m-t-20">
@@ -60,37 +85,46 @@
                         <img style="bottom:0px" class="stackImages p_child" id="slideone" src="~/images/parallax/Portrait_figure.png">
                         <img style="bottom:0px" class="stackImages P_child" id="slidetwo" src="~/images/parallax/Portrait_boi2.png">
                     </div>
+
+                    <div class="dottedFrameForLinks">
+
+                        <!-- Section - Links ---------------------------------------->
+                        <div class="container col-12">
+                            <h5 class="text-center">Visit External Sites</h5>
+                            <hr />
+                            <div class="row">
+                                <div class="btn_contain1 col">
+                                    <div class="btn_child_norm1">
+                                        <a href="http://www.google.com"><img src="~/images/UIcons/google_off.png" /></a>
+                                    </div>
+                                    <div class="btn_child_live1">
+                                        <a style="color:#f3efe9" href="http://www.google.com"><img src="~/images/UIcons/google.png" /> go to Google </a>
+                                    </div>
+                                </div>
+
+                                <div class="btn_contain2 col">
+                                    <div class="btn_child_norm2">
+                                        <a href="http://www.facebook.com"><img src="~/images/UIcons/facebook_off.png" /></a>
+                                    </div>
+                                    <div class="btn_child_live2">
+                                        <a style="color:#f3efe9" href="http://www.facebook.com"><img src="~/images/UIcons/facebook.png" /> go to Facebook </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
                 </div>
 
 
             </div>
         </div>
 
-        <!-- Section - Links ---------------------------------------->
-        <div style="height:180px;" class="container col-6">
-            <h3 class="text-center">Visit External Sites</h3>
-            <hr />
-            <br />
-            <div class="row">
-                <div class="btn_contain1 col">
-                    <div class="btn_child_norm1">
-                        <a href="http://www.google.com"><img src="~/images/UIcons/google_off.png" /></a>
-                    </div>
-                    <div class="btn_child_live1">
-                        <a style="color:#f3efe9" href="http://www.google.com"><img src="~/images/UIcons/google.png" /> go to Google </a>
-                    </div>
-                </div>
-
-                <div class="btn_contain2 col">
-                    <div class="btn_child_norm2">
-                        <a href="http://www.facebook.com"><img src="~/images/UIcons/facebook_off.png" /></a>
-                    </div>
-                    <div class="btn_child_live2">
-                        <a style="color:#f3efe9" href="http://www.facebook.com"><img src="~/images/UIcons/facebook.png" /> go to Facebook </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </div>
 </div>
 

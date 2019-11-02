@@ -21,7 +21,7 @@ namespace Web_DomainClasses.Entities.School
         [MaxLength(50, ErrorMessage = "City Name must be shorter")]
         public string City { get; set; }
 
-        [Required(ErrorMessage = "You have to give an Adress")]
+        [Required(ErrorMessage = "You have to give an Address")]
         [MinLength(2, ErrorMessage = "Adress must be longer")]
         [MaxLength(50, ErrorMessage = "Adress must be shorter")]
         public string Adress { get; set; }

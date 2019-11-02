@@ -3416,7 +3416,7 @@ input.inputchat {
 
 .alert-validate::after {
     content: "\f12a";
-    font-family: FontAwesome;
+    font-family: "FontAwesome";
     display: block;
     position: absolute;
     color: #c80000;
@@ -3884,6 +3884,16 @@ section hr {
     margin-bottom: 40px;
     padding: 25px;
     overflow: hidden;
+    box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
+    border: 2px dotted #f3efe9;
+}
+
+.dottedFrameForLinks {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    margin-top: 40px;
+    padding: 25px;
     box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
     border: 2px dotted #f3efe9;
 }
