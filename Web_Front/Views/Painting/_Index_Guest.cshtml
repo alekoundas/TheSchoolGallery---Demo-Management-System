@@ -5,25 +5,47 @@
 }
 
 
-<!-- SECOND BANNER ----------------------------------------------------- -->
+<!-- SECOND BANNER ------------------------------------------------------- -->
 @Html.Partial("_SecondBanner")
 
-<div class="feature-area pt-10 pb-10  relative">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                @using (Html.BeginForm())
-                {
-                    <p>
-                        Find by Name: @Html.TextBox("SearchString")
-                        <input class="btn btn-large" type="submit" value="Search" />
-                    </p>
-                }
-            </div>
-        </div>
-    </div>
+<!-- Section - Search/Filter/etc -------------------------------------------->
+    <div class="col-md-12 mx-auto">
+        
+        <form>
+            <div class="form-group">
+                <div style="box-shadow: 3px 3px 18px rgba(0, 0, 0, 0.4);" class="container pt-20 pb-20">
+                    <div class="row">
+                        <!-- Image for the filter --------------------------->
+                        <div class="col-2">
+                            <img src="~/images/filter.png" />
+                        </div>
+                        <div class="col-6">
+                            <!-- Actual text input for the filter ----------->
+                            <div style="border:8px solid white;" class="wrap-input100">
+                                <input class="input100" type="text" id="">
+                                <span class="focus-input100-1"></span>
+                                <span class="focus-input100-2"></span>
+                            </div>
+                            <!-- Filter Button ------------------------------>
+                            <div style="border:8px solid white;" class="container-login100-form-btn m-t-20 rs1">
+                                <button class="login100-form-btn" type="button" id="" value="Filter">
+                                    Filter
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Anything else to be done here ------------------>
+                        <div class="col  mx-0">
 
-</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <br />
+        <br />
+    </div>
+    
+
 
 <section class="feature-area pt-100 pb-100  relative">
     <div class="overlay overlay-bg"></div>
@@ -31,10 +53,10 @@
         <div class="row">
             @foreach (var item in Model)
             {
-                <div class="col-lg-4 col-sm-6 align-items-stretch dottedsurr">
+                <div class="col-lg-4 col-md-6 col-sm-12 align-items-stretch">
                     <div class="paintingcontainer">
                         <div class="paintingInfo">
-                            <div class="row">
+                            <div class="row dottedsurr p-10 pt-20 isThisLink">
                                 <!-- Section - Avatar ------------------------------------------>
                                 <div class="col">
                                     <a href="@Url.Action("Details", "Student", new { id = item.StudentFK })">
@@ -70,7 +92,7 @@
                         </div>
                         <!-- PAINTING end------------------------------------------>
                         <br />
-                        <div class="btn_contain1">
+                        <div class="btn_contain1 dottedsurr2 p-10 pt-20">
                             <div class="row">
                                 <div class="col">
                                     <!-- CART ------------------------------------------>

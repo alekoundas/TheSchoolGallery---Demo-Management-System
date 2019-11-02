@@ -260,6 +260,7 @@
     <Content Include="images\fancybox_overlay.png" />
     <Content Include="images\fancybox_sprite%402x.png" />
     <Content Include="images\fancybox_sprite.png" />
+    <Content Include="images\filter.png" />
     <Content Include="images\kid_brush.png" />
     <Content Include="images\noise.png" />
     <Content Include="images\paintings\painting_000.jpg" />

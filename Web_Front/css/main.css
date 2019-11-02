@@ -141,6 +141,10 @@ td, th {
     font-style: italic
 }
 
+.m-10 {
+    margin: 10px
+}
+
 .mt-10 {
     margin-top: 10px
 }
@@ -4074,9 +4078,19 @@ h1, h2, h3, h4, h5 {
 
 .dottedsurr {
     border: 1px dotted rgba(64, 64, 64, 0.20);
+    transition-duration: 1s;
 }
+
+.dottedsurr2 {
+    border: 1px dotted rgba(64, 64, 64, 0.20);
+    border-radius: 0 0 0 40px;
+    transition-duration: 1s;
+}
+
 
 .isThisLink:hover {
     border: 4px dotted #f3efe9;
     transition-duration: 1s;
 }
+
+/*Avatar System Display  ------------>> */
