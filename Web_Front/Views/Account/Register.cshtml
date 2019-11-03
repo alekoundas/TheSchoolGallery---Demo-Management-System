@@ -26,7 +26,7 @@
                             <h5 class="text-center">Create a new account.</h5>
                             
                             <div class="wrap-input100">
-                                @Html.TextBoxFor(m => m.Nickname, new { @class = "input100", placeholder = "Email" })
+                                @Html.TextBoxFor(m => m.Nickname, new { @class = "input100", placeholder = "Nickname" })
                                 @Html.ValidationMessageFor(m => m.Nickname, "", new { @class = "text-danger" })
                             </div>
 
@@ -61,10 +61,10 @@
                                 @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
                             </div>
 
-                            @*<div class="wrap-input100 rs2">
+                            <div class="wrap-input100 rs2">
                                 @Html.TextBoxFor(m => m.Telephone, new { @class = "input100", placeholder = "Telephone Number" })
                                 @Html.ValidationMessageFor(m => m.Telephone, "", new { @class = "text-danger" })
-                            </div>*@
+                            </div>
 
                             @*<div class="wrap-input100 rs2">
                                 @Html.TextBoxFor(m => m.Photo, new { @class = "input100", placeholder = "Photo" })

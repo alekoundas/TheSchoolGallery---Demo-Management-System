@@ -1,4 +1,5 @@
-﻿@model IEnumerable<PayPal.Api.Item>
+﻿@using Microsoft.AspNet.Identity
+@model IEnumerable<PayPal.Api.Item>
 @{
     ViewBag.Title = "AddToCart";
 }
@@ -69,6 +70,7 @@
 
             </div>
         </div>
+        
 
         <!-- Section - Links ---------------------------------------->
         <div style="height:180px;" class="container col-6">
@@ -80,7 +82,7 @@
                         <a href="@Url.Action("PayPalPayment", "PayPal")"><img src="~/images/UIcons/cart_off.png" /></a>
                     </div>
                     <div class="btn_child_live1">
-                        <a style="color:#f3efe9" href="@Url.Action("PayPalPayment", "PayPal")"><img src="~/images/UIcons/cart.png" /> Purchase </a>
+                        <a style="color:#f3efe9" href="@Url.Action("PayPalPayment", "PayPal",new {RecieverEmail= User.Identity.GetUserName()})"><img src="~/images/UIcons/cart.png" /> Purchase </a>
                     </div>
                 </div>
 

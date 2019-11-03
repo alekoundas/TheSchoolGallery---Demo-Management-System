@@ -101,7 +101,7 @@ namespace Web_Front.Models
         public string Address { get; set; }
 
         [Display(Name = "Phone Number")]
-        [Range(8, 10, ErrorMessage = "Tel must have a range of 8 to 10 digits.")]
+        //[Range(8, 10, ErrorMessage = "Tel must have a range of 8 to 10 digits.")]
         public long Telephone { get; set; }
 
     }

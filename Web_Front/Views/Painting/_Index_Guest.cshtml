@@ -9,39 +9,39 @@
 @Html.Partial("_SecondBanner")
 
 <!-- Section - Search/Filter/etc -------------------------------------------->
-    <div class="col-md-12 mx-auto">
+<div class="col-md-12 mx-auto">
 
-        <form>
-            <div class="form-group">
-                <div style="box-shadow: 3px 3px 18px rgba(0, 0, 0, 0.4);" class="container pt-20 pb-20">
-                    <div class="row">
-                        <img src="~/images/filter.png" />
+    <form>
+        <div class="form-group">
+            <div style="box-shadow: 3px 3px 18px rgba(0, 0, 0, 0.4);" class="container pt-20 pb-20">
+                <div class="row">
+                    <img src="~/images/filter.png" />
 
-                        <div class="col-6">
-                            <!-- Actual text input for the filter ----------->
-                            <div style="border:8px solid white;" class="wrap-input100">
-                                <input class="input100" type="text" id="">
-                                <span class="focus-input100-1"></span>
-                                <span class="focus-input100-2"></span>
-                            </div>
-                            <!-- Filter Button ------------------------------>
-                            <div style="border:8px solid white;" class="container-login100-form-btn m-t-20 rs1">
-                                <button class="login100-form-btn" type="button" id="" value="Filter">
-                                    Filter
-                                </button>
-                            </div>
+                    <div class="col-6">
+                        <!-- Actual text input for the filter ----------->
+                        <div style="border:8px solid white;" class="wrap-input100">
+                            <input class="input100" type="text" id="">
+                            <span class="focus-input100-1"></span>
+                            <span class="focus-input100-2"></span>
                         </div>
-                        <!-- Anything else to be done here ------------------>
-                        <div class="col  mx-0">
-
+                        <!-- Filter Button ------------------------------>
+                        <div style="border:8px solid white;" class="container-login100-form-btn m-t-20 rs1">
+                            <button class="login100-form-btn" type="button" id="" value="Filter">
+                                Filter
+                            </button>
                         </div>
+                    </div>
+                    <!-- Anything else to be done here ------------------>
+                    <div class="col  mx-0">
+
                     </div>
                 </div>
             </div>
-        </form>
-        <br />
-        <br />
-    </div>
+        </div>
+    </form>
+    <br />
+    <br />
+</div>
 
 
 <section class="feature-area pt-100 pb-100  relative">
@@ -94,7 +94,7 @@
                                 <div class="col">
                                     <!-- CART ------------------------------------------>
                                     <div class="btn_child_norm1">
-                                        <a href="@Url.Action("AddToCart", "Paypal", new { PaintingID = item.PaintingId })"><img class="cart_btn" src="~/images/UIcons/cart_off.png" /></a>
+                                        <a href="#"><img class="cart_btn" src="~/images/UIcons/cart_off.png" /></a>
                                     </div>
                                     <div class="btn_child_live1">
                                         <a style="color:#f3efe9" href="@Url.Action("AddToCart", "Paypal", new { PaintingID = item.PaintingId })"><img class="cart_btn_hidden" src="~/images/UIcons/cart.png" />add to cart</a>
@@ -103,8 +103,8 @@
                                 <div class="col">
                                     <!-- Price ------------------------------------------>
                                     <h5 class="text-right">
-                                        Donate:_ 
-                                        <span style="font-size:24px; font-weight:800;" class="fa"> @Html.DisplayFor(modelItem => item.Price)</span>
+                                        Donate:
+                                        <span style="font-size:24px; font-weight:800;" onclick="AddToCart(@item.PaintingId)" class="fa"> @Html.DisplayFor(modelItem => item.Price)</span>
                                         <i class="fa fa-eur" aria-hidden="true"></i>
                                     </h5>
                                 </div>
@@ -129,8 +129,18 @@
 @section scripts{
 
     <script>
+        function AddToCart(PaintingID) {
 
-
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("AddToCart", "Paypal")",
+            data: "PaintingID = "+PaintingID,
+            dataType: "json",
+            success: function (response) {
+                console.log(response);
+            }
+        });
+        }
 
 
     </script>

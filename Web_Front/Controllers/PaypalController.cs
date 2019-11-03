@@ -1,14 +1,20 @@
-﻿using PayPal.Api;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using PayPal.Api;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using Web_DomainClasses.Entities.School;
+using Web_Front.Models;
 using Web_Front.Models.Paypal;
 using Web_Services.ApiMapping;
-
+using System.Web.Mvc.Html;
 namespace Web_Front.Controllers
 {
     public class PayPalController : MasterController
@@ -42,7 +48,7 @@ namespace Web_Front.Controllers
                 quantity = "1",
                 sku = "sku",
             };
-            if(CartList.Any(x=>x.name== item.name && x.price == item.price))
+            if (CartList.Any(x => x.name == item.name && x.price == item.price))
             {
                 Debug.WriteLine("");
             }
@@ -53,12 +59,12 @@ namespace Web_Front.Controllers
 
         public ActionResult ClearCart()
         {
-            Session["CartList"] = null;           
+            Session["CartList"] = null;
             return View("Index", new List<Item>());
         }
 
-        public ActionResult PayPalPayment()
-        {
+        public ActionResult PayPalPayment(string RecieverEmail)
+        {           
             try
             {
                 var apiContext = PaypalConfiguration.GetAPIContext();
@@ -72,7 +78,7 @@ namespace Web_Front.Controllers
                     };
 
                     //Return To Cart If He Doest Have Anything In Cart
-                    if (itemList.items==null)
+                    if (itemList.items == null)
                     {
                         return View("Index");
                     }
@@ -165,10 +171,99 @@ namespace Web_Front.Controllers
                 return View("FailureView");
             }
 
+
+
+
+
+            //Send Email With Painting On Success Payment
+            SendEmail(RecieverEmail);
+
+
+
             //Empty Session Storage From Cart Items On Success Payment
             Session["CartList"] = null;
             //on successful payment, show success page to user.
-            return View("SuccessView");
+            return View("Index");
         }
+
+
+        public static void SendEmail(string RecieverEmail)
+        {
+
+            EmailBusiness ServiceMail = new EmailBusiness();
+            ServiceMail.to = new MailAddress(RecieverEmail, "Administrator");
+            ServiceMail.body = "ppppppppppppp";
+            ServiceMail.ToAdmin();
+
+        }
+
+
+
+    }
+    public class EmailBusiness
+    {
+        public MailAddress to { get; set; }
+        public MailAddress from { get; set; }
+        public string sub { get; set; }
+        public string body { get; set; }
+
+        //Constructor
+        public EmailBusiness()
+        {
+            from = new MailAddress("psychoson_alex3@hotmail.com");
+            sub = "Donation To Schools";
+        }
+
+
+        public void ToAdmin()
+        {
+            EmailBusiness me = new EmailBusiness();
+
+            MailMessage Mail = new MailMessage() { Subject = sub, Body = body, IsBodyHtml = true };
+            Mail.To.Add(to);
+            Mail.From = new MailAddress(from.ToString());
+            Mail.Sender = to;
+
+
+            SmtpClient smtp = new SmtpClient
+            {
+                Host = "pod51014.outlook.com",
+                Port = 587,
+                Credentials = new NetworkCredential("psychoson_alex3@hotmail.com", "0186001860Oo2423"),
+                EnableSsl = true
+            };
+
+
+            smtp.Send(Mail);
+        }
+
     }
 }
+
+
+
+
+
+//var senderEmail = new MailAddress("psychoson_alex3@hotmail.com", "Jamil");
+//var receiverEmail = new MailAddress("znq90428@eveav.com", "Receiver");
+//var password = "0186001860Oo2423";
+//var subject = "Test";
+//var body = "To Be Picture";
+//var smtp = new SmtpClient
+//{
+//    Host = "smtp.gmail.com",
+//    Port = 465,
+//    EnableSsl = true,
+//    DeliveryMethod = SmtpDeliveryMethod.Network,
+//    UseDefaultCredentials = false,
+//    Credentials = new NetworkCredential(senderEmail.Address, password)
+//};
+//                    using (var mess = new MailMessage(senderEmail, receiverEmail)
+//{
+//    Subject = subject,
+//                        Body = body
+//                    })
+//                    {
+//                        smtpDeliveryMethod = SmtpDeliveryMethod.PickupDirectoryFromIis;
+//                        smtp.Send(mess);
+//                    }   
