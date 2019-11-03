@@ -3940,7 +3940,7 @@ section hr {
     overflow: hidden;
     margin-bottom: 40px;
     box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
-    border: 15px solid #f3efe9;
+    border: 5px solid #f3efe9;
     border-radius: 50%;
 }
 
@@ -4091,15 +4091,14 @@ h1, h2, h3, h4, h5 {
     transition-duration: 1s;
 }
 
-.dottedsurr2 {
-    border: 1px dotted rgba(64, 64, 64, 0.20);
-    border-radius: 0 0 0 40px;
-    transition-duration: 1s;
-}
-
 
 .isThisLink:hover {
     border: 2px dotted #f3efe9;
+    transition-duration: 1s;
+}
+
+.isThisLink2:hover {
+    border: 3px dotted #f3efe9;
     transition-duration: 1s;
 }
 
