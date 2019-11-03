@@ -97,6 +97,7 @@ namespace Web_Front.Controllers
         }
 
         // GET: Student/Edit/5
+        [Authorize(Roles = "Admin, SuperAdmin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -114,6 +115,7 @@ namespace Web_Front.Controllers
         // POST: Student/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, SuperAdmin")]
         public ActionResult Edit([Bind(Include = "StudentId,AvatarFK,ClassroomFK,FirstName,LastName,Age")] Student student)
         {
             if (ModelState.IsValid)
@@ -125,6 +127,7 @@ namespace Web_Front.Controllers
         }
 
         // GET: Student/Delete/5
+        [Authorize(Roles = "Admin, SuperAdmin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -142,6 +145,7 @@ namespace Web_Front.Controllers
         // POST: Student/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, SuperAdmin")]
         public ActionResult DeleteConfirmed(int id)
         {
             StudentServ.DeleteStudent(id);

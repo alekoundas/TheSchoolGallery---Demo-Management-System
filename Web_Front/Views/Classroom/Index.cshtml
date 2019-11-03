@@ -32,48 +32,58 @@
     <div class="overlay overlay-bg"></div>
     <div class="container">
         <div class="row">
-
-            <div class="col-12 align-items-stretch">
-                @*PARALLAXING SCHOOL IMAGES*@
-                <div class="oz-body-wrap2">
-                    <div class="container-fluid">
-                        <div class="cd-background-wrapper">
-                            <figure class="cd-floating-background">
-                                <img style="top:60px" class="stackImages p_child" src="~/images/parallax/School_Parallax_back_01.png">
-                                <img style="top:40px" class="stackImages P_child" src="~/images/parallax/School_Parallax_mount_02.png">
-                                <img style="top:20px" class="stackImages p_child" src="~/images/parallax/School_Parallax_mount_01.png">
-                                <img style="top:80px" class="stackImages p_child" src="~/images/parallax/School_Parallax_school.png">
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             @foreach (var item in Model)
             {
-                <div class="col-12 align-items-stretch">
-                    <div class="paintingcontainer">
-                        <div class="wrap-School">
-                            <div class="painting text-center">
-                                @*IMAGE*@
-                                @*<img class="schoolBanner" src="~/images/schools/@Html.DisplayFor(modelItem => item.Image)" />*@
-
-                            </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 align-items-stretch">
+                    <div class="dottedsurr">
+                        <div class="dottedFrameDark2 isThisLink">
                             <br />
-                            <div class="Schooldesc">
-                                <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
-                                <hr />
-                                <ul class="text-right">
-                                    <li>Description: @Html.DisplayFor(modelItem => item.Description)</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div>
-                            <a style="color:#f3efe9" href="@Url.Action("Edit", "Classroom", new { id = item.ClassroomId })"><img id="iconBtn" src="~/images/UIcons/edit_off.png" /> edit </a>
-                            <a style="color:#f3efe9" href="@Url.Action("Details", "Classroom", new { id = item.ClassroomId })"><img id="iconBtn" src="~/images/UIcons/details_off.png" /> details </a>
-                            <a style="color:#f3efe9" href="@Url.Action("Delete", "Classroom", new { id = item.ClassroomId })"><img id="iconBtn" src="~/images/UIcons/delete_off.png" /> delete </a>
+                            <a href="@Url.Action("Details", "Classroom", new { id = item.ClassroomId })">
+                                <div class="Schooldesc">
+                                    <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+                                    <hr />
+                                    <ul class="text-right paintingInfo">
+                                        <li>Description: @Html.DisplayFor(modelItem => item.Description)</li>
+                                    </ul>
+                                </div>
+                            </a>
                         </div>
 
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <!-- Section - Links ---------------------------------------->
+                            <div style="height:180px;" class="container col-12">
+                                <br />
+                                <div class="row">
+                                    <div class="btn_contain1 col">
+                                        <div class="btn_child_norm1">
+                                            <a href="@Url.Action("Edit", "Classroom", new { id = item.ClassroomId })"><img src="~/images/UIcons/edit_off.png" /></a>
+                                        </div>
+                                        <div class="btn_child_live1">
+                                            <a style="color:#f3efe9" href="@Url.Action("Edit", "Classroom", new { id = item.ClassroomId })"><img src="~/images/UIcons/edit.png" /> edit </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="btn_contain2 col">
+                                        <div class="btn_child_norm2">
+                                            <a href="@Url.Action("Details", "Classroom", new { id = item.ClassroomId })"><img src="~/images/UIcons/details_off.png" /></a>
+                                        </div>
+                                        <div class="btn_child_live2">
+                                            <a style="color:#f3efe9" href="@Url.Action("Details", "Classroom", new { id = item.ClassroomId })"><img src="~/images/UIcons/details.png" /> details </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="btn_contain3 col">
+                                        <div class="btn_child_norm3">
+                                            <a href="@Url.Action("Delete", "Classroom", new { id = item.ClassroomId })"><img src="~/images/UIcons/delete_off.png" /></a>
+                                        </div>
+                                        <div class="btn_child_live3">
+                                            <a style="color:#f3efe9" href="@Url.Action("Delete", "Classroom", new { id = item.ClassroomId })"><img src="~/images/UIcons/delete.png" /> delete </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
                     </div>
                 </div>
             }

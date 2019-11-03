@@ -4099,7 +4099,7 @@ h1, h2, h3, h4, h5 {
 
 
 .isThisLink:hover {
-    border: 4px dotted #f3efe9;
+    border: 2px dotted #f3efe9;
     transition-duration: 1s;
 }
 

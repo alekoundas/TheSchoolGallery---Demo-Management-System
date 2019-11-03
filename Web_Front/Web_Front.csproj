@@ -202,6 +202,10 @@
     <Compile Include="Migrations\201911020840110_InitialRolesCreate.Designer.cs">
       <DependentUpon>201911020840110_InitialRolesCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911021902149_RegisterStuff.cs" />
+    <Compile Include="Migrations\201911021902149_RegisterStuff.Designer.cs">
+      <DependentUpon>201911021902149_RegisterStuff.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -541,6 +545,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911020840110_InitialRolesCreate.resx">
       <DependentUpon>201911020840110_InitialRolesCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911021902149_RegisterStuff.resx">
+      <DependentUpon>201911021902149_RegisterStuff.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

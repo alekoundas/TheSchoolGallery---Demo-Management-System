@@ -151,7 +151,8 @@ namespace Web_Front.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Nickname, Email = model.Email, Country = model.Country, City = model.City, Address = model.Address, Telephone = model.Telephone };
+                // Ebala prama edw --------------------------------------------------------------------------------------------------------------------------------------->>
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Country = model.Country, City = model.City, Address = model.Address, Telephone = model.Telephone };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
