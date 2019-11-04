@@ -8,75 +8,58 @@
 <!-- SECOND BANNER ------------------------------------------------------- -->
 @Html.Partial("_SecondBanner")
 
-<!-- Section - Search/Filter/etc -------------------------------------------->
-<div class="col-md-12 mx-auto">
-
-    <form>
-        <div class="form-group">
-            <div style="box-shadow: 3px 3px 18px rgba(0, 0, 0, 0.4);" class="container pt-20 pb-20">
-                <div class="row">
-                    <img src="~/images/filter.png" />
-
-                    <div class="col-6">
-                        <!-- Actual text input for the filter ----------->
-                        <div style="border:8px solid white;" class="wrap-input100">
-                            <input class="input100" type="text" id="">
-                            <span class="focus-input100-1"></span>
-                            <span class="focus-input100-2"></span>
-                        </div>
-                        <!-- Filter Button ------------------------------>
-                        <div style="border:8px solid white;" class="container-login100-form-btn m-t-20 rs1">
-                            <button class="login100-form-btn" type="button" id="" value="Filter">
-                                Filter
-                            </button>
-                        </div>
+<section class="feature-area pt-100 pb-100  relative">
+    <div class="overlay overlay-bg"></div>
+    <!-- Section - Search/Filter/etc -------------------------------------------->
+    <div class="col-md-12 mx-auto">
+        <div style="box-shadow: 3px 3px 18px rgba(0, 0, 0, 0.2);" class="dottedFrame pt-20 pb-20">
+            <div class="row">
+                <img src="~/images/filter.png" />
+                <div class="col">
+                    <!-- Actual text input for the filter ----------->
+                    <div style="border:8px solid white;" class="wrap-input100">
+                        <input class="input100" type="text" id="">
+                        <span class="focus-input100-1"></span>
+                        <span class="focus-input100-2"></span>
                     </div>
-                    <!-- Anything else to be done here ------------------>
-                    <div class="col  mx-0">
-
+                    <!-- Filter Button ------------------------------>
+                    <div style="border:8px solid white;" class="container-login100-form-btn m-t-20 rs1">
+                        <button class="login100-form-btn" type="button" id="" value="Filter">
+                            Filter
+                        </button>
+                    </div>
+                </div>
+                <!-- Anything else to be done here ------------------>
+                <div class="col">
+                    <!-- Actual text input for the filter ----------->
+                    <div style="border:8px solid white;" class="wrap-input100">
+                        <input class="input100" type="text" id="">
+                        <span class="focus-input100-1"></span>
+                        <span class="focus-input100-2"></span>
+                    </div>
+                    <!-- Filter Button ------------------------------>
+                    <div style="border:8px solid white;" class="container-login100-form-btn m-t-20 rs1">
+                        <button class="login100-form-btn" type="button" id="" value="Filter">
+                            Filter
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
-    </form>
-    <br />
-    <br />
-</div>
+        <br />
+        <br />
+    </div>
 
 
-<section class="feature-area pt-100 pb-100  relative">
-    <div class="overlay overlay-bg"></div>
     <div class="container">
         <div class="row">
             @foreach (var item in Model)
             {
                 <div class="col-lg-4 col-md-6 col-sm-12 align-items-stretch">
                     <div class="paintingcontainer">
-                        <div class="paintingInfo">
-                            <div class="row dottedsurr p-10 pt-20 isThisLink">
-                                <!-- Section - Avatar ------------------------------------------>
-                                <div class="col">
-                                    <a href="@Url.Action("Details", "Student", new { id = item.StudentFK })">
-                                        <div style="width:80px; height:80px; border:4px dotted #e5e2dd" class="wrap-studentAvatar Mama_Avatar">
-                                            @*AVATAR HERE ------------------------------------------------------>>*@
-                                            <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(modelItem => item.Student.Avatar.Background.ImageUrl)" />
-                                            <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(modelItem => item.Student.Avatar.Body.ImageUrl)" />
-                                            <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(modelItem => item.Student.Avatar.Clothing.ImageUrl)" />
-                                            <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(modelItem => item.Student.Avatar.Hair.ImageUrl)" />
-                                        </div>
-                                    </a>
-                                </div>
-                                <!-- Student - Link ------------------------------------------>
-                                <div class="col">
-                                    <h3>@Html.DisplayFor(modelItem => item.PaintingTitle) </h3>
-                                    <hr />
-                                    <a href="@Url.Action("Details", "Student", new { id = item.StudentFK })">
-                                        by @Html.DisplayFor(modelItem => item.Student.FirstName) @Html.DisplayFor(modelItem => item.Student.LastName)
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
                         <!-- PAINTING ------------------------------------------>
+                        <h3>@Html.DisplayFor(modelItem => item.PaintingTitle) </h3>
+                        <hr />
                         <div class="painting" id="grid">
                             <div class="uc-container">
                                 <div class="uc-initial-content">
@@ -89,24 +72,44 @@
                         </div>
                         <!-- PAINTING end------------------------------------------>
                         <br />
-                        <div class="btn_contain1 dottedsurr2 p-10 pt-20">
-                            <div class="row">
-                                <div class="col">
-                                    <!-- CART ------------------------------------------>
-                                    <div class="btn_child_norm1">
-                                        <a href="#"><img class="cart_btn" src="~/images/UIcons/cart_off.png" /></a>
-                                    </div>
-                                    <div class="btn_child_live1">
-                                        <a style="color:#f3efe9" href="@Url.Action("AddToCart", "Paypal", new { PaintingID = item.PaintingId })"><img class="cart_btn_hidden" src="~/images/UIcons/cart.png" />add to cart</a>
-                                    </div>
+                        <!-- STUDENT ------------------------------------------>
+                        <div class="paintingInfo d-flex justify-content-center align-items-center">
+                            <!-- Section - Avatar ------------------------------------------>
+                            <a href="@Url.Action("Details", "Student", new { id = item.StudentFK })">
+                                <div style="width:80px; height:80px;" class="wrap-studentAvatar Mama_Avatar isThisLink">
+                                    @*AVATAR HERE ------------------------------------------------------>>*@
+                                    <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(modelItem => item.Student.Avatar.Background.ImageUrl)" />
+                                    <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(modelItem => item.Student.Avatar.Body.ImageUrl)" />
+                                    <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(modelItem => item.Student.Avatar.Clothing.ImageUrl)" />
+                                    <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(modelItem => item.Student.Avatar.Hair.ImageUrl)" />
                                 </div>
+                            </a>
+                            <!-- Student - Link ------------------------------------------>
+                            <a href="@Url.Action("Details", "Student", new { id = item.StudentFK })">
+                                by @Html.DisplayFor(modelItem => item.Student.FirstName) @Html.DisplayFor(modelItem => item.Student.LastName)
+                            </a>
+                        </div>
+                        <!-- STUDENT  end------------------------------------------>
+                        
+                        <div class="dottedsurr isThisLink2">
+                            <div class="row">
                                 <div class="col">
                                     <!-- Price ------------------------------------------>
                                     <h5 class="text-right">
                                         Donate:
-                                        <span style="font-size:24px; font-weight:800;" onclick="AddToCart(@item.PaintingId)" class="fa"> @Html.DisplayFor(modelItem => item.Price)</span>
-                                        <i class="fa fa-eur" aria-hidden="true"></i>
+                                        <span style="font-size:24px;" >@Html.DisplayFor(modelItem => item.Price)</span><i class="fa fa-eur" aria-hidden="true"></i>
                                     </h5>
+                                </div>
+                                <div class="col">
+                                    <div class="btn_contain1">
+                                        <!-- CART ------------------------------------------>
+                                        <div class="btn_child_norm1">
+                                            <a href="@Url.Action("AddToCart", "Paypal", new { PaintingID = item.PaintingId })"><img class="cart_btn" src="~/images/UIcons/cart_off.png" /></a>
+                                        </div>
+                                        <div class="btn_child_live1">
+                                            <a style="color:#f3efe9" href="@Url.Action("AddToCart", "Paypal", new { PaintingID = item.PaintingId })"><img class="cart_btn_hidden" src="~/images/UIcons/cart.png" />add to cart</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -129,18 +132,8 @@
 @section scripts{
 
     <script>
-        function AddToCart(PaintingID) {
 
-        $.ajax({
-            type: "POST",
-            url: "@Url.Action("AddToCart", "Paypal")",
-            data: "PaintingID = "+PaintingID,
-            dataType: "json",
-            success: function (response) {
-                console.log(response);
-            }
-        });
-        }
+
 
 
     </script>
