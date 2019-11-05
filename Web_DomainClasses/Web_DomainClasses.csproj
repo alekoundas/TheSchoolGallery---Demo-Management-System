@@ -55,7 +55,9 @@
     <Compile Include="Entities\SignalR\MessageHistory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AvatarCreateVM.cs" />
+    <Compile Include="ViewModels\AvatarEditVM.cs" />
     <Compile Include="ViewModels\ClassroomCreateVM.cs" />
+    <Compile Include="ViewModels\SchoolIndexVM.cs" />
     <Compile Include="ViewModels\StudentCreateVM.cs" />
     <Compile Include="ViewModels\TeacherCreateVM.cs" />
   </ItemGroup>

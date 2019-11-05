@@ -42,12 +42,25 @@ namespace Web_Services.ApiMapping.Avatars
             request.AddJsonBody(Avatar);
             var response = client.Execute(request).Content;
 
-            //Avatar Avatars = JsonConvert.DeserializeObject<Avatar>(response);
+
         }
 
 
 
+        //                EDIT Avatar By ID                   \\
+        //           Method:PUT  -->  /api/Avatar/id           \\
+        public void EditAvatar(Avatar Avatar)
+        {
+            //Create Client
+            RestClient client = new RestClient(Url + "/" + Avatar.AvatarId);
 
+            //Build A Request For The Api    PUT
+            RestRequest request = new RestRequest(Method.PUT);
+            request.AddJsonBody(Avatar);
+
+            //Execute Request
+            var response = client.Execute(request).Content;           
+        }
 
     }
 }

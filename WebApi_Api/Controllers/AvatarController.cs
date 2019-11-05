@@ -80,7 +80,40 @@ namespace WebApi_Api.Controllers
         }
 
 
+        // PUT: api/Avatar/5
+        [ResponseType(typeof(void))]
+        public IHttpActionResult PutAvatar(int id, Avatar avatar)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
+            if (id != avatar.AvatarId)
+            {
+                return BadRequest();
+            }
+
+            db.Entry(avatar).State = EntityState.Modified;
+
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!AvatarExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return StatusCode(HttpStatusCode.NoContent);
+        }
 
         /////////////////////////////////////////////////////////////////////////////////////
         ///                                                                               ///
@@ -217,5 +250,51 @@ namespace WebApi_Api.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private bool AvatarExists(int id)
+        {
+            return db.AvatarDb.Count(e => e.AvatarId == id) > 0;
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+

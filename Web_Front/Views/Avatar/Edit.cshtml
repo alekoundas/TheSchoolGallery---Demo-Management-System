@@ -1,4 +1,5 @@
-﻿@model Web_DomainClasses.Entities.Avatar.Avatar
+﻿@model Web_DomainClasses.ViewModels.AvatarEditVM
+
 
 @{
     ViewBag.Title = "Edit";
@@ -6,32 +7,113 @@
 
 <h2>Edit</h2>
 
+
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Avatar</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.AvatarId)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
-            </div>
+<div class="form-horizontal">
+    <h4>Avatar</h4>
+    <hr />
+    @Html.HiddenFor(model => model.Avatar.AvatarId)
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+
+
+
+        @* Background Select *@
+        @Html.LabelFor(model => model.Avatar.Background, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <select name="SelectedBackgroundID" id="SelectedBackgroundID">
+                @foreach (var Background in Model.AvatarBackgrounds)
+                {
+                    if (Background.AvatarBackgroundId == Model.Avatar.Background.AvatarBackgroundId)
+                    {
+                        <option value="@Background.AvatarBackgroundId" selected>@Background.ImageUrl</option>
+
+                    }
+                    else
+                    {
+                        <option value="@Background.AvatarBackgroundId">@Background.ImageUrl</option>
+
+                    }
+                }
+
+            </select>
         </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
+
+        @* Hair Select *@
+        @Html.LabelFor(model => model.Avatar.Hair, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <select name="SelectedHairID" id="SelectedHairID">
+                @foreach (var Hair in Model.AvatarHairs)
+                {
+                    if (Hair.AvatarHairId == Model.Avatar.Hair.AvatarHairId)
+                    {
+                        <option value="@Hair.AvatarHairId" selected>@Hair.ImageUrl</option>
+
+                    }
+                    else
+                    {
+                        <option value="@Hair.AvatarHairId">@Hair.ImageUrl</option>
+
+                    }
+                }
+
+            </select>
+        </div>
+
+
+        @* Body Select *@
+        @Html.LabelFor(model => model.Avatar.Body, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <select name="SelectedBodyID" id="SelectedBodyID">
+                @foreach (var Body in Model.AvatarBodys)
+                {
+                    if (Body.AvatarBodyId == Model.Avatar.Body.AvatarBodyId)
+                    {
+                        <option value="@Body.AvatarBodyId" selected>@Body.ImageUrl</option>
+
+                    }
+                    else
+                    {
+                        <option value="@Body.AvatarBodyId">@Body.ImageUrl</option>
+
+                    }
+                }
+
+            </select>
+        </div>
+
+        @* Clothing Select *@
+        @Html.LabelFor(model => model.Avatar.Clothing, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <select name="SelectedClothingID" id="SelectedClothingID">
+                @foreach (var Clothing in Model.AvatarClothings)
+                {
+                    if (Clothing.AvatarClothingId == Model.Avatar.Clothing.AvatarClothingId)
+                    {
+                        <option value="@Clothing.AvatarClothingId" selected>@Clothing.ImageUrl</option>
+
+                    }
+                    else
+                    {
+                        <option value="@Clothing.AvatarClothingId">@Clothing.ImageUrl</option>
+
+                    }
+                }
+
+            </select>
+        </div>
+
+
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Submit Changes" class="btn btn-default" />
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>
+}

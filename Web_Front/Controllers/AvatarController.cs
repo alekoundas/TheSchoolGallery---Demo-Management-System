@@ -88,40 +88,48 @@ namespace Web_Front.Controllers
         // GET: Avatar/Edit/5
         public ActionResult Edit(int? id)
         {
-            //if (id == null)
-            //{
-            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            //}
-            //Avatar avatar = db.Avatars.Find(id);
-            //if (avatar == null)
-            //{
-            //    return HttpNotFound();
-            //}
-            //ViewBag.AvatarId = new SelectList(db.AvatarBackgrounds, "AvatarBackgroundId", "ImageUrl", avatar.AvatarId);
-            //ViewBag.AvatarId = new SelectList(db.AvatarBodies, "AvatarBodyId", "ImageUrl", avatar.AvatarId);
-            //ViewBag.AvatarId = new SelectList(db.AvatarClothes, "AvatarClothesId", "ImageUrl", avatar.AvatarId);
-            //ViewBag.AvatarId = new SelectList(db.AvatarHairs, "AvatarHairId", "ImageUrl", avatar.AvatarId);
-            return View(/*avatar*/);
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Avatar avatar = ServiceAvatar.GetAvatar(id);
+            if (avatar == null)
+            {
+                return HttpNotFound();
+            }
+            AvatarEditVM ViewModel = new AvatarEditVM();
+
+            ViewModel.Avatar = avatar;
+            ViewModel.AvatarBackgrounds = ServiceBackground.GetBackgrounds();
+            ViewModel.AvatarHairs = ServiceHair.GetHairs();
+            ViewModel.AvatarBodys = ServiceBody.GetBodys();
+            ViewModel.AvatarClothings = ServiceClothing.GetClothings();
+            return View(ViewModel);
         }
 
-        // POST: Avatar/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Avatar/Edit/5      
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AvatarId,Title")] Avatar avatar)
+        public ActionResult Edit(AvatarEditVM ViewModel)
         {
-            //if (ModelState.IsValid)
-            //{
-            //    db.Entry(avatar).State = EntityState.Modified;
-            //    db.SaveChanges();
-            //    return RedirectToAction("Index");
-            //}
-            //ViewBag.AvatarId = new SelectList(db.AvatarBackgrounds, "AvatarBackgroundId", "ImageUrl", avatar.AvatarId);
-            //ViewBag.AvatarId = new SelectList(db.AvatarBodies, "AvatarBodyId", "ImageUrl", avatar.AvatarId);
-            //ViewBag.AvatarId = new SelectList(db.AvatarClothes, "AvatarClothesId", "ImageUrl", avatar.AvatarId);
-            //ViewBag.AvatarId = new SelectList(db.AvatarHairs, "AvatarHairId", "ImageUrl", avatar.AvatarId);
-            return View(/*avatar*/);
+            if (ModelState.IsValid)
+            {
+
+                ViewModel.Avatar.BackgroundFK = ViewModel.SelectedBackgroundID;
+                ViewModel.Avatar.HairFK = ViewModel.SelectedHairID;
+                ViewModel.Avatar.BodyFK = ViewModel.SelectedBodyID;
+                ViewModel.Avatar.ClothingFK = ViewModel.SelectedClothingID;
+
+
+                ServiceAvatar.EditAvatar(ViewModel.Avatar);
+                return RedirectToAction("Index");
+            }
+            ViewModel.AvatarBackgrounds = ServiceBackground.GetBackgrounds();
+            ViewModel.AvatarHairs = ServiceHair.GetHairs();
+            ViewModel.AvatarBodys = ServiceBody.GetBodys();
+            ViewModel.AvatarClothings = ServiceClothing.GetClothings();
+            return View(ViewModel);
+
         }
 
         // GET: Avatar/Delete/5

@@ -210,7 +210,7 @@ namespace Web_Front.Controllers
         //Constructor
         public EmailBusiness()
         {
-            from = new MailAddress("psychoson_alex3@hotmail.com");
+            from = new MailAddress("GallerySchoolDonationSite@hotmail.com");
             sub = "Donation To Schools";
         }
 
@@ -229,7 +229,7 @@ namespace Web_Front.Controllers
             {
                 Host = "pod51014.outlook.com",
                 Port = 587,
-                Credentials = new NetworkCredential("psychoson_alex3@hotmail.com", "0186001860Oo2423"),
+                Credentials = new NetworkCredential("GallerySchoolDonationSite@hotmail.com", "1Gallery2School3Donation4Site5"),
                 EnableSsl = true
             };
 
