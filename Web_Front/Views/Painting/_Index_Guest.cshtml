@@ -76,7 +76,7 @@
                         <div class="paintingInfo d-flex justify-content-center align-items-center">
                             <!-- Section - Avatar ------------------------------------------>
                             <a href="@Url.Action("Details", "Student", new { id = item.StudentFK })">
-                                <div style="width:80px; height:80px;" class="wrap-studentAvatar Mama_Avatar isThisLink">
+                                <div style="width:80px; height:80px;" class="wrap-studentAvatar Mama_Avatar isThisLink2">
                                     @*AVATAR HERE ------------------------------------------------------>>*@
                                     <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(modelItem => item.Student.Avatar.Background.ImageUrl)" />
                                     <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(modelItem => item.Student.Avatar.Body.ImageUrl)" />
@@ -101,15 +101,12 @@
                                     </h5>
                                 </div>
                                 <div class="col">
-                                    <div class="btn_contain1">
-                                        <!-- CART ------------------------------------------>
-                                        <div class="btn_child_norm1">
+                                    <div class="btn_child_norm1">
                                             <a href="@Url.Action("AddToCart", "Paypal", new { PaintingID = item.PaintingId })"><img class="cart_btn" src="~/images/UIcons/cart_off.png" /></a>
                                         </div>
                                         <div class="btn_child_live1">
                                             <a style="color:#f3efe9" href="@Url.Action("AddToCart", "Paypal", new { PaintingID = item.PaintingId })"><img class="cart_btn_hidden" src="~/images/UIcons/cart.png" />add to cart</a>
                                         </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
