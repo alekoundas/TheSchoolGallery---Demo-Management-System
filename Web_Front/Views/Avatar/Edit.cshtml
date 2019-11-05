@@ -11,65 +11,72 @@
     <div class="container-login100">
         <div class="container">
             <br />
+            <br />
             <h2 class="text-center" style="color:#f3efe9;"> Create Avatar</h2>
             <hr />
             <br />
             <div id="Board" class="row">
 
-                <div class="col-8">
-                    <div class="col-6 drop-target">
-                        <div class="row">
-                            @foreach (var background in Model.AvatarBackgrounds)
-                            {
-                                <div class="col-3">
-                                    <ul class="AvatarElements d-flex justify-content-center align-items-center">
-                                        <li id="drag_back_@background.AvatarBackgroundId" draggable="true"><img class="selectionImages" src="~/images/Avatar/@background.ImageUrl" /></li>
-                                    </ul>
-                                </div>
-                            }
-                        </div>
+
+                <div class="col-2">
+                    <div class="row">
+                        @foreach (var background in Model.AvatarBackgrounds)
+                        {
+
+                            <div class=" drop-target">
+                                <ul class="AvatarElements d-flex justify-content-center align-items-center">
+                                    <li id="drag_back_@background.AvatarBackgroundId" draggable="true"><img class="selectionImages" src="~/images/Avatar/@background.ImageUrl" /></li>
+                                </ul>
+                            </div>
+
+                        }
                     </div>
-                    <hr />
-                    <div class="col-6 drop-target">
-                        <div class="row">
-                            @foreach (var body in Model.AvatarBodys)
-                            {
-                                <div class="col-3">
-                                    <ul class="AvatarElements d-flex justify-content-center align-items-center">
-                                        <li id="drag_body_@body.AvatarBodyId" draggable="true"><img class="selectionImages" src="~/images/Avatar/@body.ImageUrl" /></li>
-                                    </ul>
-                                </div>
-                            }
-                        </div>
-                    </div>
-                    <hr />
-                    <div class="col-6 drop-target">
-                        <div class="row">
-                            @foreach (var cloth in Model.AvatarClothings)
-                            {
-                                <div class="col-3">
-                                    <ul class="AvatarElements d-flex justify-content-center align-items-center">
-                                        <li id="drag_cloth_@cloth.AvatarClothingId" draggable="true"><img class="selectionImages" src="~/images/Avatar/@cloth.ImageUrl" /></li>
-                                    </ul>
-                                </div>
-                            }
-                        </div>
-                    </div>
-                    <hr />
-                    <div class="col-6 drop-target">
-                        <div class="row">
-                            @foreach (var hair in Model.AvatarHairs)
-                            {
-                                <div class="col-3">
-                                    <ul class="AvatarElements d-flex justify-content-center align-items-center">
-                                        <li id="drag_hair_@hair.AvatarHairId" draggable="true"><img class="selectionImages" src="~/images/Avatar/@hair.ImageUrl" /></li>
-                                    </ul>
-                                </div>
-                            }
-                        </div>
-                    </div>
-                    <hr />
                 </div>
+
+                <div class="col-2">
+                    <div class="row">
+                        @foreach (var body in Model.AvatarBodys)
+                        {
+                            <div class=" drop-target">
+                                <ul class="AvatarElements d-flex justify-content-center align-items-center">
+                                    <li id="drag_body_@body.AvatarBodyId" draggable="true"><img class="selectionImages" src="~/images/Avatar/@body.ImageUrl" /></li>
+                                </ul>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <hr />
+                <div class="col-2">
+                    <div class="row">
+                        @foreach (var cloth in Model.AvatarClothings)
+                        {
+
+                            <div class=" drop-target">
+                                <ul class="AvatarElements d-flex justify-content-center align-items-center">
+                                    <li id="drag_cloth_@cloth.AvatarClothingId" draggable="true"><img class="selectionImages" src="~/images/Avatar/@cloth.ImageUrl" /></li>
+                                </ul>
+                            </div>
+
+                        }
+                    </div>
+                </div>
+
+                <div class="col-2">
+                    <div class="row">
+                        @foreach (var hair in Model.AvatarHairs)
+                        {
+
+                            <div class=" drop-target">
+                                <ul class="AvatarElements d-flex justify-content-center align-items-center">
+                                    <li id="drag_hair_@hair.AvatarHairId" draggable="true"><img class="selectionImages" src="~/images/Avatar/@hair.ImageUrl" /></li>
+                                </ul>
+                            </div>
+
+                        }
+                    </div>
+                </div>
+
+
 
                 @*Main Container ------------------------------------------>>*@
 

@@ -3886,6 +3886,7 @@ section hr {
     overflow: hidden;
     box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
     border: 2px dotted #f3efe9;
+    transition-duration: 1s;
 }
 
 .dottedFrameForLinks {
@@ -3896,6 +3897,7 @@ section hr {
     padding: 25px;
     box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
     border: 2px dotted #f3efe9;
+    transition-duration: 1s;
 }
 
 .dottedFrameFixedH {
@@ -3906,6 +3908,7 @@ section hr {
     padding: 15px;
     box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
     border: 2px dotted #f3efe9;
+    transition-duration: 1s;
 }
 
 .dottedFrameFixedHDark {
@@ -3916,6 +3919,7 @@ section hr {
     padding: 15px;
     box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
     border: 2px dotted #5c5c5c;
+    transition-duration: 1s;
 }
 
 .dottedFrameDark {
