@@ -11,27 +11,71 @@
             <br />
             <br />
 
-            <!-- Section - Student Details ---------------------------------------->
             <div class="col-md-12 text-center">
-                <div class="dottedFrame">
-                    <h3>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h3>
-                    <hr />
-                    <h4 style="color:white">@Html.DisplayNameFor(model => model.Age): @Html.DisplayFor(model => model.Age)</h4>
+                <div class="row">
+                    <!-- Section - Student Details ---------------------------------------->
+                    <div class="col-md-6">
+                        <div class="dottedFrameFixedH">
+                            <h3>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h3>
+                            <hr />
+                            <h4 style="color:white">@Html.DisplayNameFor(model => model.Age): @Html.DisplayFor(model => model.Age)</h4>
+                        </div>
+                    </div>
+                    <!-- Section - Classroom --------------------------------------->
+                    <div class="col-md-3">
+                        <a href="@Url.Action("Details", "Classroom", new { id = Model.StudentId })">
+                            <div class="dottedFrameFixedHDark isThisLink">
+                                <h4>Class</h4>
+                                <hr style="padding-top:0px" />
+                                <h5 style="color:#f3efe9; font-size:12px;">@Html.DisplayFor(model => model.Classroom.Name)</h5>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Section - School --------------------------------------->
+                    <div class="col-md-3">
+                        <a href="@Url.Action("Details", "School", new { id = Model.StudentId })">
+                            <div class="dottedFrameFixedHDark isThisLink">
+                                <h4>School</h4>
+                                <hr style="padding-top:0px" />
+                                <h5> @Html.DisplayFor(model => model.Classroom.School.Name) </h5>
+                                <h5>@Html.DisplayFor(model => model.Classroom.School.City)</h5>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
 
             <!-- Section - Avatar ------------------------------------------>
-            <a href="@Url.Action("Index", "Avatar", new { id = Model.StudentId })">
-                <div class="col-md-4 mx-auto">
-                    <div style="width:300px; height:300px;" class="wrap-studentAvatar Mama_Avatar">
-                        @*AVATAR HERE ------------------------------------------------------>>*@
-                        <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(model => model.Avatar.Background.ImageUrl)" />
-                        <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(model => model.Avatar.Body.ImageUrl)" />
-                        <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(model => model.Avatar.Clothing.ImageUrl)" />
-                        <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(model => model.Avatar.Hair.ImageUrl)" />
+            <div class="col-md-12 text-center">
+                <div class="row">
+                    <div class="col-md-1">
+
+                    </div>
+                    <div class="col-md-10">
+                        <a href="@Url.Action("Edit", "Avatar", new { id = Model.StudentId })">
+                            <div class="col-md-4 mx-auto">
+                                <div style="width:300px; height:300px;" class="wrap-studentAvatar Mama_Avatar">
+                                    @*AVATAR HERE ------------------------------------------------------>>*@
+                                    <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(model => model.Avatar.Background.ImageUrl)" />
+                                    <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(model => model.Avatar.Body.ImageUrl)" />
+                                    <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(model => model.Avatar.Clothing.ImageUrl)" />
+                                    <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/@Html.DisplayFor(model => model.Avatar.Hair.ImageUrl)" />
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-1">
+                        <div class="btn_contain1">
+                            <div class="btn_child_norm1">
+                                <a href="@Url.Action("Edit", "Avatar", new { PaintingID = Model.StudentId })"><img src="~/images/UIcons/register.png" /></a>
+                            </div>
+                            <div class="btn_child_live1">
+                                <a style="color:#f3efe9" href="@Url.Action("Edit", "Avatar", new { PaintingID = Model.StudentId })"><img src="~/images/UIcons/register_on.png" />change Avatar</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </a>
+            </div>
 
             <!-- Section - PAINTINGS ---------------------------------------->
             <section class="feature-area pt-100 pb-100  relative">
@@ -70,10 +114,10 @@
                                         <br />
                                         <div class="btn_contain1">
                                             <div class="btn_child_norm1">
-                                                <a href="@Url.Action("AddToCart", "Paypal", new { PaintingID = item.PaintingId })"><img class="cart_btn" src="~/images/UIcons/cart_off.png" /></a>
+                                                <a href="@Url.Action("AddToCart", "Paypal", new { PaintingID = item.PaintingId })"><img src="~/images/UIcons/cart_off.png" /></a>
                                             </div>
                                             <div class="btn_child_live1">
-                                                <a href="@Url.Action("AddToCart", "Paypal", new { PaintingID = item.PaintingId })"><img class="cart_btn_hidden" src="~/images/UIcons/cart.png" />add to cart</a>
+                                                <a href="@Url.Action("AddToCart", "Paypal", new { PaintingID = item.PaintingId })"><img src="~/images/UIcons/cart.png" />add to cart</a>
                                             </div>
                                         </div>
 
@@ -87,21 +131,7 @@
 
             <br />
             <br />
-            <!-- Section - Teacher/School --------------------------------------->
-            <div class="col-md-12 text-center">
-                <div class="dottedFrame">
-                    <h5>Class</h5>
-                    @*LINK TO SCHOOL Class PAGE*@
-                    <a style="color:#f3efe9; font-size:24px;" href="@Url.Action("Details", "Classroom", new { id = Model.StudentId })">
-                        @Html.DisplayFor(model => model.Classroom.Name)
-                    </a>
-                    <hr />
-                    @*LINK TO SCHOOL DETAIL PAGE*@
-                    <h5>School</h5>
-                    <a style="color:#f3efe9; font-size:24px;" href="@Url.Action("Details", "School", new { id = Model.StudentId })"> @Html.DisplayFor(model => model.Classroom.School.Name) </a>
-                    <h4>@Html.DisplayFor(model => model.Classroom.School.City)</h4>
-                </div>
-            </div>
+
 
             <!-- Section - Links ---------------------------------------->
             <div style="height:180px;" class="container col-6">
