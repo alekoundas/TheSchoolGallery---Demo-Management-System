@@ -7,11 +7,10 @@
 -------------------------------- */
 
 /*#region INITIAL*/
-@import url('https://fonts.googleapis.com/css?family=Arvo&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 body {
     color: #777;
-    font-family: 'Arvo', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     font-weight: 300;
     line-height: 1.5em;
@@ -4111,7 +4110,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .dottedsurr {
-    border: 1px dotted rgba(64, 64, 64, 0.20);
+    border: 2px dotted rgba(64, 64, 64, 0.20);
     transition-duration: 1s;
 }
 
