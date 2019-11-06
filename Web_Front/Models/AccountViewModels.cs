@@ -49,9 +49,8 @@ namespace Web_Front.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "UserName")]
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -64,6 +63,10 @@ namespace Web_Front.Models
 
     public class RegisterViewModel
     {
+        [Required]
+        [Display(Name = "Username")]
+        public string UserName { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
@@ -81,12 +84,13 @@ namespace Web_Front.Models
         public string ConfirmPassword { get; set; }
 
         // Custom Fields ---------------->>
-        [Display(Name = "Nickname")]
+        [Display(Name = "First Name")]
         [StringLength(20, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
-        public string Nickname { get; set; }
+        public string FirstName { get; set; }
 
-        [Display(Name = "Profile Photo")]
-        public string Photo { get; set; }
+        [Display(Name = "Last Name")]
+        [StringLength(20, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
+        public string LastName { get; set; }
 
         [Display(Name = "Country")]
         [StringLength(20, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
@@ -101,7 +105,6 @@ namespace Web_Front.Models
         public string Address { get; set; }
 
         [Display(Name = "Phone Number")]
-        //[Range(8, 10, ErrorMessage = "Tel must have a range of 8 to 10 digits.")]
         public long Telephone { get; set; }
 
     }

@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="col-md-8 mx-auto">
                         <div class="wrap-login100">
-                            <form class="login100-form validate-form">
+                            <div class="login100-form validate-form">
                                 <span class="login100-form-title p-b-33">
                                     @ViewBag.Title.
                                 </span>
@@ -28,11 +28,9 @@
 
                                     <p class="text-info text-center">
                                         You've successfully authenticated with <strong>@ViewBag.LoginProvider</strong>.
-                                        Please enter a user name for this site below and click the Register button to finish
+                                        Please enter an Email for this site below and click the Register button to finish
                                         logging in.
                                     </p>
-
-                                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
 
                                     <div class="wrap-input100">
                                         @Html.TextBoxFor(m => m.Email, new { @class = "input100" })
@@ -47,7 +45,7 @@
                                     </div>
 
                                 }
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>

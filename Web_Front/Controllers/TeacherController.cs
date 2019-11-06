@@ -12,7 +12,7 @@ using Web_Services.ApiMapping;
 
 namespace Web_Front.Controllers
 {
-    [Authorize(Roles = "Admin, SuperAdmin")]
+    [Authorize(Roles = "Admin, SchoolAdmin")]
     public class TeacherController : MasterController
     {
         private ApplicationDbContext db = new ApplicationDbContext();

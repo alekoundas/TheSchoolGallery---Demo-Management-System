@@ -214,18 +214,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201911010737095_InitialCreate.cs" />
-    <Compile Include="Migrations\201911010737095_InitialCreate.Designer.cs">
-      <DependentUpon>201911010737095_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911020840110_InitialRolesCreate.cs" />
-    <Compile Include="Migrations\201911020840110_InitialRolesCreate.Designer.cs">
-      <DependentUpon>201911020840110_InitialRolesCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911021902149_RegisterStuff.cs" />
-    <Compile Include="Migrations\201911021902149_RegisterStuff.Designer.cs">
-      <DependentUpon>201911021902149_RegisterStuff.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -620,17 +608,6 @@
       <Project>{42d8f938-efda-4e92-822c-7e52d634d784}</Project>
       <Name>Web_Services</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201911010737095_InitialCreate.resx">
-      <DependentUpon>201911010737095_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911020840110_InitialRolesCreate.resx">
-      <DependentUpon>201911020840110_InitialRolesCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911021902149_RegisterStuff.resx">
-      <DependentUpon>201911021902149_RegisterStuff.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
