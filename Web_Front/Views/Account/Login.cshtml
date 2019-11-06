@@ -15,24 +15,25 @@
                 <div class="col-md-12 mx-auto">
                     <div class="wrap-login100">
                         <span class="login100-form-title p-b-33">
-                            Log In
+                            @ViewBag.Title.
                         </span>
                         <hr />
                         <br />
                         @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                         {
                             @Html.AntiForgeryToken()
-                            <p>Use a local account to log in.</p>
-
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
+                            <h5 class="text-center">Log In with an existing account.</h5>
+
                             <div class="row">
-                                <div class="col-8">
+                                <div class="col-9">
                                     <div class="wrap-input100">
-                                        @Html.TextBoxFor(m => m.UserName, new { @class = "input100", placeholder = "User name" })
-                                        @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                                        @Html.TextBoxFor(m => m.Username, new { @class = "input100", placeholder = "Username" })
+                                        @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
                                     </div>
                                     <p style="color:#909090">User Name</p>
+
                                     <div class="wrap-input100 rs1">
                                         @Html.PasswordFor(m => m.Password, new { @class = "input100", placeholder = "Password" })
                                         @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
@@ -41,9 +42,12 @@
 
                                     <!-- Log In Button ----------------------------------------->
                                     <div class="container-login100-form-btn m-t-20">
-                                        <input type="submit" value="Log in" class="login100-form-btn" />
+                                        <button class="login100-form-btn">
+                                            Sign in
+                                        </button>
                                     </div>
                                     <br />
+
                                     <!-- Remember Me Checkbox ---------------------------------->
                                     <div class="text-center">
                                         <div class="checkbox">
@@ -51,6 +55,9 @@
                                             @Html.LabelFor(m => m.RememberMe)
                                         </div>
                                     </div>
+                                    <br />
+                                    <hr />
+
                                     <!-- Link to Register -------------------------------------->
                                     <div class="btn_contain1">
                                         <div class="btn_child_norm1">
@@ -60,45 +67,56 @@
                                             <a href="@Url.Action("Register", "Account")"><img src="~/images/UIcons/register_on.png" />New User?</a>
                                         </div>
                                     </div>
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <!-- Section - Links ---------------------------------------->
-                                    <p>Log In Using:</p>
-                                    <hr />
-                                    @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-
                                 </div>
 
-                                <div class="col-4">
+                                <div class="col-3">
                                     <div class="sideImage" id="p_container">
                                         <img style="bottom:0px" class="stackImages p_child" id="slideone" src="~/images/parallax/Portrait_figure.png">
                                         <img style="bottom:0px" class="stackImages P_child" id="slidetwo" src="~/images/parallax/Portrait_boi2.png">
                                     </div>
                                 </div>
 
+
+
                             </div>
-                            <br />
-
-
-
-
 
                             // PASSWORD RECOVER -------------------------------------------------
                             @*<div class="text-center p-t-45 p-b-4">
-                        Enable this once you have account confirmation enabled for password reset functionality
-            <p>
-                @Html.ActionLink("Forgot your password?", "ForgotPassword")
-            </p>
-                    </div>*@
+                                        Enable this once you have account confirmation enabled for password reset functionality
+                            <p>
+                                @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                            </p>
+                                    </div>*@
 
+                            // REGISTER BUTTON -------------------------------------------------
 
                         }
                     </div>
                 </div>
+
+
+
             </div>
         </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        
+        <!-- Section - Links ---------------------------------------->
+        <div style="height:180px;" class="container col-6">
+            <br />
+            <br />
+            <h4 class="text-center">Log In Using:</h4>
+            <hr />
+
+
+            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+
+        </div>
+
     </div>
 </div>
 
