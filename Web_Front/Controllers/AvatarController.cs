@@ -121,7 +121,7 @@ namespace Web_Front.Controllers
 
 
                 ServiceAvatar.EditAvatar(ViewModel.Avatar);
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", "Student", new { id = 2 });
             }
             ViewModel.AvatarBackgrounds = ServiceBackground.GetBackgrounds();
             ViewModel.AvatarHairs = ServiceHair.GetHairs();

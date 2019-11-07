@@ -4,29 +4,56 @@
     ViewBag.Title = "Index";
 }
 
-    <header id="intro">
-        <div class="container">
-            <br />
-            <br />
-            <br />
+<header id="intro">
+    <div class="container">
+        <br />
+        <br />
+        <br />
 
-            <br />
-            <br />
-            <div class="table">
-                <div class="header-text">
-                    <div class="row">
+        <br />
+        <br />
+        <div class="table">
+            <div class="header-text">
+                <div class="row">
 
-                        <div class="col-md-12 text-center">
-                            <h1 style="color:#5c5c5c" class="light white">Success!</h1>
-                            <h2 style="color:#5c5c5c" class="white typed">You changed your Avatar successfully.</h2>
-                            <span style="font-size:28px" class="typed-cursor">(╯°□°)╯</span>
+                    <div class="col-md-12 text-center">
+                        <h1 style="color:#5c5c5c" class="light white">Success!</h1>
+                        <h2 style="color:#5c5c5c" class="white typed">You changed your Avatar successfully.</h2>
+                        <span style="font-size:28px" class="typed-cursor">(╯°□°)╯</span>
 
-                        </div>
                     </div>
+
+                    <div class="col-md-12 text-center">
+                        <hr />
+                        <div class="btn_contain1 col">
+                            <div class="btn_child_norm1">
+                                <a href="@Url.Action("Index", "Student")"><img src="~/images/UIcons/students_off.png" /></a>
+                            </div>
+                            <div class="btn_child_live1">
+                                <a href="@Url.Action("Index", "Student")"><img src="~/images/UIcons/students.png" /> students </a>
+                            </div>
+                        </div>
+
+
+                        @*LINK gia na stelnoume argotera ston sygkekrimeno Mathiti ---------------------------------------------->>*@
+                        @*@Html.HiddenFor(model => model.StudentId)
+                        <div class="btn_contain1 col">
+                            <div class="btn_child_norm1">
+                                <a href="@Url.Action("Details", "Student", new { id = Model.StudentId })"><img src="~/images/UIcons/students_off.png" /></a>
+                            </div>
+                            <div class="btn_child_live1">
+                                <a href="@Url.Action("Details", "Student", new { id = Model.StudentId })"><img src="~/images/UIcons/students.png" /> student </a>
+                            </div>
+                        </div>*@
+
+                    </div>
+
+
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
 @section scripts{
 
