@@ -36,15 +36,15 @@ namespace Web_Front.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<Web_DomainClasses.Entities.School.Teacher> TeachersDb { get; set; }
-        public System.Data.Entity.DbSet<Web_DomainClasses.Entities.School.Painting> PaintingDb { get; set; }
-        public System.Data.Entity.DbSet<Web_DomainClasses.Entities.School.Classroom> ClassroomDb { get; set; }
-        public System.Data.Entity.DbSet<Web_DomainClasses.Entities.School.School> SchoolDb { get; set; }
-        public System.Data.Entity.DbSet<Web_DomainClasses.Entities.School.Student> Students { get; set; }
-        public System.Data.Entity.DbSet<Web_DomainClasses.Entities.Avatar.Avatar> Avatars { get; set; }
-        public System.Data.Entity.DbSet<Web_DomainClasses.Entities.Avatar.AvatarBackground> AvatarBackgrounds { get; set; }
-        public System.Data.Entity.DbSet<Web_DomainClasses.Entities.Avatar.AvatarBody> AvatarBodies { get; set; }
-        public System.Data.Entity.DbSet<Web_DomainClasses.Entities.Avatar.AvatarClothing> AvatarClothes { get; set; }
-        public System.Data.Entity.DbSet<Web_DomainClasses.Entities.Avatar.AvatarHair> AvatarHairs { get; set; }
+        //public System.Data.Entity.DbSet<Web_DomainClasses.Entities.School.Teacher> TeachersDb { get; set; }
+        //public System.Data.Entity.DbSet<Web_DomainClasses.Entities.School.Painting> PaintingDb { get; set; }
+        //public System.Data.Entity.DbSet<Web_DomainClasses.Entities.School.Classroom> ClassroomDb { get; set; }
+        //public System.Data.Entity.DbSet<Web_DomainClasses.Entities.School.School> SchoolDb { get; set; }
+        //public System.Data.Entity.DbSet<Web_DomainClasses.Entities.School.Student> Students { get; set; }
+        //public System.Data.Entity.DbSet<Web_DomainClasses.Entities.Avatar.Avatar> Avatars { get; set; }
+        //public System.Data.Entity.DbSet<Web_DomainClasses.Entities.Avatar.AvatarBackground> AvatarBackgrounds { get; set; }
+        //public System.Data.Entity.DbSet<Web_DomainClasses.Entities.Avatar.AvatarBody> AvatarBodies { get; set; }
+        //public System.Data.Entity.DbSet<Web_DomainClasses.Entities.Avatar.AvatarClothing> AvatarClothes { get; set; }
+        //public System.Data.Entity.DbSet<Web_DomainClasses.Entities.Avatar.AvatarHair> AvatarHairs { get; set; }
     }
 }

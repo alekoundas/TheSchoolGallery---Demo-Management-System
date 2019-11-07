@@ -14,10 +14,7 @@ namespace WebApi_Entities.Avatar
         public int AvatarId { get; set; }
         public string Title { get; set; }
 
-
-
         public ICollection<Student> Students { get; set; }
-
 
 
 

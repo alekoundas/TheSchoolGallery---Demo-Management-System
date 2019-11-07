@@ -10,12 +10,18 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using WebApi_Database;
 using WebApi_Entities.Avatar;
+using WebApi_Services;
 
 namespace WebApi_Api.Controllers
 {
     public class AvatarController : ApiController
     {
         private GalleryDbContext db = new GalleryDbContext();
+        ServiceClearExtraData ServiceMaid = new ServiceClearExtraData();
+
+
+
+
 
 
         /////////////////////////////////////////////////////////////////////////////////////
@@ -26,14 +32,18 @@ namespace WebApi_Api.Controllers
         // GET: api/Avatar
         public IQueryable<Avatar> GetAvatar()
         {
+            IQueryable<Avatar> avatars = db.AvatarDb
+               .Include(b => b.Background)
+               .Include(c => c.Hair)
+               .Include(d => d.Body)
+               .Include(e => e.Clothing)
+               .Include(f => f.Students.Select(g => g.Classroom.School))
+               .Include(h => h.Students.Select(i => i.Paintings));
 
-            return db.AvatarDb
-                .Include(b => b.Background)
-                .Include(c => c.Hair)
-                .Include(d => d.Body)
-                .Include(e => e.Clothing)
-                .Include(f => f.Students.Select(g=>g.Classroom.School))
-                .Include(h => h.Students.Select(i=>i.Paintings));
+            ServiceMaid.CleanAvatars(avatars);
+
+
+            return avatars;
         }
 
         // GET: api/Avatar/5
@@ -52,12 +62,11 @@ namespace WebApi_Api.Controllers
                 .FirstOrDefault();
 
 
-
             if (avatar == null)
             {
                 return NotFound();
             }
-
+            ServiceMaid.CleanAvatar(avatar);
             return Ok(avatar);
         }
 

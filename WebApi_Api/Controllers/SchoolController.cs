@@ -10,6 +10,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using WebApi_Database;
+using WebApi_Services;
 
 using WebApi_Entities.School;
 
@@ -18,18 +19,25 @@ namespace WebApi_Api.Controllers
     public class SchoolController : ApiController
     {
         private GalleryDbContext db = new GalleryDbContext();
+        ServiceClearExtraData ServiceMaid = new ServiceClearExtraData();
+
+
+
 
         // GET: api/School
         public IQueryable<School> GetSchools()
         {
-            return db.SchoolsDb
-                .Include(b => b.Classroom.Select(c => c.Students.Select(d => d.Paintings)))
-                .Include(e => e.Classroom.Select(f => f.Students.Select(g => g.Avatar.Background)))
-                .Include(h => h.Classroom.Select(i => i.Students.Select(j => j.Avatar.Hair)))
-                .Include(k => k.Classroom.Select(l => l.Students.Select(m => m.Avatar.Body)))
-                .Include(n => n.Classroom.Select(o => o.Students.Select(p => p.Avatar.Clothing)))
-                .Include(q => q.Classroom.Select(r => r.Teacher))
-                ;
+            IQueryable<School> schools =  db.SchoolsDb
+                .Include(b => b.Classrooms.Select(c => c.Students.Select(d => d.Paintings)))
+                .Include(e => e.Classrooms.Select(f => f.Students.Select(g => g.Avatar.Background)))
+                .Include(h => h.Classrooms.Select(i => i.Students.Select(j => j.Avatar.Hair)))
+                .Include(k => k.Classrooms.Select(l => l.Students.Select(m => m.Avatar.Body)))
+                .Include(n => n.Classrooms.Select(o => o.Students.Select(p => p.Avatar.Clothing)))
+                .Include(q => q.Classrooms.Select(r => r.Teacher)) ;
+
+            ServiceMaid.CleanSchools(schools);
+
+            return schools;
         }
 
         // GET: api/School/5
@@ -37,13 +45,20 @@ namespace WebApi_Api.Controllers
         public IHttpActionResult GetSchool(int id)
         {
             School school = db.SchoolsDb.Where(a => a.SchoolId == id)
-                .Include(b => b.Classroom.Select(c => c.Students.Select(d => d.Paintings)))
-                .Include(e => e.Classroom.Select(f => f.Students.Select(g => g.Avatar.Background)))
-                .Include(h => h.Classroom.Select(i => i.Students.Select(j => j.Avatar.Hair)))
-                .Include(k => k.Classroom.Select(l => l.Students.Select(m => m.Avatar.Body)))
-                .Include(n => n.Classroom.Select(o => o.Students.Select(p => p.Avatar.Clothing)))
-                .Include(q => q.Classroom.Select(r => r.Teacher))
+                .Include(b => b.Classrooms.Select(c => c.Students.Select(d => d.Paintings)))
+                .Include(e => e.Classrooms.Select(f => f.Students.Select(g => g.Avatar.Background)))
+                .Include(h => h.Classrooms.Select(i => i.Students.Select(j => j.Avatar.Hair)))
+                .Include(k => k.Classrooms.Select(l => l.Students.Select(m => m.Avatar.Body)))
+                .Include(n => n.Classrooms.Select(o => o.Students.Select(p => p.Avatar.Clothing)))
+                .Include(q => q.Classrooms.Select(r => r.Teacher))
                 .FirstOrDefault();
+
+            ServiceMaid.CleanSchool(school);
+
+
+
+
+
             if (school == null)
             {
                 return NotFound();

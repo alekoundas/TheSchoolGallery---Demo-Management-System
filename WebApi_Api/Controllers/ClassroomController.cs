@@ -12,31 +12,46 @@ using System.Web.Http.Description;
 using WebApi_Database;
 using WebApi_Entities;
 using WebApi_Entities.School;
+using System.Diagnostics;
+using WebApi_Entities.Avatar;
+using WebApi_Services;
 
 namespace WebApi_Api.Controllers
 {
     public class ClassroomController : ApiController
     {
         private GalleryDbContext db = new GalleryDbContext();
+        ServiceClearExtraData ServiceMaid = new ServiceClearExtraData();
+
+
+
+
 
         // GET: api/Classroom
         public IQueryable<Classroom> GetClassrooms()
         {
-            return db.ClassroomsDb
+
+            IQueryable<Classroom> Classrooms = db.ClassroomsDb
                 .Include(a => a.School)
                 .Include(b => b.Teacher)
                 .Include(c => c.Students.Select(d => d.Paintings))
-                .Include(e => e.Students.Select(f => f.Avatar.Background))
+                .Include(e => e.Students.Select(f => f.Avatar))
                 .Include(g => g.Students.Select(h => h.Avatar.Hair))
                 .Include(i => i.Students.Select(j => j.Avatar.Body))
                 .Include(k => k.Students.Select(l => l.Avatar.Clothing));
+
+            ServiceMaid.CleanClassrooms(Classrooms);
+
+
+
+            return Classrooms;
         }
 
         // GET: api/Classroom/5
         [ResponseType(typeof(Classroom))]
         public IHttpActionResult GetClassroom(int id)
         {
-            Classroom classroom = db.ClassroomsDb.Where(a=>a.ClassroomId == id)
+            Classroom classroom = db.ClassroomsDb.Where(a => a.ClassroomId == id)
                 .Include(a => a.School)
                 .Include(b => b.Teacher)
                 .Include(c => c.Students.Select(d => d.Paintings))
@@ -45,6 +60,10 @@ namespace WebApi_Api.Controllers
                 .Include(i => i.Students.Select(j => j.Avatar.Body))
                 .Include(k => k.Students.Select(l => l.Avatar.Clothing))
                 .FirstOrDefault();
+
+            ServiceMaid.CleanClassroom(classroom);
+
+
 
 
             if (classroom == null)
@@ -99,7 +118,7 @@ namespace WebApi_Api.Controllers
                 return BadRequest(ModelState);
             }
 
-           
+
 
 
             classroom.SchoolFK = classroom.School.SchoolId;

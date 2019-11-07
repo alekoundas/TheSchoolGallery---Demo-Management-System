@@ -12,22 +12,32 @@ using System.Web.Http.Description;
 using WebApi_Database;
 using WebApi_Entities;
 using WebApi_Entities.School;
+using WebApi_Services;
 
 namespace WebApi_Api.Controllers
 {
     public class PaintingController : ApiController
     {
         private GalleryDbContext db = new GalleryDbContext();
+        ServiceClearExtraData ServiceMaid = new ServiceClearExtraData();
+
+
+
+
 
         // GET: api/Painting
         public IQueryable<Painting> GetPaintings()
         {
-            return db.PaintingsDb
+            IQueryable<Painting> paintings = db.PaintingsDb
                 .Include(b => b.Student.Avatar.Background)
                 .Include(c => c.Student.Avatar.Hair)
                 .Include(d => d.Student.Avatar.Body)
                 .Include(e => e.Student.Avatar.Clothing)
                 .Include(f => f.Student.Classroom.School);
+
+            ServiceMaid.CleanPaintings(paintings);
+
+            return paintings;
         }
 
         // GET: api/Painting/5
@@ -42,6 +52,9 @@ namespace WebApi_Api.Controllers
                 .Include(e => e.Student.Avatar.Clothing)
                 .Include(f => f.Student.Classroom.School)
                 .FirstOrDefault();
+
+
+            ServiceMaid.CleanPainting(painting);
 
 
             if (painting == null)           

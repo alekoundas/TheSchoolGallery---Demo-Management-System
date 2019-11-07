@@ -34,6 +34,6 @@ namespace Web_DomainClasses.Entities.School
         //public virtual ICollection<Goal> Goals { get; set; }
 
         // Has many Classes -------------------------------->>
-        public ICollection<Classroom> Classroom { get; set; }
+        public ICollection<Classroom> Classrooms { get; set; }
     }
 }

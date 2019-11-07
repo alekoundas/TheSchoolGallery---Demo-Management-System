@@ -16,7 +16,7 @@ namespace WebApi_Entities.Avatar
         public string ImageUrl { get; set; }
 
         // Has one Avatar ---------------------------------->>
-        public List<Avatar> Avatar { get; set; }
+        public ICollection<Avatar> Avatar { get; set; }
 
     }
 }

@@ -12,7 +12,7 @@ namespace Web_Front.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
             ContextKey = "Web_Front.Models.ApplicationDbContext";
         }
 

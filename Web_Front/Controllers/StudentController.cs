@@ -64,7 +64,7 @@ namespace Web_Front.Controllers
         public PartialViewResult UpdateDropDownList(int? SchoolID)
         {
 
-            List<Classroom> ClassroomList = ServiceSchool.GetSchool(SchoolID).Classroom.ToList();
+            List<Classroom> ClassroomList = ServiceSchool.GetSchool(SchoolID).Classrooms.ToList();
 
            
             //(PartialView Name, Database List)

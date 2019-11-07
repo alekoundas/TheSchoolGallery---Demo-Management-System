@@ -1,26 +1,23 @@
-﻿using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using PayPal.Api;
+﻿using PayPal.Api;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
-using System.Web;
 using System.Web.Mvc;
-using System.Web.Security;
 using Web_DomainClasses.Entities.School;
 using Web_Front.Models;
 using Web_Front.Models.Paypal;
 using Web_Services.ApiMapping;
-using System.Web.Mvc.Html;
 namespace Web_Front.Controllers
 {
     public class PayPalController : MasterController
-
     {
+        ApplicationDbContext db = new ApplicationDbContext();
         PaintingApiService ServicePainting = new PaintingApiService();
+
+
         // GET: PayPal
         public ActionResult Index()
         {
@@ -28,6 +25,7 @@ namespace Web_Front.Controllers
             return View("Index", CartList);
         }
 
+        // GET: PayPal/AddToCart/
 
         public ActionResult AddToCart(int PaintingID)
         {
@@ -63,8 +61,8 @@ namespace Web_Front.Controllers
             return View("Index", new List<Item>());
         }
 
-        public ActionResult PayPalPayment(string RecieverEmail)
-        {           
+        public ActionResult PayPalPayment(string UserId)
+        {
             try
             {
                 var apiContext = PaypalConfiguration.GetAPIContext();
@@ -173,15 +171,15 @@ namespace Web_Front.Controllers
 
 
 
+            //Get Email Of Logged in User
+            var user = db.Users.Where(x => x.Id == UserId).FirstOrDefault();
 
-
-            //Send Email With Painting On Success Payment
-            SendEmail(RecieverEmail);
-
-
+            //Send Email With Painting On Success Payment to User Email
+            SendEmail(user.Email);
 
             //Empty Session Storage From Cart Items On Success Payment
             Session["CartList"] = null;
+
             //on successful payment, show success page to user.
             return View("Index");
         }
@@ -189,16 +187,11 @@ namespace Web_Front.Controllers
 
         public static void SendEmail(string RecieverEmail)
         {
-
             EmailBusiness ServiceMail = new EmailBusiness();
             ServiceMail.to = new MailAddress(RecieverEmail, "Administrator");
             ServiceMail.body = "ppppppppppppp";
             ServiceMail.ToAdmin();
-
         }
-
-
-
     }
     public class EmailBusiness
     {
@@ -233,37 +226,7 @@ namespace Web_Front.Controllers
                 EnableSsl = true
             };
 
-
             smtp.Send(Mail);
         }
-
     }
 }
-
-
-
-
-
-//var senderEmail = new MailAddress("psychoson_alex3@hotmail.com", "Jamil");
-//var receiverEmail = new MailAddress("znq90428@eveav.com", "Receiver");
-//var password = "0186001860Oo2423";
-//var subject = "Test";
-//var body = "To Be Picture";
-//var smtp = new SmtpClient
-//{
-//    Host = "smtp.gmail.com",
-//    Port = 465,
-//    EnableSsl = true,
-//    DeliveryMethod = SmtpDeliveryMethod.Network,
-//    UseDefaultCredentials = false,
-//    Credentials = new NetworkCredential(senderEmail.Address, password)
-//};
-//                    using (var mess = new MailMessage(senderEmail, receiverEmail)
-//{
-//    Subject = subject,
-//                        Body = body
-//                    })
-//                    {
-//                        smtpDeliveryMethod = SmtpDeliveryMethod.PickupDirectoryFromIis;
-//                        smtp.Send(mess);
-//                    }   

@@ -20,9 +20,11 @@ namespace WebApi_Entities.School
         public  ICollection<Painting> Paintings { get; set; }
 
         // Has one Avatar ---------------------------------->>
+
         [ForeignKey("AvatarFK")]
         public Avatar.Avatar Avatar { get; set; }
         public int AvatarFK { get; set; }
+
 
 
         // Has one Class ----------------------------------->>

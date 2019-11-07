@@ -15,7 +15,7 @@ namespace WebApi_Database
     {
         public GalleryDbContext() : base("name=ConnStringAPI")
         {
-
+            this.Configuration.LazyLoadingEnabled = false;
         }
 
 

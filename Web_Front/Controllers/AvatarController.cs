@@ -114,7 +114,6 @@ namespace Web_Front.Controllers
         {
             if (ModelState.IsValid)
             {
-
                 ViewModel.Avatar.BackgroundFK = ViewModel.SelectedBackgroundID;
                 ViewModel.Avatar.HairFK = ViewModel.SelectedHairID;
                 ViewModel.Avatar.BodyFK = ViewModel.SelectedBodyID;

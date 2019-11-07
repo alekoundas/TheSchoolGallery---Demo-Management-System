@@ -90,23 +90,28 @@
                             </a>
                         </div>
                         <!-- STUDENT  end------------------------------------------>
-                        
+
                         <div class="dottedsurr isThisLink">
                             <div class="row">
                                 <div class="col">
                                     <!-- Price ------------------------------------------>
                                     <h5 class="text-right">
                                         Donate:
-                                        <span style="font-size:24px;" >@Html.DisplayFor(modelItem => item.Price)</span><i class="fa fa-eur" aria-hidden="true"></i>
+                                        <span style="font-size:24px;">@Html.DisplayFor(modelItem => item.Price)</span><i class="fa fa-eur" aria-hidden="true"></i>
                                     </h5>
                                 </div>
                                 <div class="col">
                                     <div class="btn_child_norm1">
-                                            <a href="@Url.Action("AddToCart", "Paypal", new { PaintingID = item.PaintingId })"><img src="~/images/UIcons/cart_off.png" /></a>
-                                        </div>
-                                        <div class="btn_child_live1">
-                                            <a style="color:#f3efe9" href="@Url.Action("AddToCart", "Paypal", new { PaintingID = item.PaintingId })"><img src="~/images/UIcons/cart.png" />add to cart</a>
-                                        </div>
+                                        <a href="@Url.Action("AddToCart", "Paypal", new { PaintingID = item.PaintingId })"><img src="~/images/UIcons/cart_off.png" /></a>
+                                    </div>
+                                    <div class="btn_child_live1">
+
+                                        @* New With Ajax  -  Not Working *@
+                                         <a style="color:#f3efe9" href="#" onclick="AddItemToCart(@item.PaintingId);"><img src="~/images/UIcons/cart.png" />add to cart</a>
+
+                                        @* Old Wornking Link To Cart *@
+                                        @*<a style="color:#f3efe9" href="@Url.Action("AddToCart", "Paypal", new { PaintingID = item.PaintingId })"><img src="~/images/UIcons/cart.png" />add to cart</a>*@
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -127,13 +132,24 @@
 
 
 @section scripts{
-
+    @Scripts.Render("~/bundles/jqueryval")
     <script>
+            $(document).ready(function () {
+                function AddItemToCart(PaintingID) {
+                console.log("okk");
+                $.ajax({
+                    type: "POST",
+                    url: @Url.Action("AddToCart", "Paypal"),
+                    data: "PaintingID="+PaintingID,
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response);
+                    }
+                });
+                };
+            });
 
-
-
-
-    </script>
+        </script>
 
 
 }
