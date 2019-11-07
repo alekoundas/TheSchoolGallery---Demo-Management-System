@@ -68,7 +68,7 @@ namespace Web_Front.Controllers
         }
 
         // GET: Classroom/Edit/5
-        [Authorize(Roles = "Admin, SuperAdmin")]
+        [Authorize(Roles = "Admin, SchoolAdmin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -86,7 +86,7 @@ namespace Web_Front.Controllers
         // POST: Classroom/Edit/5       
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin, SuperAdmin")]
+        [Authorize(Roles = "Admin, SchoolAdmin")]
         public ActionResult Edit([Bind(Include = "ClassroomId,TeacherFK,SchoolFK,Image,Name,Description")] Classroom classroom)
         {
             if (ModelState.IsValid)
@@ -98,7 +98,7 @@ namespace Web_Front.Controllers
         }
 
         // GET: Classroom/Delete/5
-        [Authorize(Roles = "Admin, SuperAdmin")]
+        [Authorize(Roles = "Admin, SchoolAdmin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -116,7 +116,7 @@ namespace Web_Front.Controllers
         // POST: Classroom/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin, SuperAdmin")]
+        [Authorize(Roles = "Admin, SchoolAdmin")]
         public ActionResult DeleteConfirmed(int id)
         {
             ServiceClassroom.DeleteClassroom(id);

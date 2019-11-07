@@ -61,7 +61,7 @@ namespace Web_Front.Controllers
         }
 
         // GET: Painting/Edit/5
-        [Authorize(Roles = "Admin, SuperAdmin")]
+        [Authorize(Roles = "Admin, SchoolAdmin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -81,7 +81,7 @@ namespace Web_Front.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin, SuperAdmin")]
+        [Authorize(Roles = "Admin, SchoolAdmin")]
         public ActionResult Edit([Bind(Include = "PaintingId,ImageUrl,PaintingTitle")] Painting painting)
         {
             if (ModelState.IsValid)
@@ -93,7 +93,7 @@ namespace Web_Front.Controllers
         }
 
         // GET: Painting/Delete/5
-        [Authorize(Roles = "Admin, SuperAdmin")]
+        [Authorize(Roles = "Admin, SchoolAdmin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -111,7 +111,7 @@ namespace Web_Front.Controllers
         // POST: Painting/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin, SuperAdmin")]
+        [Authorize(Roles = "Admin, SchoolAdmin")]
         public ActionResult DeleteConfirmed(int id)
         {
             PaintingServ.DeletePainting(id);
