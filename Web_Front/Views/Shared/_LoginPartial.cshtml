@@ -10,7 +10,7 @@
 
                 <div class="btn_contain1 col">
                     <a style="color:#5c5c5c; text-shadow:1px 1px #f3efe9;" href="@Url.Action("Profile", "Profile")"><img src="~/images/UIcons/loged.png" /></a>
-                    <span style="color:#5c5c5c; text-shadow:1px 1px #f3efe9;">@Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</span>
+                    <span style="color:#5c5c5c; text-shadow:1px 1px #f3efe9;">@Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</span>
 
                 </div>
 
