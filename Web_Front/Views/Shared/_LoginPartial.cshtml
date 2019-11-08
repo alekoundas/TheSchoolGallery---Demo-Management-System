@@ -5,7 +5,7 @@
     {
         @Html.AntiForgeryToken()
 
-        <div class="container col-10">
+        <div class="container col-5 float-left">
             <div class="row">
 
                 <div class="btn_contain1 col">
@@ -32,14 +32,14 @@
                     </div>
                 </div>
 
-                <div class="btn_contain4 col">
+                @*<div class="btn_contain4 col">
                     <div class="btn_child_norm4">
                         <a style="color:#5c5c5c; text-shadow:1px 1px #f3efe9;" href="@Url.Action("Index", "PayPal")"><img src="~/images/UIcons/donation_off.png" /></a>
                     </div>
                     <div class="btn_child_live4">
                         <a style="color:#5c5c5c; text-shadow:1px 1px #f3efe9;" href="@Url.Action("PayPalPayment", "PayPal")"><img src="~/images/UIcons/donation.png" />donation</a>
                     </div>
-                </div>
+                </div>*@
 
             </div>
         </div>
@@ -102,4 +102,4 @@ else
 
 }
 @*When SCROLL, white out the background on top ------------------------------>> *@
-<div id="Whitted_nav"></div>
+@*<div id="Whitted_nav"></div>*@

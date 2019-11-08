@@ -22,6 +22,7 @@ namespace Web_Front.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult About()
         {
             string Url = "https://localhost:44300/api/Teacher";
