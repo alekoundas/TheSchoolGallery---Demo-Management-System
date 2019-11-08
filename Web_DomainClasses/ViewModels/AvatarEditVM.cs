@@ -11,6 +11,7 @@ namespace Web_DomainClasses.ViewModels
     {
         public Avatar Avatar { get; set; }
         public int SelectedSchoolID { get; set; }
+        public int SelectedStudentID { get; set; }
         public ICollection<AvatarBackground> AvatarBackgrounds { get; set; }
         public ICollection<AvatarHair> AvatarHairs { get; set; }
         public ICollection<AvatarBody> AvatarBodys { get; set; }

@@ -132,66 +132,66 @@
             Avatar a60 = new Avatar { Background = b06, Hair = h02, Body = bd03, Clothing = c03 };
 
 
-            context.AvatarDb.Add( a1 );
-            context.AvatarDb.Add( a2 );
-            context.AvatarDb.Add( a3 );
-            context.AvatarDb.Add( a4 );
-            context.AvatarDb.Add( a5 );
-            context.AvatarDb.Add( a6 );
-            context.AvatarDb.Add( a7 );
-            context.AvatarDb.Add( a8 );
-            context.AvatarDb.Add( a9 );
-            context.AvatarDb.Add( a10);
-            context.AvatarDb.Add( a11);
-            context.AvatarDb.Add( a12);
-            context.AvatarDb.Add( a13);
-            context.AvatarDb.Add( a14);
-            context.AvatarDb.Add( a15);
-            context.AvatarDb.Add( a16);
-            context.AvatarDb.Add( a17);
-            context.AvatarDb.Add( a18);
-            context.AvatarDb.Add( a19);
-            context.AvatarDb.Add( a20);
-            context.AvatarDb.Add( a21);
-            context.AvatarDb.Add( a22);
-            context.AvatarDb.Add( a23);
-            context.AvatarDb.Add( a24);
-            context.AvatarDb.Add( a25);
-            context.AvatarDb.Add( a26);
-            context.AvatarDb.Add( a27);
-            context.AvatarDb.Add( a28);
-            context.AvatarDb.Add( a29);
-            context.AvatarDb.Add( a30);
-            context.AvatarDb.Add( a31);
-            context.AvatarDb.Add( a32);
-            context.AvatarDb.Add( a33);
-            context.AvatarDb.Add( a34);
-            context.AvatarDb.Add( a35);
-            context.AvatarDb.Add( a36);
-            context.AvatarDb.Add( a37);
-            context.AvatarDb.Add( a38);
-            context.AvatarDb.Add( a39);
-            context.AvatarDb.Add( a40);
-            context.AvatarDb.Add( a41);
-            context.AvatarDb.Add( a42);
-            context.AvatarDb.Add( a43);
-            context.AvatarDb.Add( a44);
-            context.AvatarDb.Add( a45);
-            context.AvatarDb.Add( a46);
-            context.AvatarDb.Add( a47);
-            context.AvatarDb.Add( a48);
-            context.AvatarDb.Add( a49);
-            context.AvatarDb.Add( a50);
-            context.AvatarDb.Add( a51);
-            context.AvatarDb.Add( a52);
-            context.AvatarDb.Add( a53);
-            context.AvatarDb.Add( a54);
-            context.AvatarDb.Add( a55);
-            context.AvatarDb.Add( a56);
-            context.AvatarDb.Add( a57);
-            context.AvatarDb.Add( a58);
-            context.AvatarDb.Add( a59);
-            context.AvatarDb.Add( a60);
+            context.AvatarDb.Add(a1);
+            context.AvatarDb.Add(a2);
+            context.AvatarDb.Add(a3);
+            context.AvatarDb.Add(a4);
+            context.AvatarDb.Add(a5);
+            context.AvatarDb.Add(a6);
+            context.AvatarDb.Add(a7);
+            context.AvatarDb.Add(a8);
+            context.AvatarDb.Add(a9);
+            context.AvatarDb.Add(a10);
+            context.AvatarDb.Add(a11);
+            context.AvatarDb.Add(a12);
+            context.AvatarDb.Add(a13);
+            context.AvatarDb.Add(a14);
+            context.AvatarDb.Add(a15);
+            context.AvatarDb.Add(a16);
+            context.AvatarDb.Add(a17);
+            context.AvatarDb.Add(a18);
+            context.AvatarDb.Add(a19);
+            context.AvatarDb.Add(a20);
+            context.AvatarDb.Add(a21);
+            context.AvatarDb.Add(a22);
+            context.AvatarDb.Add(a23);
+            context.AvatarDb.Add(a24);
+            context.AvatarDb.Add(a25);
+            context.AvatarDb.Add(a26);
+            context.AvatarDb.Add(a27);
+            context.AvatarDb.Add(a28);
+            context.AvatarDb.Add(a29);
+            context.AvatarDb.Add(a30);
+            context.AvatarDb.Add(a31);
+            context.AvatarDb.Add(a32);
+            context.AvatarDb.Add(a33);
+            context.AvatarDb.Add(a34);
+            context.AvatarDb.Add(a35);
+            context.AvatarDb.Add(a36);
+            context.AvatarDb.Add(a37);
+            context.AvatarDb.Add(a38);
+            context.AvatarDb.Add(a39);
+            context.AvatarDb.Add(a40);
+            context.AvatarDb.Add(a41);
+            context.AvatarDb.Add(a42);
+            context.AvatarDb.Add(a43);
+            context.AvatarDb.Add(a44);
+            context.AvatarDb.Add(a45);
+            context.AvatarDb.Add(a46);
+            context.AvatarDb.Add(a47);
+            context.AvatarDb.Add(a48);
+            context.AvatarDb.Add(a49);
+            context.AvatarDb.Add(a50);
+            context.AvatarDb.Add(a51);
+            context.AvatarDb.Add(a52);
+            context.AvatarDb.Add(a53);
+            context.AvatarDb.Add(a54);
+            context.AvatarDb.Add(a55);
+            context.AvatarDb.Add(a56);
+            context.AvatarDb.Add(a57);
+            context.AvatarDb.Add(a58);
+            context.AvatarDb.Add(a59);
+            context.AvatarDb.Add(a60);
             context.SaveChanges();
 
             // TEACHER ------------------------------------------------------------------------------->>  
@@ -305,15 +305,15 @@
 
 
             // STUDENTS ------------------------------------------------------------------------------->>  
-            Student s01 = new Student { StudentId = 01, Age = 5, AvatarFK = 1 , Paintings = new List<Painting> { p01, p02 }, FirstName = "James", LastName = "Hernandez" };
-            Student s02 = new Student { StudentId = 02, Age = 5, AvatarFK = 2 , Paintings = new List<Painting> { p03, p04 }, FirstName = "Senzieng", LastName = "Hou" };
-            Student s03 = new Student { StudentId = 03, Age = 5, AvatarFK = 3 , Paintings = new List<Painting> { p06 }, FirstName = "Robert", LastName = "Rodriguez" };
-            Student s04 = new Student { StudentId = 04, Age = 5, AvatarFK = 4 , Paintings = new List<Painting> { p00 }, FirstName = "Maria", LastName = "Garcia" };
-            Student s05 = new Student { StudentId = 05, Age = 5, AvatarFK = 5 , Paintings = new List<Painting> { p07, p09, p05 }, FirstName = "Fumiko", LastName = "Koyama" };
-            Student s06 = new Student { StudentId = 06, Age = 5, AvatarFK = 6 , Paintings = new List<Painting> { p08, p10 }, FirstName = "Ryoya", LastName = "Urehara" };
-            Student s07 = new Student { StudentId = 07, Age = 5, AvatarFK = 7 , Paintings = new List<Painting> { p11 }, FirstName = "Kim", LastName = "Yun" };
-            Student s08 = new Student { StudentId = 08, Age = 5, AvatarFK = 8 , Paintings = new List<Painting> { p12, p13 }, FirstName = "Fael", LastName = "Faery" };
-            Student s09 = new Student { StudentId = 09, Age = 5, AvatarFK = 9 , Paintings = new List<Painting> { p14, p15 }, FirstName = "Amanda", LastName = "Diamond" };
+            Student s01 = new Student { StudentId = 01, Age = 5, AvatarFK = 1, Paintings = new List<Painting> { p01, p02 }, FirstName = "James", LastName = "Hernandez" };
+            Student s02 = new Student { StudentId = 02, Age = 5, AvatarFK = 2, Paintings = new List<Painting> { p03, p04 }, FirstName = "Senzieng", LastName = "Hou" };
+            Student s03 = new Student { StudentId = 03, Age = 5, AvatarFK = 3, Paintings = new List<Painting> { p06 }, FirstName = "Robert", LastName = "Rodriguez" };
+            Student s04 = new Student { StudentId = 04, Age = 5, AvatarFK = 4, Paintings = new List<Painting> { p00 }, FirstName = "Maria", LastName = "Garcia" };
+            Student s05 = new Student { StudentId = 05, Age = 5, AvatarFK = 5, Paintings = new List<Painting> { p07, p09, p05 }, FirstName = "Fumiko", LastName = "Koyama" };
+            Student s06 = new Student { StudentId = 06, Age = 5, AvatarFK = 6, Paintings = new List<Painting> { p08, p10 }, FirstName = "Ryoya", LastName = "Urehara" };
+            Student s07 = new Student { StudentId = 07, Age = 5, AvatarFK = 7, Paintings = new List<Painting> { p11 }, FirstName = "Kim", LastName = "Yun" };
+            Student s08 = new Student { StudentId = 08, Age = 5, AvatarFK = 8, Paintings = new List<Painting> { p12, p13 }, FirstName = "Fael", LastName = "Faery" };
+            Student s09 = new Student { StudentId = 09, Age = 5, AvatarFK = 9, Paintings = new List<Painting> { p14, p15 }, FirstName = "Amanda", LastName = "Diamond" };
             Student s10 = new Student { StudentId = 10, Age = 5, AvatarFK = 10, Paintings = new List<Painting> { p16, p23 }, FirstName = "Michael", LastName = "Shumy" };
             Student s11 = new Student { StudentId = 11, Age = 6, AvatarFK = 11, Paintings = new List<Painting> { p17 }, FirstName = "Will", LastName = "Smooth" };
             Student s12 = new Student { StudentId = 12, Age = 6, AvatarFK = 12, Paintings = new List<Painting> { p18, p19, p20, p21, p22 }, FirstName = "Bob", LastName = "Sfougg" };
@@ -348,24 +348,24 @@
             Student s41 = new Student { StudentId = 41, Age = 9, AvatarFK = 41, Paintings = new List<Painting> { }, FirstName = "Michalis", LastName = "Karydas" };
             Student s42 = new Student { StudentId = 42, Age = 9, AvatarFK = 42, Paintings = new List<Painting> { p64, p65 }, FirstName = "Rea Ifigeneia", LastName = "Chorman" };
             Student s43 = new Student { StudentId = 43, Age = 8, AvatarFK = 43, Paintings = new List<Painting> { }, FirstName = "Johnnys", LastName = "Perpatitis" };
-            Student s44 = new Student { StudentId = 44, Age = 10,AvatarFK = 44, Paintings = new List<Painting> { }, FirstName = "Dimitris", LastName = "Lymperis" };
+            Student s44 = new Student { StudentId = 44, Age = 10, AvatarFK = 44, Paintings = new List<Painting> { }, FirstName = "Dimitris", LastName = "Lymperis" };
             Student s45 = new Student { StudentId = 45, Age = 8, AvatarFK = 45, Paintings = new List<Painting> { }, FirstName = "Filippas", LastName = "Mpitsis" };
             Student s46 = new Student { StudentId = 46, Age = 8, AvatarFK = 46, Paintings = new List<Painting> { }, FirstName = "Alexis", LastName = "Prothypos" };
-            Student s47 = new Student { StudentId = 47, Age = 10,AvatarFK = 47, Paintings = new List<Painting> { }, FirstName = "Konstantinos", LastName = "Torinos" };
-            Student s48 = new Student { StudentId = 48, Age = 10,AvatarFK = 48, Paintings = new List<Painting> { }, FirstName = "Maria", LastName = "Maraki" };
-            Student s49 = new Student { StudentId = 49, Age = 10,AvatarFK = 49, Paintings = new List<Painting> { }, FirstName = "Katerina", LastName = "Vafeidi" };
+            Student s47 = new Student { StudentId = 47, Age = 10, AvatarFK = 47, Paintings = new List<Painting> { }, FirstName = "Konstantinos", LastName = "Torinos" };
+            Student s48 = new Student { StudentId = 48, Age = 10, AvatarFK = 48, Paintings = new List<Painting> { }, FirstName = "Maria", LastName = "Maraki" };
+            Student s49 = new Student { StudentId = 49, Age = 10, AvatarFK = 49, Paintings = new List<Painting> { }, FirstName = "Katerina", LastName = "Vafeidi" };
             Student s50 = new Student { StudentId = 50, Age = 9, AvatarFK = 50, Paintings = new List<Painting> { }, FirstName = "Vaggelitsa", LastName = "Grylou" };
             Student s51 = new Student { StudentId = 51, Age = 9, AvatarFK = 51, Paintings = new List<Painting> { }, FirstName = "Hector", LastName = "Gatsos" };
             Student s52 = new Student { StudentId = 52, Age = 9, AvatarFK = 52, Paintings = new List<Painting> { }, FirstName = "Mike", LastName = "Lawry" };
-            Student s53 = new Student { StudentId = 53, Age = 10,AvatarFK = 53, Paintings = new List<Painting> { }, FirstName = "Vanessa", LastName = "Smith" };
-            Student s54 = new Student { StudentId = 54, Age = 10,AvatarFK = 54, Paintings = new List<Painting> { }, FirstName = "Maria", LastName = "Mpihi" };
-            Student s55 = new Student { StudentId = 55, Age = 10,AvatarFK = 55, Paintings = new List<Painting> { }, FirstName = "Kostas", LastName = "Malamoutis" };
-            Student s56 = new Student { StudentId = 56, Age = 10,AvatarFK = 56, Paintings = new List<Painting> { }, FirstName = "Yiannis", LastName = "Noaa" };
-            Student s57 = new Student { StudentId = 57, Age = 10,AvatarFK = 57, Paintings = new List<Painting> { }, FirstName = "Kaori", LastName = "Koyama" };
-            Student s58 = new Student { StudentId = 58, Age = 10,AvatarFK = 58, Paintings = new List<Painting> { p73, p74 }, FirstName = "Jessica", LastName = "Nian" };
-            Student s59 = new Student { StudentId = 59, Age = 10,AvatarFK = 59, Paintings = new List<Painting> { p72 }, FirstName = "Biki", LastName = "Valgeri" };
+            Student s53 = new Student { StudentId = 53, Age = 10, AvatarFK = 53, Paintings = new List<Painting> { }, FirstName = "Vanessa", LastName = "Smith" };
+            Student s54 = new Student { StudentId = 54, Age = 10, AvatarFK = 54, Paintings = new List<Painting> { }, FirstName = "Maria", LastName = "Mpihi" };
+            Student s55 = new Student { StudentId = 55, Age = 10, AvatarFK = 55, Paintings = new List<Painting> { }, FirstName = "Kostas", LastName = "Malamoutis" };
+            Student s56 = new Student { StudentId = 56, Age = 10, AvatarFK = 56, Paintings = new List<Painting> { }, FirstName = "Yiannis", LastName = "Noaa" };
+            Student s57 = new Student { StudentId = 57, Age = 10, AvatarFK = 57, Paintings = new List<Painting> { }, FirstName = "Kaori", LastName = "Koyama" };
+            Student s58 = new Student { StudentId = 58, Age = 10, AvatarFK = 58, Paintings = new List<Painting> { p73, p74 }, FirstName = "Jessica", LastName = "Nian" };
+            Student s59 = new Student { StudentId = 59, Age = 10, AvatarFK = 59, Paintings = new List<Painting> { p72 }, FirstName = "Biki", LastName = "Valgeri" };
             Student s60 = new Student { StudentId = 60, Age = 11, AvatarFK = 60, Paintings = new List<Painting> { p24, p25, p26 }, FirstName = "Ifigeneia", LastName = "Fotopoulou" };
-                                                                          
+
 
             // CLASSROOM ------------------------------------------------------------------------------->>  
             List<Student> slist = new List<Student> { s01, s02, s03, s04, s05, s06, s07, s08, s09, s13 };
@@ -380,10 +380,10 @@
 
 
             // SCHOOLS ------------------------------------------------------------------------------->>  
-            School sh01 = new School { Name = "The Lindle School", City = "London", Adress = "59 Picabou Str. SQ9 DZ8 London", Tel = 2109299999, Classrooms = new List<Classroom> { cl1, cl2 } };
-            School sh02 = new School { Name = "Little People", City = "Hangzhou", Adress = "156 XiWu", Tel = 210896542, Classrooms = new List<Classroom> { cl3, cl4 } };
-            School sh03 = new School { Name = "Nipio", City = "Limnos", Adress = "27 Hroon Str. TK81100 Myrina", Tel = 2109788888, Classrooms = new List<Classroom> {/* cl5, cl6*/ } };
-            School sh04 = new School { Name = "Faliro School of Arts", City = "Athens", Adress = "56 Agiou Alexandrou TK17561 P.Faliro", Tel = 2106822222, Classrooms = new List<Classroom> { cl7 } };
+            School sh01 = new School {  Name = "The Lindle School", City = "London", Adress = "59 Picabou Str. SQ9 DZ8 London", Tel = 2109299999, Classrooms = new List<Classroom> { cl1, cl2 } ,PlaceId = "ChIJW8YvDoy9oRQRIZq-4MCqrNI" };
+            School sh02 = new School {  Name = "Little People", City = "Hangzhou", Adress = "156 XiWu", Tel = 210896542, Classrooms = new List<Classroom> { cl3, cl4 }, PlaceId = "Eh1QYW5lcGlzdGltaW91LCBBdGhpbmEsIEdyZWVjZSIuKiwKFAoSCaPhC9A-vaEUEQos_mJAl90EEhQKEgnxQ3AGH72hFBHdjWZ2RTU2Jw" };
+            School sh03 = new School {  Name = "Nipio", City = "Limnos", Adress = "27 Hroon Str. TK81100 Myrina", Tel = 2109788888, Classrooms = new List<Classroom> {/* cl5, cl6*/ } ,PlaceId = "ChIJW8YvDoy9oRQRIZq-4MCqrNI" };
+            School sh04 = new School {  Name = "Faliro School of Arts", City = "Athens", Adress = "56 Agiou Alexandrou TK17561 P.Faliro", Tel = 2106822222, Classrooms = new List<Classroom> { cl7 }, PlaceId = "ChIJ8UM_O1VFXxMRx_7G5nG6RFM" };
 
 
 

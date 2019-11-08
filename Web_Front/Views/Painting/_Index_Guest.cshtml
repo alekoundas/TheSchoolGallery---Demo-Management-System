@@ -107,10 +107,10 @@
                                     <div class="btn_child_live1">
 
                                         @* New With Ajax  -  Not Working *@
-                                         <a style="color:#f3efe9" href="#" onclick="AddItemToCart(@item.PaintingId);"><img src="~/images/UIcons/cart.png" />add to cart</a>
+                                        @*<a style="color:#f3efe9" href="#" id="SaveItemToCart"><img src="~/images/UIcons/cart.png" />add to cart</a>*@
 
-                                        @* Old Wornking Link To Cart *@
-                                        @*<a style="color:#f3efe9" href="@Url.Action("AddToCart", "Paypal", new { PaintingID = item.PaintingId })"><img src="~/images/UIcons/cart.png" />add to cart</a>*@
+                                        @* Old Working Link To Cart *@
+                                        <a style="color:#f3efe9" href="@Url.Action("AddToCart", "Paypal", new { PaintingID = item.PaintingId })"><img src="~/images/UIcons/cart.png" />add to cart</a>
                                     </div>
                                 </div>
                             </div>
@@ -133,11 +133,10 @@
 
 @section scripts{
     @Scripts.Render("~/bundles/jqueryval")
-    <script>
-            $(document).ready(function () {
-                function AddItemToCart(PaintingID) {
+@*<script>
+            $('#SaveItemToCart').on('click', function () {
                 console.log("okk");
-                $.ajax({
+             $.ajax({
                     type: "POST",
                     url: @Url.Action("AddToCart", "Paypal"),
                     data: "PaintingID="+PaintingID,
@@ -146,10 +145,8 @@
                         console.log(response);
                     }
                 });
-                };
-            });
-
-        </script>
+        });
+    </script>*@
 
 
 }

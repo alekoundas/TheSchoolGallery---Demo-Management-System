@@ -7,8 +7,10 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Web_DomainClasses.Entities.Avatar;
+using Web_DomainClasses.Entities.School;
 using Web_DomainClasses.ViewModels;
 using Web_Front.Models;
+using Web_Services.ApiMapping;
 using Web_Services.ApiMapping.Avatars;
 
 namespace Web_Front.Controllers
@@ -21,6 +23,7 @@ namespace Web_Front.Controllers
         HairApiService ServiceHair = new HairApiService();
         BodyApiService ServiceBody = new BodyApiService();
         ClothingApiService ServiceClothing = new ClothingApiService();
+        StudentApiService ServiceStudent = new StudentApiService();
 
         // GET: Avatar
         public ActionResult Index()
@@ -88,15 +91,17 @@ namespace Web_Front.Controllers
         // GET: Avatar/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             Avatar avatar = ServiceAvatar.GetAvatar(id);
+
+
+            if (id == null)
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            
             if (avatar == null)
-            {
                 return HttpNotFound();
-            }
+
+
+
             AvatarEditVM ViewModel = new AvatarEditVM();
 
             ViewModel.Avatar = avatar;
@@ -104,6 +109,7 @@ namespace Web_Front.Controllers
             ViewModel.AvatarHairs = ServiceHair.GetHairs();
             ViewModel.AvatarBodys = ServiceBody.GetBodys();
             ViewModel.AvatarClothings = ServiceClothing.GetClothings();
+            ViewModel.SelectedStudentID = ServiceStudent.GetStudent(id).StudentId;
             return View(ViewModel);
         }
 
@@ -119,9 +125,8 @@ namespace Web_Front.Controllers
                 ViewModel.Avatar.BodyFK = ViewModel.SelectedBodyID;
                 ViewModel.Avatar.ClothingFK = ViewModel.SelectedClothingID;
 
-
                 ServiceAvatar.EditAvatar(ViewModel.Avatar);
-                return RedirectToAction("Details", "Student", new { id = 2 });
+                return RedirectToAction("Details", "Student", new { id = ViewModel.SelectedStudentID });
             }
             ViewModel.AvatarBackgrounds = ServiceBackground.GetBackgrounds();
             ViewModel.AvatarHairs = ServiceHair.GetHairs();
@@ -131,31 +136,38 @@ namespace Web_Front.Controllers
 
         }
 
-        // GET: Avatar/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            //if (id == null)
-            //{
-            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            //}
-            //Avatar avatar = db.Avatars.Find(id);
-            //if (avatar == null)
-            //{
-            //    return HttpNotFound();
-            //}
-            return View(/*avatar*/);
-        }
 
-        // POST: Avatar/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            //Avatar avatar = db.Avatars.Find(id);
-            //db.Avatars.Remove(avatar);
-            //db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+
+
+        //TO BE: Deleted
+
+
+
+        //// GET: Avatar/Delete/5
+        //public ActionResult Delete(int? id)
+        //{
+        //    //if (id == null)
+        //    //{
+        //    //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    //}
+        //    //Avatar avatar = db.Avatars.Find(id);
+        //    //if (avatar == null)
+        //    //{
+        //    //    return HttpNotFound();
+        //    //}
+        //    return View(/*avatar*/);
+        //}
+
+        //// POST: Avatar/Delete/5
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteConfirmed(int id)
+        //{
+        //    //Avatar avatar = db.Avatars.Find(id);
+        //    //db.Avatars.Remove(avatar);
+        //    //db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
 
 
     }

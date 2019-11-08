@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<Web_DomainClasses.Entities.School.School>
-
 @{
     ViewBag.Title = "Index";
 }
@@ -107,28 +106,16 @@
 
 
 
-@*                            BETA GMAPS API                                        *@
+@*                             GMAPS API                                        *@
 
 <script type="text/javascript">
 
 
     function initMap() {
 
-
-        var locations = [
-            ['Bondi Beach', -33.890542, 151.274856, 4],
-            ['Coogee Beach', -33.923036, 151.259052, 5],
-            ['Cronulla Beach', -34.028249, 151.157507, 3],
-            ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
-            ['Maroubra Beach', -33.950198, 151.259302, 1]
-        ];
-
-
-
-
-
+        //set Map properties to a var
         var MapProperties = {
-            center: { lat: -33.92, lng: 151.25 },
+            center: { lat: 37.983810, lng: 23.727539 },
             zoom: 12,
             styles: [
                 {
@@ -297,42 +284,34 @@
 
         var map = new google.maps.Map(document.getElementById('gmap2'), MapProperties);
 
-      
 
 
-        var infowindow = new google.maps.InfoWindow();
+        //AJAX to Controller To Get a List Of Place_id
+        $.getJSON('@(Url.Action("GetPlace_ids"))', null, function (data) {
 
-        var marker, i;
+            //Service to translate place_id to
+            var service = new google.maps.places.PlacesService(map);
 
-        for (i = 0; i < myArray.Count; i++) {
-            //marker = new google.maps.Marker({
-            //    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-            //    map: map
-            //});
+            for (var i = 0; i < data.Place_IDs.length; i++) {
 
-            //var service = new google.maps.places.PlacesService(map);
-            //service.getDetails({
-            //    placeId: myArray[i]
-            //}, function (result, status) {
-            //    var marker = new google.maps.Marker({
-            //        map: map,
-            //        place: {
-            //            placeId: myArray[i],
-            //            location: result.geometry.location
-            //        }
-            //    });
-            //});
+                var placeid = data.Place_IDs[i];
+                var title = data.Titles[i];
 
+                    service.getDetails({ placeId: placeid }, function (result, status)
+                    {
+                        var marker = new google.maps.Marker({ map: map,place: {placeId: placeid,  location: result.geometry.location  } });
 
-            //To Show Description On Pin Click
-
-            //google.maps.event.addListener(marker, 'click', (function(marker, i) {
-            //  return function() {
-            //    infowindow.setContent(locations[i][0]);
-            //    infowindow.open(map, marker);
-            //  }
-            //})(marker, i));
-        }
+                        //To Show Description On Pin Click
+                         var infowindow = new google.maps.InfoWindow();
+                         google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                                return function() {
+                                       infowindow.setContent(title);
+                                       infowindow.open(map, marker);
+                                }
+                      })(marker, i));
+                    });
+            }
+        });
     };
 </script>
 

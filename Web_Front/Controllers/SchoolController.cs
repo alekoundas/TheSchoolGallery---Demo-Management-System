@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Web_DomainClasses.Entities.GoogleMaps;
 using Web_DomainClasses.Entities.School;
 using Web_Front.Models;
 using Web_Services.ApiMapping;
@@ -16,12 +17,12 @@ namespace Web_Front.Controllers
     public class SchoolController : MasterController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        SchoolApiService SchoolServ = new SchoolApiService();
+        SchoolApiService ServiceSchool = new SchoolApiService();
 
         // GET: School
         public ActionResult Index()
         {
-            return View(SchoolServ.GetSchools());
+            return View(ServiceSchool.GetSchools());
         }
 
         // GET: School/Details/5
@@ -31,7 +32,7 @@ namespace Web_Front.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            School school = SchoolServ.GetSchool(id);
+            School school = ServiceSchool.GetSchool(id);
             if (school == null)
             {
                 return HttpNotFound();
@@ -52,7 +53,7 @@ namespace Web_Front.Controllers
         {
             if (ModelState.IsValid)
             {
-                SchoolServ.CreateSchool(school);
+                ServiceSchool.CreateSchool(school);
                 return RedirectToAction("Index");
             }
 
@@ -67,7 +68,7 @@ namespace Web_Front.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            School school = SchoolServ.GetSchool(id);
+            School school = ServiceSchool.GetSchool(id);
             if (school == null)
             {
                 return HttpNotFound();
@@ -76,7 +77,7 @@ namespace Web_Front.Controllers
         }
 
         // POST: School/Edit/5
-       
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin, SchoolAdmin")]
@@ -84,7 +85,7 @@ namespace Web_Front.Controllers
         {
             if (ModelState.IsValid)
             {
-                SchoolServ.EditSchool(school);
+                ServiceSchool.EditSchool(school);
                 return RedirectToAction("Index");
             }
             return View(school);
@@ -98,7 +99,7 @@ namespace Web_Front.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            School school = SchoolServ.GetSchool(id);
+            School school = ServiceSchool.GetSchool(id);
             if (school == null)
             {
                 return HttpNotFound();
@@ -112,9 +113,35 @@ namespace Web_Front.Controllers
         [Authorize(Roles = "Admin, SchoolAdmin")]
         public ActionResult DeleteConfirmed(int id)
         {
-            SchoolServ.DeleteSchool(id);
+            ServiceSchool.DeleteSchool(id);
             return RedirectToAction("Index");
         }
+
+
+
+
+        /// <summary>
+        /// Retrives all schools and extract Place_id prop to a list
+        /// </summary>
+        /// <returns>JSON List of Place_id Of every school</returns>
+        [HttpGet]
+        public JsonResult GetPlace_ids()
+        {
+
+            MapMarker marker = new MapMarker();
+            marker.Place_IDs = ServiceSchool.GetSchools().Select(x => x.PlaceId).ToList();
+            marker.Titles = ServiceSchool.GetSchools().Select(x => x.Name).ToList();
+
+            return Json(marker, JsonRequestBehavior.AllowGet);
+        }
+
+
+
+
+
+
+
+
 
         protected override void Dispose(bool disposing)
         {

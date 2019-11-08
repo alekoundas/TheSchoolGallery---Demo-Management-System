@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -123,6 +124,31 @@ namespace Web_Front.Controllers
             return RedirectToAction("Index");
         }
 
+
+
+        
+        [HttpGet]
+        public string GetPlace_ids()
+        {
+
+            //get or create WorkItem here
+            var schools = ServiceSchool.GetSchools().Select(x=>x.PlaceId);
+
+
+           
+            return JsonConvert.SerializeObject(schools);
+        }
+
+
+
+
+
+
+
+
+
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -131,5 +157,10 @@ namespace Web_Front.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+
+
+
     }
 }

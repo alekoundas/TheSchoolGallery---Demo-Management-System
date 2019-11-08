@@ -66,6 +66,7 @@
     <Compile Include="Entities\Avatar\AvatarBody.cs" />
     <Compile Include="Entities\Avatar\AvatarClothing.cs" />
     <Compile Include="Entities\Avatar\AvatarHair.cs" />
+    <Compile Include="Entities\GoogleMaps\MapMarker.cs" />
     <Compile Include="Entities\School\Classroom.cs" />
     <Compile Include="Entities\School\Painting.cs" />
     <Compile Include="Entities\School\School.cs" />

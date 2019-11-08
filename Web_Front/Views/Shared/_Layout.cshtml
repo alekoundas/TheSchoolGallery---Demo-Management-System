@@ -61,7 +61,7 @@
 
     @*MODAL POWER ---------------------------------------->> *@
     <script>
-       
+
 
         $(function () {
             // say we want to have only one item opened at one moment
@@ -162,6 +162,51 @@
             return encodedValue;
         }
     </script>
+    @* End SignalR *@
+
+
+
+    @* Add Item To Cart Via Ajax *@
+    <script>
+
+
+        @*$('#SaveItemToCart').on('click', function () {
+                console.log("okk");
+             $.ajax({
+                    type: "POST",
+                    url: @Url.Action("AddToCart", "Paypal"),
+                    data: "PaintingID="+PaintingID,
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response);
+                    }
+                });
+        });
+
+            $(document).ready(function () {
+                function AddItemToCart(PaintingID) {
+                console.log("okk");
+                $.ajax({
+                    type: "POST",
+                    url: @Url.Action("AddToCart", "Paypal"),
+                    data: "PaintingID="+PaintingID,
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response);
+                    }
+                });
+                };
+            });*@
+
+    </script>
+    @* Add Item To Cart  End *@
+
+
+
+
+
+
+
 
     @RenderSection("scripts", required: false)
 </body>
