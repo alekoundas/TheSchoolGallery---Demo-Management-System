@@ -70,11 +70,11 @@
             AvatarClothing c09 = new AvatarClothing { ImageUrl = "clothes_09.png" };
 
             // AVATAR ------------------------------------------------------------------------------->>  
-            Avatar a1 = new Avatar { Background = b01, Hair = h01, Body = bd01, Clothing = c01 };
-            Avatar a2 = new Avatar { Background = b02, Hair = h02, Body = bd01, Clothing = c01 };
-            Avatar a3 = new Avatar { Background = b03, Hair = h03, Body = bd01, Clothing = c01 };
-            Avatar a4 = new Avatar { Background = b04, Hair = h04, Body = bd09, Clothing = c09 };
-            Avatar a5 = new Avatar { Background = b05, Hair = h05, Body = bd08, Clothing = c08 };
+            Avatar a1 = new Avatar { Background = b01, Hair = h01, Body = bd02, Clothing = c06 };
+            Avatar a2 = new Avatar { Background = b02, Hair = h04, Body = bd05, Clothing = c04 };
+            Avatar a3 = new Avatar { Background = b03, Hair = h02, Body = bd03, Clothing = c02 };
+            Avatar a4 = new Avatar { Background = b04, Hair = h06, Body = bd09, Clothing = c09 };
+            Avatar a5 = new Avatar { Background = b05, Hair = h09, Body = bd08, Clothing = c07 };
             Avatar a6 = new Avatar { Background = b06, Hair = h06, Body = bd07, Clothing = c07 };
             Avatar a7 = new Avatar { Background = b07, Hair = h07, Body = bd06, Clothing = c06 };
             Avatar a8 = new Avatar { Background = b08, Hair = h08, Body = bd05, Clothing = c05 };
