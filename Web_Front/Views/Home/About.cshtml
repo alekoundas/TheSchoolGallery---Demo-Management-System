@@ -18,221 +18,45 @@
     <link rel="stylesheet" href="~/css/pfold.css" />
     <link rel="stylesheet" href="~/css/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/handwrite.css" />
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/utils/Draggable.min.js"></script>
 
-    <style>
-
-        /*#region PARALLAX*/
-        .cd-background-wrapper {
-            background-color: #f3efe9;
-            background-image: url(../images/parallax/sky.png);
-            background-size: contain;
-            position: relative;
-            overflow: hidden;
-            -webkit-perspective: 4000px;
-            perspective: 4000px;
-            padding: 0px;
-            border: 50px solid #f3efe9;
-            width: 100%;
-            height: auto;
-        }
-
-
-        .cd-floating-background {
-            position: relative;
-            top: 0;
-            left: 0px;
-            -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-            -webkit-transform: translateZ(0);
-            -ms-transform: translateZ(0);
-            transform: translateZ(0);
-        }
-
-            .cd-floating-background.is-absolute {
-                position: absolute;
-            }
-
-            .cd-floating-background img {
-                display: block;
-                width: 100%;
-                -webkit-backface-visibility: hidden;
-                backface-visibility: hidden;
-                /* fixes a Firefox bug - images not correctly rendered*/
-                background-color: rgba(255, 255, 255, 0.01);
-            }
-
-            .cd-floating-background a {
-                display: block;
-                position: absolute;
-                left:250px;
-                
-            }
-
-
-            .cd-floating-background img:not(:first-child) {
-                position: absolute;
-                top: 0;
-            }
-
-
-            .cd-floating-background img:first-child {
-                -webkit-transform: translateZ(-2000px);
-                -ms-transform: translateZ(-2000px);
-                transform: translateZ(-2000px);
-                top: -800px;
-                left: -1200px;
-                width: 140%;
-            }
-
-            .cd-floating-background img:nth-child(2) {
-                -webkit-transform: translateZ(-1500px);
-                -ms-transform: translateZ(-1500px);
-                transform: translateZ(-1500px);
-                top: -220px;
-                left: -200px;
-                width: 140%;
-            }
-
-            .cd-floating-background img:nth-child(3) {
-                -webkit-transform: translateZ(-1000px);
-                -ms-transform: translateZ(-1000px);
-                transform: translateZ(-1000px);
-                top: -320px;
-                left: -200px;
-                width: 150%;
-            }
-
-            .cd-floating-background img:nth-child(4) {
-                -webkit-transform: translateZ(-800px);
-                -ms-transform: translateZ(-800px);
-                transform: translateZ(-800px);
-                top: 0px;
-                left: 0px;
-                width: 100%;
-            }
-
-            .cd-floating-background img:nth-child(5) {
-                -webkit-transform: translateZ(-700px);
-                -ms-transform: translateZ(-700px);
-                transform: translateZ(-700px);
-                top: -50px;
-                left: -80px;
-                width: 110%;
-            }
-
-            .cd-floating-background img:nth-child(6) {
-                -webkit-transform: translateZ(-580px);
-                -ms-transform: translateZ(-580px);
-                transform: translateZ(-580px);
-                top: -40px;
-                left: -80px;
-                width: 110%;
-            }
-
-            .cd-floating-background img:nth-child(7) {
-                -webkit-transform: translateZ(-340px);
-                -ms-transform: translateZ(-340px);
-                transform: translateZ(-340px);
-                top: -60px;
-                left: -40px;
-                width: 110%;
-            }
-
-            .cd-floating-background img:nth-child(8) {
-                -webkit-transform: translateZ(-200px);
-                -ms-transform: translateZ(-200px);
-                transform: translateZ(-200px);
-            }
-
-            .cd-floating-background img:nth-child(9) {
-                -webkit-transform: translateZ(-100px);
-                -ms-transform: translateZ(-100px);
-                transform: translateZ(-100px);
-                top: -60px;
-                left: -40px;
-                width: 110%;
-            }
-
-            .cd-floating-background img:nth-child(10) {
-                -webkit-transform: translateZ(20px);
-                -ms-transform: translateZ(20px);
-                transform: translateZ(20px);
-            }
-
-            .cd-floating-background img:nth-child(11) {
-                -webkit-transform: translateZ(100px);
-                -ms-transform: translateZ(100px);
-                transform: translateZ(100px);
-            }
-
-            .cd-floating-background img:nth-child(12) {
-                -webkit-transform: translateZ(400px);
-                -ms-transform: translateZ(400px);
-                transform: translateZ(400px);
-                top: -20px;
-                left: 0px;
-                width: 90%;
-            }
-
-
-            .cd-floating-background a:nth-child(13) {
-                -webkit-transform: translateZ(480px);
-                -ms-transform: translateZ(480px);
-                transform: translateZ(480px);
-                top: 300px;
-            }
-
-        .no-preserve-3d .cd-floating-background {
-            /* we target browsers that don't support preserve-3d and show just a standard image - no effect visible */
-            position: relative;
-        }
-
-
-            mousetrack:hover {
-                cursor: pointer;
-            }
-
-
-        a {
-            color: #f3efe9;
-            font-size: 120px;
-            font-family: "Sweet Hipster";
-            text-shadow: 1px 2px 1px rgb( 235, 72, 72 );
-            left: 50px;
-            top: 150px;
-            width: 100%;
-            z-index:999;
-        }
-
-        /*#endregion PARALLAX*/
-    </style>
 </head>
-<body>
+<body> 
 
-
-
-    <div class="container-fluid">
-        <div class="cd-background-wrapper">
-            <div class="mousetrack"></div>
-            <figure class="cd-floating-background">
-                <img id="para01" src="~/images/parallax/clouds_back.png">
-                <img id="para02" src="~/images/parallax/clouds_middle.png">
-                <img id="para03" src="~/images/parallax/clouds_front.png">
-                <img id="para04" src="~/images/parallax/birds.png">
-                <img id="para05" src="~/images/parallax/mountains_back.png">
-                <img id="para06" src="~/images/parallax/mountains_middle.png">
-                <img id="para07" src="~/images/parallax/mountains_front.png">
-                <img id="para08" src="~/images/parallax/gallery_frame.png">
-                <img id="para09" src="~/images/parallax/smoke.png">
-                <img id="para10" src="~/images/parallax/gallery_paint.png">
-                <img id="para11" src="~/images/parallax/gallery_boi.png">
-                <img id="mousetrack" src="~/images/parallax/front.png">
-                <a href="@Url.Action("Index", "Home")">(The School Gallery)</a>
-            </figure>
+    <a href="@Url.Action("Index", "Home")">
+        <div class="wrapper">
+            <div class="text" data-index="1">(Welcome to...)</div>
+            <div class="text hidden" data-index="2">(The School Gallery)</div>
+            <div class="text hidden" data-index="3">(Childen Create Art)</div>
+            <div class="text hidden" data-index="4">(Buy any piece of Art)</div>
+            <div class="text hidden" data-index="5">(Support their Schools)</div>
         </div>
+    </a>
+
+
+
+    <div class="cd-background-wrapper">
+        <div class="mousetrack"></div>
+        <figure class="cd-floating-background">
+            <img id="para01" src="~/images/parallax/clouds_back.png">
+            <img id="para02" src="~/images/parallax/clouds_middle.png">
+            <img id="para03" src="~/images/parallax/clouds_front.png">
+            <img id="para04" src="~/images/parallax/birds.png">
+            <img id="para05" src="~/images/parallax/mountains_back.png">
+            <img id="para06" src="~/images/parallax/mountains_middle.png">
+            <img id="para07" src="~/images/parallax/mountains_front.png">
+            <img id="para08" src="~/images/parallax/gallery_frame.png">
+            <img id="para09" src="~/images/parallax/smoke.png">
+            <img id="para10" src="~/images/parallax/gallery_paint.png">
+            <img id="para11" src="~/images/parallax/gallery_boi.png">
+            <img id="para12" src="~/images/parallax/front.png">
+            @*<a href="@Url.Action("Index", "Home")">(The School Gallery)</a>*@
+        </figure>
     </div>
+
 
 
 
@@ -252,9 +76,12 @@
     <script src="~/js/modernizr.custom.79639.js"></script>
     <script src="~/js/jquery.pfold.js"></script>
     <script src="~/js/main.js"></script>
+    <script src="~/js/textswap.js"></script>
 
     <script>
-        $(document).ready(function () {
+
+
+        @*$(document).ready(function () {
 
             $("mousetrack").click(function (e) {
                 @Url.Action("Index", "Home")
@@ -271,14 +98,7 @@
                 }, 4000);
             });
 
-
-
-
-
-
-        });
-
-
+        });*@
 
     </script>
 
