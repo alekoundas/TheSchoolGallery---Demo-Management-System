@@ -23,7 +23,7 @@
                     </div>
                     <!-- Section - Classroom --------------------------------------->
                     <div class="col-md-3">
-                        <a href="@Url.Action("Details", "Classroom", new { id = Model.StudentId })">
+                        <a href="@Url.Action("Details", "Classroom", new { id = Model.ClassroomFK })">
                             <div class="dottedFrameFixedHDark isThisLink">
                                 <h4>Class</h4>
                                 <hr/>
@@ -33,7 +33,7 @@
                     </div>
                     <!-- Section - School --------------------------------------->
                     <div class="col-md-3">
-                        <a href="@Url.Action("Details", "School", new { id = Model.StudentId })">
+                        <a href="@Url.Action("Details", "School", new { id = Model.Classroom.SchoolFK })">
                             <div class="dottedFrameFixedHDark isThisLink">
                                 <h4>School</h4>
                                 <hr/>
