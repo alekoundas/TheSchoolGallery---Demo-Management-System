@@ -3,90 +3,198 @@
 
 @{
     ViewBag.Title = "Edit";
-    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
-    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
 }
 
 <div class="limiter">
     <div class="container-login100">
         <div class="container">
-            <br />
-            <br />
             <h2 class="text-center" style="color:#f3efe9;"> Create Avatar</h2>
             <hr />
-            <br />
             <div id="Board" class="row">
+                <div class="col-12">
+                    <!--Carousel Wrapper-->
+                    <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+                        <!--Controls-->
+                        <div class="controls-top d-flex justify-content-center align-items-center">
+                            <h1><a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a></h1>
+                            <h1><a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a></h1>
+                        </div>
+                        <!--/.Controls-->
+                        <!--Indicators-->
+                        <ol class="carousel-indicators">
+                            <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+                            <li data-target="#multi-item-example" data-slide-to="1"></li>
+                            <li data-target="#multi-item-example" data-slide-to="2"></li>
+                            <li data-target="#multi-item-example" data-slide-to="3"></li>
+                        </ol>
+                        <!--/.Indicators-->
+                        <!--Slides-->
+                        <div class="carousel-inner" role="listbox">
 
+                            <!--First slide-->
+                            <div class="carousel-item active">
+                                <div class="col inline-flex">
+                                    @foreach (var background in Model.AvatarBackgrounds)
+                                    {
 
-                <div class="col-2">
-                    <div class="row">
-                        @foreach (var background in Model.AvatarBackgrounds)
-                        {
+                                        <div class="drop-target">
+                                            <ul class="AvatarElements d-flex justify-content-center align-items-center">
+                                                <li id="drag_back_@background.AvatarBackgroundId" draggable="true"><img class="selectionImages" src="~/images/Avatar/@background.ImageUrl" /></li>
+                                            </ul>
+                                        </div>
 
-                            <div class=" drop-target">
-                                <ul class="AvatarElements d-flex justify-content-center align-items-center">
-                                    <li id="drag_back_@background.AvatarBackgroundId" draggable="true"><img class="selectionImages" src="~/images/Avatar/@background.ImageUrl" /></li>
-                                </ul>
+                                    }
+                                </div>
                             </div>
+                            <!--/.First slide-->
+                            <!--Second slide-->
+                            <div class="carousel-item">
 
-                        }
-                    </div>
-                </div>
+                                <div class="col inline-flex">
+                                    @foreach (var body in Model.AvatarBodys)
+                                    {
+                                        <div class=" drop-target">
+                                            <ul class="AvatarElements d-flex justify-content-center align-items-center">
+                                                <li id="drag_body_@body.AvatarBodyId" draggable="true"><img class="selectionImages" src="~/images/Avatar/@body.ImageUrl" /></li>
+                                            </ul>
+                                        </div>
+                                    }
+                                </div>
 
-                <div class="col-2">
-                    <div class="row">
-                        @foreach (var body in Model.AvatarBodys)
-                        {
-                            <div class=" drop-target">
-                                <ul class="AvatarElements d-flex justify-content-center align-items-center">
-                                    <li id="drag_body_@body.AvatarBodyId" draggable="true"><img class="selectionImages" src="~/images/Avatar/@body.ImageUrl" /></li>
-                                </ul>
                             </div>
-                        }
-                    </div>
-                </div>
-                <hr />
-                <div class="col-2">
-                    <div class="row">
-                        @foreach (var cloth in Model.AvatarClothings)
-                        {
+                            <!--/.Second slide-->
+                            <!--Third slide-->
+                            <div class="carousel-item">
 
-                            <div class=" drop-target">
-                                <ul class="AvatarElements d-flex justify-content-center align-items-center">
-                                    <li id="drag_cloth_@cloth.AvatarClothingId" draggable="true"><img class="selectionImages" src="~/images/Avatar/@cloth.ImageUrl" /></li>
-                                </ul>
+                                <div class="col inline-flex">
+                                    @foreach (var cloth in Model.AvatarClothings)
+                                    {
+
+                                        <div class=" drop-target">
+                                            <ul class="AvatarElements d-flex justify-content-center align-items-center">
+                                                <li id="drag_cloth_@cloth.AvatarClothingId" draggable="true"><img class="selectionImages" src="~/images/Avatar/@cloth.ImageUrl" /></li>
+                                            </ul>
+                                        </div>
+
+                                    }
+                                </div>
+
                             </div>
+                            <!--/.Third slide-->
+                            <!--Fourth slide-->
+                            <div class="carousel-item">
 
-                        }
-                    </div>
-                </div>
+                                <div class="col inline-flex">
+                                    @foreach (var hair in Model.AvatarHairs)
+                                    {
 
-                <div class="col-2">
-                    <div class="row">
-                        @foreach (var hair in Model.AvatarHairs)
-                        {
+                                        <div class=" drop-target">
+                                            <ul class="AvatarElements d-flex justify-content-center align-items-center">
+                                                <li id="drag_hair_@hair.AvatarHairId" draggable="true"><img class="selectionImages" src="~/images/Avatar/@hair.ImageUrl" /></li>
+                                            </ul>
+                                        </div>
 
-                            <div class=" drop-target">
-                                <ul class="AvatarElements d-flex justify-content-center align-items-center">
-                                    <li id="drag_hair_@hair.AvatarHairId" draggable="true"><img class="selectionImages" src="~/images/Avatar/@hair.ImageUrl" /></li>
-                                </ul>
+                                    }
+                                </div>
+
                             </div>
-
-                        }
+                            <!--/.Fourth slide-->
+                        </div>
+                        <!--/.Slides-->
                     </div>
+                    <!--/.Carousel Wrapper-->
                 </div>
-
-
 
                 @*Main Container ------------------------------------------>>*@
-
-                <div class="col-4">
+                <br />
+                <div class="col-12 d-flex justify-content-center align-items-center">
                     <div class="drop-target mamaContainer justify-content-center align-items-center">
                         <ul class="listAcceptImage"></ul>
                     </div>
                 </div>
 
+                <div style="margin-top:20px;" class="col-12">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.Avatar.AvatarId)
 
+                        <div class="row d-flex justify-content-center align-items-center">
+
+                            <select name="SelectedBackgroundID" id="SelectedBackgroundID">
+                                @foreach (var Background in Model.AvatarBackgrounds)
+                                {
+                                    if (Background.AvatarBackgroundId == Model.Avatar.Background.AvatarBackgroundId)
+                                    {
+                                        <option value="@Background.AvatarBackgroundId" selected>@Background.ImageUrl</option>
+
+                                    }
+                                    else
+                                    {
+                                        <option value="@Background.AvatarBackgroundId">@Background.ImageUrl</option>
+
+                                    }
+                                }
+
+                            </select>
+                            <select name="SelectedHairID" id="SelectedHairID">
+                                @foreach (var Hair in Model.AvatarHairs)
+                                {
+                                    if (Hair.AvatarHairId == Model.Avatar.Hair.AvatarHairId)
+                                    {
+                                        <option value="@Hair.AvatarHairId" selected>@Hair.ImageUrl</option>
+
+                                    }
+                                    else
+                                    {
+                                        <option value="@Hair.AvatarHairId">@Hair.ImageUrl</option>
+
+                                    }
+                                }
+
+                            </select>
+                            <select name="SelectedBodyID" id="SelectedBodyID">
+                                @foreach (var Body in Model.AvatarBodys)
+                                {
+                                    if (Body.AvatarBodyId == Model.Avatar.Body.AvatarBodyId)
+                                    {
+                                        <option value="@Body.AvatarBodyId" selected>@Body.ImageUrl</option>
+
+                                    }
+                                    else
+                                    {
+                                        <option value="@Body.AvatarBodyId">@Body.ImageUrl</option>
+
+                                    }
+                                }
+
+                            </select>
+                            <select name="SelectedClothingID" id="SelectedClothingID">
+                                @foreach (var Clothing in Model.AvatarClothings)
+                                {
+                                    if (Clothing.AvatarClothingId == Model.Avatar.Clothing.AvatarClothingId)
+                                    {
+                                        <option value="@Clothing.AvatarClothingId" selected>@Clothing.ImageUrl</option>
+
+                                    }
+                                    else
+                                    {
+                                        <option value="@Clothing.AvatarClothingId">@Clothing.ImageUrl</option>
+
+                                    }
+                                }
+
+                            </select>
+                        </div>
+
+                        // SAVE BUTTON ----------------------------------------------------
+                        <div class="container-login100-form-btn m-t-20">
+                            <input class="login100-form-btn" type="submit" value="Submit Changes" />
+                        </div>
+
+                    }
+                </div>
 
             </div>
         </div>
@@ -94,12 +202,19 @@
 </div>
 
 
+<!-- SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS---------------------------------->
+<!-- SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS---------------------------------->
+<!-- SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS---------------------------------->
+<!-- SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS---------------------------------->
+<!-- SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS---------------------------------->
 
 @section scripts{
 
     @Scripts.Render("~/bundles/jqueryval")
 
     <script>
+
+        // JAVASCRIPT DRAG n DROP --------------------------------------------------->>
         function initTasksBoard() {
 
             function handleDragStart(event) {
@@ -116,6 +231,12 @@
 
                 let draggedElement = document.querySelector("#" + draggedElementId);
                 event.currentTarget.querySelector("ul").appendChild(draggedElement);
+
+                // Edw gia oti allo tha ginei otan to antikeimeno peftei ------------------------------>>
+                alert("epese");
+
+
+                //------------------------------------------------------------------------------------->>
             }
 
             function addDragStartEventListener(el) {
@@ -129,13 +250,18 @@
 
             let listItems = document.querySelectorAll("#Board li");
             let dropTargets = document.querySelectorAll("#Board .drop-target");
-            // Edw bazoume kodika
+
             listItems.forEach(addDragStartEventListener);
             dropTargets.forEach(initDrop);
 
         }
 
         window.addEventListener("DOMContentLoaded", initTasksBoard);
+
+
+        // CAROUSEL ------------------------------------------>>
+        // It is all bootstrap
+
     </script>
 
 
@@ -148,117 +274,3 @@
 
 
 
-
-
-
-
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
-    <div class="form-horizontal">
-        <h4>Avatar</h4>
-        <hr />
-        @Html.HiddenFor(model => model.Avatar.AvatarId)
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-
-
-
-            @* Background Select *@
-            @Html.LabelFor(model => model.Avatar.Background, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <select name="SelectedBackgroundID" id="SelectedBackgroundID">
-                    @foreach (var Background in Model.AvatarBackgrounds)
-                    {
-                        if (Background.AvatarBackgroundId == Model.Avatar.Background.AvatarBackgroundId)
-                        {
-                            <option value="@Background.AvatarBackgroundId" selected>@Background.ImageUrl</option>
-
-                        }
-                        else
-                        {
-                            <option value="@Background.AvatarBackgroundId">@Background.ImageUrl</option>
-
-                        }
-                    }
-
-                </select>
-            </div>
-
-
-            @* Hair Select *@
-            @Html.LabelFor(model => model.Avatar.Hair, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <select name="SelectedHairID" id="SelectedHairID">
-                    @foreach (var Hair in Model.AvatarHairs)
-                    {
-                        if (Hair.AvatarHairId == Model.Avatar.Hair.AvatarHairId)
-                        {
-                            <option value="@Hair.AvatarHairId" selected>@Hair.ImageUrl</option>
-
-                        }
-                        else
-                        {
-                            <option value="@Hair.AvatarHairId">@Hair.ImageUrl</option>
-
-                        }
-                    }
-
-                </select>
-            </div>
-
-
-            @* Body Select *@
-            @Html.LabelFor(model => model.Avatar.Body, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <select name="SelectedBodyID" id="SelectedBodyID">
-                    @foreach (var Body in Model.AvatarBodys)
-                    {
-                        if (Body.AvatarBodyId == Model.Avatar.Body.AvatarBodyId)
-                        {
-                            <option value="@Body.AvatarBodyId" selected>@Body.ImageUrl</option>
-
-                        }
-                        else
-                        {
-                            <option value="@Body.AvatarBodyId">@Body.ImageUrl</option>
-
-                        }
-                    }
-
-                </select>
-            </div>
-
-            @* Clothing Select *@
-            @Html.LabelFor(model => model.Avatar.Clothing, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <select name="SelectedClothingID" id="SelectedClothingID">
-                    @foreach (var Clothing in Model.AvatarClothings)
-                    {
-                        if (Clothing.AvatarClothingId == Model.Avatar.Clothing.AvatarClothingId)
-                        {
-                            <option value="@Clothing.AvatarClothingId" selected>@Clothing.ImageUrl</option>
-
-                        }
-                        else
-                        {
-                            <option value="@Clothing.AvatarClothingId">@Clothing.ImageUrl</option>
-
-                        }
-                    }
-
-                </select>
-            </div>
-
-
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Submit Changes" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
-}
