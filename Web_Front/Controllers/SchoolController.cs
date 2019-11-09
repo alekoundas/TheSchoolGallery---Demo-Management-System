@@ -25,6 +25,7 @@ namespace Web_Front.Controllers
             return View(ServiceSchool.GetSchools());
         }
 
+        [Authorize(Roles = "Admin, SchoolAdmin")]
         // GET: School/Details/5
         public ActionResult Details(int? id)
         {
@@ -40,6 +41,7 @@ namespace Web_Front.Controllers
             return View(school);
         }
 
+        [Authorize(Roles = "Admin, SchoolAdmin")]
         // GET: School/Create
         public ActionResult Create()
         {

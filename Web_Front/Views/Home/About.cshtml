@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="~/css/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="~/css/handwrite.css" />
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/utils/Draggable.min.js"></script>
 
@@ -34,31 +33,25 @@
             <div class="text hidden" data-index="4">(Buy any piece of Art)</div>
             <div class="text hidden" data-index="5">(Support their Schools)</div>
         </div>
+
+        <div class="cd-background-wrapper">
+            <div class="mousetrack"></div>
+            <figure class="cd-floating-background">
+                <img id="para01" src="~/images/parallax/clouds_back.png">
+                <img id="para02" src="~/images/parallax/clouds_middle.png">
+                <img id="para03" src="~/images/parallax/clouds_front.png">
+                <img id="para04" src="~/images/parallax/birds.png">
+                <img id="para05" src="~/images/parallax/mountains_back.png">
+                <img id="para06" src="~/images/parallax/mountains_middle.png">
+                <img id="para07" src="~/images/parallax/mountains_front.png">
+                <img id="para08" src="~/images/parallax/gallery_frame.png">
+                <img id="para09" src="~/images/parallax/smoke.png">
+                <img id="para10" src="~/images/parallax/gallery_paint.png">
+                <img id="para11" src="~/images/parallax/gallery_boi.png">
+                <img id="para12" src="~/images/parallax/front.png">
+            </figure>
+        </div>
     </a>
-
-
-
-    <div class="cd-background-wrapper">
-        <div class="mousetrack"></div>
-        <figure class="cd-floating-background">
-            <img id="para01" src="~/images/parallax/clouds_back.png">
-            <img id="para02" src="~/images/parallax/clouds_middle.png">
-            <img id="para03" src="~/images/parallax/clouds_front.png">
-            <img id="para04" src="~/images/parallax/birds.png">
-            <img id="para05" src="~/images/parallax/mountains_back.png">
-            <img id="para06" src="~/images/parallax/mountains_middle.png">
-            <img id="para07" src="~/images/parallax/mountains_front.png">
-            <img id="para08" src="~/images/parallax/gallery_frame.png">
-            <img id="para09" src="~/images/parallax/smoke.png">
-            <img id="para10" src="~/images/parallax/gallery_paint.png">
-            <img id="para11" src="~/images/parallax/gallery_boi.png">
-            <img id="para12" src="~/images/parallax/front.png">
-            @*<a href="@Url.Action("Index", "Home")">(The School Gallery)</a>*@
-        </figure>
-    </div>
-
-
-
 
     <!-- JAVASCRIPTS ----------------------------------------------------- -->
     <script src="~/js/vendor/jquery-2.2.4.min.js"></script>
@@ -79,26 +72,6 @@
     <script src="~/js/textswap.js"></script>
 
     <script>
-
-
-        @*$(document).ready(function () {
-
-            $("mousetrack").click(function (e) {
-                @Url.Action("Index", "Home")
-            });
-
-            $(function () {
-                count = 0;
-                wordsArray = ["(The School Gallery)", "(Childen Create Art)", "(Buy any piece of Art)", "(Support their Schools)" ];
-                setInterval(function () {
-                    count++;
-                    $("#para13").fadeOut(888, function () {
-                        $(this).text(wordsArray[count % wordsArray.length]).fadeIn(400);
-                    });
-                }, 4000);
-            });
-
-        });*@
 
     </script>
 

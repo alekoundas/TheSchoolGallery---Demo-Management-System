@@ -26,7 +26,7 @@
                         <a href="@Url.Action("Details", "Classroom", new { id = Model.ClassroomFK })">
                             <div class="dottedFrameFixedHDark isThisLink">
                                 <h4>Class</h4>
-                                <hr/>
+                                <hr />
                                 <h5>@Html.DisplayFor(model => model.Classroom.Name)</h5>
                             </div>
                         </a>
@@ -36,7 +36,7 @@
                         <a href="@Url.Action("Details", "School", new { id = Model.Classroom.SchoolFK })">
                             <div class="dottedFrameFixedHDark isThisLink">
                                 <h4>School</h4>
-                                <hr/>
+                                <hr />
                                 <h5> @Html.DisplayFor(model => model.Classroom.School.Name) </h5>
                                 <h5>@Html.DisplayFor(model => model.Classroom.School.City)</h5>
                             </div>
@@ -132,6 +132,7 @@
             <br />
             <br />
 
+            @Html.HiddenFor(model => model.ClassroomFK)
 
             <!-- Section - Links ---------------------------------------->
             <div style="height:180px;" class="container col-6">
@@ -147,21 +148,21 @@
                         </div>
                     </div>
 
-                    <div class="btn_contain2 col">
-                        <div class="btn_child_norm2">
-                            <a href="@Url.Action("Index", "Student")"><img src="~/images/UIcons/students_off.png" /></a>
-                        </div>
-                        <div class="btn_child_live2">
-                            <a style="color:#f3efe9" href="@Url.Action("Index", "Student")"><img src="~/images/UIcons/students.png" /> students </a>
-                        </div>
+                    @*<div class="btn_contain2 col">
+                    <div class="btn_child_norm2">
+                        <a href="@Url.Action("Index", "Student")"><img src="~/images/UIcons/students_off.png" /></a>
                     </div>
+                    <div class="btn_child_live2">
+                        <a style="color:#f3efe9" href="@Url.Action("Index", "Student")"><img src="~/images/UIcons/students.png" /> students </a>
+                    </div>
+                </div>*@
 
                     <div class="btn_contain3 col">
                         <div class="btn_child_norm3">
-                            <a href="@Url.Action("Details", "Classroom", new { id = Model.StudentId })"><img src="~/images/UIcons/schools_off.png" /></a>
+                            <a href="@Url.Action("Details", "Classroom", new { id = Model.ClassroomFK })"><img src="~/images/UIcons/schools_off.png" /></a>
                         </div>
                         <div class="btn_child_live3">
-                            <a style="color:#f3efe9" href="@Url.Action("Details", "Classroom", new { id = Model.StudentId })"><img src="~/images/UIcons/schoolspng.png" /> class </a>
+                            <a style="color:#f3efe9" href="@Url.Action("Details", "Classroom", new { id = Model.ClassroomFK })"><img src="~/images/UIcons/schoolspng.png" /> class </a>
                         </div>
                     </div>
                 </div>

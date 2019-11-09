@@ -4172,6 +4172,48 @@ h1, h2, h3, h4, h5 {
     src: url('../Fonts/Sweet Hipster.ttf') format('truetype');
 }
 
-/*OWL Corusel*/
+/*HOME ----------------- redone */
 
+.threePanels {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    min-height: 600px;
+    background: #f3efe9;
+    overflow: hidden;
+    box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
+}
 
+#secondAppear{
+    opacity:0;
+    transition:2s;
+}
+
+#firstAppear {
+    opacity: 1;
+    transition: 2s;
+}
+
+#secondAppear:hover {
+    opacity: 1;
+    transition: 2s;
+}
+
+#firstAppear:hover {
+    opacity: 0;
+    transition: 2s;
+}
+
+#threetext {
+    position: absolute;
+    color: #f3efe9;
+    background-color: rgba(243, 239, 233, 0.74);
+    font-size: 100px;
+    font-family: "Sweet Hipster";
+    text-shadow: 3px 3px 3px rgba(75, 24, 82, 0.90);
+    left: 0px;
+    top: 80px;
+    width: 100%;
+    height: 120px;
+    z-index: 999;
+}

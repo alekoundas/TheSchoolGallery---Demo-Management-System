@@ -4,98 +4,85 @@
 }
 
 <div class="col-md-12 pt-20 pb-20">
-    <h1 style="color:#f3efe9;">Schools Participating</h1>
+    <h2 style="color:#5c5c5c;">Schools Participating</h2>
 </div>
-<div class="feature-area pt-10 pb-10  relative">
-    <div class="container">
-        <div class="row">
-            @if (User.IsInRole("Admin"))
-            {
-                <!-- ADMIN VIEW ----------------------------------------------------- -->
-                <h2 class="col-md-6">
-                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                    @Html.ActionLink("Create New", "Create")
-                </h2>
-            }
-            <div class="col-md-6">
-                @using (Html.BeginForm())
-                {
-                    <p>
-                        Find by Name: @Html.TextBox("SearchString")
-                        <input class="btn btn-large" type="submit" value="Search" />
-                    </p>
-                }
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- SECOND BANNER ----------------------------------------------------- -->
-@Html.Partial("_SchoolMapLocations")
 
 <section class="feature-area pt-100 pb-100  relative">
     <div class="overlay overlay-bg"></div>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            @foreach (var item in Model)
-            {
-                <div class="col-lg-4 col-md-6 col-sm-12 align-items-stretch">
-                    <div class="dottedsurr">
-                        <div class="dottedFrameDark2 isThisLink">
-                            <br />
-                            <a href="@Url.Action("Details", "School", new { id = item.SchoolId })">
-                                <div class="Schooldesc">
-                                    <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
-                                    <hr />
-                                    <ul class="text-right paintingInfo">
-                                        <li>City: @Html.DisplayFor(modelItem => item.City)</li>
-                                        <li>Address: @Html.DisplayFor(modelItem => item.Adress)</li>
-                                        <li>Tel: @Html.DisplayFor(modelItem => item.Tel)</li>
-                                    </ul>
-                                </div>
-                            </a>
-                        </div>
-
-                        @if (User.IsInRole("Admin"))
-                        {
-                            <!-- Section - Links ---------------------------------------->
-                            <div style="height:180px;" class="container col-12">
-                                <br />
-                                <div class="row">
-                                    <div class="btn_contain1 col">
-                                        <div class="btn_child_norm1">
-                                            <a href="@Url.Action("Edit", "School", new { id = item.SchoolId })"><img src="~/images/UIcons/edit_off.png" /></a>
-                                        </div>
-                                        <div class="btn_child_live1">
-                                            <a style="color:#f3efe9" href="@Url.Action("Edit", "School", new { id = item.SchoolId })"><img src="~/images/UIcons/edit.png" /> edit </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="btn_contain2 col">
-                                        <div class="btn_child_norm2">
-                                            <a href="@Url.Action("Details", "School", new { id = item.SchoolId })"><img src="~/images/UIcons/details_off.png" /></a>
-                                        </div>
-                                        <div class="btn_child_live2">
-                                            <a style="color:#f3efe9" href="@Url.Action("Details", "School", new { id = item.SchoolId })"><img src="~/images/UIcons/details.png" /> details </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="btn_contain3 col">
-                                        <div class="btn_child_norm3">
-                                            <a href="@Url.Action("Delete", "School", new { id = item.SchoolId })"><img src="~/images/UIcons/delete_off.png" /></a>
-                                        </div>
-                                        <div class="btn_child_live3">
-                                            <a style="color:#f3efe9" href="@Url.Action("Delete", "School", new { id = item.SchoolId })"><img src="~/images/UIcons/delete.png" /> delete </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        }
-
+            <div class="col-8">
+                @using (Html.BeginForm())
+                {
+                    @* <Google Maps Start Here>  *@
+                    <div class="sideFrame">
+                        <div id="gmap2" style="width:100%;height:400px;"></div> @*The Map Will Be Displayed*@
 
                     </div>
-                </div>
-            }
+                    @* </Google Maps Start Here> *@
+                }
+            </div>
+
+            <div class="col-4">
+                @foreach (var item in Model)
+                {
+                    
+                        <div>
+                            <div class="dottedFrameDark2 isThisLink">
+                                <br />
+                                <a href="@Url.Action("Details", "School", new { id = item.SchoolId })">
+                                    <div class="Schooldesc">
+                                        <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+                                        <hr />
+                                        <ul class="text-right paintingInfo">
+                                            <li>City: @Html.DisplayFor(modelItem => item.City)</li>
+                                            <li>Address: @Html.DisplayFor(modelItem => item.Adress)</li>
+                                            <li>Tel: @Html.DisplayFor(modelItem => item.Tel)</li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </div>
+
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <!-- Section - Links ---------------------------------------->
+                                <div style="height:180px;" class="container col-12">
+                                    <br />
+                                    <div class="row">
+                                        <div class="btn_contain1 col">
+                                            <div class="btn_child_norm1">
+                                                <a href="@Url.Action("Edit", "School", new { id = item.SchoolId })"><img src="~/images/UIcons/edit_off.png" /></a>
+                                            </div>
+                                            <div class="btn_child_live1">
+                                                <a style="color:#f3efe9" href="@Url.Action("Edit", "School", new { id = item.SchoolId })"><img src="~/images/UIcons/edit.png" /> edit </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="btn_contain2 col">
+                                            <div class="btn_child_norm2">
+                                                <a href="@Url.Action("Details", "School", new { id = item.SchoolId })"><img src="~/images/UIcons/details_off.png" /></a>
+                                            </div>
+                                            <div class="btn_child_live2">
+                                                <a style="color:#f3efe9" href="@Url.Action("Details", "School", new { id = item.SchoolId })"><img src="~/images/UIcons/details.png" /> details </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="btn_contain3 col">
+                                            <div class="btn_child_norm3">
+                                                <a href="@Url.Action("Delete", "School", new { id = item.SchoolId })"><img src="~/images/UIcons/delete_off.png" /></a>
+                                            </div>
+                                            <div class="btn_child_live3">
+                                                <a style="color:#f3efe9" href="@Url.Action("Delete", "School", new { id = item.SchoolId })"><img src="~/images/UIcons/delete.png" /> delete </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+                  
+                }
+            </div>
         </div>
     </div>
 </section>
