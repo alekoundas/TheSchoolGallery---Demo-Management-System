@@ -1322,6 +1322,19 @@
     <Content Include="Skopia\TemplateData\style.css" />
     <Content Include="Skopia\TemplateData\UnityProgress.js" />
     <Content Include="Skopia\TemplateData\webgl-logo.png" />
+    <Content Include="UnityGalleryWeb\Build\UnityLoader.js" />
+    <Content Include="UnityGalleryWeb\index.html" />
+    <Content Include="UnityGalleryWeb\TemplateData\favicon.ico" />
+    <Content Include="UnityGalleryWeb\TemplateData\fullscreen.png" />
+    <Content Include="UnityGalleryWeb\TemplateData\progressEmpty.Dark.png" />
+    <Content Include="UnityGalleryWeb\TemplateData\progressEmpty.Light.png" />
+    <Content Include="UnityGalleryWeb\TemplateData\progressFull.Dark.png" />
+    <Content Include="UnityGalleryWeb\TemplateData\progressFull.Light.png" />
+    <Content Include="UnityGalleryWeb\TemplateData\progressLogo.Dark.png" />
+    <Content Include="UnityGalleryWeb\TemplateData\progressLogo.Light.png" />
+    <Content Include="UnityGalleryWeb\TemplateData\style.css" />
+    <Content Include="UnityGalleryWeb\TemplateData\UnityProgress.js" />
+    <Content Include="UnityGalleryWeb\TemplateData\webgl-logo.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1410,6 +1423,10 @@
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Home\_indexMain.cshtml" />
     <Content Include="Views\Painting\_SearchSortFilter.cshtml" />
+    <Content Include="UnityGalleryWeb\Build\UnityGalleryWeb.data.unityweb" />
+    <Content Include="UnityGalleryWeb\Build\UnityGalleryWeb.json" />
+    <Content Include="UnityGalleryWeb\Build\UnityGalleryWeb.wasm.code.unityweb" />
+    <Content Include="UnityGalleryWeb\Build\UnityGalleryWeb.wasm.framework.unityweb" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
