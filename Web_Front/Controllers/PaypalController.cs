@@ -63,6 +63,7 @@ namespace Web_Front.Controllers
 
         public ActionResult PayPalPayment(string UserId)
         {
+            Session["UserId"] = UserId;
             try
             {
                 var apiContext = PaypalConfiguration.GetAPIContext();
@@ -172,7 +173,8 @@ namespace Web_Front.Controllers
 
 
             //Get Email Of Logged in User
-            var user = db.Users.Where(x => x.Id == UserId).FirstOrDefault();
+            string userid = Session["UserId"] as string;
+            var user = db.Users.Where(x => x.Id == userid).FirstOrDefault();
 
             //Send Email With Painting On Success Payment to User Email
             SendEmail(user.Email);

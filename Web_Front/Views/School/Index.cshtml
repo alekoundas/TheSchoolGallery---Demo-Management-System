@@ -103,7 +103,7 @@
         //set Map properties to a var
         var MapProperties = {
             center: { lat: 37.983810, lng: 23.727539 },
-            zoom: 12,
+            zoom: 10,
             styles: [
                 {
                     elementType: "geometry",
@@ -289,13 +289,13 @@
                         var marker = new google.maps.Marker({ map: map,place: {placeId: placeid,  location: result.geometry.location  } });
 
                         //To Show Description On Pin Click
-                         var infowindow = new google.maps.InfoWindow();
-                         google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                                return function() {
-                                       infowindow.setContent(title);
-                                       infowindow.open(map, marker);
-                                }
-                      })(marker, i));
+                      //   var infowindow = new google.maps.InfoWindow();
+                      //   google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                      //          return function() {
+                      //                 infowindow.setContent(title);
+                      //                 infowindow.open(map, marker);
+                      //          }
+                      //})(marker, i));
                     });
             }
         });
