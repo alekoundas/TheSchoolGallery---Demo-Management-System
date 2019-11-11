@@ -207,6 +207,7 @@
     <Compile Include="Controllers\MasterController.cs" />
     <Compile Include="Controllers\PaintingController.cs" />
     <Compile Include="Controllers\PaypalController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\SchoolController.cs" />
     <Compile Include="Controllers\SkopiaGameController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
@@ -283,6 +284,7 @@
     <Content Include="css\owl.css" />
     <Content Include="css\parallaxStyle.css" />
     <Content Include="css\pfold.css" />
+    <Content Include="css\adminNav.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -438,6 +440,7 @@
     <Content Include="images\parallax\Portrait_hand_01.png" />
     <Content Include="images\parallax\sky.png" />
     <Content Include="images\parallax\smoke.png" />
+    <Content Include="images\Preloader_7.gif" />
     <Content Include="images\threePanels\gallery_painting.jpg" />
     <Content Include="images\threePanels\panel_A_door.png" />
     <Content Include="images\threePanels\panel_A_kid.png" />
@@ -459,6 +462,8 @@
     <Content Include="images\UIcons\edit_off.png" />
     <Content Include="images\UIcons\facebook.png" />
     <Content Include="images\UIcons\facebook_off.png" />
+    <Content Include="images\UIcons\gears.png" />
+    <Content Include="images\UIcons\gears_off.png" />
     <Content Include="images\UIcons\google.png" />
     <Content Include="images\UIcons\google_off.png" />
     <Content Include="images\UIcons\loged.png" />
@@ -479,14 +484,6 @@
     <Content Include="images\UIcons\students.png" />
     <Content Include="images\UIcons\students_off.png" />
     <Content Include="images\white-paper-texture.jpg" />
-    <Content Include="img\elements\disabled-check.png" />
-    <Content Include="img\elements\disabled-radio.png" />
-    <Content Include="img\elements\logo.png" />
-    <Content Include="img\elements\primary-check.png" />
-    <Content Include="img\elements\primary-radio.png" />
-    <Content Include="img\elements\success-check.png" />
-    <Content Include="img\elements\success-radio.png" />
-    <Content Include="img\elements\work-arrow.png" />
     <Content Include="js\jquery.ajaxchimp.min.js" />
     <Content Include="js\jquery.counterup.min.js" />
     <Content Include="js\jquery.magnific-popup.min.js" />
@@ -1401,7 +1398,7 @@
     <Content Include="Views\School\Details.cshtml" />
     <Content Include="Views\School\Edit.cshtml" />
     <Content Include="Views\School\Index.cshtml" />
-    <Content Include="Views\Shared\_Navigation_C.cshtml" />
+    <Content Include="Views\Shared\_Navigation_Admin.cshtml" />
     <Content Include="Views\Account\_test.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Error\404.cshtml" />
@@ -1427,6 +1424,8 @@
     <Content Include="UnityGalleryWeb\Build\UnityGalleryWeb.json" />
     <Content Include="UnityGalleryWeb\Build\UnityGalleryWeb.wasm.code.unityweb" />
     <Content Include="UnityGalleryWeb\Build\UnityGalleryWeb.wasm.framework.unityweb" />
+    <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\Roles\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

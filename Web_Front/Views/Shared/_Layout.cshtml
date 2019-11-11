@@ -9,15 +9,15 @@
 
     <!-- STYLES ---------------------------------------------------------- -->
     <link rel="stylesheet" href="~/css/linearicons.css">
-        <link rel="stylesheet" href="~/css/owl.carousel.css">
-        <link rel="stylesheet" href="~/css/font-awesome.min.css">
-        <link rel="stylesheet" href="~/css/nice-select.css">
-        <link rel="stylesheet" href="~/css/magnific-popup.css">
-        <link rel="stylesheet" href="~/css/bootstrap.css">
-        <link rel="stylesheet" href="~/css/animate.css">
-        <link rel="stylesheet" href="~/css/pfold.css" />
-        <link rel="stylesheet" href="~/css/owl.css" />
-        <link rel="stylesheet" href="~/css/main.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/nice-select.css">
+    <link rel="stylesheet" href="~/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/css/bootstrap.css">
+    <link rel="stylesheet" href="~/css/animate.css">
+    <link rel="stylesheet" href="~/css/pfold.css" />
+    <link rel="stylesheet" href="~/css/owl.css" />
+    <link rel="stylesheet" href="~/css/main.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
@@ -31,7 +31,15 @@
         @Html.Partial("_LoginPartial")
     </div>
 
+    @if (User.IsInRole("Admin"))
+    {
+        <!-- NAVIGATION ADMIN -------------------------------------------------- -->
+        @Html.Partial("_Navigation_Admin")
+    }
+
+
     <div class="oz-body-wrap">
+
         <!-- NAVIGATION BAR -------------------------------------------------- -->
         @Html.Partial("_Navigation_B")
 
@@ -60,7 +68,7 @@
     <script src="~/js/modernizr.custom.79639.js"></script>
     <script src="~/js/jquery.pfold.js"></script>
     <script src="~/js/main.js"></script>
-
+    <link href="~/css/adminNav.css" rel="stylesheet" />
 
     @*MODAL POWER ---------------------------------------->> *@
     <script>

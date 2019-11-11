@@ -8,27 +8,28 @@
 <div class="limiter">
     <div class="container-login100">
         <div class="container">
-            <h2 class="text-center" style="color:#f3efe9;"> Create Avatar</h2>
-            <hr />
-            <div id="Board" class="row">
-                <div class="col-12">
-                    <!--Carousel Wrapper-->
-                    <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
-                        <!--Controls-->
-                        <div class="controls-top d-flex justify-content-center align-items-center">
-                            <h1><a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a></h1>
-                            <h1><a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a></h1>
+            <div id="Board">
+                <!--Carousel Wrapper-->
+                <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+                    <div class="row">
+                        <div class="col d-flex justify-content-start align-items-start controls-top">
+                            <h2><a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a></h2>
                         </div>
-                        <!--/.Controls-->
-                        <!--Indicators-->
-                        <ol class="carousel-indicators">
-                            <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
-                            <li data-target="#multi-item-example" data-slide-to="1"></li>
-                            <li data-target="#multi-item-example" data-slide-to="2"></li>
-                            <li data-target="#multi-item-example" data-slide-to="3"></li>
-                        </ol>
-                        <!--/.Indicators-->
-                        <!--Slides-->
+                        <div class="col d-flex justify-content-center align-items-center">
+                            <h2 style="color:#f3efe9;"> Create Avatar</h2>
+                        </div>
+                        <div class="col d-flex justify-content-end align-items-end controls-top">
+                            <h2><a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a></h2>
+                        </div>
+                    </div>
+                    <!--Indicators-->
+                    <ol class="carousel-indicators">
+                        <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+                        <li data-target="#multi-item-example" data-slide-to="1"></li>
+                        <li data-target="#multi-item-example" data-slide-to="2"></li>
+                        <li data-target="#multi-item-example" data-slide-to="3"></li>
+                    </ol>
+                    <div class="">
                         <div class="carousel-inner" role="listbox">
 
                             <!--First slide-->
@@ -36,20 +37,17 @@
                                 <div class="col inline-flex">
                                     @foreach (var background in Model.AvatarBackgrounds)
                                     {
-
                                         <div class="drop-target">
                                             <ul class="AvatarElements d-flex justify-content-center align-items-center">
                                                 <li id="drag_back_@background.AvatarBackgroundId" draggable="true"><img class="selectionImages" src="~/images/Avatar/@background.ImageUrl" /></li>
                                             </ul>
                                         </div>
-
                                     }
                                 </div>
                             </div>
                             <!--/.First slide-->
                             <!--Second slide-->
                             <div class="carousel-item">
-
                                 <div class="col inline-flex">
                                     @foreach (var body in Model.AvatarBodys)
                                     {
@@ -60,12 +58,10 @@
                                         </div>
                                     }
                                 </div>
-
                             </div>
                             <!--/.Second slide-->
                             <!--Third slide-->
                             <div class="carousel-item">
-
                                 <div class="col inline-flex">
                                     @foreach (var cloth in Model.AvatarClothings)
                                     {
@@ -75,7 +71,6 @@
                                                 <li id="drag_cloth_@cloth.AvatarClothingId" draggable="true"><img class="selectionImages" src="~/images/Avatar/@cloth.ImageUrl" /></li>
                                             </ul>
                                         </div>
-
                                     }
                                 </div>
 
@@ -83,7 +78,6 @@
                             <!--/.Third slide-->
                             <!--Fourth slide-->
                             <div class="carousel-item">
-
                                 <div class="col inline-flex">
                                     @foreach (var hair in Model.AvatarHairs)
                                     {
@@ -93,23 +87,20 @@
                                                 <li id="drag_hair_@hair.AvatarHairId" draggable="true"><img class="selectionImages" src="~/images/Avatar/@hair.ImageUrl" /></li>
                                             </ul>
                                         </div>
-
                                     }
                                 </div>
 
                             </div>
                             <!--/.Fourth slide-->
                         </div>
-                        <!--/.Slides-->
                     </div>
-                    <!--/.Carousel Wrapper-->
+
                 </div>
+                <!--/.Carousel Wrapper-->
+            </div>
 
-
-
-
-
-
+            @using (Html.BeginForm())
+            {
 
                 @*Main Container Will Hold Dropped Items As <li>----------------------------->>*@
                 <br />
@@ -117,38 +108,29 @@
                     <div class="drop-target mamaContainer justify-content-center align-items-center">
                         <ul class="listAcceptImage"></ul>
                     </div>
-                </div>
-
-
-
-                @*  *@
-
-                @using (Html.BeginForm())
-                {
                     @Html.AntiForgeryToken()
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     @Html.HiddenFor(model => model.Avatar.AvatarId)
                     @Html.HiddenFor(model => model.SelectedStudentID)
                     @Html.HiddenFor(model => model.SelectedSchoolID)
-
-                    //For production make the bellow lines hidden
-                    <input type="text" name="SelectedBackgroundID" id="SelectedBackgroundID" @*hidden*@ required />
-                    <input type="text" name="SelectedHairID" id="SelectedHairID"  @*hidden*@ required/>
-                    <input type="text" name="SelectedBodyID" id="SelectedBodyID"  @*hidden*@ required/>
-                    <input type="text" name="SelectedClothingID" id="SelectedClothingID"  @*hidden*@ required />
-
-
-                    // SAVE BUTTON - SUBMIT  --------------------------------------
-                    <div class="container-login100-form-btn m-t-20">
-                        <input class="login100-form-btn" type="submit" value="Submit Changes"  />
+                    <!-- For production make the bellow lines hidden -->
+                    <div hidden>
+                        <input type="text" name="SelectedBackgroundID" id="SelectedBackgroundID" required />
+                        <input type="text" name="SelectedHairID" id="SelectedHairID" required />
+                        <input type="text" name="SelectedBodyID" id="SelectedBodyID" required />
+                        <input type="text" name="SelectedClothingID" id="SelectedClothingID" required />
                     </div>
-                }
-
-            </div>
+                </div>
+                <br />
+                <div class="col-12 d-flex justify-content-center align-items-center">
+                    <div class="container-login100-form-btn m-t-20">
+                        <input class="login100-form-btn" type="submit" value="Submit Changes" />
+                    </div>
+                </div>
+            }
         </div>
     </div>
 </div>
-
 
 
 <!-- SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS SCRIPTS---------------------------------->
@@ -158,17 +140,14 @@
     @Scripts.Render("~/bundles/jqueryval")
 
     <script>
-      
-
         function SetChoiceToInputs(draggedElementId) {
             //id ex: drag_back_5
             //so split geterate ['drag','back','5']  -->Basicly we dont need [0], olny [1] for switch and [2] to set val(id)
             var elementIdArr = draggedElementId.split("_");
 
-
             switch (elementIdArr[1]) {
                 case 'back':
-                   $('#SelectedBackgroundID').val(elementIdArr[2]);
+                    $('#SelectedBackgroundID').val(elementIdArr[2]);
                     break;
                 case 'body':
                     $('#SelectedHairID').val(elementIdArr[2]);
@@ -185,17 +164,11 @@
         }
 
 
-
-
         // JAVASCRIPT DRAG n DROP --------------------------------------------------->>
         function initTasksBoard() {
 
-
-
-
             function handleDragStart(event) {
                 event.dataTransfer.setData("text/plain", event.currentTarget.id);
-
             }
 
             function preventDefault(event) {
@@ -234,106 +207,8 @@
         window.addEventListener("DOMContentLoaded", initTasksBoard);
 
 
-       // CAROUSEL ------------------------------------------>>
-       // It is all bootstrap
-
     </script>
 
 
 }
 
-
-
-
-
-
-@* To Be DELETED *@
-
-@* Dropdowns  *@
-
-
-
-
-
-@*<div style="margin-top:20px;" class="col-12">
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.HiddenFor(model => model.Avatar.AvatarId)
-
-            <div class="row d-flex justify-content-center align-items-center">
-
-                <select name="SelectedBackgroundID" id="SelectedBackgroundID">
-                    @foreach (var Background in Model.AvatarBackgrounds)
-                    {
-                        if (Background.AvatarBackgroundId == Model.Avatar.Background.AvatarBackgroundId)
-                        {
-                            <option value="@Background.AvatarBackgroundId" selected>@Background.ImageUrl</option>
-
-                        }
-                        else
-                        {
-                            <option value="@Background.AvatarBackgroundId">@Background.ImageUrl</option>
-
-                        }
-                    }
-
-                </select>
-                <select name="SelectedHairID" id="SelectedHairID">
-                    @foreach (var Hair in Model.AvatarHairs)
-                    {
-                        if (Hair.AvatarHairId == Model.Avatar.Hair.AvatarHairId)
-                        {
-                            <option value="@Hair.AvatarHairId" selected>@Hair.ImageUrl</option>
-
-                        }
-                        else
-                        {
-                            <option value="@Hair.AvatarHairId">@Hair.ImageUrl</option>
-
-                        }
-                    }
-
-                </select>
-                <select name="SelectedBodyID" id="SelectedBodyID">
-                    @foreach (var Body in Model.AvatarBodys)
-                    {
-                        if (Body.AvatarBodyId == Model.Avatar.Body.AvatarBodyId)
-                        {
-                            <option value="@Body.AvatarBodyId" selected>@Body.ImageUrl</option>
-
-                        }
-                        else
-                        {
-                            <option value="@Body.AvatarBodyId">@Body.ImageUrl</option>
-
-                        }
-                    }
-
-                </select>
-                <select name="SelectedClothingID" id="SelectedClothingID">
-                    @foreach (var Clothing in Model.AvatarClothings)
-                    {
-                        if (Clothing.AvatarClothingId == Model.Avatar.Clothing.AvatarClothingId)
-                        {
-                            <option value="@Clothing.AvatarClothingId" selected>@Clothing.ImageUrl</option>
-
-                        }
-                        else
-                        {
-                            <option value="@Clothing.AvatarClothingId">@Clothing.ImageUrl</option>
-
-                        }
-                    }
-
-                </select>
-            </div>
-
-            // SAVE BUTTON ----------------------------------------------------
-            <div class="container-login100-form-btn m-t-20">
-                <input class="login100-form-btn" type="submit" value="Submit Changes" />
-            </div>
-
-        }
-    </div>*@

@@ -44,9 +44,10 @@
 
                                     @*      reCAPTCHA V2 checkbox     *@
 
-                                    <div id="reCAPTCHA_V2"></div>
-                                    <input type="text" name="reCAPTCHA_Response" id="reCAPTCHA_Response" required @*hidden*@ />
-
+                                    <div class="d-flex justify-content-center align-items-center" id="reCAPTCHA_V2"></div>
+                                    <input type="text" name="reCAPTCHA_Response" id="reCAPTCHA_Response" required hidden />
+                                    <p class="text-center" style="color:#909090">Please Check the fact you are not an Evil Robot that wants to take over the World.</p>
+                                    <br />
 
 
                                     <!-- Log In Button ----------------------------------------->
@@ -64,9 +65,6 @@
                                             @Html.LabelFor(m => m.RememberMe)
                                         </div>
                                     </div>
-                                    <br />
-                                    <hr />
-
                                     <!-- Link to Register -------------------------------------->
                                     <div class="btn_contain1">
                                         <div class="btn_child_norm1">
@@ -76,6 +74,7 @@
                                             <a href="@Url.Action("Register", "Account")"><img src="~/images/UIcons/register_on.png" />New User?</a>
                                         </div>
                                     </div>
+
                                 </div>
 
                                 <div class="col-3">
@@ -84,9 +83,6 @@
                                         <img style="bottom:0px" class="stackImages P_child" id="slidetwo" src="~/images/parallax/Portrait_boi2.png">
                                     </div>
                                 </div>
-
-
-
                             </div>
 
                             // PASSWORD RECOVER -------------------------------------------------
@@ -97,36 +93,20 @@
                                 </p>
                                         </div>*@
 
-                            // REGISTER BUTTON -------------------------------------------------
-
                         }
                     </div>
                 </div>
-
-
-
             </div>
         </div>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-
-        <!-- Section - Links ---------------------------------------->
-        <div style="height:180px;" class="container col-6">
-            <br />
-            <br />
-            <h4 class="text-center">Log In Using:</h4>
-            <hr />
-
-
-            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-
-        </div>
-
     </div>
+</div>
+
+<!-- Section - Links ---------------------------------------->
+<div style="height:180px;" class="container col-4">
+    <br />
+    <h4 style="color:#909090" class="text-center">Log In Using:</h4>
+    <hr />
+    @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
 </div>
 
 @section Scripts {
@@ -134,22 +114,22 @@
 
     @* reCAPTCHA script *@
     <script type="text/javascript">
-            var onloadCallback = function () {
+        var onloadCallback = function () {
 
-                //On success reCAPTCHA submition it will return here with the user anthentication
-                //will use this response to send a POST to reCAPTCHA API to ensure users validity
-                var verifyCallback = function (response) {
-                    $('#reCAPTCHA_Response').val(response);  //Set response to hidden input field
-                };
-
-                //Set reCAPTCHA attributes
-                grecaptcha.render('reCAPTCHA_V2', {
-                    'sitekey': '6Lcc_sEUAAAAAML6tLKE_q9S2vs10BhDSU_mTPWv',
-                    'theme': 'dark',    //light
-                    'size': 'normal',     //compact
-                    'callback': verifyCallback,
-                });
+            //On success reCAPTCHA submition it will return here with the user anthentication
+            //will use this response to send a POST to reCAPTCHA API to ensure users validity
+            var verifyCallback = function (response) {
+                $('#reCAPTCHA_Response').val(response);  //Set response to hidden input field
             };
+
+            //Set reCAPTCHA attributes
+            grecaptcha.render('reCAPTCHA_V2', {
+                'sitekey': '6Lcc_sEUAAAAAML6tLKE_q9S2vs10BhDSU_mTPWv',
+                'theme': 'dark',    //light
+                'size': 'normal',     //compact
+                'callback': verifyCallback,
+            });
+        };
     </script>
     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 }

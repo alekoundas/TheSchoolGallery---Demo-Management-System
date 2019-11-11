@@ -1,0 +1,45 @@
+﻿@model Microsoft.AspNet.Identity.EntityFramework.IdentityRole
+@{
+    ViewBag.Title = "Edit Roles";
+}
+
+<div class="limiter">
+    <div class="container-login100">
+        <div class="container">
+            <h3 class="text-center" style="color:#f3efe9;"> Admin Role Managment</h3>
+            <hr />
+            <br />
+            <div class="row">
+                <!-- Section - Roles A ---------------------------------------->
+                <div class="col-md-6 mx-auto">
+                    <div class="wrap-AvatarnoH" style="color:#f3efe9">
+                        <div class="wrap-login100noH">
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(model => model.Id)
+
+                                <h4 style="color:#4a4a4a;">Role Name</h4>
+                                <hr style="border-bottom:2px dotted #4a4a4a;" />
+
+                                <div class="row mx-auto">
+                                    <div class="col mx-0 wrap-avabox text-center">
+                                        @Html.TextBoxFor(model => model.Name, new { htmlAttributes = new { @class = "input100" } })
+                                    </div>
+                                    <div class="col mx-0 container-login100-form-btn">
+                                        <input type="submit" value="Save" class="login100-form-btn" />
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <br />
+                        <hr />
+                        @Html.ActionLink("Return to Role Manager", "Index")
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
