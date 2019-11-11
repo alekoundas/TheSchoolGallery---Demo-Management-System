@@ -14,7 +14,7 @@
                 <div class="col-md-12 mx-auto">
                     <div class="wrap-login100">
                         <span class="login100-form-title p-b-33">
-                            @ViewBag.Title.
+                            @ViewBag.Title
                         </span>
                         <hr />
                         <br />
@@ -47,6 +47,7 @@
                                         @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
                                     </div>
                                     <p style="color:#909090">Confirm Password</p>
+                                    <div id="example3"></div>
 
                                 </div>
 
@@ -88,9 +89,18 @@
                                         <img style="bottom:0px" class="stackImages P_child" id="slidetwo" src="~/images/parallax/Portrait_boi2.png">
                                     </div>
                                 </div>
-
                             </div>
                             <br />
+
+
+
+                            //reCAPTCHA V2 checkbox
+
+                            <div id="reCAPTCHA_V2"></div>
+                            <input type="text" name="reCAPTCHA_Response" id="reCAPTCHA_Response" required @*hidden*@ />
+
+
+
 
 
                             // REGISTER BUTTON ----------------------------------------------------
@@ -100,19 +110,33 @@
 
                         }
                     </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
 
+        @* reCAPTCHA script *@
+        <script type="text/javascript">
+            var onloadCallback = function () {
 
+                //On success reCAPTCHA submition it will return here with the user anthentication
+                //will use this response to send a POST to reCAPTCHA API to ensure users validity
+                var verifyCallback = function (response) {
+                    $('#reCAPTCHA_Response').val(response);  //Set response to hidden input field
+                };
 
-
-
-
-
-}
+                //Set reCAPTCHA attributes
+                grecaptcha.render('reCAPTCHA_V2', {
+                    'sitekey': '6Lcc_sEUAAAAAML6tLKE_q9S2vs10BhDSU_mTPWv',
+                    'theme': 'dark',    //light
+                    'size': 'normal',     //compact
+                    'callback': verifyCallback,
+                });
+            };
+        </script>
+        <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+    }

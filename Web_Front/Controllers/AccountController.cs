@@ -9,18 +9,22 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Web_Front.Models;
+using Web_Services.ApiMapping.Authentication;
 
 namespace Web_Front.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
+        RecaptchaApiService ServiceRecaptcha = new RecaptchaApiService();
+
+
+
+
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
-        public AccountController()
-        {
-        }
+        public AccountController() {}
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
         {
@@ -68,7 +72,13 @@ namespace Web_Front.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
-            if (!ModelState.IsValid)
+
+            //This service will validate the user and return true/false based on recaptcha response code from view form
+            bool validated = ServiceRecaptcha.ValidateUserResponse(model.reCAPTCHA_Response);
+
+
+
+            if (!ModelState.IsValid | validated==false)
             {
                 return View(model);
             }
@@ -149,7 +159,13 @@ namespace Web_Front.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
-            if (ModelState.IsValid)
+
+            //This service will validate the user and return true/false based on recaptcha response code from view form
+            bool validated = ServiceRecaptcha.ValidateUserResponse(model.reCAPTCHA_Response);
+
+
+
+            if (ModelState.IsValid && validated)
             {
                 // Ebala prama edw --------------------------------------------------------------------------------------------------------------------------------------->>
                 var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Country = model.Country, City = model.City, Address = model.Address};

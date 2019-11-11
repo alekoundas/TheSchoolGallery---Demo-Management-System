@@ -40,6 +40,15 @@
                                     </div>
                                     <p style="color:#909090">Password</p>
 
+
+
+                                    @*      reCAPTCHA V2 checkbox     *@
+
+                                    <div id="reCAPTCHA_V2"></div>
+                                    <input type="text" name="reCAPTCHA_Response" id="reCAPTCHA_Response" required @*hidden*@ />
+
+
+
                                     <!-- Log In Button ----------------------------------------->
                                     <div class="container-login100-form-btn m-t-20">
                                         <button class="login100-form-btn">
@@ -82,11 +91,11 @@
 
                             // PASSWORD RECOVER -------------------------------------------------
                             @*<div class="text-center p-t-45 p-b-4">
-                                        Enable this once you have account confirmation enabled for password reset functionality
-                            <p>
-                                @Html.ActionLink("Forgot your password?", "ForgotPassword")
-                            </p>
-                                    </div>*@
+                                            Enable this once you have account confirmation enabled for password reset functionality
+                                <p>
+                                    @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                                </p>
+                                        </div>*@
 
                             // REGISTER BUTTON -------------------------------------------------
 
@@ -104,7 +113,7 @@
         <br />
         <br />
         <br />
-        
+
         <!-- Section - Links ---------------------------------------->
         <div style="height:180px;" class="container col-6">
             <br />
@@ -120,7 +129,27 @@
     </div>
 </div>
 
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
+    @* reCAPTCHA script *@
+    <script type="text/javascript">
+            var onloadCallback = function () {
+
+                //On success reCAPTCHA submition it will return here with the user anthentication
+                //will use this response to send a POST to reCAPTCHA API to ensure users validity
+                var verifyCallback = function (response) {
+                    $('#reCAPTCHA_Response').val(response);  //Set response to hidden input field
+                };
+
+                //Set reCAPTCHA attributes
+                grecaptcha.render('reCAPTCHA_V2', {
+                    'sitekey': '6Lcc_sEUAAAAAML6tLKE_q9S2vs10BhDSU_mTPWv',
+                    'theme': 'dark',    //light
+                    'size': 'normal',     //compact
+                    'callback': verifyCallback,
+                });
+            };
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 }

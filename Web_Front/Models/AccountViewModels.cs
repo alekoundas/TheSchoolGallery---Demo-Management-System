@@ -59,6 +59,8 @@ namespace Web_Front.Models
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
+
+        public string reCAPTCHA_Response { get; set; }
     }
 
     public class RegisterViewModel
@@ -106,6 +108,9 @@ namespace Web_Front.Models
 
         [Display(Name = "Phone Number")]
         public long Telephone { get; set; }
+
+
+        public string reCAPTCHA_Response { get; set; }
 
     }
 

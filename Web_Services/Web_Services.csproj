@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiMapping\Authentication\RecaptchaApiService.cs" />
     <Compile Include="ApiMapping\Avatars\AvatarApiService.cs" />
     <Compile Include="ApiMapping\Avatars\BackgroundApiService.cs" />
     <Compile Include="ApiMapping\Avatars\BodyApiService.cs" />
@@ -89,8 +90,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ControllerModel\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
