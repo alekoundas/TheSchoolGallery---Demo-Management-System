@@ -27,7 +27,9 @@
                             <h5 class="text-center">Log In with an existing account.</h5>
 
                             <div class="row">
-                                <div class="col-9">
+                                <div class="col-md-9 col-sm-12">
+                                    <p style="color:#909090">Please Fill In your Details </p>
+
                                     <div class="wrap-input100">
                                         @Html.TextBoxFor(m => m.Username, new { @class = "input100", placeholder = "Username" })
                                         @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
@@ -65,19 +67,11 @@
                                             @Html.LabelFor(m => m.RememberMe)
                                         </div>
                                     </div>
-                                    <!-- Link to Register -------------------------------------->
-                                    <div class="btn_contain1">
-                                        <div class="btn_child_norm1">
-                                            <a href="@Url.Action("Register", "Account")"><img src="~/images/UIcons/register.png" /></a>
-                                        </div>
-                                        <div class="btn_child_live1">
-                                            <a href="@Url.Action("Register", "Account")"><img src="~/images/UIcons/register_on.png" />New User?</a>
-                                        </div>
-                                    </div>
+
 
                                 </div>
 
-                                <div class="col-3">
+                                <div class="col-md-3 col-sm-6">
                                     <div class="sideImage" id="p_container">
                                         <img style="bottom:0px" class="stackImages p_child" id="slideone" src="~/images/parallax/Portrait_figure.png">
                                         <img style="bottom:0px" class="stackImages P_child" id="slidetwo" src="~/images/parallax/Portrait_boi2.png">
@@ -87,27 +81,29 @@
 
                             // PASSWORD RECOVER -------------------------------------------------
                             @*<div class="text-center p-t-45 p-b-4">
-                                            Enable this once you have account confirmation enabled for password reset functionality
-                                <p>
-                                    @Html.ActionLink("Forgot your password?", "ForgotPassword")
-                                </p>
-                                        </div>*@
+                                        Enable this once you have account confirmation enabled for password reset functionality
+                            <p>
+                                @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                            </p>
+                                    </div>*@
 
                         }
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Section - Links ---------------------------------------->
+        <div style="height:180px; margin-top:40px;" class="dottedFrameFixedH col-lg-6 col-md-6 col-sm-6">
+            <br />
+            <h5 class="text-center">Log In Using:</h5>
+            <hr />
+            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+        </div>
     </div>
 </div>
 
-<!-- Section - Links ---------------------------------------->
-<div style="height:180px;" class="container col-4">
-    <br />
-    <h4 style="color:#909090" class="text-center">Log In Using:</h4>
-    <hr />
-    @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-</div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

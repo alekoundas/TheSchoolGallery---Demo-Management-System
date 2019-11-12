@@ -448,6 +448,8 @@
     <Content Include="images\threePanels\panel_B_paintings.png" />
     <Content Include="images\threePanels\panel_C_kid.png" />
     <Content Include="images\threePanels\panel_C_schools.png" />
+    <Content Include="images\threePanels\panel_D_kid.png" />
+    <Content Include="images\threePanels\play_painting.jpg" />
     <Content Include="images\threePanels\school_painting.jpg" />
     <Content Include="images\threePanels\unity_painting.jpg" />
     <Content Include="images\UIcons\cart.png" />

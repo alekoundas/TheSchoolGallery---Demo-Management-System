@@ -25,17 +25,9 @@
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
 
-    <script>
-        // Wait for window load
-        $(window).load(function () {
-            // Animate loader off screen
-            $(".se-pre-con").fadeOut("slow");;
-        });
-    </script>
-
 </head>
 <body>
-
+    <div id="load"></div>
     <div class="se-pre-con"></div>
 
 
@@ -44,7 +36,7 @@
         <div class="wrapper">
             <div class="text" data-index="1">(Welcome to...)</div>
             <div class="text hidden" data-index="2">(The School Gallery)</div>
-            <div class="text hidden" data-index="3">(Childen Create Art)</div>
+            <div class="text hidden" data-index="3">(Children Create Art)</div>
             <div class="text hidden" data-index="4">(Buy any piece of Art)</div>
             <div class="text hidden" data-index="5">(Support their Schools)</div>
         </div>
@@ -87,7 +79,18 @@
     <script src="~/js/textswap.js"></script>
 
     <script>
-
+        document.onreadystatechange = function () {
+            var state = document.readyState
+            if (state == 'interactive') {
+                document.getElementById('contents').style.visibility = "hidden";
+            } else if (state == 'complete') {
+                setTimeout(function () {
+                    document.getElementById('interactive');
+                    document.getElementById('load').style.visibility = "hidden";
+                    document.getElementById('contents').style.visibility = "visible";
+                }, 2000);
+            }
+        }
     </script>
 
 </body>

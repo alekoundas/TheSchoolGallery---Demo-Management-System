@@ -25,6 +25,7 @@
 
 </head>
 <body>
+    <div id="loading"></div>
 
     <div class="fixed-top pl-10">
         <!-- STEADY BAR (login, register, cart, etc -------------------------- -->
@@ -38,15 +39,15 @@
     }
 
 
-    <div class="oz-body-wrap">
+<div class="oz-body-wrap">
 
-        <!-- NAVIGATION BAR -------------------------------------------------- -->
-        @Html.Partial("_Navigation_B")
+    <!-- NAVIGATION BAR -------------------------------------------------- -->
+    @*@Html.Partial("_Navigation_A")*@
 
-        <!-- MAIN BODY --------------------------------------------------- -->
-        @RenderBody()
+    <!-- MAIN BODY --------------------------------------------------- -->
+    @RenderBody()
 
-    </div>
+</div>
 
     <!-- FOOTER AREA ----------------------------------------------------- -->
     <div id="chat">@Html.Partial("_Footer")</div>
@@ -73,6 +74,10 @@
     @*MODAL POWER ---------------------------------------->> *@
     <script>
 
+        // LOADER ----------------------------------------->>
+        jQuery(document).ready(function () {
+            jQuery('#loading').fadeOut(2000);
+        });
 
         $(function () {
             // say we want to have only one item opened at one moment

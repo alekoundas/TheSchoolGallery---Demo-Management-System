@@ -1,69 +1,59 @@
 ﻿@{
-    Layout = "";
+    ViewBag.Title = "Play Room";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title>Banner</title>
-    <!-- STYLES ---------------------------------------------------------- -->
-    <link rel="stylesheet" href="~/css/linearicons.css">
-    <link rel="stylesheet" href="~/css/owl.carousel.css">
-    <link rel="stylesheet" href="~/css/font-awesome.min.css">
-    <link rel="stylesheet" href="~/css/nice-select.css">
-    <link rel="stylesheet" href="~/css/magnific-popup.css">
-    <link rel="stylesheet" href="~/css/bootstrap.css">
-    <link rel="stylesheet" href="~/css/animate.css">
-    <link rel="stylesheet" href="~/css/pfold.css" />
-    <link rel="stylesheet" href="~/css/main.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="~/css/handwrite.css" />
+<br />
+<br />
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/utils/Draggable.min.js"></script>
+<div class="container dottedFrameDark2">
+    <div class="row mx-auto">
+        <div class="col-12 mx-0">
+            <h4 style="color:#5c5c5c;">Play Games</h4>
+            <hr style="margin-top:-3px;"/>
+        </div>
 
-</head>
-<body>
+        @*Skopia Link -------------------------------------->>*@
+        <div class="col mx-0">
+            <h5 style="color:#5c5c5c;">Skopia Game</h5>
+            <div class="btn_child_norm1">
+                <a href="~/Skopia/index.html"><img style="width:100px;" src="~/images/UIcons/skopia_off.png" /></a>
+            </div>
+            <div class="btn_child_live1">
+                <a href="~/Skopia/index.html"><img style="width:100px;" src="~/images/UIcons/skopia.png" /></a>
+            </div>
+        </div>
 
+        @*Gallery Link -------------------------------------->>*@
+        <div class="col mx-0">
+            <h5 style="color:#5c5c5c;">The School gallery</h5>
+            <div class="btn_child_norm1">
+                <a href="~/Skopia/index.html"><img style="width:100px;" src="~/images/UIcons/paintings_off.png" /></a>
+            </div>
+            <div class="btn_child_live1">
+                <a href="~/UnityGalleryWeb/index.html"><img style="width:100px;" src="~/images/UIcons/paintings.png" /></a>
+            </div>
+        </div>
 
-    <div class="wrapper">
-        <div class="text" data-index="1">First bit of text</div>
-        <div class="text hidden" data-index="2">Second bit of text</div>
-        <div class="text hidden" data-index="3">Third bit of text</div>
-        <div class="text hidden" data-index="4">Fourth bit of text</div>
-        <div class="text hidden" data-index="5">Fifth bit of text</div>
     </div>
+</div>
 
 
+<br />
+<br />
+<br />
+<br />
 
 
+<!-- CANVAS ---------------------------------------------------------- -->
+@Html.Partial("_Canvas")
 
-    <!-- JAVASCRIPTS ----------------------------------------------------- -->
-    <script src="~/js/vendor/jquery-2.2.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="~/js/vendor/bootstrap.min.js"></script>
-    <script src="~/js/jquery.ajaxchimp.min.js"></script>
-    <script src="~/js/owl.carousel.min.js"></script>
-    <script src="~/js/jquery.nice-select.min.js"></script>
-    <script src="~/js/jquery.magnific-popup.min.js"></script>
-    <script src="~/js/jquery.counterup.min.js"></script>
-    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
-    <script src="~/js/waypoints.min.js"></script>
-    <script src="~/js/parallax.js"></script>
-    <script src="~/js/typewriter.js"></script>
-    <script src="~/js/modernizr.custom.79639.js"></script>
-    <script src="~/js/jquery.pfold.js"></script>
-    <script src="~/js/main.js"></script>
-    <script src="~/js/textswap.js"></script>
-    <script>
+<!-- ABOUT US -------------------------------------------------------- -->
+@Html.Partial("_AboutUs")
 
+<!-- SCHOOL STATS ---------------------------------------------------- -->
+@Html.Partial("_SchoolStats")
 
-   
+<!-- PAINTING STATS -------------------------------------------------- -->
+@Html.Partial("_PaintingStats")
 
-
-    </script>
-
-</body>
-</html>

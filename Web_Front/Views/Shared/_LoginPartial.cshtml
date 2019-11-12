@@ -5,29 +5,47 @@
     {
         @Html.AntiForgeryToken()
 
-        <div class="container col-5 float-left">
+        <div class="container float-left">
             <div class="row">
 
                 <div class="btn_contain1 col">
-                    <a style="color:#5c5c5c; text-shadow:1px 1px #f3efe9;" href="@Url.Action("Profile", "Profile")"><img src="~/images/UIcons/loged.png" /></a>
+                    <a title="Logged" style="color:#5c5c5c; text-shadow:1px 1px #f3efe9;" href="@Url.Action("Profile", "Profile")"><img src="~/images/UIcons/loged.png" /></a>
                     <span style="color:#5c5c5c; text-shadow:1px 1px #f3efe9;">@Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</span>
                 </div>
 
                 <div class="btn_contain2 col">
                     <div class="btn_child_norm2">
-                        <a style="color:#5c5c5c; text-shadow:1px 1px #f3efe9;" href="javascript:document.getElementById('logoutForm').submit()"><img id="iconBtn" src="~/images/UIcons/logoff.png" /></a>
+                        <a title="Log Off" href="javascript:document.getElementById('logoutForm').submit()"><img id="iconBtn" src="~/images/UIcons/logoff.png" /></a>
                     </div>
                     <div class="btn_child_live2">
-                        <a style="color:#5c5c5c; text-shadow:1px 1px #f3efe9;" href="javascript:document.getElementById('logoutForm').submit()"><img id="iconBtn" src="~/images/UIcons/logoff_on.png" />log off</a>
+                        <a title="Log Off" href="javascript:document.getElementById('logoutForm').submit()"><img id="iconBtn" src="~/images/UIcons/logoff_on.png" /></a>
                     </div>
                 </div>
 
                 <div class="btn_contain3 col">
                     <div class="btn_child_norm3">
-                        <a style="color:#5c5c5c; text-shadow:1px 1px #f3efe9;" href="@Url.Action("Index", "PayPal")"><img src="~/images/UIcons/cart_off.png" /></a>
+                        <a title="Intro" href="@Url.Action("About", "Home")"><img src="~/images/UIcons/schools_off.png" /></a>
                     </div>
                     <div class="btn_child_live3">
-                        <a style="color:#5c5c5c; text-shadow:1px 1px #f3efe9;" href="@Url.Action("Index", "PayPal")"><img src="~/images/UIcons/cart.png" />cart</a>
+                        <a title="Intro" href="@Url.Action("About", "Home")"><img src="~/images/UIcons/schoolspng.png" /></a>
+                    </div>
+                </div>
+
+                <div class="btn_contain4 col">
+                    <div class="btn_child_norm4">
+                        <a title="Home" href="@Url.Action("Index", "Home")"><img src="~/images/UIcons/paintings_off.png" /></a>
+                    </div>
+                    <div class="btn_child_live4">
+                        <a title="Home" href="@Url.Action("Index", "Home")"><img src="~/images/UIcons/paintings.png" /></a>
+                    </div>
+                </div>
+
+                <div class="btn_contain5 col">
+                    <div class="btn_child_norm4">
+                        <a title="Cart" href="@Url.Action("Index", "PayPal")"><img src="~/images/UIcons/cart_off.png" /></a>
+                    </div>
+                    <div class="btn_child_live5">
+                        <a title="Cart" href="@Url.Action("Index", "PayPal")"><img src="~/images/UIcons/cart.png" /></a>
                     </div>
                 </div>
 
@@ -36,10 +54,10 @@
                     <!-- ADMIN ONLY VIEW ----------------------------------------------------- -->
                     <div class="btn_contain4 col">
                         <div class="btn_child_norm4">
-                            <a style="color:#5c5c5c; text-shadow:1px 1px #f3efe9;" href="@Url.Action("Index", "Roles")"><img src="~/images/UIcons/gears_off.png" /></a>
+                            <a title="Settings" href="@Url.Action("Index", "Roles")"><img src="~/images/UIcons/gears_off.png" /></a>
                         </div>
                         <div class="btn_child_live4">
-                            <a style="color:#5c5c5c; text-shadow:1px 1px #f3efe9;" href="@Url.Action("Index", "Roles")"><img src="~/images/UIcons/gears.png" />settings</a>
+                            <a title="Settings" href="@Url.Action("Index", "Roles")"><img src="~/images/UIcons/gears.png" /></a>
                         </div>
                     </div>
                 }
@@ -54,18 +72,18 @@ else
         <div class="row">
             <div class="btn_contain1 col">
                 <div class="btn_child_norm1">
-                    <a style="color:#5c5c5c; text-shadow:1px 1px #f3efe9;" href="@Url.Action("Login", "Account")"><img src="~/images/UIcons/login.png" /></a>
+                    <a title="LogIn" href="@Url.Action("Login", "Account")"><img src="~/images/UIcons/login.png" /></a>
                 </div>
                 <div class="btn_child_live1">
-                    <a style="color:#5c5c5c; text-shadow:1px 1px #f3efe9;" href="@Url.Action("Login", "Account")"><img src="~/images/UIcons/login_on.png" />log in</a>
+                    <a title="LogIn" href="@Url.Action("Login", "Account")"><img src="~/images/UIcons/login_on.png" /></a>
                 </div>
             </div>
             <div class="btn_contain2 col">
                 <div class="btn_child_norm2">
-                    <a style="color:#5c5c5c; text-shadow:1px 1px #f3efe9;" href="@Url.Action("Register", "Account")"><img src="~/images/UIcons/register.png" /></a>
+                    <a title="Register" href="@Url.Action("Register", "Account")"><img src="~/images/UIcons/register.png" /></a>
                 </div>
                 <div class="btn_child_live2">
-                    <a style="color:#5c5c5c; text-shadow:1px 1px #f3efe9;" href="@Url.Action("Register", "Account")"><img src="~/images/UIcons/register_on.png" />register</a>
+                    <a title="Register" href="@Url.Action("Register", "Account")"><img src="~/images/UIcons/register_on.png" /></a>
                 </div>
             </div>
         </div>

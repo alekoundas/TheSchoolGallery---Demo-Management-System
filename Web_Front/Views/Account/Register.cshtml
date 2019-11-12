@@ -26,7 +26,10 @@
                             <h5 class="text-center">Create a new account.</h5>
 
                             <div class="row">
-                                <div class="col-4">
+
+                                <div class="col-md-4 col-sm-6">
+                                    <p style="color:#909090">Please Fill In your Details </p>
+
                                     <div class="wrap-input100">
                                         @Html.TextBoxFor(m => m.UserName, new { @class = "input100", placeholder = "User Name" })
                                         @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
@@ -51,7 +54,9 @@
 
                                 </div>
 
-                                <div class="col-5">
+                                <div class="col-md-5 col-sm-6">
+                                    <p style="color:#909090">.. and some more Details</p>
+
                                     <div class="wrap-input100 rs1">
                                         @Html.TextBoxFor(m => m.FirstName, new { @class = "input100", placeholder = "First name" })
                                         @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
@@ -83,7 +88,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-3">
+                                <div class="col-md-3 col-sm-6">
                                     <div class="sideImage" id="p_container">
                                         <img style="bottom:0px" class="stackImages p_child" id="slideone" src="~/images/parallax/Portrait_figure.png">
                                         <img style="bottom:0px" class="stackImages P_child" id="slidetwo" src="~/images/parallax/Portrait_boi2.png">
@@ -93,14 +98,11 @@
                             <br />
 
 
-
                             //reCAPTCHA V2 checkbox
-
-                            <div id="reCAPTCHA_V2"></div>
-                            <input type="text" name="reCAPTCHA_Response" id="reCAPTCHA_Response" required @*hidden*@ />
-
-
-
+                            <div class="d-flex justify-content-center align-items-center" id="reCAPTCHA_V2"></div>
+                            <input type="text" name="reCAPTCHA_Response" id="reCAPTCHA_Response" required hidden />
+                            <p class="text-center" style="color:#909090">Please Check the fact you are not an Evil Robot that wants to take over the World.</p>
+                            <br />
 
 
                             // REGISTER BUTTON ----------------------------------------------------
@@ -114,29 +116,30 @@
             </div>
         </div>
     </div>
+</div>
 
 
-    @section Scripts {
-        @Scripts.Render("~/bundles/jqueryval")
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
 
-        @* reCAPTCHA script *@
-        <script type="text/javascript">
-            var onloadCallback = function () {
+    @* reCAPTCHA script *@
+    <script type="text/javascript">
+        var onloadCallback = function () {
 
-                //On success reCAPTCHA submition it will return here with the user anthentication
-                //will use this response to send a POST to reCAPTCHA API to ensure users validity
-                var verifyCallback = function (response) {
-                    $('#reCAPTCHA_Response').val(response);  //Set response to hidden input field
-                };
-
-                //Set reCAPTCHA attributes
-                grecaptcha.render('reCAPTCHA_V2', {
-                    'sitekey': '6Lcc_sEUAAAAAML6tLKE_q9S2vs10BhDSU_mTPWv',
-                    'theme': 'dark',    //light
-                    'size': 'normal',     //compact
-                    'callback': verifyCallback,
-                });
+            //On success reCAPTCHA submition it will return here with the user anthentication
+            //will use this response to send a POST to reCAPTCHA API to ensure users validity
+            var verifyCallback = function (response) {
+                $('#reCAPTCHA_Response').val(response);  //Set response to hidden input field
             };
-        </script>
-        <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
-    }
+
+            //Set reCAPTCHA attributes
+            grecaptcha.render('reCAPTCHA_V2', {
+                'sitekey': '6Lcc_sEUAAAAAML6tLKE_q9S2vs10BhDSU_mTPWv',
+                'theme': 'dark',    //light
+                'size': 'normal',     //compact
+                'callback': verifyCallback,
+            });
+        };
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+}
