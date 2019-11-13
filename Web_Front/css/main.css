@@ -2044,6 +2044,7 @@ body {
 
 .feature-area {
     background-color: #f3efe9;
+    box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
 }
 
 
@@ -3720,7 +3721,23 @@ section hr {
     position: relative;
     width: 100%;
     height: auto;
-    padding:15px;
+    padding: 15px;
+    background: #f3efe9;
+    overflow: hidden;
+    box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
+    border: 15px solid #dbd7d1;
+    transition-duration: 1s;
+}
+
+    .sideFrameD:hover {
+        border: 5px solid #dbd7d1;
+        transition-duration: 1s;
+    }
+
+.GoogleFrame {
+    position: relative;
+    width: 100%;
+    height: auto;
     background: #f3efe9;
     overflow: hidden;
     box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
@@ -3766,7 +3783,7 @@ section hr {
 .dottedFrameFixedH {
     position: relative;
     width: 100%;
-    height: 150px;
+    height: 130px;
     margin-bottom: 20px;
     padding: 15px;
     box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
@@ -3777,7 +3794,7 @@ section hr {
 .dottedFrameFixedHDark {
     position: relative;
     width: 100%;
-    height: 150px;
+    height: 130px;
     margin-bottom: 20px;
     padding: 15px;
     box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
@@ -3808,6 +3825,25 @@ section hr {
     border: 2px dotted #5c5c5c;
     transition-duration: 1s;
 }
+
+.dottedFrameAdmin {
+    position: relative;
+    width: 30px;
+    height: auto;
+    padding: 20px 0;
+    margin-left: -10px;
+    box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
+    border: 1px dotted #5c5c5c;
+    background-color: #f3efe9;
+    transition-duration: 1s;
+}
+
+    .dottedFrameAdmin:hover {
+        cursor: pointer;
+        border: 1px dotted #f3efe9;
+        padding: 50px 0;
+        transition-duration: 1s;
+    }
 
 .sideFrame h1, .sideFrame h2, .sideFrame h3, .sideFrame h4, .sideFrame h5 {
     color: #f3efe9;
@@ -3887,9 +3923,11 @@ h1, h2, h3, h4, h5 {
 
 /* -------------------------------- 
 
-    MODAL
+    FINILISING
 
 -------------------------------- */
+
+/*#region MODAL*/
 
 #openit:hover, #closeit:hover{
     cursor:pointer;
@@ -3927,7 +3965,12 @@ h1, h2, h3, h4, h5 {
     z-index: 99;
 }
 
-/*ICON button System  ------------>> */
+/*#endregion MODAL*/
+
+
+/*#region ICONS*/
+
+
 .btn_contain1, .btn_contain2, .btn_contain3, .btn_contain4, .btn_contain5, .btn_contain6 {
     display: inline-block;
     position: relative;
@@ -3960,7 +4003,16 @@ h1, h2, h3, h4, h5 {
     }
 
 
-/*Avatar System Display  ------------>> */
+.btn_contain1 img, .btn_contain2 img, .btn_contain3 img, .btn_contain4 img, .btn_contain5 img, .btn_contain6 img {
+    width: 50px;
+}
+
+
+/*#endregion ICONS*/
+
+
+/*#region AVATAR*/
+
 
 .Mama_Avatar {
     position: relative;
@@ -3989,8 +4041,6 @@ h1, h2, h3, h4, h5 {
     border: 3px dotted #f3efe9;
     transition-duration: .4s;
 }
-
-/*Avatar System Display  ------------>> */
 
 .selectionImages {
     width: 100px;
@@ -4030,7 +4080,7 @@ h1, h2, h3, h4, h5 {
     margin-bottom:25px;
 }
 
-
+/*#endregion AVATAR*/
 
 @font-face {
     font-family: 'Sweet Hipster';
@@ -4089,4 +4139,31 @@ h1, h2, h3, h4, h5 {
     height: 100vh;
     background: #fff url('../images/Preloader_7.gif') no-repeat center center;
     z-index: 9999;
+}
+
+.navigationTitle {
+    color: #4a4a4a;
+    /*animation of color change application [strong]*/
+    -webkit-animation: Color_Change_Strong 180s infinite;
+    animation: Color_Change_Strong 120s infinite;
+    animation-delay: 6s;
+    -webkit-transition-timing-function: ease-in;
+    padding:10px;
+    margin:10px;
+    font-size: 40px;
+    font-family: "Sweet Hipster";
+    text-shadow: 1px 1px 2px rgba(75, 24, 82, 0.90);
+}
+
+.bracketz {
+    color: #4a4a4a;
+    /*animation of color change application [strong]*/
+    -webkit-animation: Color_Change_Strong 180s infinite;
+    animation: Color_Change_Strong 120s infinite;
+    animation-delay: 6s;
+    -webkit-transition-timing-function: ease-in;
+    padding-top: 40px;
+    font-size: 140px;
+    font-family: "Sweet Hipster";
+    text-shadow: 1px 1px 2px rgba(75, 24, 82, 0.90);
 }

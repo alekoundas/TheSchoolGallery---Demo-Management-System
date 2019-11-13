@@ -5,63 +5,68 @@
     {
         @Html.AntiForgeryToken()
 
-        <div class="container float-left">
+        <div class="container">
             <div class="row">
 
-                <div class="btn_contain1 col">
-                    <a title="Logged" style="color:#5c5c5c; text-shadow:1px 1px #f3efe9;" href="@Url.Action("Profile", "Profile")"><img src="~/images/UIcons/loged.png" /></a>
-                    <span style="color:#5c5c5c; text-shadow:1px 1px #f3efe9;">@Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</span>
+                <div class="col navigationTitle float-left">
+                    <p>(The School Gallery)</p>
                 </div>
 
-                <div class="btn_contain2 col">
-                    <div class="btn_child_norm2">
-                        <a title="Log Off" href="javascript:document.getElementById('logoutForm').submit()"><img id="iconBtn" src="~/images/UIcons/logoff.png" /></a>
-                    </div>
-                    <div class="btn_child_live2">
-                        <a title="Log Off" href="javascript:document.getElementById('logoutForm').submit()"><img id="iconBtn" src="~/images/UIcons/logoff_on.png" /></a>
-                    </div>
-                </div>
+                <div class="col float-right">
+                    <div class="row">
 
-                <div class="btn_contain3 col">
-                    <div class="btn_child_norm3">
-                        <a title="Intro" href="@Url.Action("About", "Home")"><img src="~/images/UIcons/schools_off.png" /></a>
-                    </div>
-                    <div class="btn_child_live3">
-                        <a title="Intro" href="@Url.Action("About", "Home")"><img src="~/images/UIcons/schoolspng.png" /></a>
-                    </div>
-                </div>
-
-                <div class="btn_contain4 col">
-                    <div class="btn_child_norm4">
-                        <a title="Home" href="@Url.Action("Index", "Home")"><img src="~/images/UIcons/paintings_off.png" /></a>
-                    </div>
-                    <div class="btn_child_live4">
-                        <a title="Home" href="@Url.Action("Index", "Home")"><img src="~/images/UIcons/paintings.png" /></a>
-                    </div>
-                </div>
-
-                <div class="btn_contain5 col">
-                    <div class="btn_child_norm4">
-                        <a title="Cart" href="@Url.Action("Index", "PayPal")"><img src="~/images/UIcons/cart_off.png" /></a>
-                    </div>
-                    <div class="btn_child_live5">
-                        <a title="Cart" href="@Url.Action("Index", "PayPal")"><img src="~/images/UIcons/cart.png" /></a>
-                    </div>
-                </div>
-
-                @if (User.IsInRole("Admin"))
-                {
-                    <!-- ADMIN ONLY VIEW ----------------------------------------------------- -->
-                    <div class="btn_contain4 col">
-                        <div class="btn_child_norm4">
-                            <a title="Settings" href="@Url.Action("Index", "Roles")"><img src="~/images/UIcons/gears_off.png" /></a>
+                        <div class="btn_contain1 col-2">
+                            <a title="Logged" style="color:#5c5c5c; text-shadow:1px 1px #f3efe9;" href="@Url.Action("Index", "Manage")"><img src="~/images/UIcons/loged.png" /></a>
+                            <span style="color:#5c5c5c; text-shadow:1px 1px #f3efe9;">@Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</span>
                         </div>
-                        <div class="btn_child_live4">
-                            <a title="Settings" href="@Url.Action("Index", "Roles")"><img src="~/images/UIcons/gears.png" /></a>
-                        </div>
-                    </div>
-                }
 
+                        <div class="btn_contain2 col-2">
+                            <div class="btn_child_norm2">
+                                <a title="Log Off" href="javascript:document.getElementById('logoutForm').submit()"><img id="iconBtn" src="~/images/UIcons/logoff.png" /></a>
+                            </div>
+                            <div class="btn_child_live2">
+                                <a title="Log Off" href="javascript:document.getElementById('logoutForm').submit()"><img id="iconBtn" src="~/images/UIcons/logoff_on.png" /></a>
+                            </div>
+                        </div>
+
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <!-- ADMIN ONLY VIEW ----------------------------------------------------- -->
+                            <div class="btn_contain3 col-2">
+                                <div class="btn_child_norm4">
+                                    <a title="Settings" href="@Url.Action("Index", "Roles")"><img src="~/images/UIcons/gears_off.png" /></a>
+                                </div>
+                                <div class="btn_child_live3">
+                                    <a title="Settings" href="@Url.Action("Index", "Roles")"><img src="~/images/UIcons/gears.png" /></a>
+                                </div>
+                            </div>
+                        }
+
+                        <div class="btn_contain4 col-2">
+                            <div class="btn_child_norm4">
+                                <a title="Home" href="@Url.Action("Index", "Home")"><img src="~/images/UIcons/paintings_off.png" /></a>
+                            </div>
+                            <div class="btn_child_live4">
+                                <a title="Home" href="@Url.Action("Index", "Home")"><img src="~/images/UIcons/paintings.png" /></a>
+                            </div>
+                        </div>
+
+                        <div class="btn_contain5 col-2">
+                            <div class="btn_child_norm5">
+                                <a title="Cart" href="@Url.Action("Index", "PayPal")"><img src="~/images/UIcons/cart_off.png" /></a>
+                            </div>
+                            <div class="btn_child_live5">
+                                <a title="Cart" href="@Url.Action("Index", "PayPal")"><img src="~/images/UIcons/cart.png" /></a>
+                            </div>
+
+                        </div>
+                        <!-- Cart Indication --------------------------- -->
+                        <p style="margin:15px; margin-left:-30px;">empty</p>
+
+
+                    </div>
+
+                </div>
             </div>
         </div>
     }

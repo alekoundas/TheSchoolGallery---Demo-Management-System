@@ -7,36 +7,39 @@
 <div class="limiter">
     <div class="container-login100">
         <div class="container">
-            <br />
-            <br />
             <div class="row">
                 <!-- Section - Class Details ---------------------------------------->
-                <div class="col-md-12 mx-auto text-center">
-                    <div class="sideFrameD">
+                <div class="col-md-6 mx-auto text-center">
+                    <div class="sideFrameD" style="height:130px; margin-bottom:25px;">
                         <div class="studentdesc">
-                            <h3>@Html.DisplayFor(model => model.Name)</h3>
-                            <hr style="border-bottom:2px dotted" />
-                            <h4>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</h4>
+                            <p style="font-size:20px;">@Html.DisplayFor(model => model.Name)</p>
+                            <hr />
+                            <p>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</p>
                         </div>
-
                     </div>
                 </div>
-                <br />
-                <!-- Section - Teacher/School --------------------------------------->
-                <div class="col-md-12 mx-auto text-center">
-                    <div Class="dottedFrame mt-40">
-                        <h5>Class Teacher</h5>
+
+                <!-- Section - Teacher --------------------------------------->
+                <div class="col-md-3 mx-auto text-center">
+                    <div Class="sideFrameD" style="height:130px; margin-bottom:25px;">
+                        <p>Class Teacher</p>
+                        <hr />
                         @*LINK TO SCHOOL Teachers PAGE*@
-                        <a style="color:#f3efe9; font-size:24px;" href="@Url.Action("Details", "Teacher", new { id = Model.ClassroomId })">
+                        <a style="font-size:20px;" href="@Url.Action("Details", "Teacher", new { id = Model.TeacherFK })">
                             @Html.DisplayFor(model => model.Teacher.FirstName) @Html.DisplayFor(model => model.Teacher.LastName)
                         </a>
+                    </div>
+                </div>
+
+                <!-- Section - School --------------------------------------->
+                <div class="col-md-3 mx-auto text-center">
+                    <div Class="sideFrameD" style="height:130px; margin-bottom:25px;">
+                        <p>@Html.DisplayFor(model => model.School.City)</p>
                         <hr />
                         @*LINK TO SCHOOL DETAIL PAGE*@
-                        <a style="color:#f3efe9; font-size:24px;" href="@Url.Action("Details", "School", new { id = Model.ClassroomId })">
+                        <a style="font-size:20px;" href="@Url.Action("Details", "School", new { id = Model.SchoolFK })">
                             @Html.DisplayFor(model => model.School.Name)
                         </a>
-
-                        <h4>@Html.DisplayFor(model => model.School.City)</h4>
                     </div>
                 </div>
 
@@ -81,16 +84,16 @@
                 </div>
 
                 <!-- Section - Links ---------------------------------------->
-                <div style="height:180px;" class="container col-6 align-self-center">
+                <div style="height:180px;" class="container col-12 align-self-center">
                     <hr />
                     <br />
                     <div class="row">
                         <div class="btn_contain3 col">
                             <div class="btn_child_norm3">
-                                <a href="@Url.Action("Details", "School", new { id = Model.School.SchoolId })"><img src="~/images/UIcons/schools_off.png" /></a>
+                                <a title="back to schools" href="@Url.Action("Details", "School", new { id = Model.School.SchoolId })"><img src="~/images/UIcons/schools_off.png" /></a>
                             </div>
                             <div class="btn_child_live3">
-                                <a style="color:#f3efe9" href="@Url.Action("Details", "School", new { id = Model.School.SchoolId })"><img src="~/images/UIcons/schoolspng.png" /> go to schools </a>
+                                <a title="back to schools" href="@Url.Action("Details", "School", new { id = Model.School.SchoolId })"><img src="~/images/UIcons/schoolspng.png" /></a>
                             </div>
                         </div>
                     </div>
