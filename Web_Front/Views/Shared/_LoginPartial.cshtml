@@ -8,19 +8,20 @@
         <div class="container">
             <div class="row">
 
-                <div class="col navigationTitle float-left">
-                    <p>(The School Gallery)</p>
+                <div style="margin-top:15px;" class="col navigationTitle text-center">
+                    <a href="@Url.Action("About", "Home")">(The School Gallery)</a>
                 </div>
 
                 <div class="col float-right">
                     <div class="row">
-
-                        <div class="btn_contain1 col-2">
+                        <div style="margin-top:15px;" class="navigationTitle text-center">
+                            <a>(<span>@Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</span></a>
+                        </div>
+                        <div class="btn_contain1 col-1">
                             <a title="Logged" style="color:#5c5c5c; text-shadow:1px 1px #f3efe9;" href="@Url.Action("Index", "Manage")"><img src="~/images/UIcons/loged.png" /></a>
-                            <span style="color:#5c5c5c; text-shadow:1px 1px #f3efe9;">@Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</span>
                         </div>
 
-                        <div class="btn_contain2 col-2">
+                        <div class="btn_contain2 col-1">
                             <div class="btn_child_norm2">
                                 <a title="Log Off" href="javascript:document.getElementById('logoutForm').submit()"><img id="iconBtn" src="~/images/UIcons/logoff.png" /></a>
                             </div>
@@ -32,7 +33,7 @@
                         @if (User.IsInRole("Admin"))
                         {
                             <!-- ADMIN ONLY VIEW ----------------------------------------------------- -->
-                            <div class="btn_contain3 col-2">
+                            <div class="btn_contain3 col-1">
                                 <div class="btn_child_norm4">
                                     <a title="Settings" href="@Url.Action("Index", "Roles")"><img src="~/images/UIcons/gears_off.png" /></a>
                                 </div>
@@ -40,9 +41,10 @@
                                     <a title="Settings" href="@Url.Action("Index", "Roles")"><img src="~/images/UIcons/gears.png" /></a>
                                 </div>
                             </div>
+
                         }
 
-                        <div class="btn_contain4 col-2">
+                        <div class="btn_contain4 col-1">
                             <div class="btn_child_norm4">
                                 <a title="Home" href="@Url.Action("Index", "Home")"><img src="~/images/UIcons/paintings_off.png" /></a>
                             </div>
@@ -51,7 +53,7 @@
                             </div>
                         </div>
 
-                        <div class="btn_contain5 col-2">
+                        <div class="btn_contain5 col-1">
                             <div class="btn_child_norm5">
                                 <a title="Cart" href="@Url.Action("Index", "PayPal")"><img src="~/images/UIcons/cart_off.png" /></a>
                             </div>
@@ -61,7 +63,9 @@
 
                         </div>
                         <!-- Cart Indication --------------------------- -->
-                        <p style="margin:15px; margin-left:-30px;">empty</p>
+                        <div style="margin-left:14px; margin-top:15px;" class="navigationTitle text-center">
+                            <a style="font-size:24px;">cart is empty)</a>
+                        </div>
 
 
                     </div>

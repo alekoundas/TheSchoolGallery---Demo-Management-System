@@ -32,7 +32,6 @@ $(document).ready(function () {
 
 
 
-
     // BRING THE CANVAS ------------------------------------------->>
     $("#drawingCtrl").hide(0);
 
@@ -237,7 +236,7 @@ $(document).ready(function () {
         })
     }
 
-    
+
 
 
 

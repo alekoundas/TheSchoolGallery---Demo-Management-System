@@ -1,18 +1,227 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+
 }
 
-<!-- MAIN BANNER ----------------------------------------------------- -->
-@Html.Partial("_indexMain")
 
-<!-- CANVAS ---------------------------------------------------------- -->
-@*@Html.Partial("_Canvas")*@
+<div class="container">
+    <br />
+    <div class="row">
 
-<!-- ABOUT US -------------------------------------------------------- -->
-@*@Html.Partial("_AboutUs")*@
+        <!-- Section 2A - HIDDEN ------------------------------>
+        <div id="HiddenPaintRoom1" class="col-md-3 col-sm-6 mx-auto">
+            <div class="threePanelsHidden">
+                <a href="@Url.Action("Index", "Painting")">
+                    <div class="d-flex justify-content-center align-items-center" id="threetext">Enter</div>
+                </a>
+            </div>
+        </div>
 
-<!-- SCHOOL STATS ---------------------------------------------------- -->
-@*@Html.Partial("_SchoolStats")*@
+        <!-- Section 3A - HIDDEN ------------------------------>
+        <div id="HiddenEnter1" class="col-md-6 col-sm-6 mx-auto">
+            <div class="threePanelsHidden">
+                <div class="d-flex justify-content-center align-items-center" id="threetext">PlayRoom</div>
+            </div>
+        </div>
 
-<!-- PAINTING STATS -------------------------------------------------- -->
-@*@Html.Partial("_PaintingStats")*@
+        <!-- Section 1 - Unity Gallery ------------------------------>
+        <div id="Unity" class="col-md-3 col-sm-6 mx-auto">
+            @*<a href="~/UnityGalleryWeb/index.html">*@
+            <div style="background-color:#8ba0a5;" class="threePanels" id="p_container">
+                <img style="bottom:0px; left:-20px;" class="stackImages p_child" src="~/images/threePanels/panel_A_door.png">
+                <img style="bottom:0px; left:-20px;" class="stackImages P_child" src="~/images/threePanels/panel_A_kid.png">
+                <div id="secondAppear">
+                    <img style="width:100%; height:100%;" class="stackImages P_child" src="~/images/threePanels/play_painting.jpg">
+                </div>
+                <div class="container-fluid text-center">
+                    <h4>Gallery</h4>
+                    <hr />
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2 - Paintings ------------------------------>
+        <div id="PaintRoom" class="col-md-3 col-sm-6 mx-auto">
+            <div style="background-color:#a78c8c;" class="threePanels" id="p_container">
+                <img style="bottom:200px; left:-20px;" class="stackImages p_child" src="~/images/threePanels/panel_B_paintings.png">
+                <img style="bottom:0px; left:-20px;" class="stackImages P_child" src="~/images/threePanels/panel_B_kid.png">
+                <div id="secondAppear">
+                    <img style="width:100%; height:100%;" class="stackImages P_child" src="~/images/threePanels/gallery_painting.jpg">
+                </div>
+                <div class="container-fluid text-center">
+                    <h4>Paintings</h4>
+                    <hr />
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3 - Entairtainment ------------------------------>
+        <div id="Entairtainment" class="col-md-3 col-sm-6 mx-auto">
+            <div style="background-color:#8c95a8;" class="threePanels" id="p_container">
+                <img style="bottom:50px; transform: scaleX(-1);" class="stackImages p_child" src="~/images/threePanels/panel_B_paintings.png">
+                <img style="bottom:0px" class="stackImages P_child" src="~/images/threePanels/panel_D_kid.png" id="firstAppear">
+                <div id="secondAppear">
+                    <img style="width:100%; height:100%;" class="stackImages P_child" src="~/images/threePanels/unity_painting.jpg">
+                </div>
+                <div class="container-fluid text-center">
+                    <h4>Play Room</h4>
+                    <hr />
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4 - HIDDEN ------------------------------>
+        <div id="HiddenSchools" class="col-md-9 col-sm-6 mx-auto">
+            <div class="threePanelsHidden">
+                <a href="@Url.Action("Index", "School")">
+                <div class="d-flex justify-content-center align-items-center" id="threetext">Enter Schools</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Section 4 - Schools ------------------------------>
+        <div id="Schoolz" class="col-md-3 col-sm-6 mx-auto">
+            <div style="background-color:#bea9c1;" class="threePanels" id="p_container">
+                <img style="bottom:150px" class="stackImages p_child" src="~/images/threePanels/panel_C_schools.png">
+                <img style="bottom:0px" class="stackImages P_child" src="~/images/threePanels/panel_C_kid.png" id="firstAppear">
+                <div id="secondAppear">
+                    <img style="width:100%; height:100%;" class="stackImages P_child" src="~/images/threePanels/school_painting.jpg">
+                </div>
+                <div class="container-fluid text-center">
+                    <h4>Schools</h4>
+                    <hr />
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 1 - HIDDEN ------------------------------>
+        <div id="HiddenUnity" class="col-md-9 col-sm-6 mx-auto">
+            <div class="threePanelsHidden">
+                <a href="~/UnityGalleryWeb/index.html">
+                    <div class="d-flex justify-content-center align-items-center" id="threetext">Enter 3D Gallery</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Section 2B - HIDDEN ------------------------------>
+        <div id="HiddenPaintRoom2" class="col-md-6 col-sm-6 mx-auto">
+            <div class="threePanelsHidden">
+                <div class="d-flex justify-content-center align-items-center" id="threetext">Paintings</div>
+
+            </div>
+        </div>
+
+        <!-- Section 3B - HIDDEN ------------------------------>
+        <div id="HiddenEnter2" class="col-md-3 col-sm-6 mx-auto">
+            <div class="threePanelsHidden">
+                <a href="@Url.Action("Contact", "Home")">
+                    <div class="d-flex justify-content-center align-items-center" id="threetext">Enter</div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <br />
+
+</div>
+
+<div id="retuBtn" class="container-fluid text-center">
+    <h4>Return to Previous Choices</h4>
+</div>
+
+
+
+@section scripts{
+
+    <script>
+
+        // Script for _indexMain_B -------------------------------->>
+        $(document).ready(function () {
+
+            var allChoices = $("#retuBtn");
+            var panelUnity = $("#Unity");
+            var panelPaintings = $("#PaintRoom");
+            var panelPlayRoom = $("#Entairtainment");
+            var panelSchool = $("#Schoolz");
+
+            $(allChoices).fadeTo("fast", 0, function () { });
+
+            var Unity = $("#HiddenUnity").hide();
+
+            var Paintings1 = $("#HiddenPaintRoom1").hide();
+            var Paintings2 = $("#HiddenPaintRoom2").hide();
+
+            var PlayRoom1 = $("#HiddenEnter1").hide();
+            var PlayRoom2 = $("#HiddenEnter2").hide();
+
+            var Schools = $("#HiddenSchools").hide();
+
+            // Return to Initial State ------------------------>>
+            $(allChoices).click(function () {
+
+                $("#HiddenUnity").hide();
+                $("#HiddenPaintRoom1").hide();
+                $("#HiddenPaintRoom2").hide();
+                $("#HiddenEnter1").hide();
+                $("#HiddenEnter2").hide();
+                $("#HiddenSchools").hide();
+                $("#Unity, #PaintRoom, #Entairtainment, #Schoolz").show();
+                $("#Unity, #PaintRoom, #Entairtainment, #Schoolz").animate({
+                    opacity: 1
+                }, 1000, function () {
+                    $(allChoices).fadeTo("slow", 0, function () {
+                    });
+                });
+            });
+
+            // Show Section A - Unity Gallery --------------------------->>
+            $(panelUnity).click(function () {
+                $("#PaintRoom, #Entairtainment, #Schoolz").animate({
+                    opacity: 0
+                }, 1000, function () {
+                    $("#PaintRoom, #Entairtainment, #Schoolz").hide();
+                    $(Unity).show(1000);
+                    $(allChoices).fadeTo("slow", 1, function () { });
+                });
+            });
+
+            // Show Section B - Painting Gallery ------------------------>>
+            $(panelPaintings).click(function () {
+                $("#Unity, #Entairtainment, #Schoolz").animate({
+                    opacity: 0
+                }, 1000, function () {
+                    $("#Unity, #Entairtainment, #Schoolz").hide();
+                    $(Paintings1).show(1100);
+                    $(Paintings2).show(900);
+                    $(allChoices).fadeTo("slow", 1, function () { });
+                });
+            });
+
+            // Show Section C - Play Room  ------------------------------>>
+            $(panelPlayRoom).click(function () {
+                $("#Unity, #PaintRoom, #Schoolz").animate({
+                    opacity: 0
+                }, 1000, function () {
+                    $("#Unity, #PaintRoom, #Schoolz").hide();
+                    $(PlayRoom1).show(900);
+                    $(PlayRoom2).show(1100);
+                    $(allChoices).fadeTo("slow", 1, function () { });
+                });
+            });
+
+            // Show Section D - Schools --------------------------->>
+            $(panelSchool).click(function () {
+                $("#PaintRoom, #Entairtainment, #Unity").animate({
+                    opacity: 0
+                }, 1000, function () {
+                    $("#PaintRoom, #Entairtainment, #Unity").hide();
+                    $(Schools).show(1000);
+                    $(allChoices).fadeTo("slow", 1, function () { });
+                });
+            });
+        });
+    </script>
+
+
+}
+

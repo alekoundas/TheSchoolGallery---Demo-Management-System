@@ -1420,7 +1420,6 @@
     <Content Include="Skopia\Build\Skopia.wasm.framework.unityweb" />
     <Content Include="Views\SkopiaGame\SkopiaGame.cshtml" />
     <Content Include="Scripts\version.json" />
-    <Content Include="Views\Home\_indexMain.cshtml" />
     <Content Include="Views\Painting\_SearchSortFilter.cshtml" />
     <Content Include="UnityGalleryWeb\Build\UnityGalleryWeb.data.unityweb" />
     <Content Include="UnityGalleryWeb\Build\UnityGalleryWeb.json" />
