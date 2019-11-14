@@ -207,7 +207,7 @@ $(document).ready(function () {
     });
 
 
-    //Little Prallaxing ----------------------------------------------->>
+    //Little Prallaxing A ----------------------------------------------->>
     var timeout;
     $('#p_container').mousemove(function (e) {
         if (timeout) clearTimeout(timeout);
@@ -236,6 +236,34 @@ $(document).ready(function () {
         })
     }
 
+    //Little Prallaxing B ----------------------------------------------->>
+    var timeout;
+    $('#p_container2').mousemove(function (e) {
+        if (timeout) clearTimeout(timeout);
+        setTimeout(callParallax2.bind(null, e), 200);
+
+    });
+
+    function callParallax2(e) {
+        parallaxIt2(e, '#slideone2', 20);
+        parallaxIt2(e, '#slidetwo2', 40);
+        parallaxIt2(e, '#slidethree2', 50);
+        parallaxIt2(e, '#slidefour2', 60);
+        parallaxIt2(e, '#slidefive2', 70);
+        parallaxIt2(e, '.p_child2', 20);
+    }
+
+    function parallaxIt2(e, target, movement) {
+        var $this = $('#p_container2');
+        var relX = e.pageX - $this.offset().left;
+        var relY = e.pageY - $this.offset().top;
+
+        TweenMax.to(target, 1, {
+            x: (relX - $this.width() / 2) / $this.width() * movement,
+            y: (relY - $this.height() / 2) / $this.height() * movement,
+            ease: Power2.easeOut
+        })
+    }
 
 
 

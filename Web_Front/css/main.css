@@ -8,6 +8,7 @@
 
 /*#region INITIAL*/
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
 body {
     color: #777;
     font-family: 'Montserrat', sans-serif;
@@ -1909,10 +1910,6 @@ body {
                 color: #fff
             }
 
-.banner-area {
-    background-color: #f3efe9;
-}
-
 
 @media (max-width: 1199px) {
     .banner-left {
@@ -1955,12 +1952,23 @@ body {
     }
 }
 
-.story-content .sp-1 {
-    font-weight: 600
+.sp-1 {
+    font-weight: 600 ;
+    color: #4a4a4a;
+    /*animation of color change application [strong]*/
+    -webkit-animation: Color_Change_Strong 180s infinite;
+    animation: Color_Change_Strong 120s infinite;
+    animation-delay: 2s;
+    -webkit-transition-timing-function: ease-in;
 }
 
-.story-content .sp-2 {
-    color: #666666;
+.sp-2 {
+    color: #4a4a4a;
+    /*animation of color change application [strong]*/
+    -webkit-animation: Color_Change_Strong 180s infinite;
+    animation: Color_Change_Strong 120s infinite;
+    animation-delay: 2s;
+    -webkit-transition-timing-function: ease-in;
     font-weight: 600
 }
 
@@ -3023,7 +3031,6 @@ iframe {
 
 .login100-form-title {
     display: block;
-    font-family: OpenSans-Regular;
     font-size: 30px;
     color: #555555;
     line-height: 1.2;
@@ -3853,7 +3860,7 @@ section hr {
 .sideFrameD h1, .sideFrameD h2, .sideFrameD h3, .sideFrameD h4, .sideFrameD h5 {
     color: #5c5c5c;
     text-shadow: none;
-    margin-bottom:2px;
+    margin-bottom: 2px;
 }
 
 .wrap-studentAvatar {
@@ -3929,8 +3936,8 @@ h1, h2, h3, h4, h5 {
 
 /*#region MODAL*/
 
-#openit:hover, #closeit:hover{
-    cursor:pointer;
+#openit:hover, #closeit:hover {
+    cursor: pointer;
 }
 
 
@@ -3941,7 +3948,7 @@ h1, h2, h3, h4, h5 {
     width: 100%;
     height: 70px;
     z-index: -1;
-    opacity:0;
+    opacity: 0;
     background-color: rgba(243, 239, 233, 0.50);
     box-shadow: 3px 3px 18px rgba(0, 0, 0, 0.4);
 }
@@ -4047,7 +4054,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .mamaContainer {
-    display:block;
+    display: block;
     width: 400px;
     height: 400px;
     border: 20px solid #f3efe9;
@@ -4060,27 +4067,30 @@ h1, h2, h3, h4, h5 {
     height: 380px;
 }
 
-.listAcceptImage li{
-    position:absolute;
-    top:-10px;
-    left:-10px;
-    width: 380px;
-    height: 380px;
-}
+    .listAcceptImage li {
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        width: 380px;
+        height: 380px;
+    }
 
-.listAcceptImage li img{
-    width: 380px;
-    height: 380px;
-}
+        .listAcceptImage li img {
+            width: 380px;
+            height: 380px;
+        }
 
 .AvatarElements {
-    width:120px;
-    height:120px;
+    width: 120px;
+    height: 120px;
     border: 1px dotted #5c5c5c;
-    margin-bottom:25px;
+    margin-bottom: 25px;
 }
 
 /*#endregion AVATAR*/
+
+
+/*#region HOME*/
 
 @font-face {
     font-family: 'Sweet Hipster';
@@ -4093,11 +4103,11 @@ h1, h2, h3, h4, h5 {
     position: relative;
     width: 100%;
     height: 600px;
-    border:12px solid #f3efe9;
+    border: 12px solid #f3efe9;
     background: #f3efe9;
     overflow: hidden;
     box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
-    transition:1s;
+    transition: 1s;
 }
 
 .threePanelsHidden {
@@ -4109,9 +4119,9 @@ h1, h2, h3, h4, h5 {
     transition: 1s;
 }
 
-#secondAppear{
-    opacity:0;
-    transition:1s;
+#secondAppear {
+    opacity: 0;
+    transition: 1s;
 }
 
 #firstAppear {
@@ -4120,7 +4130,7 @@ h1, h2, h3, h4, h5 {
 }
 
 #secondAppear:hover {
-    cursor:pointer;
+    cursor: pointer;
     opacity: 1;
     transition: 1s;
 }
@@ -4192,10 +4202,55 @@ h1, h2, h3, h4, h5 {
     animation: Color_Change_Background 120s infinite;
     animation-delay: 6s;
     -webkit-transition-timing-function: ease-in;
-
 }
 
     #retuBtn:hover {
         cursor: pointer;
-
     }
+
+
+
+
+.bannerakiaIntroPage {
+    position: relative;
+    width: 100%;
+    height: 360px;
+    min-height: 320px;
+    max-width: 580px;    
+    margin:50px;
+    overflow: hidden;
+    box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
+    border: 15px solid #f3efe9;
+}
+
+.bannerakiA {
+    background: #7dc7d0;
+}
+
+.bannerakiB {
+    background: #eac787;
+}
+
+.BannerakiaSide {
+    position: relative;
+    width: 100%;
+    height: 360px;
+    min-height: 320px;
+    margin: 50px;
+    padding: 50px;
+    overflow: hidden;
+    
+}
+
+.dottedBannerakiA {
+    border: 2px dotted #61bbc6;
+    border-right:none;
+}
+
+.dottedBannerakiB {
+    border: 2px dotted #d19068;
+    border-left: none;
+}
+
+
+/*#endregion HOME*/

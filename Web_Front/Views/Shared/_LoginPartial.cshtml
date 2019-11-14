@@ -41,15 +41,14 @@
                                     <a title="Settings" href="@Url.Action("Index", "Roles")"><img src="~/images/UIcons/gears.png" /></a>
                                 </div>
                             </div>
-
                         }
 
                         <div class="btn_contain4 col-1">
                             <div class="btn_child_norm4">
-                                <a title="Home" href="@Url.Action("Index", "Home")"><img src="~/images/UIcons/paintings_off.png" /></a>
+                                <a title="Home" href="@Url.Action("Index", "Home")"><img src="~/images/UIcons/schools_off.png" /></a>
                             </div>
                             <div class="btn_child_live4">
-                                <a title="Home" href="@Url.Action("Index", "Home")"><img src="~/images/UIcons/paintings.png" /></a>
+                                <a title="Home" href="@Url.Action("Index", "Home")"><img src="~/images/UIcons/schoolspng.png" /></a>
                             </div>
                         </div>
 
@@ -67,9 +66,7 @@
                             <a style="font-size:24px;">cart is empty)</a>
                         </div>
 
-
                     </div>
-
                 </div>
             </div>
         </div>
@@ -77,22 +74,48 @@
 }
 else
 {
-    <div class="container col-2 float-left">
+
+    <div class="container">
         <div class="row">
-            <div class="btn_contain1 col">
-                <div class="btn_child_norm1">
-                    <a title="LogIn" href="@Url.Action("Login", "Account")"><img src="~/images/UIcons/login.png" /></a>
-                </div>
-                <div class="btn_child_live1">
-                    <a title="LogIn" href="@Url.Action("Login", "Account")"><img src="~/images/UIcons/login_on.png" /></a>
-                </div>
+
+            <div style="margin-top:15px;" class="col navigationTitle text-center">
+                <a href="@Url.Action("About", "Home")">(The School Gallery)</a>
             </div>
-            <div class="btn_contain2 col">
-                <div class="btn_child_norm2">
-                    <a title="Register" href="@Url.Action("Register", "Account")"><img src="~/images/UIcons/register.png" /></a>
-                </div>
-                <div class="btn_child_live2">
-                    <a title="Register" href="@Url.Action("Register", "Account")"><img src="~/images/UIcons/register_on.png" /></a>
+
+            <div class="col float-right">
+                <div class="row">
+
+                    <div class="btn_contain1 col-1">
+                        <div class="btn_child_norm1">
+                            <a title="LogIn" href="@Url.Action("Login", "Account")"><img src="~/images/UIcons/login.png" /></a>
+                        </div>
+                        <div class="btn_child_live1">
+                            <a title="LogIn" href="@Url.Action("Login", "Account")"><img src="~/images/UIcons/login_on.png" /></a>
+                        </div>
+                    </div>
+                    <div class="btn_contain2 col-1">
+                        <div class="btn_child_norm2">
+                            <a title="Register" href="@Url.Action("Register", "Account")"><img src="~/images/UIcons/register.png" /></a>
+                        </div>
+                        <div class="btn_child_live2">
+                            <a title="Register" href="@Url.Action("Register", "Account")"><img src="~/images/UIcons/register_on.png" /></a>
+                        </div>
+                    </div>
+
+                    <div class="btn_contain4 col-1">
+                        <div class="btn_child_norm4">
+                            <a title="Home" href="@Url.Action("Index", "Home")"><img src="~/images/UIcons/schools_off.png" /></a>
+                        </div>
+                        <div class="btn_child_live4">
+                            <a title="Home" href="@Url.Action("Index", "Home")"><img src="~/images/UIcons/schoolspng.png" /></a>
+                        </div>
+                    </div>
+
+                    <!-- Cart Indication --------------------------- -->
+                    <div style="margin-left:14px; margin-top:15px;" class="navigationTitle text-center">
+                        <a style="font-size:24px;">Please Log-In)</a>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -100,6 +123,12 @@ else
 
 
 
+
+
+
+
+
+
+
+
 }
-@*When SCROLL, white out the background on top ------------------------------>> *@
-@*<div id="Whitted_nav"></div>*@
