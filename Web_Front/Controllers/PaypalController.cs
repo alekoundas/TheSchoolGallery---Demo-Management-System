@@ -3,13 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Net;
 using System.Net.Mail;
 using System.Web.Mvc;
 using Web_DomainClasses.Entities.School;
 using Web_Front.Models;
 using Web_Front.Models.Paypal;
 using Web_Services.ApiMapping;
+using Web_Services.Mail;
+
 namespace Web_Front.Controllers
 {
     public class PayPalController : MasterController
@@ -21,6 +22,7 @@ namespace Web_Front.Controllers
         // GET: PayPal
         public ActionResult Index()
         {
+            
             List<Item> CartList = Session["CartList"] as List<Item>;
             return View("Index", CartList);
         }
@@ -45,6 +47,7 @@ namespace Web_Front.Controllers
                 price = painting.Price.ToString(),
                 quantity = "1",
                 sku = "sku",
+                description = painting.PaintingId.ToString()
             };
             if (CartList.Any(x => x.name == item.name && x.price == item.price))
             {
@@ -63,7 +66,6 @@ namespace Web_Front.Controllers
 
         public ActionResult PayPalPayment(string UserId)
         {
-            Session["UserId"] = UserId;
             try
             {
                 var apiContext = PaypalConfiguration.GetAPIContext();
@@ -142,6 +144,7 @@ namespace Web_Front.Controllers
 
                     // saving the paymentID in the key guid
                     Session.Add(guid, createdPayment.id);
+                    Session.Add("UserId", UserId);
 
                     return Redirect(paypalRedirectUrl);
                 }
@@ -177,7 +180,9 @@ namespace Web_Front.Controllers
             var user = db.Users.Where(x => x.Id == userid).FirstOrDefault();
 
             //Send Email With Painting On Success Payment to User Email
-            SendEmail(user.Email);
+            //Get ids from decription and give them as a list of strings
+            List<Item> CartList = Session["CartList"] as List<Item>;
+            SendEmail(user.Email, CartList.Select(x=>x.description).ToList());
 
             //Empty Session Storage From Cart Items On Success Payment
             Session["CartList"] = null;
@@ -187,48 +192,14 @@ namespace Web_Front.Controllers
         }
 
 
-        public static void SendEmail(string RecieverEmail)
+        public static void SendEmail(string recieverEmail,List<string> paintingIDs)
         {
-            EmailBusiness ServiceMail = new EmailBusiness();
-            ServiceMail.to = new MailAddress(RecieverEmail, "Administrator");
-            ServiceMail.body = "ppppppppppppp";
-            ServiceMail.ToAdmin();
-        }
-    }
-    public class EmailBusiness
-    {
-        public MailAddress to { get; set; }
-        public MailAddress from { get; set; }
-        public string sub { get; set; }
-        public string body { get; set; }
+            CustomEmailService mail = new CustomEmailService();
 
-        //Constructor
-        public EmailBusiness()
-        {
-            from = new MailAddress("GallerySchoolDonationSite@hotmail.com");
-            sub = "Donation To Schools";
+            mail.to = new MailAddress(recieverEmail);
+            mail.CreateAttachments(paintingIDs);
+            mail.SendMail();
         }
 
-
-        public void ToAdmin()
-        {
-            EmailBusiness me = new EmailBusiness();
-
-            MailMessage Mail = new MailMessage() { Subject = sub, Body = body, IsBodyHtml = true };
-            Mail.To.Add(to);
-            Mail.From = new MailAddress(from.ToString());
-            Mail.Sender = to;
-
-
-            SmtpClient smtp = new SmtpClient
-            {
-                Host = "pod51014.outlook.com",
-                Port = 587,
-                Credentials = new NetworkCredential("GallerySchoolDonationSite@hotmail.com", "1Gallery2School3Donation4Site5"),
-                EnableSsl = true
-            };
-
-            smtp.Send(Mail);
-        }
     }
 }
