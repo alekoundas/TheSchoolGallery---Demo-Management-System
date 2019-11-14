@@ -306,4 +306,5 @@
 </script>
 
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCucoJw77Lpe1D97ZE4Nin_yakyZ_npPgs&libraries=places&callback=initMap" async defer></script>
+<script src="@System.Configuration.ConfigurationManager.AppSettings["GMapsUrl"].ToString()" async defer></script>
+@*Get Link from Web.config*@

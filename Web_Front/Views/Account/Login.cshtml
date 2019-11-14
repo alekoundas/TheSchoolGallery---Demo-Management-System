@@ -120,7 +120,7 @@
 
             //Set reCAPTCHA attributes
             grecaptcha.render('reCAPTCHA_V2', {
-                'sitekey': '6Lcc_sEUAAAAAML6tLKE_q9S2vs10BhDSU_mTPWv',
+                'sitekey': '@System.Configuration.ConfigurationManager.AppSettings["sitekey"].ToString()',//Get value from Web.config
                 'theme': 'dark',    //light
                 'size': 'normal',     //compact
                 'callback': verifyCallback,

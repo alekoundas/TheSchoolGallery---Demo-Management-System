@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
@@ -55,13 +56,13 @@ namespace Web_Front
             //   consumerSecret: "");
 
             app.UseFacebookAuthentication(
-               appId: "356477281769369",
-               appSecret: "424764fd3523cf144ece18e6ba6b2442");
+               appId: ConfigurationManager.AppSettings["FacebookClientId"], 
+               appSecret: ConfigurationManager.AppSettings["FacebookClientSecret"]);
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
-                ClientId = "1014210418853-iboab50ih0d36smg2urn0784lfthgf4l.apps.googleusercontent.com",
-                ClientSecret = "aB0OvZg2wYJe58Tz_v1sasdw"
+                ClientId = ConfigurationManager.AppSettings["GoogleClientId"],
+                ClientSecret = ConfigurationManager.AppSettings["GoogleClientSecret"]
             });
         }
     }

@@ -2,6 +2,7 @@
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,8 @@ namespace Web_Services.ApiMapping.Authentication
         //              Method:POST                 \\
         public bool ValidateUserResponse(string recaptcha_response)
         {
-            string secret = "secret=6Lcc_sEUAAAAAOlbrK_gK8DRI0TNYZmWMjpk-08Y";
+
+            string secret =  ConfigurationManager.AppSettings["SecretKEY"];//Get Pass from Web.config
             recaptcha_response = "response=" + recaptcha_response;
 
             //Create Client
