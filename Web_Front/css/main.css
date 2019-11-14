@@ -8,10 +8,11 @@
 
 /*#region INITIAL*/
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Reem+Kufi&display=swap');
 
 body {
     color: #777;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Reem Kufi', sans-serif;
     font-size: 14px;
     font-weight: 300;
     line-height: 1.5em;
@@ -3303,7 +3304,6 @@ input.inputchat {
     width: 100%;
     height: auto;
     min-height: 530px;
-    background: #fff;
     overflow: hidden;
     box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
     border: 15px solid #f3efe9;
@@ -4229,6 +4229,15 @@ h1, h2, h3, h4, h5 {
 
 .bannerakiB {
     background: #eac787;
+}
+
+.bannerakiC {
+    background: rgba(64, 64, 64, 0.50);
+    /*animation of color change application [background]*/
+    -webkit-animation: Color_Change_Background 180s infinite;
+    animation: Color_Change_Background 120s infinite;
+    animation-delay: 6s;
+    -webkit-transition-timing-function: ease-in;
 }
 
 .BannerakiaSide {
