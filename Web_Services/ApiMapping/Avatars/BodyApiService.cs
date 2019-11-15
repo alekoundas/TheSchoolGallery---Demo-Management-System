@@ -2,6 +2,7 @@
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace Web_Services.ApiMapping.Avatars
 {
     public class BodyApiService
     {
-        const string Url = "https://localhost:44300/api/Avatar/Body";
+        private string Url = ConfigurationManager.AppSettings["WebApiHost"] + "/api/Avatar/Body";
 
         public List<AvatarBody> GetBodys()
         {

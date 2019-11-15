@@ -20,7 +20,7 @@ namespace Web_Services.ApiMapping.Authentication
         public bool ValidateUserResponse(string recaptcha_response)
         {
 
-            string secret =  ConfigurationManager.AppSettings["SecretKEY"];//Get Pass from Web.config
+            string secret =  ConfigurationManager.AppSettings["SecretKEY"];//Get Secret from Web.config
             recaptcha_response = "response=" + recaptcha_response;
 
             //Create Client

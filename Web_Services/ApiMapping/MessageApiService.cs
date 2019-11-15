@@ -2,6 +2,7 @@
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace Web_Services.ApiMapping
 {
     public class MessageApiService
     {//Constant Url To WebApi
-        const string Url = "https://localhost:44300/api/MessageHistory";
+        private string Url = ConfigurationManager.AppSettings["WebApiHost"] + "/api/MessageHistory";
 
 
          //                GET All MessageHistorys                   \\

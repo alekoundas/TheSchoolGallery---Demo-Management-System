@@ -546,6 +546,7 @@
     <Content Include="Scripts\angular-cookies.min.js.map" />
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
+    <None Include="Properties\PublishProfiles\SchoolGallery - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
@@ -1401,7 +1402,6 @@
     <Content Include="Views\School\Edit.cshtml" />
     <Content Include="Views\School\Index.cshtml" />
     <Content Include="Views\Shared\_Navigation_Admin.cshtml" />
-    <Content Include="Views\Account\_test.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Error\404.cshtml" />
     <Content Include="Views\Home\_Canvas.cshtml" />
@@ -1421,12 +1421,12 @@
     <Content Include="Views\SkopiaGame\SkopiaGame.cshtml" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Painting\_SearchSortFilter.cshtml" />
-    <Content Include="UnityGalleryWeb\Build\UnityGalleryWeb.data.unityweb" />
-    <Content Include="UnityGalleryWeb\Build\UnityGalleryWeb.json" />
-    <Content Include="UnityGalleryWeb\Build\UnityGalleryWeb.wasm.code.unityweb" />
-    <Content Include="UnityGalleryWeb\Build\UnityGalleryWeb.wasm.framework.unityweb" />
     <Content Include="Views\Roles\Index.cshtml" />
     <Content Include="Views\Roles\Edit.cshtml" />
+    <Content Include="UnityGalleryWeb\Build\TheSchoolGalleryWeb.data.unityweb" />
+    <Content Include="UnityGalleryWeb\Build\TheSchoolGalleryWeb.json" />
+    <Content Include="UnityGalleryWeb\Build\TheSchoolGalleryWeb.wasm.code.unityweb" />
+    <Content Include="UnityGalleryWeb\Build\TheSchoolGalleryWeb.wasm.framework.unityweb" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

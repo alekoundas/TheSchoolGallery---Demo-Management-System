@@ -182,13 +182,13 @@
                     $('#SelectedBackgroundID').val(elementIdArr[2]);
                     break;
                 case 'body':
-                    $('#SelectedHairID').val(elementIdArr[2]);
-                    break;
-                case 'cloth':
                     $('#SelectedBodyID').val(elementIdArr[2]);
                     break;
-                case 'hair':
+                case 'cloth':
                     $('#SelectedClothingID').val(elementIdArr[2]);
+                    break;
+                case 'hair':
+                    $('#SelectedHairID').val(elementIdArr[2]);
                     break;
                 default:
             }
@@ -223,8 +223,8 @@
             dropTargets.forEach(initDrop);
         }
         window.addEventListener("DOMContentLoaded", initTasksBoard);
-                   // CAROUSEL ------------------------------------------>>
-                   // It is all bootstrap
+                       // CAROUSEL ------------------------------------------>>
+                       // It is all bootstrap
     </script>
 
 

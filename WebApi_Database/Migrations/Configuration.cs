@@ -389,7 +389,7 @@
 
             context.SchoolsDb.AddOrUpdate(sh01);
             context.SchoolsDb.AddOrUpdate(sh02);
-            //context.SchoolsDb.AddOrUpdate(sh03);//has error!!! DONT RUN
+            context.SchoolsDb.AddOrUpdate(sh03);//<--Previously it had error...beta uncomment this on 15-November
             context.SchoolsDb.AddOrUpdate(sh04);
 
             context.SaveChanges();

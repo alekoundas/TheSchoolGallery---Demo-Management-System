@@ -2,6 +2,7 @@
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace Web_Services.ApiMapping
     public class SchoolApiService
     {
         //Constant Url To WebApi
-        const string Url = "https://localhost:44300/api/School";
+        private string Url = ConfigurationManager.AppSettings["WebApiHost"] + "/api/School";
 
 
         //                GET All Schools                    \\

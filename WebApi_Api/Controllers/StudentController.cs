@@ -12,23 +12,27 @@ using System.Web.Http.Description;
 using WebApi_Database;
 using WebApi_Entities;
 using WebApi_Entities.School;
+using WebApi_Services;
 
 namespace WebApi_Api.Controllers
 {
     public class StudentController : ApiController
     {
         private GalleryDbContext db = new GalleryDbContext();
-
+        ServiceClearExtraData ServiceMaid = new ServiceClearExtraData();
         // GET: api/Student
         public IQueryable<Student> GetStudentDb()
         {
-            return db.StudentDb
+            IQueryable<Student> students = db.StudentDb
                 .Include(x => x.Avatar.Background)
                 .Include(x => x.Avatar.Hair)
                 .Include(x => x.Avatar.Body)
                 .Include(x => x.Avatar.Clothing)
                 .Include(y => y.Classroom.School)
                 .Include(z => z.Paintings);
+
+            ServiceMaid.CleanStudents(students);
+            return students;
         }
 
         // GET: api/Student/5
@@ -49,7 +53,7 @@ namespace WebApi_Api.Controllers
             {
                 return NotFound();
             }
-
+            ServiceMaid.CleanStudent(student);
             return Ok(student);
         }
 

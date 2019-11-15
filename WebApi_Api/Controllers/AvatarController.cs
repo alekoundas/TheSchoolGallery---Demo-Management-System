@@ -98,6 +98,8 @@ namespace WebApi_Api.Controllers
                 return BadRequest(ModelState);
             }
 
+
+
             if (id != avatar.AvatarId)
             {
                 return BadRequest();
