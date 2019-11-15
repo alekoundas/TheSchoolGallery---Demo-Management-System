@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using RestSharp;
 using System.Collections.Generic;
+using System.Configuration;
 using Web_DomainClasses.Entities.Avatar;
 using Web_DomainClasses.ViewModels;
 
@@ -8,7 +9,7 @@ namespace Web_Services.ApiMapping.Avatars
 {
     public  class AvatarApiService
     {
-        const string Url = "https://localhost:44300/api/Avatar";
+        private string Url = ConfigurationManager.AppSettings["WebApiHost"] +"/api/Avatar";
         public List<Avatar> GetAvatars()
         {
             RestClient client = new RestClient(Url);

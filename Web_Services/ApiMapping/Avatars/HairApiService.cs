@@ -1,13 +1,14 @@
 ﻿using Newtonsoft.Json;
 using RestSharp;
 using System.Collections.Generic;
+using System.Configuration;
 using Web_DomainClasses.Entities.Avatar;
 
 namespace Web_Services.ApiMapping.Avatars
 {
     public class HairApiService
     {
-                const string Url = "https://localhost:44300/api/Avatar/Hair";
+        private string Url = ConfigurationManager.AppSettings["WebApiHost"] + "/api/Avatar/Hair";
 
         public List<AvatarHair> GetHairs()
         {
