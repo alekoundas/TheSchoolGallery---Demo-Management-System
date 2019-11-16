@@ -141,7 +141,11 @@ namespace Web_Front.Controllers
 
 
 
-
+        // GET: C#
+        public ActionResult classSharp()
+        {
+            return View();
+        }
 
 
 

@@ -7,15 +7,13 @@
 <div class="limiter">
     <div class="container-login100">
         <div class="container">
-            <br />
-            <br />
             <div class="row">
                 <div class="col-md-8 mx-auto">
-                    <div class="wrap-login100">
-                        <div class="paintingInfoD">
-                            <span class="login100-form-title p-b-33">
-                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                Cart
+                    <div class="">
+                        <div class="sideImage">
+                            <br />
+                            <span style="color:#f3efe9;" class="login100-form-title p-b-33">
+                                Your Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                             </span>
                             <hr />
                             <br />
@@ -57,49 +55,42 @@
                     </div>
                 </div>
 
-                @*Create Something side Parallax*@
                 <div class="col-md-4 mx-auto">
                     <div class="sideImage" id="p_container">
                         <img style="right:20px; bottom:200px; border:4px solid #bababa; width:80%; box-shadow:1px 1px 20px 10px rgba(0,0,0,0.1);" class="stackImages P_child" id="slidetwo" src="~/images/white-paper-texture.jpg">
                         <img style="left:-300px; bottom:20px; width:900px" class="stackImages p_child" id="slideone" src="~/images/parallax/gallery_boi.png">
+                        <div class="btn_contain2 col">
+                            <div class="btn_child_norm2">
+                                <a title="clear Cart" href="@Url.Action("ClearCart", "PayPal")"><img src="~/images/UIcons/delete_off.png" /></a>
+                            </div>
+                            <div class="btn_child_live2">
+                                <a title="clear Cart" href="@Url.Action("ClearCart", "PayPal")"><img src="~/images/UIcons/delete.png" /></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
 
+                <div class="col-md-12">
+                    <div id="p_container">
+                        <div class="btn_contain1 col">
+                            <div class="btn_child_norm1">
+                                <a title="Purchase" href="@Url.Action("PayPalPayment", "PayPal")"><img style="width:220px; border:1px dotted #5c5c5c;" src="~/images/bannerakia/Bannerakia_1_money.png" /></a>
+                            </div>
+                            <div class="btn_child_live1">
+                                <a style="color:#f3efe9; font-size:24px;" title="Purchase" href="@Url.Action("PayPalPayment", "PayPal",new {UserId= User.Identity.GetUserId()})"><img style="width:220px; border:1px solid #5c5c5c; background-color:#f3efe9;" src="~/images/bannerakia/Bannerakia_1_money.png" /> Purchase </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-
             </div>
         </div>
+
         <script>
-                    var user = UserManager.FindById(User.Identity.GetUserId()).Email;
-        var email = user.Email;
+            var user = UserManager.FindById(User.Identity.GetUserId()).Email;
+            var email = user.Email;
         </script>
-
-
-        <!-- Section - Links ---------------------------------------->
-        <div style="height:180px;" class="container col-6">
-            <hr />
-            <br />
-            <div class="row">
-                <div class="btn_contain1 col">
-                    <div class="btn_child_norm1">
-                        <a href="@Url.Action("PayPalPayment", "PayPal")"><img src="~/images/UIcons/cart_off.png" /></a>
-                    </div>
-                    <div class="btn_child_live1">
-                        <a style="color:#f3efe9" href="@Url.Action("PayPalPayment", "PayPal",new {UserId= User.Identity.GetUserId()})"><img src="~/images/UIcons/cart.png" /> Purchase </a>
-                    </div>
-                </div>
-
-                <div class="btn_contain2 col">
-                    <div class="btn_child_norm2">
-                        <a href="@Url.Action("ClearCart", "PayPal")"><img src="~/images/UIcons/cart_off.png" /></a>
-                    </div>
-                    <div class="btn_child_live2">
-                        <a style="color:#f3efe9" href="@Url.Action("ClearCart", "PayPal")"><img src="~/images/UIcons/delete.png" /> clear cart </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
 </div>
 

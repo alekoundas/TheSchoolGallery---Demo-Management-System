@@ -14,6 +14,43 @@
 
     <div class="container-fluid">
         <div class="row">
+            <!-- Create New - Search/Filter ------------------------------------------>
+            <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <div class="row">
+                                <div class="col-3">
+                                    <img style="margin-top:-12px;" src="~/images/UIcons/schoolspng.png" />
+                                </div>
+                                <div class="col-9">
+                                    <h4>@Html.ActionLink("Create New", "Create", null, new { @class = "h4" })</h4>
+                                </div>
+                            </div>
+
+                        }
+                    </div>
+                    <div class="col-7">
+                        @using (Html.BeginForm())
+                        {
+                            <div class="row mx-auto">
+                                <div class="col-6 mx-0 wrap-avabox text-center">
+                                    @Html.TextBox("SearchString", null, new { @class = "inputchat", placeholder = "Filter" })
+                                </div>
+                                <div class="col-4 mx-0 container-login100-form-btn">
+                                    <input type="submit" value="Search" class="login10-form-btn" />
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <div class="col-1">
+                        <img style="margin-top:-20px; width:80px;" src="~/images/filter.png" />
+                    </div>
+                    <hr />
+                </div>
+            </div>
+
 
             <!-- SECTION Schools ------------------------------------- -->
             <div class="col-12 d-flex justify-content-center align-items-center">

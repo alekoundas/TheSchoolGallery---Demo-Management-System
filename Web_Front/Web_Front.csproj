@@ -308,6 +308,24 @@
     <Content Include="images\Avatar\body_07.png" />
     <Content Include="images\Avatar\body_08.png" />
     <Content Include="images\Avatar\body_09.png" />
+    <Content Include="images\Avatar\Class\Alex.png" />
+    <Content Include="images\Avatar\Class\Artemis.png" />
+    <Content Include="images\Avatar\Class\Ektoras.png" />
+    <Content Include="images\Avatar\Class\Giorgos2.png" />
+    <Content Include="images\Avatar\Class\Giorgos3.png" />
+    <Content Include="images\Avatar\Class\Grigoris.png" />
+    <Content Include="images\Avatar\Class\Ioannis.png" />
+    <Content Include="images\Avatar\Class\Josef.png" />
+    <Content Include="images\Avatar\Class\Kostis.png" />
+    <Content Include="images\Avatar\Class\Mairy.png" />
+    <Content Include="images\Avatar\Class\Mario.png" />
+    <Content Include="images\Avatar\Class\Mpampis.png" />
+    <Content Include="images\Avatar\Class\Nikos.png" />
+    <Content Include="images\Avatar\Class\Ralou.png" />
+    <Content Include="images\Avatar\Class\Stauros.png" />
+    <Content Include="images\Avatar\Class\Stelios.png" />
+    <Content Include="images\Avatar\Class\Vlassis.png" />
+    <Content Include="images\Avatar\Class\YioCho.png" />
     <Content Include="images\Avatar\clothes_01.png" />
     <Content Include="images\Avatar\clothes_02.png" />
     <Content Include="images\Avatar\clothes_03.png" />
@@ -1318,19 +1336,6 @@
     <Content Include="Scripts\test-bundles\angular-route.js" />
     <Content Include="Scripts\test-bundles\angular-sanitize.js" />
     <Content Include="Scripts\test-bundles\angular-touch.js" />
-    <Content Include="Skopia\Build\UnityLoader.js" />
-    <Content Include="Skopia\index.html" />
-    <Content Include="Skopia\TemplateData\favicon.ico" />
-    <Content Include="Skopia\TemplateData\fullscreen.png" />
-    <Content Include="Skopia\TemplateData\progressEmpty.Dark.png" />
-    <Content Include="Skopia\TemplateData\progressEmpty.Light.png" />
-    <Content Include="Skopia\TemplateData\progressFull.Dark.png" />
-    <Content Include="Skopia\TemplateData\progressFull.Light.png" />
-    <Content Include="Skopia\TemplateData\progressLogo.Dark.png" />
-    <Content Include="Skopia\TemplateData\progressLogo.Light.png" />
-    <Content Include="Skopia\TemplateData\style.css" />
-    <Content Include="Skopia\TemplateData\UnityProgress.js" />
-    <Content Include="Skopia\TemplateData\webgl-logo.png" />
     <Content Include="UnityGalleryWeb\Build\UnityLoader.js" />
     <Content Include="UnityGalleryWeb\index.html" />
     <Content Include="UnityGalleryWeb\TemplateData\favicon.ico" />
@@ -1424,10 +1429,6 @@
     <Content Include="Views\Avatar\Details.cshtml" />
     <Content Include="Views\Avatar\Edit.cshtml" />
     <Content Include="Views\Avatar\Index.cshtml" />
-    <Content Include="Skopia\Build\Skopia.data.unityweb" />
-    <Content Include="Skopia\Build\Skopia.json" />
-    <Content Include="Skopia\Build\Skopia.wasm.code.unityweb" />
-    <Content Include="Skopia\Build\Skopia.wasm.framework.unityweb" />
     <Content Include="Views\SkopiaGame\SkopiaGame.cshtml" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Painting\_SearchSortFilter.cshtml" />
@@ -1437,10 +1438,13 @@
     <Content Include="UnityGalleryWeb\Build\TheSchoolGallery3D.json" />
     <Content Include="UnityGalleryWeb\Build\TheSchoolGallery3D.wasm.code.unityweb" />
     <Content Include="UnityGalleryWeb\Build\TheSchoolGallery3D.wasm.framework.unityweb" />
+    <Content Include="Views\Classroom\classSharp.cshtml" />
+    <Content Include="Views\Classroom\_classC.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="images\schools\" />
+    <Folder Include="Skopia\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.min.css.map" />

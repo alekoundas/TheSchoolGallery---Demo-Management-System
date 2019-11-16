@@ -5,39 +5,43 @@
 }
 
 
-<div class="feature-area pt-10 pb-10  relative">
-    <div class="container">
-        <div class="row">
-            <h2 class="col-md-6">
-
-                <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                @Html.ActionLink("Create New", "Create")
-
-                @*@if (User.IsInRole("admin"))
-                    {
-                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                        @Html.ActionLink("Create New", "Create")
-                    }*@
-
-            </h2>
-            <div class="col-md-6">
-                @using (Html.BeginForm())
-                {
-                    <p>
-                        Find by Name: @Html.TextBox("SearchString")
-                        <input class="btn btn-large" type="submit" value="Search" />
-                    </p>
-                }
-            </div>
-        </div>
-    </div>
-
-</div>
-
 <section class="feature-area pt-100 pb-100  relative">
     <div class="overlay overlay-bg"></div>
     <div class="container">
         <div class="row">
+            <!-- Create New - Search/Filter ------------------------------------------>
+            <div class="col-4">
+                @if (User.IsInRole("Admin"))
+                {
+                    <div class="row">
+                        <div class="col-3">
+                            <img style="margin-top:-12px;" src="~/images/UIcons/paintings.png" />
+                        </div>
+                        <div class="col-9">
+                            <h4>@Html.ActionLink("Create New", "Create", null, new { @class = "h4" })</h4>
+                        </div>
+                    </div>
+
+                }
+            </div>
+            <div class="col-7">
+                @using (Html.BeginForm())
+                {
+                    <div class="row mx-auto">
+                        <div class="col-6 mx-0 wrap-avabox text-center">
+                            @Html.TextBox("SearchString", null, new { @class = "inputchat", placeholder = "Filter" })
+                        </div>
+                        <div class="col-4 mx-0 container-login100-form-btn">
+                            <input type="submit" value="Search" class="login10-form-btn" />
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="col-1">
+                <img style="margin-top:-20px; width:80px;" src="~/images/filter.png" />
+            </div>
+            <hr />
+
             @foreach (var item in Model)
             {
                 <div class="col-lg-4 col-sm-6 align-items-stretch">
@@ -67,28 +71,26 @@
                             <div class="row">
                                 <div class="btn_contain1 col">
                                     <div class="btn_child_norm1">
-                                        <a href="@Url.Action("Edit", "Painting", new { id = item.PaintingId })"><img src="~/images/UIcons/edit_off.png" /></a>
+                                        <a title="edit" href="@Url.Action("Edit", "Painting", new { id = item.PaintingId })"><img src="~/images/UIcons/edit_off.png" /></a>
                                     </div>
                                     <div class="btn_child_live1">
-                                        <a style="color:#f3efe9" href="@Url.Action("Edit", "Painting", new { id = item.PaintingId })"><img src="~/images/UIcons/edit.png" /> edit </a>
+                                        <a title="edit" href="@Url.Action("Edit", "Painting", new { id = item.PaintingId })"><img src="~/images/UIcons/edit.png" /></a>
                                     </div>
                                 </div>
-
                                 <div class="btn_contain2 col">
                                     <div class="btn_child_norm2">
-                                        <a href="@Url.Action("Details", "Painting", new { id = item.PaintingId })"><img src="~/images/UIcons/details_off.png" /></a>
+                                        <a title="details" href="@Url.Action("Details", "Painting", new { id = item.PaintingId })"><img src="~/images/UIcons/details_off.png" /></a>
                                     </div>
                                     <div class="btn_child_live2">
-                                        <a style="color:#f3efe9" href="@Url.Action("Details", "Painting", new { id = item.PaintingId })"><img src="~/images/UIcons/details.png" /> details </a>
+                                        <a title="details" href="@Url.Action("Details", "Painting", new { id = item.PaintingId })"><img src="~/images/UIcons/details.png" /></a>
                                     </div>
                                 </div>
-
                                 <div class="btn_contain3 col">
                                     <div class="btn_child_norm3">
-                                        <a href="@Url.Action("Delete", "Painting", new { id = item.PaintingId })"><img src="~/images/UIcons/delete_off.png" /></a>
+                                        <a title="delete" vhref="@Url.Action("Delete", "Painting", new { id = item.PaintingId })"><img src="~/images/UIcons/delete_off.png" /></a>
                                     </div>
                                     <div class="btn_child_live3">
-                                        <a style="color:#f3efe9" href="@Url.Action("Delete", "Painting", new { id = item.PaintingId })"><img src="~/images/UIcons/delete.png" /> delete </a>
+                                        <a title="delete" href="@Url.Action("Delete", "Painting", new { id = item.PaintingId })"><img src="~/images/UIcons/delete.png" /></a>
                                     </div>
                                 </div>
                             </div>

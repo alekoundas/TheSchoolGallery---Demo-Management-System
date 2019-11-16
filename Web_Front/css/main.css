@@ -3064,6 +3064,17 @@ iframe {
     line-height: 1.2;
 }
 
+.input10 {
+    display: block;
+    width: 80%;
+    background: transparent;
+    font-family: OpenSans-Regular;
+    font-size: 15px;
+    color: #666666;
+    line-height: 1.2;
+    max-height:40px;
+}
+
 .inputchat {
     display: block;
     width: 100%;
@@ -3079,6 +3090,7 @@ input.input100 {
     height: 68px;
     padding: 0 25px 0 25px;
 }
+
 
 input.inputchat {
     height: 38px;
@@ -3226,10 +3238,41 @@ input.inputchat {
     transition: all 0.4s;
 }
 
+.login10-form-btn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    width: 100%;
+    height: auto;
+    background: rgba(64, 64, 64, 0.50);
+    /*animation of color change application [background]*/
+    -webkit-animation: Color_Change_Background 180s infinite;
+    animation: Color_Change_Background 120s infinite;
+    animation-delay: 6s;
+    -webkit-transition-timing-function: ease-in;
+    font-family: OpenSans-Regular;
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
     .login100-form-btn:hover {
         border: 4px solid #f3efe9;
     }
 
+.login10-form-btn:hover {
+    border: 2px solid #f3efe9;
+}
 
 /*------------------------------------------------------------------
 [ Alert validate ]*/
@@ -3736,6 +3779,18 @@ section hr {
     transition-duration: 1s;
 }
 
+.sideFrameSchool {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    background: #f3efe9;
+    overflow: hidden;
+    box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
+    border: 15px solid #dbd7d1;
+
+}
+
     .sideFrameD:hover {
         border: 5px solid #dbd7d1;
         transition-duration: 1s;
@@ -3858,6 +3913,12 @@ section hr {
 }
 
 .sideFrameD h1, .sideFrameD h2, .sideFrameD h3, .sideFrameD h4, .sideFrameD h5 {
+    color: #5c5c5c;
+    text-shadow: none;
+    margin-bottom: 2px;
+}
+
+.sideFrameSchool h1, .sideFrameSchool h2, .sideFrameSchool h3, .sideFrameSchool h4, .sideFrameSchool h5 {
     color: #5c5c5c;
     text-shadow: none;
     margin-bottom: 2px;
@@ -4086,6 +4147,22 @@ h1, h2, h3, h4, h5 {
     border: 1px dotted #5c5c5c;
     margin-bottom: 25px;
 }
+
+
+.dottedFrameClass {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding:20px;
+    overflow: hidden;
+    transition-duration: 1s;
+}
+
+.ClassAva:hover {
+    border: 2px dotted #5c5c5c;
+    transition-duration: 1s;
+}
+
 
 /*#endregion AVATAR*/
 

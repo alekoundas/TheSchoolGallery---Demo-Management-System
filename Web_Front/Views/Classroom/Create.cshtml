@@ -22,10 +22,6 @@
                                 @Html.AntiForgeryToken()
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                                <div class="wrap-avabox text-center">
-                                    @Html.EditorFor(model => model.Classroom.Image, new { htmlAttributes = new { @class = "input100", placeholder = "Image" } })
-                                    @Html.ValidationMessageFor(model => model.Classroom.Image, "", new { @class = "text-danger" })
-                                </div>
                                 <p style="color:#909090">Image File</p>
                                 <div class="wrap-avabox text-center">
                                     @Html.EditorFor(model => model.Classroom.Name, new { htmlAttributes = new { @class = "input100", placeholder = "Name" } })
@@ -80,15 +76,16 @@
                             <input class="login100-form-btn" type="submit" value="Create" />
                         </div>
 
-                        <section id="socialLoginForm" class="text-center">
-                            <br />
-                            <hr />
-                            <div id="dark_back_C">
-                                <a href="@Url.Action("Index", "Classroom")"><img id="iconBtn" src="~/images/UIcons/schools_off.png" /> back to class </a>
-                            </div>
-                        </section>
-                    </div>
 
+                    </div>
+                    <div class="btn_contain1 col-12">
+                        <div class="btn_child_norm1">
+                            <a title="edit" href="@Url.Action("Index", "Classroom")"><img src="~/images/UIcons/edit_off.png" /></a>
+                        </div>
+                        <div class="btn_child_live1">
+                            <a title="edit" href="@Url.Action("Index", "Classroom")"><img src="~/images/UIcons/edit.png" /></a>
+                        </div>
+                    </div>
                 </div>
             }
         </div>

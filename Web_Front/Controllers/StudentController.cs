@@ -23,9 +23,9 @@ namespace Web_Front.Controllers
         SchoolApiService ServiceSchool = new SchoolApiService();
 
         // GET: Student
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            return View(StudentServ.GetStudents());
+            return View(StudentServ.GetStudents(searchString));
         }
 
         // GET: Student/Details/5

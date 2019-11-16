@@ -7,9 +7,6 @@
 <div class="limiter">
     <div class="container-login100">
         <div class="container">
-            <br />
-            <br />
-            <br />
             <div class="row">
                 <div class="col-md-8 mx-auto">
                     <div class="wrap-login100">
@@ -22,19 +19,18 @@
                             <br />
                             <div class="paintingcontainer">
                                 <div style="margin-top:20px" class="text-center">
-                                        <h2>@Html.DisplayFor(model => model.Name)</h2>
-                                        <h5>@Html.DisplayFor(model => model.City)</h5>
-                                        <hr />
-                                        <h3 id="emojiis" class="text-center">
-                                            ˓(ᑊᘩᑊ⁎)
-                                        </h3>                               
+                                    <h2>@Html.DisplayFor(model => model.Name)</h2>
+                                    <h5>@Html.DisplayFor(model => model.City)</h5>
+                                    <hr />
+                                    <h3 id="emojiis" class="text-center">
+                                        ˓(ᑊᘩᑊ⁎)
+                                    </h3>
                                 </div>
                             </div>
                         </div>
                         @using (Html.BeginForm())
                         {
                             @Html.AntiForgeryToken()
-
                             <div class="form-actions no-color">
                                 <div class="container-login100-form-btn m-t-20">
                                     <input class="login100-form-btn" type="submit" value="Delete" />
@@ -49,15 +45,19 @@
                         <img style="bottom:0px" class="stackImages_corr P_child" id="slidetwo" src="~/images/parallax/Portrait_hand_02.png">
                         <img style="bottom:0px" class="stackImages p_child" id="slideone" src="~/images/parallax/Portrait_body_02.png">
                     </div>
+                    <div class="btn_contain3 col">
+                        <div class="btn_child_norm3">
+                            <a title="back to schools" href="@Url.Action("Index", "School")"><img src="~/images/UIcons/schools_off.png" /></a>
+                        </div>
+                        <div class="btn_child_live3">
+                            <a title="back to schools" href="@Url.Action("Index", "School")"><img src="~/images/UIcons/schoolspng.png" /></a>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
-        <section>
-            <hr />
-            <div class="container-login100-form-btn m-t-20">
-                <a style="color:#f3efe9" href="@Url.Action("Index", "School")"><img id="iconBtn" src="~/images/UIcons/schools_off.png" /> back to school </a>
-            </div>
-        </section>
+       
     </div>
 </div>
 

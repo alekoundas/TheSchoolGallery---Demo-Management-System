@@ -20,7 +20,9 @@
         <!-- Section 3A - HIDDEN ------------------------------>
         <div id="HiddenEnter1" class="col-md-6 col-sm-6 mx-auto">
             <div class="threePanelsHidden">
-                <div class="d-flex justify-content-center align-items-center" id="threetext">PlayRoom</div>
+                <a href="@Url.Action("Contact", "Home")">
+                    <div class="d-flex justify-content-center align-items-center" id="threetext">PlayRoom</div>
+                </a>
                 <div class="container">
                     <div class="row align-self-center" style="margin-top:220px; margin-left:50px;">
                         <div class="col-8">
@@ -37,12 +39,11 @@
                         </div>
                     </div>
                 </div>
-            </div>           
+            </div>
         </div>
 
         <!-- Section 1 - Unity Gallery ------------------------------>
         <div id="Unity" class="col-md-3 col-sm-6 mx-auto">
-            @*<a href="~/UnityGalleryWeb/index.html">*@
             <div style="background-color:#8ba0a5;" class="threePanels" id="p_container">
                 <img style="bottom:0px; left:-20px;" class="stackImages p_child" src="~/images/threePanels/panel_A_door.png">
                 <img style="bottom:0px; left:-20px;" class="stackImages P_child" src="~/images/threePanels/panel_A_kid.png">
@@ -127,17 +128,17 @@
 
         <!-- Section 1 - HIDDEN ------------------------------>
         <div id="HiddenUnity" class="col-md-9 col-sm-6 mx-auto">
-            <div class="threePanelsHidden">  
+            <div class="threePanelsHidden">
                 <div class="col-12">
                     <a href="~/UnityGalleryWeb/index.html">
                         <div class="d-flex justify-content-center align-items-center" id="threetext">Enter 3D Gallery</div>
                     </a>
                 </div>
-                <div class="container">                    
+                <div class="container">
                     <div class="row align-self-center" style="margin-top:220px; margin-left:50px;">
                         <div class="col-6">
                             <h4 class="elegantshadow">
-                               3D Gallery
+                                3D Gallery
                                 <br />
                                 <br />
                             </h4>
@@ -145,7 +146,7 @@
                                 <strong>You have the unique opportunity to enter our 3D Gallery and set the Children’s paintings of your liking, to display.</strong>
                                 <hr />
                                 <p>Browse through all our pieces of Art.</p>
-                                <p>Place Art in whatever order you like.</p>                                
+                                <p>Place Art in whatever order you like.</p>
                                 <p>Enjoy your Gallery Setup.</p>
                             </div>
                         </div>
@@ -157,7 +158,9 @@
         <!-- Section 2B - HIDDEN ------------------------------>
         <div id="HiddenPaintRoom2" class="col-md-6 col-sm-6 mx-auto">
             <div class="threePanelsHidden">
-                <div class="d-flex justify-content-center align-items-center" id="threetext">Paintings</div>
+                <a href="@Url.Action("Index", "Painting")">
+                    <div class="d-flex justify-content-center align-items-center" id="threetext">Paintings</div>
+                </a>                
                 <div class="container">
                     <div class="row align-self-center" style="margin-top:220px; margin-left:50px;">
                         <div class="col-8">

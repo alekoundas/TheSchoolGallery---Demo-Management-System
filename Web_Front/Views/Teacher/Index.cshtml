@@ -5,54 +5,85 @@
 }
 
 
-<div class="col-md-12 pt-20 pb-20">
-    <h1 style="color:#f3efe9;">Teachers</h1>
-</div>
-<div class="feature-area pt-10 pb-10  relative">
-    <div class="container">
-        <div class="row">
-            <h2 class="col-md-6">
-                <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                @Html.ActionLink("Create New", "Create")
-            </h2>
-            <div class="col-md-6">
-                @using (Html.BeginForm())
-                {
-                    <p>
-                        Find by Name: @Html.TextBox("SearchString")
-                        <input class="btn btn-large" type="submit" value="Search" />
-                    </p>
-                }
-            </div>
-        </div>
-    </div>
-</div>
-
 <section class="feature-area pt-100 pb-100  relative">
     <div class="overlay overlay-bg"></div>
     <div class="container">
         <div class="row">
+            <!-- Create New - Search/Filter ------------------------------------------>
+            <div class="col-4">
+                @if (User.IsInRole("Admin"))
+                {
+                    <div class="row">
+                        <div class="col-3">
+                            <img style="margin-top:-12px;" src="~/images/UIcons/students.png" />
+                        </div>
+                        <div class="col-9">
+                            <h4>@Html.ActionLink("Create New", "Create", null, new { @class = "h4" })</h4>
+                        </div>
+                    </div>
+
+                }
+            </div>
+            <div class="col-7">
+                @using (Html.BeginForm())
+                {
+                    <div class="row mx-auto">
+                        <div class="col-6 mx-0 wrap-avabox text-center">
+                            @Html.TextBox("SearchString", null, new { @class = "inputchat", placeholder = "Filter" })
+                        </div>
+                        <div class="col-4 mx-0 container-login100-form-btn">
+                            <input type="submit" value="Search" class="login10-form-btn" />
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="col-1">
+                <img style="margin-top:-20px; width:80px;" src="~/images/filter.png" />
+            </div>
+            <hr />
 
             @foreach (var item in Model)
             {
                 <div class="col-12 align-items-stretch">
-                    <div class="paintingcontainer">
-                        <div class="wrap-School">
-                            <br />
-                            <div class="Schooldesc">
-                                <h3>@Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)</h3>
-                                <hr />
-                                <ul class="text-right">
-                                    <li> Oti allo Info exei o mpagasas</li>
-                                </ul>
+                    <div class="row wrap-School">
+                        <div class="col-8 Schooldesc">
+                            <h3>@Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)</h3>
+                            <hr />
+                            <ul class="text-right">
+                                <li> @Html.DisplayFor(modelItem => item.Classrooms)</li>
+                            </ul>
+                        </div>
+                        <!-- Section - Links ---------------------------------------->
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="btn_contain1 col">
+                                    <div class="btn_child_norm1">
+                                        <a title="edit" href="@Url.Action("Edit", "Teacher", new { id = item.TeacherId })"><img src="~/images/UIcons/edit_off.png" /></a>
+                                    </div>
+                                    <div class="btn_child_live1">
+                                        <a title="edit" href="@Url.Action("Edit", "Teacher", new { id = item.TeacherId })"><img src="~/images/UIcons/edit.png" /></a>
+                                    </div>
+                                </div>
+
+                                <div class="btn_contain2 col">
+                                    <div class="btn_child_norm2">
+                                        <a title="details" href="@Url.Action("Details", "Teacher", new { id = item.TeacherId })"><img src="~/images/UIcons/details_off.png" /></a>
+                                    </div>
+                                    <div class="btn_child_live2">
+                                        <a title="details" href="@Url.Action("Details", "Teacher", new { id = item.TeacherId })"><img src="~/images/UIcons/details.png" /></a>
+                                    </div>
+                                </div>
+
+                                <div class="btn_contain3 col">
+                                    <div class="btn_child_norm3">
+                                        <a title="delete" href="@Url.Action("Delete", "Teacher", new { id = item.TeacherId })"><img src="~/images/UIcons/delete_off.png" /></a>
+                                    </div>
+                                    <div class="btn_child_live3">
+                                        <a title="delete" href="@Url.Action("Delete", "Teacher", new { id = item.TeacherId })"><img src="~/images/UIcons/delete.png" /></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <a style="color:#f3efe9" href="@Url.Action("Edit", "Teacher", new { id = item.TeacherId })"><img id="iconBtn" src="~/images/UIcons/edit_off.png" /> edit </a>
-                            <a style="color:#f3efe9" href="@Url.Action("Details", "Teacher", new { id = item.TeacherId })"><img id="iconBtn" src="~/images/UIcons/details_off.png" /> details </a>
-                            <a style="color:#f3efe9" href="@Url.Action("Delete", "Teacher", new { id = item.TeacherId })"><img id="iconBtn" src="~/images/UIcons/delete_off.png" /> delete </a>
-                        </div>
-
                     </div>
                 </div>
             }
