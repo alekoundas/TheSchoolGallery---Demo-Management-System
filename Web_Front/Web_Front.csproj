@@ -1411,7 +1411,6 @@
     <Content Include="Views\School\Edit.cshtml" />
     <Content Include="Views\School\Index.cshtml" />
     <Content Include="Views\Shared\_Navigation_Admin.cshtml" />
-    <Content Include="Views\Account\_test.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Error\404.cshtml" />
     <Content Include="Views\Home\_Canvas.cshtml" />
@@ -1437,6 +1436,11 @@
     <Content Include="UnityGalleryWeb\Build\TheSchoolGallery3D.json" />
     <Content Include="UnityGalleryWeb\Build\TheSchoolGallery3D.wasm.code.unityweb" />
     <Content Include="UnityGalleryWeb\Build\TheSchoolGallery3D.wasm.framework.unityweb" />
+    <Content Include="UnityGalleryWeb\Build\UnityGalleryWeb.data.unityweb" />
+    <Content Include="UnityGalleryWeb\Build\UnityGalleryWeb.json" />
+    <Content Include="UnityGalleryWeb\Build\UnityGalleryWeb.wasm.code.unityweb" />
+    <Content Include="UnityGalleryWeb\Build\UnityGalleryWeb.wasm.framework.unityweb" />
+    <Content Include="Views\Painting\_SecondBanner.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
