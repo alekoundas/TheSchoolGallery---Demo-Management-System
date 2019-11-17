@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PagedList;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -20,9 +21,51 @@ namespace Web_Front.Controllers
 
         // GET: Painting
         [AllowAnonymous]
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            return View(PaintingServ.GetPaintings());
+            // SORTING ---------------------------------------------------------------------------->>
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "title_desc" : "";
+            ViewBag.CurrentSort = sortOrder;
+
+            var paintings = from st in PaintingServ.GetPaintings() // Edw einai ntaks?
+                           select st;
+
+            // PAGE NUMBERS ----------------------------------------------------------------------->>
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            ViewBag.CurrentFilter = searchString;
+
+
+            // FILTER --------------------------------------=-------------------------------------->>
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                paintings = paintings.Where(st => (st.PaintingTitle.Contains(searchString)));
+            }
+
+            // SORTING ---------------------------------------------------------------------------->>
+            switch (sortOrder)
+            {
+                case "title_desc":
+                    paintings = paintings.OrderByDescending(s => s.PaintingTitle);
+                    break;
+                default:
+                    paintings = paintings.OrderBy(s => s.PaintingTitle);
+                    break;
+            }
+
+            // Number of Pages -------------------------------------------------------------------->>
+            int pageSize = 6;
+            int pageNumber = (page ?? 1);
+            return View(paintings.ToPagedList(pageNumber, pageSize));
+
+            // Palio return ------------------------------>>
+            //return View(PaintingServ.GetPaintings());
         }
 
         // GET: Painting/Details/5

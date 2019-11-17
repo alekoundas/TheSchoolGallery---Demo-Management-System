@@ -29,10 +29,9 @@ namespace Web_Front.Controllers
             // SORTING ---------------------------------------------------------------------------->>
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "fname_desc" : "";
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "lname_desc" : "";
-            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "Age_desc" : "";
             ViewBag.CurrentSort = sortOrder;
 
-            var students = from st in StudentServ.GetStudents() // Edw einai ntaks?
+            var students = from st in StudentServ.GetStudents()
                            select st;
 
             // PAGE NUMBERS ----------------------------------------------------------------------->>
@@ -61,9 +60,6 @@ namespace Web_Front.Controllers
                     break;
                 case "lname_desc":
                     students = students.OrderByDescending(s => s.LastName);
-                    break;
-                case "Age_desc":
-                    students = students.OrderByDescending(s => s.Age);
                     break;
                 default:
                     students = students.OrderBy(s => s.LastName);

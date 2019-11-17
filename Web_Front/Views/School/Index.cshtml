@@ -1,8 +1,11 @@
-﻿@model IEnumerable<Web_DomainClasses.Entities.School.School>
+﻿@*@model IEnumerable<Web_DomainClasses.Entities.School.School>*@
+@model PagedList.IPagedList<Web_DomainClasses.Entities.School.School>
+
+@using PagedList.Mvc;
+
 @{
     ViewBag.Title = "Index";
 }
-
 
 <section class="feature-area pt-100 pb-100  relative">
     <div class="overlay overlay-bg text-center">
@@ -17,7 +20,8 @@
             <!-- Create New - Search/Filter ------------------------------------------>
             <div class="container">
                 <div class="row">
-                    <div class="col-4">
+                    <!-- Create New ------------------------------------------>
+                    <div class="col-3">
                         @if (User.IsInRole("Admin"))
                         {
                             <div class="row">
@@ -31,12 +35,19 @@
 
                         }
                     </div>
-                    <div class="col-7">
-                        @using (Html.BeginForm())
+                    <!-- Sort ------------------------------------------>
+                    <div class="col-3 SortByBox text-center">
+                        Sort By: @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }, new { @class = "h6" })
+                        | @Html.ActionLink("City", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }, new { @class = "h6" })
+                        | @Html.ActionLink("Address", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }, new { @class = "h6" })
+                    </div>
+                    <!-- Filter ------------------------------------------>
+                    <div class="col-5">
+                        @using (Html.BeginForm("Index", "School", FormMethod.Get))
                         {
                             <div class="row mx-auto">
                                 <div class="col-6 mx-0 wrap-avabox text-center">
-                                    @Html.TextBox("SearchString", null, new { @class = "inputchat", placeholder = "Filter" })
+                                    @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "inputchat", placeholder = "Filter" })
                                 </div>
                                 <div class="col-4 mx-0 container-login100-form-btn">
                                     <input type="submit" value="Search" class="login10-form-btn" />
@@ -112,6 +123,14 @@
 
                 </div>
             </div>
+
+            <div class="container text-center">
+                Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+                @Html.PagedListPager(Model, page => Url.Action("Index",
+                    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+            </div>
+
 
             <!-- SECTION Google Maps ------------------------------------- -->
             <div class="col-12">

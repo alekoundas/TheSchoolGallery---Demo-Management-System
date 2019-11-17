@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PagedList;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -20,9 +21,59 @@ namespace Web_Front.Controllers
         SchoolApiService ServiceSchool = new SchoolApiService();
 
         // GET: School
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            return View(ServiceSchool.GetSchools());
+            // SORTING ---------------------------------------------------------------------------->>
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "city_desc" : "";
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "address_desc" : "";
+            ViewBag.CurrentSort = sortOrder;
+
+            var schools = from sch in ServiceSchool.GetSchools() // Edw einai ntaks?
+                           select sch;
+
+            // PAGE NUMBERS ----------------------------------------------------------------------->>
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            ViewBag.CurrentFilter = searchString;
+
+
+            // FILTER --------------------------------------=-------------------------------------->>
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                schools = schools.Where(st => (st.Name.Contains(searchString)) || (st.City.Contains(searchString)) || (st.Adress.Contains(searchString)));
+            }
+
+            // SORTING ---------------------------------------------------------------------------->>
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    schools = schools.OrderByDescending(s => s.Name);
+                    break;
+                case "city_desc":
+                    schools = schools.OrderByDescending(s => s.City);
+                    break;
+                case "address_desc":
+                    schools = schools.OrderByDescending(s => s.Adress);
+                    break;
+                default:
+                    schools = schools.OrderBy(s => s.Name);
+                    break;
+            }
+
+            // Number of Pages -------------------------------------------------------------------->>
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
+            return View(schools.ToPagedList(pageNumber, pageSize));
+
+            // Palio return ------------------------------>>
+            //return View(ServiceSchool.GetSchools());
         }
 
         [Authorize(Roles = "Admin, SchoolAdmin")]

@@ -3818,6 +3818,7 @@ section hr {
     border: 2px dotted #f3efe9;
 }
 
+
 .dottedFrame {
     position: relative;
     width: 100%;
@@ -4340,3 +4341,13 @@ h1, h2, h3, h4, h5 {
 
 
 /*#endregion HOME*/
+
+.SortByBox {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    height: auto;
+    padding-top:8px;
+    color: #f3efe9;
+    overflow: hidden;
+}

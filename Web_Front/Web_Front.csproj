@@ -1439,7 +1439,6 @@
     <Content Include="Views\Avatar\Index.cshtml" />
     <Content Include="Views\SkopiaGame\SkopiaGame.cshtml" />
     <Content Include="Scripts\version.json" />
-    <Content Include="Views\Painting\_SearchSortFilter.cshtml" />
     <Content Include="Views\Roles\Index.cshtml" />
     <Content Include="Views\Roles\Edit.cshtml" />
     <Content Include="UnityGalleryWeb\Build\TheSchoolGallery3D.data.unityweb" />
