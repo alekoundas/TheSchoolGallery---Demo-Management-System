@@ -38,15 +38,9 @@
         @Html.Partial("_Navigation_Admin")
     }
 
-
 <div class="oz-body-wrap">
-
-    <!-- NAVIGATION BAR -------------------------------------------------- -->
-    @*@Html.Partial("_Navigation_A")*@
-
     <!-- MAIN BODY --------------------------------------------------- -->
     @RenderBody()
-
 </div>
 
     <!-- FOOTER AREA ----------------------------------------------------- -->
@@ -96,7 +90,6 @@
                     onEndFolding: function () { opened = false; },
                 });
                 $item.find('#openit').on('click', function () {
-
                     if (!opened) {
                         opened = true;
                         pfold.unfold();
@@ -108,8 +101,6 @@
                 });
             });
         });
-
-
     </script>
 
 
@@ -126,8 +117,6 @@
                 $('#discussion').append('<li><strong>' + htmlEncode(name)
                     + '</strong>: ' + htmlEncode(message) + '</li>');
             };
-
-
 
             //Receive All Messages From Database So U Can Change Page And Dont Loose Messages
             //With AJAX I Call A Controllers Action And Get A Result
@@ -146,7 +135,6 @@
                     },
                     error: function(recData) { alert("Error While Loading Previous Messages"+recData); }
             });
-
 
             // Set initial focus to message input box.
             //$('#message').focus();
@@ -179,8 +167,6 @@
         }
     </script>
     @* End SignalR *@
-
-
 
     @* Add Item To Cart Via Ajax *@
     <script>
@@ -216,13 +202,6 @@
 
     </script>
     @* Add Item To Cart  End *@
-
-
-
-
-
-
-
 
     @RenderSection("scripts", required: false)
 </body>
