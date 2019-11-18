@@ -26,12 +26,13 @@
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
 
 </head>
-<body>
-    <div id="load"></div>
-    <div class="se-pre-con"></div>
+<body onload="myFunction()" style="margin:0;">
+    <!-- Loading ---------------------------------------- -->
+    <div id="loading"></div>
 
+    <!-- PARALLAX --------------------------------------- -->
     <a href="@Url.Action("Index", "Home")">
-        <div class="wrapper">
+        <div style="width:80%;" class="wrapper">
             <div class="text" data-index="1">(Welcome to...)</div>
             <div class="text hidden" data-index="2">(The School Gallery)</div>
             <div class="text hidden" data-index="3">(Children Create Art)</div>
@@ -58,184 +59,174 @@
         </div>
     </a>
 
-    <div class="oz-body-wrap">
-        <div class="container-fluid">
-            <div class="row d-flex justify-content-center align-items-center">
-                <div class="col-6 mx-auto">
-                    <div class="bannerakiaIntroPage bannerakiA" id="p_container">
-                        <img style="bottom:0px;" class="stackImages p_child" id="slideone" src="~/images/bannerakia/Bannerakia_2_creative.png">
-                        <img style="bottom:0px; right:50px;" class="stackImages P_child" id="slidetwo" src="~/images/bannerakia/Bannerakia_2_kid.png">
+    <div style="display:none;" id="myDiv" class="animate-bottom">
+        <!-- Info A ----------------------------------------- -->
+        <div class="oz-body-wrap">
+            <div class="container-fluid">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col-6 mx-auto">
+                        <div class="bannerakiaIntroPage bannerakiA" id="p_container">
+                            <img style="bottom:0px;" class="stackImages p_child" id="slideone" src="~/images/bannerakia/Bannerakia_2_creative.png">
+                            <img style="bottom:0px; right:50px;" class="stackImages P_child" id="slidetwo" src="~/images/bannerakia/Bannerakia_2_kid.png">
+                        </div>
                     </div>
-                </div>
-                <div class="col-6 mx-auto BannerakiaSide dottedBannerakiA text-left">
-                    <h3 style="color:#4b4a4a;">
-                        <br />
-                        <span class="sp-1">Support Children’s Creations </span>
-                        <br />
-                    </h3>
-                    <div style="color:#5c5c5c;">
-                        <strong>Show any Kid your appreciation.</strong>
-                        <hr />
-                        <p>Encourage your child to draw his Art. This Art will be displayed in our Gallery for people to appreciate and buy. Thus supporting a cause.  </p>
+                    <div class="col-6 mx-auto BannerakiaSide dottedBannerakiA text-left">
+                        <h3 style="color:#4b4a4a;">
+                            <br />
+                            <span class="sp-1">Support Children’s Creations </span>
+                            <br />
+                        </h3>
+                        <div style="color:#5c5c5c;">
+                            <strong>Show any Kid your appreciation.</strong>
+                            <hr />
+                            <p>Encourage your child to draw his Art. This Art will be displayed in our Gallery for people to appreciate and buy. Thus supporting a cause.  </p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <!-- Info B ----------------------------------------- -->
+        <div class="oz-body-wrap">
+            <div class="container-fluid">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col-6 mx-auto BannerakiaSide dottedBannerakiB text-right">
+                        <h3 style="color:#4b4a4a;">
+                            <br />
+                            <span class="sp-1">Children Create Valuable Art!</span>
+                            <br />
+                        </h3>
+                        <div style="color:#5c5c5c;">
+                            <strong>Their painting Values More.</strong>
+                            <hr />
+                            <p>By Purchasing paintings, you help schools to achieve their goals. </p>
+                        </div>
+                    </div>
+                    <div class="col-6 mx-auto">
+                        <div class="bannerakiaIntroPage bannerakiB" id="p_container2">
+                            <img style="bottom:0px;" class="stackImages p_child2" id="slideone2" src="~/images/bannerakia/Bannerakia_1_kid.png">
+                            <img style="bottom:0px; right:50px;" class="stackImages P_child2" id="slidetwo2" src="~/images/bannerakia/Bannerakia_1_money.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TEAM ------------------------------------------- -->
+        <div style="margin-left:50px;" class="container">
+            <h3 class="sp-1">Our Team</h3>
+            <hr />
+            <div class="row d-flex justify-content-end align-items-end">
+                <div class="col-4 mx-auto">
+                    <div class="row">
+                        <div class="col-4 justify-content-center align-items-center">
+                            <h5 style="text-shadow:1px 1px 1px #f3efe9;" class="sp-1">Alex Psychogios</h5>
+                            <hr />
+                            <!-- Section - Avatar ------------------------------------------>
+                            <div style="width:200px; height:200px;" class="wrap-studentAvatar Mama_Avatar">
+                                <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/Alex.png" />
+                            </div>
+                        </div>
+                        <div class="col-1">
+                            <div class="btn_contain1">
+                                <div class="btn_child_norm1">
+                                    <a title="facebook" href="https://www.facebook.com/alexandros.psihogios"><img src="~/images/UIcons/facebook_off.png" /></a>
+                                </div>
+                                <div class="btn_child_live1">
+                                    <a title="facebook" href="https://www.facebook.com/alexandros.psihogios"><img src="~/images/UIcons/facebook.png" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-1">
+                            <div class="btn_contain1">
+                                <div class="btn_child_norm1">
+                                    <a title="GitHub" href="https://github.com/alekoundas"><img src="~/images/UIcons/git_off.png" /></a>
+                                </div>
+                                <div class="btn_child_live1">
+                                    <a title="GitHub" href="https://github.com/alekoundas"><img src="~/images/UIcons/git.png" /></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-4 mx-auto">
+                    <div class="row">
+                        <div class="col-4 justify-content-center align-items-center">
+                            <h5 style="text-shadow:1px 1px 1px #f3efe9;" class="sp-1">Yiorgos Chorman</h5>
+                            <hr />
+                            <!-- Section - Avatar ------------------------------------------>
+                            <div style="width:200px; height:200px;" class="wrap-studentAvatar Mama_Avatar">
+                                <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/YioCho.png" />
+                            </div>
+                        </div>
+                        <div class="col-1">
+                            <div class="btn_contain1">
+                                <div class="btn_child_norm1">
+                                    <a title="facebook" href="https://www.facebook.com/gigeroeides"><img src="~/images/UIcons/facebook_off.png" /></a>
+                                </div>
+                                <div class="btn_child_live1">
+                                    <a title="facebook" href="https://www.facebook.com/gigeroeides"><img src="~/images/UIcons/facebook.png" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-1">
+                            <div class="btn_contain1">
+                                <div class="btn_child_norm1">
+                                    <a title="GitHub" href="https://github.com/tsormang"><img src="~/images/UIcons/git_off.png" /></a>
+                                </div>
+                                <div class="btn_child_live1">
+                                    <a title="GitHub" href="https://github.com/tsormang"><img src="~/images/UIcons/git.png" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 mx-auto">
+                    <div class="row">
+                        <div class="col-4 justify-content-center align-items-center">
+                            <h5 style="text-shadow:1px 1px 1px #f3efe9;" class="sp-1">Iosif Voutsinos</h5>
+                            <hr />
+                            <!-- Section - Avatar ------------------------------------------>
+                            <div style="width:200px; height:200px;" class="wrap-studentAvatar Mama_Avatar">
+                                <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/Josef.png" />
+                            </div>
+                        </div>
+                        <div class="col-1">
+                            <div class="btn_contain1">
+                                <div class="btn_child_norm1">
+                                    <a title="facebook" href="https://www.facebook.com/jvouts"><img src="~/images/UIcons/facebook_off.png" /></a>
+                                </div>
+                                <div class="btn_child_live1">
+                                    <a title="facebook" href="https://www.facebook.com/jvouts"><img src="~/images/UIcons/facebook.png" /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-1">
+                            <div class="btn_contain1">
+                                <div class="btn_child_norm1">
+                                    <a title="GitHub" href=""><img src="~/images/UIcons/git_off.png" /></a>
+                                </div>
+                                <div class="btn_child_live1">
+                                    <a title="GitHub" href=""><img src="~/images/UIcons/git.png" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Our Class ----------------------------------------- -->
+            <div class="btn_contain1 col">
+                <div class="btn_child_norm1">
+                    <a title="our class" href="@Url.Action("classSharp", "Classroom")"><img src="~/images/UIcons/students_off.png" /></a>
+                </div>
+                <div class="btn_child_live1">
+                    <a title="our class" href="@Url.Action("classSharp", "Classroom")"><img src="~/images/UIcons/students.png" /></a>
+                </div>
+            </div>
+
+
+
         </div>
     </div>
-
-    <div class="oz-body-wrap">
-        <div class="container-fluid">
-            <div class="row d-flex justify-content-center align-items-center">
-                <div class="col-6 mx-auto BannerakiaSide dottedBannerakiB text-right">
-                    <h3 style="color:#4b4a4a;">
-                        <br />
-                        <span class="sp-1">Children Create Valuable Art!</span>
-                        <br />
-                    </h3>
-                    <div style="color:#5c5c5c;">
-                        <strong>Their painting Values More.</strong>
-                        <hr />
-                        <p>By Purchasing paintings, you help schools to achieve their goals. </p>
-                    </div>
-                </div>
-                <div class="col-6 mx-auto">
-                    <div class="bannerakiaIntroPage bannerakiB" id="p_container2">
-                        <img style="bottom:0px;" class="stackImages p_child2" id="slideone2" src="~/images/bannerakia/Bannerakia_1_kid.png">
-                        <img style="bottom:0px; right:50px;" class="stackImages P_child2" id="slidetwo2" src="~/images/bannerakia/Bannerakia_1_money.png">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div style="margin-left:50px;" class="container">
-
-        <h3 class="sp-1">Our Team</h3>
-        <hr />
-
-        <div class="row d-flex justify-content-end align-items-end">
-
-            <div class="col-4 mx-auto">
-                <div class="row">
-                    <div class="col-4 justify-content-center align-items-center">
-                        <h5 style="text-shadow:1px 1px 1px #f3efe9;" class="sp-1">Alex Psychogios</h5>
-                        <hr />
-                        <!-- Section - Avatar ------------------------------------------>
-                        <div style="width:200px; height:200px;" class="wrap-studentAvatar Mama_Avatar">
-                            <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/Alex.png" />
-                        </div>
-                    </div>
-                    <div class="col-1">
-                        <div class="btn_contain1">
-                            <div class="btn_child_norm1">
-                                <a title="facebook" href="https://www.facebook.com/alexandros.psihogios"><img src="~/images/UIcons/facebook_off.png" /></a>
-                            </div>
-                            <div class="btn_child_live1">
-                                <a title="facebook" href="https://www.facebook.com/alexandros.psihogios"><img src="~/images/UIcons/facebook.png" /></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-1">
-                        <div class="btn_contain1">
-                            <div class="btn_child_norm1">
-                                <a title="GitHub" href="https://github.com/alekoundas"><img src="~/images/UIcons/git_off.png" /></a>
-                            </div>
-                            <div class="btn_child_live1">
-                                <a title="GitHub" href="https://github.com/alekoundas"><img src="~/images/UIcons/git.png" /></a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="col-4 mx-auto">
-                <div class="row">
-                    <div class="col-4 justify-content-center align-items-center">
-                        <h5 style="text-shadow:1px 1px 1px #f3efe9;" class="sp-1">Yiorgos Chorman</h5>
-                        <hr />
-                        <!-- Section - Avatar ------------------------------------------>
-                        <div style="width:200px; height:200px;" class="wrap-studentAvatar Mama_Avatar">
-                            <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/YioCho.png" />
-                        </div>
-                    </div>
-                    <div class="col-1">
-                        <div class="btn_contain1">
-                            <div class="btn_child_norm1">
-                                <a title="facebook" href="https://www.facebook.com/gigeroeides"><img src="~/images/UIcons/facebook_off.png" /></a>
-                            </div>
-                            <div class="btn_child_live1">
-                                <a title="facebook" href="https://www.facebook.com/gigeroeides"><img src="~/images/UIcons/facebook.png" /></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-1">
-                        <div class="btn_contain1">
-                            <div class="btn_child_norm1">
-                                <a title="GitHub" href="https://github.com/tsormang"><img src="~/images/UIcons/git_off.png" /></a>
-                            </div>
-                            <div class="btn_child_live1">
-                                <a title="GitHub" href="https://github.com/tsormang"><img src="~/images/UIcons/git.png" /></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-4 mx-auto">
-                <div class="row">
-                    <div class="col-4 justify-content-center align-items-center">
-                        <h5 style="text-shadow:1px 1px 1px #f3efe9;" class="sp-1">Iosif Voutsinos</h5>
-                        <hr />
-                        <!-- Section - Avatar ------------------------------------------>
-                        <div style="width:200px; height:200px;" class="wrap-studentAvatar Mama_Avatar">
-                            <img class="Boi_Avatar" style="width:100%; height:100%;" src="~/images/Avatar/Josef.png" />
-                        </div>
-                    </div>
-                    <div class="col-1">
-                        <div class="btn_contain1">
-                            <div class="btn_child_norm1">
-                                <a title="facebook" href="https://www.facebook.com/jvouts"><img src="~/images/UIcons/facebook_off.png" /></a>
-                            </div>
-                            <div class="btn_child_live1">
-                                <a title="facebook" href="https://www.facebook.com/jvouts"><img src="~/images/UIcons/facebook.png" /></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-1">
-                        <div class="btn_contain1">
-                            <div class="btn_child_norm1">
-                                <a title="GitHub" href=""><img src="~/images/UIcons/git_off.png" /></a>
-                            </div>
-                            <div class="btn_child_live1">
-                                <a title="GitHub" href=""><img src="~/images/UIcons/git.png" /></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="btn_contain1 col">
-            <div class="btn_child_norm1">
-                <a title="our class" href="@Url.Action("classSharp", "Classroom")"><img src="~/images/UIcons/students_off.png" /></a>
-            </div>
-            <div class="btn_child_live1">
-                <a title="our class" href="@Url.Action("classSharp", "Classroom")"><img src="~/images/UIcons/students.png" /></a>
-            </div>
-        </div>
-
-
-
-    </div>
-
-  
-
-
-
-
 
     <!-- JAVASCRIPTS ----------------------------------------------------- -->
     <script src="~/js/vendor/jquery-2.2.4.min.js"></script>
@@ -256,17 +247,15 @@
     <script src="~/js/textswap.js"></script>
 
     <script>
-        document.onreadystatechange = function () {
-            var state = document.readyState
-            if (state == 'interactive') {
-                document.getElementById('contents').style.visibility = "hidden";
-            } else if (state == 'complete') {
-                setTimeout(function () {
-                    document.getElementById('interactive');
-                    document.getElementById('load').style.visibility = "hidden";
-                    document.getElementById('contents').style.visibility = "visible";
-                }, 2000);
-            }
+        // LOADER ----------------------------------------->>
+        var myVar;
+        function myFunction() {
+            myVar = setTimeout(showPage, 3000);
+        }
+        function showPage() {
+            $("#loading").fadeOut(888, function () {
+                $("#myDiv").fadeIn();
+            });
         }
     </script>
 

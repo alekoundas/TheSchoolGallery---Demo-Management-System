@@ -26,9 +26,7 @@
 
 </head>
 <body>
-    <div id="loading"></div>
-
-    <div class="fixed-top pl-10">
+    <div class="fixed-top pl-10" style="margin-bottom:30px;">
         <!-- STEADY BAR (login, register, cart, etc -------------------------- -->
         @Html.Partial("_LoginPartial")
     </div>
@@ -68,11 +66,6 @@
 
     @*MODAL POWER ---------------------------------------->> *@
     <script>
-
-        // LOADER ----------------------------------------->>
-        jQuery(document).ready(function () {
-            jQuery('#loading').fadeOut(2000);
-        });
 
         $(function () {
             // say we want to have only one item opened at one moment
