@@ -29,7 +29,9 @@
             </div>
             <!-- Sort ------------------------------------------>
             <div class="col-3 SortByBox text-center">
-                Sort By: @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }, new { @class = "h6" }) 
+                Sort By:
+                <img id="profileImage" style="width:20px;" />
+                @Html.ActionLink("Title", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }, new { @class = "h6" })
             </div>
             <!-- Filter ------------------------------------------>
             <div class="col-5">
@@ -118,3 +120,4 @@
 
     </div>
 </section>
+

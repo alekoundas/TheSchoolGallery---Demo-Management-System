@@ -361,6 +361,7 @@
     <Content Include="images\bannerakia\Bannerakia_2_kid.png" />
     <Content Include="images\blank.gif" />
     <Content Include="images\down-arrow.png" />
+    <Content Include="images\down.png" />
     <Content Include="images\fancybox_loading%402x.gif" />
     <Content Include="images\fancybox_loading.gif" />
     <Content Include="images\fancybox_overlay.png" />
@@ -521,6 +522,7 @@
     <Content Include="images\UIcons\skopia_off.png" />
     <Content Include="images\UIcons\students.png" />
     <Content Include="images\UIcons\students_off.png" />
+    <Content Include="images\up.png" />
     <Content Include="images\white-paper-texture.jpg" />
     <Content Include="images\Avatar\YioCho.png" />
     <Content Include="js\AdminArch.js" />

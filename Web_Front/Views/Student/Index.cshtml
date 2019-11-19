@@ -29,7 +29,9 @@
             </div>
             <!-- Sort ------------------------------------------>
             <div class="col-3 SortByBox text-center">
-                    Sort By: @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }, new { @class = "h6" }) | @Html.ActionLink("Surname", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }, new { @class = "h6" })
+                Sort By:
+                <img id="profileImage" style="width:20px;" />
+                @Html.ActionLink("Surname", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }, new { @class = "h6" })
             </div>
             <!-- Filter ------------------------------------------>
             <div class="col-5">
@@ -128,4 +130,15 @@
 
 
 
+@section Scripts {
 
+    <script>
+        $(document).ready(function () {
+            if('@ViewBag.NameSortParm'!='')
+                $("#profileImage").attr("src", "../Images/down.png");
+            else
+                $("#profileImage").attr("src", "../Images/up.png");
+        });
+    </script>
+
+}

@@ -16,9 +16,21 @@ else
 }
 
 
+@section Scripts {
+
+    <script>
+        $(document).ready(function () {
+            if('@ViewBag.NameSortParm'!='')
+                $("#profileImage").attr("src", "../Images/down.png");
+            else
+                $("#profileImage").attr("src", "../Images/up.png");
+        });
+    </script>
+
+    <script>
 
 
-<script>
+
         $(document).ready(function () {
             function AddItemToCart(PaintingID) {
             console.log("okk");
@@ -34,4 +46,9 @@ else
             };
         });
 
-</script>
+    </script>
+
+
+
+}
+
