@@ -130,8 +130,6 @@
                     error: function(recData) { alert("Error While Loading Previous Messages"+recData); }
             });
 
-            // Set initial focus to message input box.
-            //$('#message').focus();
             // Start the connection.
             $.connection.hub.start().done(function () {
                 $('#sendmessage').click(function () {

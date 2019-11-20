@@ -3231,7 +3231,6 @@ input.inputchat {
     animation: Color_Change_Background 120s infinite;
     animation-delay: 6s;
     -webkit-transition-timing-function: ease-in;
-    font-family: OpenSans-Regular;
     font-size: 14px;
     color: #fff;
     line-height: 1.2;
@@ -3259,11 +3258,9 @@ input.inputchat {
     animation: Color_Change_Background 120s infinite;
     animation-delay: 6s;
     -webkit-transition-timing-function: ease-in;
-    font-family: OpenSans-Regular;
     font-size: 14px;
     color: #fff;
     line-height: 1.2;
-    text-transform: uppercase;
     -webkit-transition: all 0.4s;
     -o-transition: all 0.4s;
     -moz-transition: all 0.4s;
@@ -3302,7 +3299,6 @@ input.inputchat {
     transform: translateY(-50%);
     right: 12px;
     pointer-events: none;
-    font-family: OpenSans-Regular;
     color: #c80000;
     font-size: 13px;
     line-height: 1.4;
@@ -3899,6 +3895,7 @@ section hr {
     height: auto;
     padding: 5px 0;
     margin-left: -10px;
+    margin-top: 10px;
     box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
     border: 1px dotted #5c5c5c;
     background-color: #f3efe9;
@@ -3921,15 +3918,17 @@ section hr {
 
 .dottedFrameAdmin:hover {
     cursor: pointer;
-    border: 1px dotted #ff6a00;
-    padding: 10px 0;
+    border-right: 2px dotted #ff6a00;
+    border-left: 2px dotted #ff6a00;
+    padding: 5px 0;
     transition-duration: 1s;
 }
 
 .dottedFrameAdminC:hover {
     cursor: pointer;
-    border: 1px dotted #ff6a00;
-    padding: 10px 0;
+    border-right: 2px dotted #ff6a00;
+    border-left: 2px dotted #ff6a00;
+    padding: 5px 0;
     border-top: none;
     transition-duration: 1s;
 }

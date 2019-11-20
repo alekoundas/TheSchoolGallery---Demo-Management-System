@@ -1,116 +1,106 @@
 ﻿
 
-<div class="navbar navbar-inverse navbar-twitch" role="navigation">
+<div class="navbar navbar-twitch" role="navigation">
     <div class="container">
 
-        <div class="nav navbar-nav">
-
-            <!-- MAIN Home ---------------------------------------------------- -->
-            <div title="Home" class="dottedFrameAdmin text-center">
-                <a href="@Url.Action("Index", "Home")" title="Home" aria-label="Home">
-                    <i class="fa fa-home" aria-hidden="true"></i>
-                </a>
-            </div>
-            <!-- Sub-Categories ---------------------- -->
-            <div title="Play Room" class="dottedFrameAdminC text-center">
-                <a href="@Url.Action("Contact", "Home")" title="Play Room" aria-label="Play Room">
-                    <i class="fa fa-child" aria-hidden="true"></i>
-                </a>
-            </div>
-            <div title="3D Gallery" class="dottedFrameAdminC text-center">
-                <a href="~/UnityGalleryWeb/index.html" title="3D Gallery" aria-label="3D Gallery">
-                    <i class="fa fa-play" aria-hidden="true"></i>
-                </a>
-            </div>
-            <br />
-
-            <!-- MAIN Paintings ----------------------------------------------- -->
-            <div title="Paintings" class="dottedFrameAdmin text-center">
-                <a href="@Url.Action("Index", "Painting")" title="Paintings" aria-label="Paintings">
-                    <i class="fa fa-paint-brush" aria-hidden="true"></i>
-                </a>
-            </div>
-            <!-- Create ---------------------- -->
-            <div title="Create Painting" class="dottedFrameAdminC text-center">
-                <a href="@Url.Action("Create", "Painting")" title="Create Paintings" aria-label="Create Paintings">
-                    <i class="fa fa-gear fa-spin" aria-hidden="true"></i>
-                </a>
-            </div>
-            <br />
-
-            <!-- MAIN Schools ----------------------------------------------- -->
-            <div title="Schools" class="dottedFrameAdmin text-center">
-                <a href="@Url.Action("Index", "School")" title="Schools" aria-label="Schools">
-                    <i class="fa fa-bank" aria-hidden="true"></i>
-                </a>
-            </div>
-            <!-- Create ---------------------- -->
-            <div title="Create School" class="dottedFrameAdminC text-center">
-                <a href="@Url.Action("Create", "School")" title="Create School" aria-label="Create School">
-                    <i class="fa fa-gear fa-spin" aria-hidden="true"></i>
-                </a>
-            </div>
-            <br />
-
-            <!-- MAIN Students ----------------------------------------------- -->
-            <div title="Students" class="dottedFrameAdmin text-center">
-                <a href="@Url.Action("Index", "Student")" title="Students" aria-label="Students">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                </a>
-            </div>
-            <!-- Create ---------------------- -->
-            <div title="Create Student" class="dottedFrameAdminC text-center">
-                <a href="@Url.Action("Create", "Student")" title="Create Student" aria-label="Create Student">
-                    <i class="fa fa-gear fa-spin" aria-hidden="true"></i>
-                </a>
-            </div>
-            <br />
-
-            <!-- MAIN Teachers ----------------------------------------------- -->
-            <div title="Teachers" class="dottedFrameAdmin text-center">
-                <a href="@Url.Action("Index", "Teacher")" title="Teachers" aria-label="Teachers">
-                    <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                </a>
-            </div>
-            <!-- Create ---------------------- -->
-            <div title="Create Teacher" class="dottedFrameAdminC text-center">
-                <a href="@Url.Action("Create", "Teacher")" title="Create Teacher" aria-label="Create Teacher">
-                    <i class="fa fa-gear fa-spin" aria-hidden="true"></i>
-                </a>
-            </div>
-            <br />
-
-            <!-- MAIN Classroom ----------------------------------------------- -->
-            <div title="Class" class="dottedFrameAdmin text-center">
-                <a href="@Url.Action("Index", "Classroom")" title="Class" aria-label="Class">
-                    <i class="fa fa-book" aria-hidden="true"></i>
-                </a>
-            </div>
-            <!-- Create ---------------------- -->
-            <div title="Create Classroom" class="dottedFrameAdminC text-center">
-                <a href="@Url.Action("Create", "Classroom")" title="Create Classroom" aria-label="Create Classroom">
-                    <i class="fa fa-gear fa-spin" aria-hidden="true"></i>
-                </a>
-            </div>
-            <br />
-
-            <!-- FOOTER CHAT -------------------------------------------------- -->
-            <div title="Chat" class="dottedFrameAdmin text-center">
-                <a href="#Chat" title="Chat" aria-label="Chat">
-                    <i class="fa fa-comments" aria-hidden="true"></i>
-                </a>
-            </div>
-            <br />
-
-            <!-- ADMIN AREA -------------------------------------------------- -->
-            <div title="Admin Panel" class="dottedFrameAdmin text-center">
-                <a href="@Url.Action("Index", "Roles")" title="Admin Panel" aria-label="Admin Panel">
-                    <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                </a>
-            </div>
-            <br />
-
+        <!-- MAIN Home ---------------------------------------------------- -->
+        <div title="Home" class="dottedFrameAdmin text-center">
+            <a href="@Url.Action("Index", "Home")" title="Home" aria-label="Home">
+                <i class="fa fa-home" aria-hidden="true"></i>
+            </a>
         </div>
+        <!-- Sub-Categories ---------------------- -->
+        <div title="Play Room" class="dottedFrameAdminC text-center">
+            <a href="@Url.Action("Contact", "Home")" title="Play Room" aria-label="Play Room">
+                <i class="fa fa-child" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div title="3D Gallery" class="dottedFrameAdminC text-center">
+            <a href="~/UnityGalleryWeb/index.html" title="3D Gallery" aria-label="3D Gallery">
+                <i class="fa fa-play" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <!-- MAIN Paintings ----------------------------------------------- -->
+        <div title="Paintings" class="dottedFrameAdmin text-center">
+            <a href="@Url.Action("Index", "Painting")" title="Paintings" aria-label="Paintings">
+                <i class="fa fa-paint-brush" aria-hidden="true"></i>
+            </a>
+        </div>
+        <!-- Create ---------------------- -->
+        <div title="Create Painting" class="dottedFrameAdminC text-center">
+            <a href="@Url.Action("Create", "Painting")" title="Create Paintings" aria-label="Create Paintings">
+                <i class="fa fa-gear fa-spin" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <!-- MAIN Schools ----------------------------------------------- -->
+        <div title="Schools" class="dottedFrameAdmin text-center">
+            <a href="@Url.Action("Index", "School")" title="Schools" aria-label="Schools">
+                <i class="fa fa-bank" aria-hidden="true"></i>
+            </a>
+        </div>
+        <!-- Create ---------------------- -->
+        <div title="Create School" class="dottedFrameAdminC text-center">
+            <a href="@Url.Action("Create", "School")" title="Create School" aria-label="Create School">
+                <i class="fa fa-gear fa-spin" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <!-- MAIN Students ----------------------------------------------- -->
+        <div title="Students" class="dottedFrameAdmin text-center">
+            <a href="@Url.Action("Index", "Student")" title="Students" aria-label="Students">
+                <i class="fa fa-star" aria-hidden="true"></i>
+            </a>
+        </div>
+        <!-- Create ---------------------- -->
+        <div title="Create Student" class="dottedFrameAdminC text-center">
+            <a href="@Url.Action("Create", "Student")" title="Create Student" aria-label="Create Student">
+                <i class="fa fa-gear fa-spin" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <!-- MAIN Teachers ----------------------------------------------- -->
+        <div title="Teachers" class="dottedFrameAdmin text-center">
+            <a href="@Url.Action("Index", "Teacher")" title="Teachers" aria-label="Teachers">
+                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            </a>
+        </div>
+        <!-- Create ---------------------- -->
+        <div title="Create Teacher" class="dottedFrameAdminC text-center">
+            <a href="@Url.Action("Create", "Teacher")" title="Create Teacher" aria-label="Create Teacher">
+                <i class="fa fa-gear fa-spin" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <!-- MAIN Classroom ----------------------------------------------- -->
+        <div title="Class" class="dottedFrameAdmin text-center">
+            <a href="@Url.Action("Index", "Classroom")" title="Class" aria-label="Class">
+                <i class="fa fa-book" aria-hidden="true"></i>
+            </a>
+        </div>
+        <!-- Create ---------------------- -->
+        <div title="Create Classroom" class="dottedFrameAdminC text-center">
+            <a href="@Url.Action("Create", "Classroom")" title="Create Classroom" aria-label="Create Classroom">
+                <i class="fa fa-gear fa-spin" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <!-- FOOTER CHAT -------------------------------------------------- -->
+        <div title="Chat" class="dottedFrameAdmin text-center">
+            <a href="#Chat" title="Chat" aria-label="Chat">
+                <i class="fa fa-comments" aria-hidden="true"></i>
+            </a>
+        </div>
+
+
+        <!-- ADMIN AREA -------------------------------------------------- -->
+        <div title="Admin Panel" class="dottedFrameAdmin text-center">
+            <a href="@Url.Action("Index", "Roles")" title="Admin Panel" aria-label="Admin Panel">
+                <i class="fa fa-bar-chart" aria-hidden="true"></i>
+            </a>
+        </div>
+
     </div>
 </div>
 
