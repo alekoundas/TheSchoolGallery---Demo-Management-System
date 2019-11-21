@@ -113,7 +113,7 @@ namespace Web_Front.Controllers
 
             List<Classroom> ClassroomList = ServiceSchool.GetSchool(SchoolID).Classrooms.ToList();
 
-           
+
             //(PartialView Name, Database List)
             return PartialView("_CreateAjaxDropdown", ClassroomList);
         }
@@ -130,9 +130,8 @@ namespace Web_Front.Controllers
         {
             if (ModelState.IsValid)
             {
-               //We Need To Set Instance of School and Classroom at Student To be Created!
-                ViewModel.Student.Classroom= ServiceClassroom.GetClassroom(ViewModel.SelectedClassroomID);
-                ViewModel.Student.Classroom.School = ServiceSchool.GetSchool(ViewModel.SelectedSchoolID);
+                //We Need To Set Instance of School and Classroom at Student To be Created!
+                ViewModel.Student.ClassroomFK = ViewModel.SelectedClassroomID;
                 //Create User
                 StudentServ.CreateStudent(ViewModel.Student);
                 return RedirectToAction("Index");

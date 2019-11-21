@@ -11,6 +11,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using WebApi_Database;
 using WebApi_Entities;
+using WebApi_Entities.Avatar;
 using WebApi_Entities.School;
 using WebApi_Services;
 
@@ -107,8 +108,10 @@ namespace WebApi_Api.Controllers
                 return BadRequest(ModelState);
             }
 
-            student.ClassroomFK = student.Classroom.ClassroomId;
+
             student.Classroom = null;
+            //Initialise the avatar
+            student.Avatar = new Avatar() { Background = new AvatarBackground(), Body = new AvatarBody(), Hair = new AvatarHair(), Clothing = new AvatarClothing() };
 
 
             db.StudentDb.Add(student);

@@ -129,20 +129,26 @@
 
 
 
-    @*<script>
-                $('#SaveItemToCart').on('click', function () {
-                    console.log("okk");
-                 $.ajax({
-                        type: "POST",
-                        url: @Url.Action("AddToCart", "Paypal"),
-                        data: "PaintingID="+PaintingID,
-                        dataType: "json",
-                        success: function (response) {
-                            console.log(response);
-                        }
-                    });
+    <script>
+
+
+        $('#SaveItemToCart').on('click', function () {
+            console.log("zzzzzzzzzzzzzzzzzzz");
+        })
+
+              @*function AddItemToCart(PaintingID) {
+            console.log("okk");
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("AddToCart", "Paypal")',
+                data: "PaintingID="+PaintingID,
+                dataType: "json",
+                success: function (response) {
+                    console.log(response);
+                }
             });
-        </script>*@
+            };*@
+    </script>
 
 
 }

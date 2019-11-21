@@ -261,36 +261,6 @@ namespace WebApi_Api.Controllers
             }
             base.Dispose(disposing);
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         private bool AvatarExists(int id)
         {
             return db.AvatarDb.Count(e => e.AvatarId == id) > 0;

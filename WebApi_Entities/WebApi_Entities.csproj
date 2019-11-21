@@ -72,6 +72,8 @@
     <Compile Include="Avatar\AvatarBody.cs" />
     <Compile Include="Avatar\AvatarClothing.cs" />
     <Compile Include="Avatar\AvatarHair.cs" />
+    <Compile Include="Sales\PurchacedItem.cs" />
+    <Compile Include="Sales\Sale.cs" />
     <Compile Include="School\Classroom.cs" />
     <Compile Include="School\Painting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,9 +82,7 @@
     <Compile Include="School\Teacher.cs" />
     <Compile Include="SignalR\MessageHistory.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Goal\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
