@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PagedList;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -23,9 +24,55 @@ namespace Web_Front.Controllers
         SchoolApiService ServiceSchool = new SchoolApiService();
 
         // GET: Student
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            return View(StudentServ.GetStudents());
+            // SORTING ---------------------------------------------------------------------------->>
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "fname_desc" : "";
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "lname_desc" : "";
+            ViewBag.CurrentSort = sortOrder;
+
+            var students = from st in StudentServ.GetStudents()
+                           select st;
+
+            // PAGE NUMBERS ----------------------------------------------------------------------->>
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            ViewBag.CurrentFilter = searchString;
+
+
+            // FILTER --------------------------------------=-------------------------------------->>
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                students = students.Where(st => (st.FirstName.Contains(searchString)) || (st.LastName.Contains(searchString)));
+            }
+
+            // SORTING ---------------------------------------------------------------------------->>
+            switch (sortOrder)
+            {
+                case "fname_desc":
+                    students = students.OrderByDescending(s => s.FirstName);
+                    break;
+                case "lname_desc":
+                    students = students.OrderByDescending(s => s.LastName);
+                    break;
+                default:
+                    students = students.OrderBy(s => s.LastName);
+                    break;
+            }
+
+            // Number of Pages -------------------------------------------------------------------->>
+            int pageSize = 6;
+            int pageNumber = (page ?? 1);
+            return View(students.ToPagedList(pageNumber, pageSize));
+
+            // Palio return ------------------------------>>
+            //return View(StudentServ.GetStudents());
         }
 
         // GET: Student/Details/5
@@ -66,7 +113,7 @@ namespace Web_Front.Controllers
 
             List<Classroom> ClassroomList = ServiceSchool.GetSchool(SchoolID).Classrooms.ToList();
 
-           
+
             //(PartialView Name, Database List)
             return PartialView("_CreateAjaxDropdown", ClassroomList);
         }
@@ -83,9 +130,8 @@ namespace Web_Front.Controllers
         {
             if (ModelState.IsValid)
             {
-               //We Need To Set Instance of School and Classroom at Student To be Created!
-                ViewModel.Student.Classroom= ServiceClassroom.GetClassroom(ViewModel.SelectedClassroomID);
-                ViewModel.Student.Classroom.School = ServiceSchool.GetSchool(ViewModel.SelectedSchoolID);
+                //We Need To Set Instance of School and Classroom at Student To be Created!
+                ViewModel.Student.ClassroomFK = ViewModel.SelectedClassroomID;
                 //Create User
                 StudentServ.CreateStudent(ViewModel.Student);
                 return RedirectToAction("Index");

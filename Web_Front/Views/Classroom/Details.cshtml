@@ -88,12 +88,20 @@
                     <hr />
                     <br />
                     <div class="row">
-                        <div class="btn_contain3 col">
-                            <div class="btn_child_norm3">
-                                <a title="back to schools" href="@Url.Action("Details", "School", new { id = Model.School.SchoolId })"><img src="~/images/UIcons/schools_off.png" /></a>
+                        <div class="btn_contain1 col">
+                            <div class="btn_child_norm1">
+                                <a title="Classroom" href="@Url.Action("Index", "Classroom" )"><img src="~/images/UIcons/students_off.png" /></a>
                             </div>
-                            <div class="btn_child_live3">
-                                <a title="back to schools" href="@Url.Action("Details", "School", new { id = Model.School.SchoolId })"><img src="~/images/UIcons/schoolspng.png" /></a>
+                            <div class="btn_child_live1">
+                                <a title="Classroom" href="@Url.Action("Index", "Classroom" )"><img src="~/images/UIcons/students.png" /></a>
+                            </div>
+                        </div>
+                        <div class="btn_contain2 col">
+                            <div class="btn_child_norm2">
+                                <a title="go to school" href="@Url.Action("Details", "School", new { id = Model.School.SchoolId })"><img src="~/images/UIcons/schools_off.png" /></a>
+                            </div>
+                            <div class="btn_child_live2">
+                                <a title="go to school" href="@Url.Action("Details", "School", new { id = Model.School.SchoolId })"><img src="~/images/UIcons/schoolspng.png" /></a>
                             </div>
                         </div>
                     </div>
@@ -102,5 +110,4 @@
         </div>
     </div>
 </div>
-
 

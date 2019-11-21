@@ -19,8 +19,8 @@ namespace Web_Services.Mail
         public MailMessage mail { get; set; }
         public string sub { get; set; }
         public string body { get; set; }
-        private string _EmailAddress { get; set; }
-        private string _EmailPassword { get; set; }
+        private string _emailAddress { get; set; }
+        private string _emailPassword { get; set; }
         private  string LocalUrl { get; set; }
 
         //Constructor
@@ -32,8 +32,8 @@ namespace Web_Services.Mail
             mail.Subject =  "Donation To Schools";
             mail.Body="Thank you for your purchase, all of the money will be given to selected schools in order to help upgrade the current facilities.";
 
-            _EmailAddress = ConfigurationManager.AppSettings["EmailAddress"];//Get Email from Web.config
-            _EmailPassword = ConfigurationManager.AppSettings["EmailPassword"];//Get Pass from Web.config
+            _emailAddress = ConfigurationManager.AppSettings["EmailAddress"];//Get Email from Web.config
+            _emailPassword = ConfigurationManager.AppSettings["EmailPassword"];//Get Pass from Web.config
 
             LocalUrl = System.Web.HttpContext.Current.Server.MapPath("~/images/paintings/");//Get current url of painting folder
 
@@ -46,9 +46,9 @@ namespace Web_Services.Mail
 
 
             //Purpose of LINQ: Get list of paintings and a list of selected painting ids and fill the list of mail.Attachments
-            //
+            
 
-            ServicePainting
+            ServicePainting                                 //Service For Paintings
                 .GetPaintings()                             //Will Get A List of Paintings From API
                 .Where(a => paintingIDs                     //From paintingIDs
                     .Select(int.Parse)                      //Convert Everything To INT
@@ -73,7 +73,7 @@ namespace Web_Services.Mail
                 //Outlook Mail Server
                 Host = "pod51014.outlook.com",
                 Port = 587,
-                Credentials = new NetworkCredential(_EmailAddress, _EmailPassword),
+                Credentials = new NetworkCredential(_emailAddress, _emailPassword),
                 EnableSsl = true
             };
 

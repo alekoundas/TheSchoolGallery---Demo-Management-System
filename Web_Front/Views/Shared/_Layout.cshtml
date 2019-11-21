@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="~/css/animate.css">
     <link rel="stylesheet" href="~/css/pfold.css" />
     <link rel="stylesheet" href="~/css/owl.css" />
+    <link rel="stylesheet" href="~/css/PagedList.css" />
     <link rel="stylesheet" href="~/css/main.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -38,9 +39,7 @@
 
 </head>
 <body>
-    <div id="loading"></div>
-
-    <div class="fixed-top pl-10">
+    <div class="fixed-top pl-10" style="margin-bottom:30px;">
         <!-- STEADY BAR (login, register, cart, etc -------------------------- -->
         @Html.Partial("_LoginPartial")
     </div>
@@ -51,15 +50,9 @@
         @Html.Partial("_Navigation_Admin")
     }
 
-
 <div class="oz-body-wrap">
-
-    <!-- NAVIGATION BAR -------------------------------------------------- -->
-    @*@Html.Partial("_Navigation_A")*@
-
     <!-- MAIN BODY --------------------------------------------------- -->
     @RenderBody()
-
 </div>
 
     <!-- FOOTER AREA ----------------------------------------------------- -->
@@ -87,11 +80,6 @@
     @*MODAL POWER ---------------------------------------->> *@
     <script>
 
-        // LOADER ----------------------------------------->>
-        jQuery(document).ready(function () {
-            jQuery('#loading').fadeOut(2000);
-        });
-
         $(function () {
             // say we want to have only one item opened at one moment
             var opened = false;
@@ -109,7 +97,6 @@
                     onEndFolding: function () { opened = false; },
                 });
                 $item.find('#openit').on('click', function () {
-
                     if (!opened) {
                         opened = true;
                         pfold.unfold();
@@ -121,8 +108,6 @@
                 });
             });
         });
-
-
     </script>
 
 
@@ -139,8 +124,6 @@
                 $('#discussion').append('<li><strong>' + htmlEncode(name)
                     + '</strong>: ' + htmlEncode(message) + '</li>');
             };
-
-
 
             //Receive All Messages From Database So U Can Change Page And Dont Loose Messages
             //With AJAX I Call A Controllers Action And Get A Result
@@ -160,9 +143,6 @@
                     error: function(recData) { alert("Error While Loading Previous Messages"+recData); }
             });
 
-
-            // Set initial focus to message input box.
-            //$('#message').focus();
             // Start the connection.
             $.connection.hub.start().done(function () {
                 $('#sendmessage').click(function () {
@@ -192,8 +172,6 @@
         }
     </script>
     @* End SignalR *@
-
-
 
     @* Add Item To Cart Via Ajax *@
     <script>
@@ -229,13 +207,6 @@
 
     </script>
     @* Add Item To Cart  End *@
-
-
-
-
-
-
-
 
     @RenderSection("scripts", required: false)
 </body>

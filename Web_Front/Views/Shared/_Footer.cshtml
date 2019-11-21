@@ -1,57 +1,45 @@
-﻿    <!-- FOOTER AREA ----------------------------------------------------- -->
-
-
+﻿<!-- FOOTER AREA ----------------------------------------------------- -->
 
 <footer id="Chat" class="section-gap">
     <div class="container">
-        <div class="row pt-60">
+        <div class="row">
 
-            <div class="col-lg-2 col-sm-2">
-                <div class="single-footer-widget">
-                    <h6 class="text-uppercase mb-20">Site Navigation</h6>
-                    <ul class="footer-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Paintings", "Index", "Painting")</li>
-                        <li>@Html.ActionLink("Schools", "Index", "School")</li>
-                        <li>@Html.ActionLink("Class", "Index", "Classroom")</li>
-                        <li>@Html.ActionLink("Students", "Index", "Student")</li>
-                        <li>@Html.ActionLink("Teachers", "Index", "Teacher")</li>
-
-                    </ul>
-                </div>
+            <div class="col-lg-3 col-md-3 col-sm-2">
+                <img style="width:80%;" src="~/images/bannerakia/Chat.png" />
             </div>
 
-            <div class="col-lg-8 col-sm-8">
-                <h6 class="text-uppercase mb-20" style="margin-left:20px">Chat</h6>
+            <div class="col-lg-5 col-md-5 col-sm-4">
+                <h6 class="text-uppercase mb-20" style="margin-left:20px">Shout Out Now!</h6>
                 <form>
                     <div class="form-group">
                         <div class="container">
+                            <!-- Set Name for Chat ----------------------------------------------------- -->
                             <div class="wrap-input100">
                                 <input class="inputchat" type="text" id="username" placeholder="Set Name For Chat">
                             </div>
+                            <!-- Chat Text Box Here ---------------------------------------------------- -->
                             <div class="wrap-input100 rs1">
                                 <input class="input100" type="text" id="message">
                                 <span class="focus-input100-1"></span>
                                 <span class="focus-input100-2"></span>
                             </div>
+                            <!-- Submit Mssg Button ---------------------------------------------------- -->
                             <div class="container-login100-form-btn m-t-20">
-                                <button class="login100-form-btn" type="button" id="sendmessage" value="Send">
-                                    Chat
-                                </button>
+                                <button class="login100-form-btn" type="button" id="sendmessage" value="Send">Message</button>
                             </div>
                         </div>
-                        @* aaaand DOES NOT crashes :p *@
-                        @* axaxaxaxxaaax *@
                     </div>
                 </form>
             </div>
 
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <h6 class="text-uppercase mb-20" style="margin-left:20px">The School Gallery Chat</h6>
+                <div class="single-footer-widget dottedFrame">
+                    <ul id="discussion"></ul>
 
-            <div class="col-lg-2 col-sm-2">
-                <div class="single-footer-widget">
-                    @*<h6 class="text-uppercase mb-20">Chat Box</h6>*@
-                    <ul id="discussion">
-                    </ul>
+
+
+
                 </div>
             </div>
 

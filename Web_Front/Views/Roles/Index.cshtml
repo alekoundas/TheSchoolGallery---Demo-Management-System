@@ -1,16 +1,19 @@
 ﻿@{
     ViewBag.Title = "ManageUserRoles";
     Layout = "~/Views/Shared/_Layout.cshtml";
+<link href="~/css/AdminArch.css" rel="stylesheet" />
 }
+
+
 
 
 <div class="limiter">
     <div class="container-login100">
-        <div class="container">
+        <div class="container-fluid">
             <h3 class="text-center" style="color:#f3efe9;"> Admin Role Managment</h3>
             <hr />
             <br />
-            <div class="row">
+            <div class="row text-center">
                 <!-- Section - Roles A ---------------------------------------->
                 <div class="col-md-6 mx-auto">
                     <div class="wrap-AvatarnoH" style="color:#f3efe9">
@@ -63,10 +66,10 @@
 
                                 <div class="row mx-auto">
                                     <div class="col-4 mx-0 wrap-avabox text-left">
-                                        User Name: @Html.DropDownList("UserName", (IEnumerable<SelectListItem>)ViewBag.Users, "Select ...")
+                                        User Name @Html.DropDownList("UserName", (IEnumerable<SelectListItem>)ViewBag.Users, "Select ...")
                                     </div>
                                     <div class="col-4 mx-0 wrap-avabox text-left">
-                                        Role Name: @Html.DropDownList("RoleName", (IEnumerable<SelectListItem>)ViewBag.Roles, "Select ...")
+                                        Role Name @Html.DropDownList("RoleName", (IEnumerable<SelectListItem>)ViewBag.Roles, "Select ...")
                                     </div>
 
                                     <div class="col-4 mx-0 container-login100-form-btn">
@@ -87,7 +90,7 @@
 
                                 <div class="row mx-auto">
                                     <div class="col-4 mx-0 wrap-avabox text-left">
-                                        User Name: @Html.DropDownList("UserName", (IEnumerable<SelectListItem>)ViewBag.Users, "Select ...")
+                                        User Name @Html.DropDownList("UserName", (IEnumerable<SelectListItem>)ViewBag.Users, "Select ...")
                                     </div>
                                     <div class="col-4 mx-0 wrap-avabox text-left">
                                     </div>
@@ -122,10 +125,10 @@
 
                                 <div class="row mx-auto">
                                     <div class="col-4 mx-0 wrap-avabox text-left">
-                                        User Name: @Html.DropDownList("UserName", (IEnumerable<SelectListItem>)ViewBag.Users, "Select ...")
+                                        User Name @Html.DropDownList("UserName", (IEnumerable<SelectListItem>)ViewBag.Users, "Select ...")
                                     </div>
                                     <div class="col-4 mx-0 wrap-avabox text-left">
-                                        Role Name: @Html.DropDownList("RoleName", (IEnumerable<SelectListItem>)ViewBag.Roles, "Select ...")
+                                        Role Name @Html.DropDownList("RoleName", (IEnumerable<SelectListItem>)ViewBag.Roles, "Select ...")
                                     </div>
 
                                     <div class="col-4 mx-0 container-login100-form-btn">
@@ -134,19 +137,39 @@
                                 </div>
                                 <br />
                             }
-
                             <hr />
-
                             <div class="alert-info col-sm-12 col-lg-12 col-md-12">
                                 @ViewBag.Message
                             </div>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="col-12 mx-auto text-center">
+                    <br />
+                    <h3 style="color:#f3efe9;"> Admin General Info</h3>
+                    <hr />
+                    <br />
+                </div>
+
+                <div class="col-12 mx-auto">
+                    <div class="wrap-AvatarnoH">
+                        <div class="wrap-login100noH">
+
+                            <!-- General Stuff -------------------------------------------------- -->
+                            @Html.Partial("_AdminToys")
 
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
 </div>
+
+
+@section Scripts {
+    <script src="~/js/AdminArch.js"></script>
+}
 

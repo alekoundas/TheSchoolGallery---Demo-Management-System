@@ -67,44 +67,49 @@
                         <img style="bottom:0px" class="stackImages P_child" id="slidetwo" src="~/images/parallax/Portrait_boi2.png">
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- Section - Links ---------------------------------------->
-        <div style="height:180px;" class="container col-6">
-            <hr />
-            <br />
-            <div class="row">
-                <div class="btn_contain1 col">
-                    <div class="btn_child_norm1">
-                        <a href="@Url.Action("Index", "Student")"><img src="~/images/UIcons/students_off.png" /></a>
-                    </div>
-                    <div class="btn_child_live1">
-                        <a style="color:#f3efe9" href="@Url.Action("Index", "Student")"><img src="~/images/UIcons/students.png" /> students </a>
+
+                <!-- Section - Links ---------------------------------------->
+                <div style="height:180px;" class="container col-12">
+                    <hr />
+                    <br />
+                    <div class="row">
+                        <div class="btn_contain1 col">
+                            <div class="btn_child_norm1">
+                                <a title="students" href="@Url.Action("Index", "Student")"><img src="~/images/UIcons/students_off.png" /></a>
+                            </div>
+                            <div class="btn_child_live1">
+                                <a title="students" href="@Url.Action("Index", "Student")"><img src="~/images/UIcons/students.png" /></a>
+                            </div>
+                        </div>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <div class="btn_contain2 col">
+                                <div class="btn_child_norm2">
+                                    <a title="edit" href="@Url.Action("Edit", "Student", new { id = Model.StudentId })"><img src="~/images/UIcons/edit_off.png" /></a>
+                                </div>
+                                <div class="btn_child_live2">
+                                    <a title="edit" href="@Url.Action("Edit", "Student", new { id = Model.StudentId })"><img src="~/images/UIcons/edit.png" /></a>
+                                </div>
+                            </div>
+
+                            <div class="btn_contain3 col">
+                                <div class="btn_child_norm3">
+                                    <a title="details" href="@Url.Action("Details", "Student", new { id = Model.StudentId })"><img src="~/images/UIcons/details_off.png" /></a>
+                                </div>
+                                <div class="btn_child_live3">
+                                    <a title="details" href="@Url.Action("Details", "Student", new { id = Model.StudentId })"><img src="~/images/UIcons/details.png" /></a>
+                                </div>
+                            </div>
+                        }
+
                     </div>
                 </div>
-                @if (User.IsInRole("Admin"))
-                {
-                    <div class="btn_contain2 col">
-                        <div class="btn_child_norm2">
-                            <a href="@Url.Action("Edit", "Student", new { id = Model.StudentId })"><img src="~/images/UIcons/edit_off.png" /></a>
-                        </div>
-                        <div class="btn_child_live2">
-                            <a style="color:#f3efe9" href="@Url.Action("Edit", "Student", new { id = Model.StudentId })"><img src="~/images/UIcons/edit.png" /> edit </a>
-                        </div>
-                    </div>
 
-                    <div class="btn_contain3 col">
-                        <div class="btn_child_norm3">
-                            <a href="@Url.Action("Details", "Student", new { id = Model.StudentId })"><img src="~/images/UIcons/details_off.png" /></a>
-                        </div>
-                        <div class="btn_child_live3">
-                            <a style="color:#f3efe9" href="@Url.Action("Details", "Student", new { id = Model.StudentId })"><img src="~/images/UIcons/details.png" /> details </a>
-                        </div>
-                    </div>
-                }
 
             </div>
         </div>
+
+       
     </div>
 </div>

@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -23,9 +24,51 @@ namespace Web_Front.Controllers
         TeacherApiService ServiceTeacher = new TeacherApiService();
 
         // GET: Classroom
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            return View(ServiceClassroom.GetClassrooms());
+            // SORTING ---------------------------------------------------------------------------->>
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.CurrentSort = sortOrder;
+
+            var classrooms = from cls in ServiceClassroom.GetClassrooms()
+                           select cls;
+
+            // PAGE NUMBERS ----------------------------------------------------------------------->>
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            ViewBag.CurrentFilter = searchString;
+
+
+            // FILTER --------------------------------------=-------------------------------------->>
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                classrooms = classrooms.Where(st => (st.Name.Contains(searchString)));
+            }
+
+            // SORTING ---------------------------------------------------------------------------->>
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    classrooms = classrooms.OrderByDescending(s => s.Name);
+                    break;
+                default:
+                    classrooms = classrooms.OrderBy(s => s.Name);
+                    break;
+            }
+
+            // Number of Pages -------------------------------------------------------------------->>
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
+            return View(classrooms.ToPagedList(pageNumber, pageSize));
+
+            // Palio return ------------------------------>>
+            //return View(ServiceClassroom.GetClassrooms());
         }
 
         // GET: Classroom/Details/5
@@ -141,7 +184,11 @@ namespace Web_Front.Controllers
 
 
 
-
+        // GET: C#
+        public ActionResult classSharp()
+        {
+            return View();
+        }
 
 
 

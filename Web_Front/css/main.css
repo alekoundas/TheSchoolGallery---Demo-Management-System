@@ -646,7 +646,7 @@ td, th {
 
 @media (max-width: 767px) {
     .no-flex-xs {
-        display: block !important
+        display: block;
     }
 }
 
@@ -1793,13 +1793,15 @@ body {
 
 @media (max-width: 767px) {
     .oz-body-wrap {
-        margin: 30px
+        margin: 10px;
+        margin-top:100px;
     }
 }
 
 @media (max-width: 575px) {
     .oz-body-wrap {
-        margin: 10px
+        margin: 10px;
+        margin-top: 100px;
     }
 }
 
@@ -1813,13 +1815,15 @@ body {
 
 @media (max-width: 767px) {
     .oz-body-wrap2 {
-        margin: 60px
+        margin: 10px;
+        margin-top: 100px;
     }
 }
 
 @media (max-width: 575px) {
     .oz-body-wrap2 {
-        margin: 30px
+        margin: 10px;
+        margin-top: 100px;
     }
 }
 
@@ -3064,6 +3068,17 @@ iframe {
     line-height: 1.2;
 }
 
+.input10 {
+    display: block;
+    width: 80%;
+    background: transparent;
+    font-family: OpenSans-Regular;
+    font-size: 15px;
+    color: #666666;
+    line-height: 1.2;
+    max-height:40px;
+}
+
 .inputchat {
     display: block;
     width: 100%;
@@ -3079,6 +3094,7 @@ input.input100 {
     height: 68px;
     padding: 0 25px 0 25px;
 }
+
 
 input.inputchat {
     height: 38px;
@@ -3215,7 +3231,6 @@ input.inputchat {
     animation: Color_Change_Background 120s infinite;
     animation-delay: 6s;
     -webkit-transition-timing-function: ease-in;
-    font-family: OpenSans-Regular;
     font-size: 14px;
     color: #fff;
     line-height: 1.2;
@@ -3226,10 +3241,39 @@ input.inputchat {
     transition: all 0.4s;
 }
 
+.login10-form-btn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    width: 100%;
+    height: auto;
+    background: rgba(64, 64, 64, 0.50);
+    /*animation of color change application [background]*/
+    -webkit-animation: Color_Change_Background 180s infinite;
+    animation: Color_Change_Background 120s infinite;
+    animation-delay: 6s;
+    -webkit-transition-timing-function: ease-in;
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.2;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
     .login100-form-btn:hover {
         border: 4px solid #f3efe9;
     }
 
+.login10-form-btn:hover {
+    border: 2px solid #f3efe9;
+}
 
 /*------------------------------------------------------------------
 [ Alert validate ]*/
@@ -3255,7 +3299,6 @@ input.inputchat {
     transform: translateY(-50%);
     right: 12px;
     pointer-events: none;
-    font-family: OpenSans-Regular;
     color: #c80000;
     font-size: 13px;
     line-height: 1.4;
@@ -3736,6 +3779,18 @@ section hr {
     transition-duration: 1s;
 }
 
+.sideFrameSchool {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    background: #f3efe9;
+    overflow: hidden;
+    box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
+    border: 15px solid #dbd7d1;
+
+}
+
     .sideFrameD:hover {
         border: 5px solid #dbd7d1;
         transition-duration: 1s;
@@ -3762,6 +3817,7 @@ section hr {
     box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
     border: 2px dotted #f3efe9;
 }
+
 
 .dottedFrame {
     position: relative;
@@ -3837,20 +3893,45 @@ section hr {
     position: relative;
     width: 30px;
     height: auto;
-    padding: 20px 0;
+    padding: 5px 0;
     margin-left: -10px;
+    margin-top: 10px;
     box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
     border: 1px dotted #5c5c5c;
     background-color: #f3efe9;
     transition-duration: 1s;
 }
 
-    .dottedFrameAdmin:hover {
-        cursor: pointer;
-        border: 1px dotted #f3efe9;
-        padding: 50px 0;
-        transition-duration: 1s;
-    }
+.dottedFrameAdminC {
+    position: relative;
+    width: 30px;
+    height: auto;
+    padding: 5px 0;
+    margin-top: 0px;
+    margin-left: -10px;
+    box-shadow: 1px 1px 20px 10px rgba(0,0,0,0.1);
+    border: 1px dotted #5c5c5c;
+    border-top: none;
+    background-color: #f3efe9;
+    transition-duration: 1s;
+}
+
+.dottedFrameAdmin:hover {
+    cursor: pointer;
+    border-right: 2px dotted #ff6a00;
+    border-left: 2px dotted #ff6a00;
+    padding: 5px 0;
+    transition-duration: 1s;
+}
+
+.dottedFrameAdminC:hover {
+    cursor: pointer;
+    border-right: 2px dotted #ff6a00;
+    border-left: 2px dotted #ff6a00;
+    padding: 5px 0;
+    border-top: none;
+    transition-duration: 1s;
+}
 
 .sideFrame h1, .sideFrame h2, .sideFrame h3, .sideFrame h4, .sideFrame h5 {
     color: #f3efe9;
@@ -3858,6 +3939,12 @@ section hr {
 }
 
 .sideFrameD h1, .sideFrameD h2, .sideFrameD h3, .sideFrameD h4, .sideFrameD h5 {
+    color: #5c5c5c;
+    text-shadow: none;
+    margin-bottom: 2px;
+}
+
+.sideFrameSchool h1, .sideFrameSchool h2, .sideFrameSchool h3, .sideFrameSchool h4, .sideFrameSchool h5 {
     color: #5c5c5c;
     text-shadow: none;
     margin-bottom: 2px;
@@ -4087,6 +4174,22 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 25px;
 }
 
+
+.dottedFrameClass {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding:20px;
+    overflow: hidden;
+    transition-duration: 1s;
+}
+
+.ClassAva:hover {
+    border: 2px dotted #5c5c5c;
+    transition-duration: 1s;
+}
+
+
 /*#endregion AVATAR*/
 
 
@@ -4160,13 +4263,7 @@ h1, h2, h3, h4, h5 {
     -webkit-transition-timing-function: ease-in;
 }
 
-#loading {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: #fff url('../images/Preloader_7.gif') no-repeat center center;
-    z-index: 9999;
-}
+
 
 .navigationTitle a {
     color: #4a4a4a;
@@ -4263,3 +4360,54 @@ h1, h2, h3, h4, h5 {
 
 
 /*#endregion HOME*/
+
+.SortByBox {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    height: auto;
+    padding-top:8px;
+    color: #f3efe9;
+    overflow: hidden;
+}
+
+#loading {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #fff url('../images/Preloader_7.gif') no-repeat center center;
+    z-index: 9999;
+}
+
+/* Add animation to "INTRO APPEAR" */
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+}
+@-webkit-keyframes animatebottom {
+    from {
+        bottom: -8000px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0px;
+        opacity: 1
+    }
+}
+
+@keyframes animatebottom {
+    from {
+        bottom: -8000px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+

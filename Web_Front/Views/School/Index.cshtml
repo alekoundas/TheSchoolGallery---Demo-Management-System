@@ -1,8 +1,11 @@
-﻿@model IEnumerable<Web_DomainClasses.Entities.School.School>
+﻿@*@model IEnumerable<Web_DomainClasses.Entities.School.School>*@
+@model PagedList.IPagedList<Web_DomainClasses.Entities.School.School>
+
+@using PagedList.Mvc;
+
 @{
     ViewBag.Title = "Index";
 }
-
 
 <section class="feature-area pt-100 pb-100  relative">
     <div class="overlay overlay-bg text-center">
@@ -14,6 +17,51 @@
 
     <div class="container-fluid">
         <div class="row">
+            <!-- Create New - Search/Filter ------------------------------------------>
+            <div class="container">
+                <div class="row">
+                    <!-- Create New ------------------------------------------>
+                    <div class="col-3">
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <div class="row">
+                                <div class="col-3">
+                                    <img style="margin-top:-12px;" src="~/images/UIcons/schoolspng.png" />
+                                </div>
+                                <div class="col-9">
+                                    <h4>@Html.ActionLink("Create New", "Create", null, new { @class = "h4" })</h4>
+                                </div>
+                            </div>
+
+                        }
+                    </div>
+                    <!-- Sort ------------------------------------------>
+                    <div class="col-3 SortByBox text-center">
+                        Sort By: 
+                        <img id="profileImage" style="width:20px;" />
+                        @Html.ActionLink("School Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }, new { @class = "h6" })
+                    </div>
+                    <!-- Filter ------------------------------------------>
+                    <div class="col-5">
+                        @using (Html.BeginForm("Index", "School", FormMethod.Get))
+                        {
+                            <div class="row mx-auto">
+                                <div class="col-6 mx-0 wrap-avabox text-center">
+                                    @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "inputchat", placeholder = "Filter" })
+                                </div>
+                                <div class="col-4 mx-0 container-login100-form-btn">
+                                    <input type="submit" value="Search" class="login10-form-btn" />
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <div class="col-1">
+                        <img style="margin-top:-20px; width:80px;" src="~/images/filter.png" />
+                    </div>
+                    <hr />
+                </div>
+            </div>
+
 
             <!-- SECTION Schools ------------------------------------- -->
             <div class="col-12 d-flex justify-content-center align-items-center">
@@ -76,6 +124,14 @@
                 </div>
             </div>
 
+            <div class="container text-center">
+                Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+                @Html.PagedListPager(Model, page => Url.Action("Index",
+                    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+            </div>
+
+
             <!-- SECTION Google Maps ------------------------------------- -->
             <div class="col-12">
                 @using (Html.BeginForm())
@@ -90,7 +146,18 @@
     </div>
 </section>
 
+@section Scripts {
 
+    <script>
+        $(document).ready(function () {
+            if('@ViewBag.NameSortParm'!='')
+                $("#profileImage").attr("src", "../Images/down.png");
+            else
+                $("#profileImage").attr("src", "../Images/up.png");
+        });
+    </script>
+
+}
 
 
 

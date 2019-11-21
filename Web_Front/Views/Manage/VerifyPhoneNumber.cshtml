@@ -3,28 +3,46 @@
     ViewBag.Title = "Verify Phone Number";
 }
 
-<h2>@ViewBag.Title.</h2>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="container-fluid">
+            <h3 class="text-center" style="color:#f3efe9;">Set Password</h3>
+            <hr />
+            <br />
+            <div class="row">
+                <!--  ---------------------------------------->
+                <div class="col-md-12 mx-auto">
+                    <div class="wrap-Avatar">
+                        <div class="wrap-login100">
 
-@using (Html.BeginForm("VerifyPhoneNumber", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    @Html.Hidden("phoneNumber", @Model.PhoneNumber)
-    <h4>Enter verification code</h4>
-    <h5>@ViewBag.Status</h5>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Code, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Code, new { @class = "form-control" })
+                            @using (Html.BeginForm("VerifyPhoneNumber", "Manage", FormMethod.Post, new { @class = "wrap-Avatar", role = "form" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.Hidden("phoneNumber", @Model.PhoneNumber)
+                                <h4 style="color:#5c5c5c;">Enter verification code</h4>
+                                <h5 style="color:#5c5c5c;">@ViewBag.Status</h5>
+                                <hr />
+                                @Html.ValidationSummary("", new { @class = "text-danger" })
+                                <div class="wrap-avabox">
+                                    @Html.TextBoxFor(m => m.Code, new { @class = "form-control" })
+                                </div>
+                                <p style="color:#909090">Code</p>
+
+                                <div class="container-login100-form-btn m-t-20">
+                                    <input type="submit" class="login100-form-btn" value="Submit" />
+                                </div>
+
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Submit" />
-        </div>
-    </div>
-}
+</div>
+
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

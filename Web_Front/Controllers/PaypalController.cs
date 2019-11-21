@@ -6,9 +6,11 @@ using System.Linq;
 using System.Net.Mail;
 using System.Web.Mvc;
 using Web_DomainClasses.Entities.School;
+using Web_DomainClasses.Entities.Sales;
 using Web_Front.Models;
 using Web_Front.Models.Paypal;
 using Web_Services.ApiMapping;
+using Web_Services.ApiMapping.Sales;
 using Web_Services.Mail;
 
 namespace Web_Front.Controllers
@@ -17,12 +19,13 @@ namespace Web_Front.Controllers
     {
         ApplicationDbContext db = new ApplicationDbContext();
         PaintingApiService ServicePainting = new PaintingApiService();
+        SaleApiService ServiceSale = new SaleApiService();
 
 
         // GET: PayPal
         public ActionResult Index()
         {
-            
+
             List<Item> CartList = Session["CartList"] as List<Item>;
             return View("Index", CartList);
         }
@@ -49,14 +52,13 @@ namespace Web_Front.Controllers
                 sku = "sku",
                 description = painting.PaintingId.ToString()
             };
-            if (CartList.Any(x => x.name == item.name && x.price == item.price))
-            {
-                Debug.WriteLine("");
-            }
-            CartList.Add(item);
+            AddOrUpdateCart(CartList, item);
+
             Session["CartList"] = CartList;
             return View("Index", CartList);
         }
+
+
 
         public ActionResult ClearCart()
         {
@@ -66,6 +68,7 @@ namespace Web_Front.Controllers
 
         public ActionResult PayPalPayment(string UserId)
         {
+
             try
             {
                 var apiContext = PaypalConfiguration.GetAPIContext();
@@ -100,13 +103,13 @@ namespace Web_Front.Controllers
                     {
                         tax = "0",
                         shipping = "0",
-                        subtotal = itemList.items.Select(x => int.Parse(x.price)).Sum().ToString()
+                        subtotal = itemList.items.Select(x => int.Parse(x.price) * int.Parse(x.quantity)).Sum().ToString()// Based on item prices by quantities
                     };
 
                     var amount = new Amount()
                     {
                         currency = "USD",
-                        total = itemList.items.Select(x => int.Parse(x.price)).Sum().ToString(), // Total must be equal to sum of shipping, tax and subtotal.
+                        total = itemList.items.Select(x => int.Parse(x.price) * int.Parse(x.quantity)).Sum().ToString(), // Total must be equal to sum of shipping, tax and subtotal.
                         details = details
                     };
 
@@ -182,7 +185,18 @@ namespace Web_Front.Controllers
             //Send Email With Painting On Success Payment to User Email
             //Get ids from decription and give them as a list of strings
             List<Item> CartList = Session["CartList"] as List<Item>;
-            SendEmail(user.Email, CartList.Select(x=>x.description).ToList());
+            SendEmail(user.Email, CartList.Select(x => x.description).ToList());
+           
+            //Will use method below to return a sale and then the ServiceSale 
+            //will send this obj to WebApi project
+            ServiceSale.CreateSale(CreateSaleObj(CartList));
+
+
+
+
+
+
+
 
             //Empty Session Storage From Cart Items On Success Payment
             Session["CartList"] = null;
@@ -191,14 +205,63 @@ namespace Web_Front.Controllers
             return View("Index");
         }
 
-
-        public static void SendEmail(string recieverEmail,List<string> paintingIDs)
+        /// <summary>
+        /// Will create and send automated email based on users email and
+        /// selection of paintngs.This will be executed after successful purchase
+        /// </summary>
+        /// <param name="recieverEmail"></param>
+        /// <param name="paintingIDs"></param>
+        public static void SendEmail(string recieverEmail, List<string> paintingIDs)
         {
             CustomEmailService mail = new CustomEmailService();
 
             mail.to = new MailAddress(recieverEmail);
             mail.CreateAttachments(paintingIDs);
             mail.SendMail();
+        }
+
+
+
+
+
+        /// <summary>
+        /// Checks if the cart has the same item.If true it increases existing item quantity by 1
+        /// else adds the new item to list
+        /// </summary>
+        /// <param name="CartList"></param>
+        /// <param name="item"></param>
+        private static void AddOrUpdateCart(List<Item> CartList, Item item)
+        {
+            if (CartList.Any(x => x.name == item.name && x.price == item.price))
+            {
+                string current_quantity = CartList.Where(x => x.name == item.name && x.price == item.price).FirstOrDefault().quantity;
+                int new_quantity = Int32.Parse(current_quantity) + 1;
+                CartList.Where(x => x.name == item.name && x.price == item.price).FirstOrDefault().quantity = new_quantity.ToString();
+            }
+            else
+            {
+                CartList.Add(item);
+            }
+        }
+
+
+
+
+
+        private static Web_DomainClasses.Entities.Sales.Sale  CreateSaleObj(List<Item> cartList)
+        {
+            //Purpose of Linq: Create a list of PurchasedItem objects ,based on users painting selection
+           List<PurchacedItem> purchases =  cartList
+                .Select(a => new PurchacedItem                          //Create Obj
+                { 
+                    PurchasedPaintingId = Int32.Parse(a.description)    //Add the
+                    ,Quantity = Int32.Parse(a.quantity)                 //properties
+                })
+                .ToList();                                              //Return it as a list
+
+            return new Web_DomainClasses.Entities.Sales.Sale() { purchacedItems =  purchases };
+            
+
         }
 
     }

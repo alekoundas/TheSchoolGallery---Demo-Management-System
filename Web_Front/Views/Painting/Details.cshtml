@@ -8,6 +8,8 @@
         <div class="container-login100">
             <div class="container">
                 <br />
+                <h2 class="text-center" style="color:#f3efe9;">Painting Details</h2>
+                <hr />
                 <br />
                 <div class="row">
 
@@ -20,49 +22,44 @@
                         </div>
                     </div>
 
-                    <!-- Section - Student Details ---------------------------------------->
-                    <div class="col-md-12 mx-auto text-center">
-                        <div class="paintingcontainer">
-                            <div class="studentdesc">
-                                <h3>@Html.DisplayFor(model => model.PaintingTitle)</h3>
-                                <hr />
-                                <h4 style="color:white">@Html.DisplayNameFor(model => model.Price):@Html.DisplayFor(model => model.Price)</h4>
-                            </div>
-                        </div>
-                        <hr />
-                        <br />
-                    </div>
-
-                    <!-- Section - Links ---------------------------------------->
-                    <div style="height:180px;" class="container col-6">
-                      
+                    <div class="container">
                         <div class="row">
-                            <div class="btn_contain1 col">
-                                <div class="btn_child_norm1">
-                                    <a href="@Url.Action("Index", "Painting")"><img src="~/images/UIcons/paintings_off.png" /></a>
+                            <!-- Section - Student Details ---------------------------------------->
+                            <div class="col-md-6 mx-auto text-center">
+                                <div class="paintingcontainer">
+                                    <div class="studentdesc">
+                                        <h3>@Html.DisplayFor(model => model.PaintingTitle)</h3>
+                                        <hr />
+                                        <h4 style="color:white">@Html.DisplayNameFor(model => model.Price):@Html.DisplayFor(model => model.Price)</h4>
+                                    </div>
                                 </div>
-                                <div class="btn_child_live1">
-                                    <a style="color:#f3efe9" href="@Url.Action("Index", "Painting")"><img src="~/images/UIcons/paintings.png" /> paintings </a>
+                                <hr />
+                                <br />
+                            </div>
+                            <!-- Section - Links ---------------------------------------->
+                            <div style="height:180px;" class="container col-6">
+
+                                <div class="row">
+                                    <div class="btn_contain1 col">
+                                        <div class="btn_child_norm1">
+                                            <a title="paintings" href="@Url.Action("Index", "Painting")"><img src="~/images/UIcons/paintings_off.png" /></a>
+                                        </div>
+                                        <div class="btn_child_live1">
+                                            <a title="paintings" href="@Url.Action("Index", "Painting")"><img src="~/images/UIcons/paintings.png" /></a>
+                                        </div>
+                                    </div>
+                                    <div class="btn_contain2 col">
+                                        <div class="btn_child_norm2">
+                                            <a title="edit painting" href="@Url.Action("Edit", "Painting", new { id = Model.PaintingId })"><img src="~/images/UIcons/register.png" /></a>
+                                        </div>
+                                        <div class="btn_child_live2">
+                                            <a title="edit painting" href="@Url.Action("Edit", "Painting", new { id = Model.PaintingId })"><img src="~/images/UIcons/register_on.png" /></a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="btn_contain2 col">
-                                <div class="btn_child_norm2">
-                                    <a href="@Url.Action("Edit", "Painting", new { id = Model.PaintingId })"><img src="~/images/UIcons/paintings_off.png" /></a>
-                                </div>
-                                <div class="btn_child_live2">
-                                    <a style="color:#f3efe9" href="@Url.Action("Edit", "Painting", new { id = Model.PaintingId })"><img src="~/images/UIcons/paintings.png" /> edit painting </a>
-                                </div>
-                            </div>
-
-                            
                         </div>
                     </div>
-
-
-
-
-
 
                 </div>
             </div>

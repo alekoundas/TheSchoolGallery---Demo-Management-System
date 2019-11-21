@@ -20,46 +20,11 @@
                             <hr />
 
                             <h4>
-                                @*@Html.DisplayNameFor(model => model.Classroom): @Html.DisplayFor(model => model.Classroom)*@
+                                @Html.DisplayNameFor(model => model.Classrooms): @Html.DisplayFor(model => model.Classrooms)
                             </h4>
                         </div>
 
 
-
-
-                        <!-- Section - Links ---------------------------------------->
-                        <div style="height:180px;" class="container col-6">
-                            <hr />
-                            <br />
-                            <div class="row">
-                                <div class="btn_contain1 col">
-                                    <div class="btn_child_norm1">
-                                        <a href="@Url.Action("Index", "Teacher")"><img src="~/images/UIcons/students_off.png" /></a>
-                                    </div>
-                                    <div class="btn_child_live1">
-                                        <a style="color:#f3efe9" href="@Url.Action("Index", "Teacher")"><img src="~/images/UIcons/students.png" /> teachers </a>
-                                    </div>
-                                </div>
-
-                                <div class="btn_contain2 col">
-                                    <div class="btn_child_norm2">
-                                        <a href="@Url.Action("Details", "Classroom", new { id = Model.TeacherId })"><img src="~/images/UIcons/schools_off.png" /></a>
-                                    </div>
-                                    <div class="btn_child_live2">
-                                        <a style="color:#f3efe9" href="@Url.Action("Details", "Classroom", new { id = Model.TeacherId })"><img src="~/images/UIcons/schoolspng.png" /> go to class </a>
-                                    </div>
-                                </div>
-
-                                <div class="btn_contain3 col">
-                                    <div class="btn_child_norm3">
-                                        <a href="@Url.Action("Edit", "Teacher", new { id = Model.TeacherId })"><img src="~/images/UIcons/edit_off.png" /></a>
-                                    </div>
-                                    <div class="btn_child_live3">
-                                        <a style="color:#f3efe9" href="@Url.Action("Edit", "Teacher", new { id = Model.TeacherId })"><img src="~/images/UIcons/edit.png" /> edit teacher </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                     </div>
                 </div>

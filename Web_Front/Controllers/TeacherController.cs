@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PagedList;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -18,11 +19,56 @@ namespace Web_Front.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
         TeacherApiService ServiceTeacher = new TeacherApiService();
 
-
         // GET: Teacher
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            return View(ServiceTeacher.GetTeachers());
+            // SORTING ---------------------------------------------------------------------------->>
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "fname_desc" : "";
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "lname_desc" : "";
+            ViewBag.CurrentSort = sortOrder;
+
+            var teachers = from tch in ServiceTeacher.GetTeachers()
+                           select tch;
+
+            // PAGE NUMBERS ----------------------------------------------------------------------->>
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            ViewBag.CurrentFilter = searchString;
+
+
+            // FILTER --------------------------------------=-------------------------------------->>
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                teachers = teachers.Where(st => (st.FirstName.Contains(searchString)) || (st.LastName.Contains(searchString)));
+            }
+
+            // SORTING ---------------------------------------------------------------------------->>
+            switch (sortOrder)
+            {
+                case "fname_desc":
+                    teachers = teachers.OrderByDescending(s => s.FirstName);
+                    break;
+                case "lname_desc":
+                    teachers = teachers.OrderByDescending(s => s.LastName);
+                    break;
+                default:
+                    teachers = teachers.OrderBy(s => s.LastName);
+                    break;
+            }
+
+            // Number of Pages -------------------------------------------------------------------->>
+            int pageSize = 6;
+            int pageNumber = (page ?? 1);
+            return View(teachers.ToPagedList(pageNumber, pageSize));
+
+            // Palio return ------------------------------>>
+            //return View(ServiceTeacher.GetTeachers());
         }
 
 

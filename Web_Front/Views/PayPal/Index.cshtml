@@ -7,101 +7,85 @@
 <div class="limiter">
     <div class="container-login100">
         <div class="container">
-            <br />
-            <br />
             <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <div class="wrap-login100">
-                        <div class="paintingInfoD">
-                            <span class="login100-form-title p-b-33">
-                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                Cart
-                            </span>
-                            <hr />
-                            <br />
+                <div class="col-md-3 col-sm-3 mx-auto">
+                    <a title="Purchase" href="@Url.Action("PayPalPayment", "PayPal",new {UserId= User.Identity.GetUserId()})">
+                        <div class="sideImage text-center" id="p_container2">
 
-                            @if (Model == null)
+                            <img style="right:20px; bottom:200px; border:4px solid #bababa; width:80%; box-shadow:1px 1px 20px 10px rgba(0,0,0,0.1);" class="stackImages P_child2" id="slidetwo2" src="~/images/banner.jpg">
+                            <img style="left:-20px; bottom:80px;" class="stackImages p_child2" id="slideone2" src="~/images/bannerakia/Bannerakia_1_money.png">
+                            <h2>Purchase</h2>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-sm-3 mx-auto">
+                    <div class="sideImage">
+                        <br />
+                        <span style="color:#f3efe9;" class="login100-form-title p-b-33">
+                            Your Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        </span>
+                        <hr />
+                        <br />
+                        @if (Model == null)
+                        {
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12 align-items-stretch">
+                                        <div class="dottedFrameDark text-center">
+                                            <h2>
+                                                Fill Cart to Reach 50 <i class="fa fa-eur" aria-hidden="true"></i>  Goal!
+                                            </h2>
+                                            <hr />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            foreach (var item in Model)
                             {
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-12 align-items-stretch">
                                             <div class="dottedFrameDark text-center">
-                                                <h2>
-                                                    Fill Cart to Reach 50 <i class="fa fa-eur" aria-hidden="true"></i>  Goal!
-                                                </h2>
-                                                <hr />
+                                                <h5>
+                                                    Painting: @item.name |  Price:  @item.price <i class="fa fa-eur" aria-hidden="true"></i> |  Tax: @item.tax | Quantity:  @item.quantity
+                                                </h5>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             }
-                            else
-                            {
-                                foreach (var item in Model)
-                                {
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-12 align-items-stretch">
-                                                <div class="dottedFrameDark text-center">
-                                                    <h5>
-                                                        Painting: @item.name |  Price:  @item.price <i class="fa fa-eur" aria-hidden="true"></i> |  Tax: @item.tax | Quantity:  @item.quantity
-                                                    </h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                }
-                            }
+                        }
 
-                        </div>
                     </div>
                 </div>
-
-                @*Create Something side Parallax*@
-                <div class="col-md-4 mx-auto">
+                <div class="col-md-3 col-sm-3 mx-auto">
                     <div class="sideImage" id="p_container">
                         <img style="right:20px; bottom:200px; border:4px solid #bababa; width:80%; box-shadow:1px 1px 20px 10px rgba(0,0,0,0.1);" class="stackImages P_child" id="slidetwo" src="~/images/white-paper-texture.jpg">
                         <img style="left:-300px; bottom:20px; width:900px" class="stackImages p_child" id="slideone" src="~/images/parallax/gallery_boi.png">
-
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-        <script>
-                    var user = UserManager.FindById(User.Identity.GetUserId()).Email;
-        var email = user.Email;
-        </script>
-
-
-        <!-- Section - Links ---------------------------------------->
-        <div style="height:180px;" class="container col-6">
-            <hr />
-            <br />
-            <div class="row">
-                <div class="btn_contain1 col">
-                    <div class="btn_child_norm1">
-                        <a href="@Url.Action("PayPalPayment", "PayPal")"><img src="~/images/UIcons/cart_off.png" /></a>
-                    </div>
-                    <div class="btn_child_live1">
-                        <a style="color:#f3efe9" href="@Url.Action("PayPalPayment", "PayPal",new {UserId= User.Identity.GetUserId()})"><img src="~/images/UIcons/cart.png" /> Purchase </a>
-                    </div>
-                </div>
-
-                <div class="btn_contain2 col">
-                    <div class="btn_child_norm2">
-                        <a href="@Url.Action("ClearCart", "PayPal")"><img src="~/images/UIcons/cart_off.png" /></a>
-                    </div>
-                    <div class="btn_child_live2">
-                        <a style="color:#f3efe9" href="@Url.Action("ClearCart", "PayPal")"><img src="~/images/UIcons/delete.png" /> clear cart </a>
+                        <div class="btn_contain2 col">
+                            <div class="btn_child_norm2">
+                                <a title="clear Cart" href="@Url.Action("ClearCart", "PayPal")"><img src="~/images/UIcons/delete_off.png" /></a>
+                            </div>
+                            <div class="btn_child_live2">
+                                <a title="clear Cart" href="@Url.Action("ClearCart", "PayPal")"><img src="~/images/UIcons/delete.png" /></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
+
+    <script>
+        var user = UserManager.FindById(User.Identity.GetUserId()).Email;
+        var email = user.Email;
+    </script>
 </div>
+
 
 
 

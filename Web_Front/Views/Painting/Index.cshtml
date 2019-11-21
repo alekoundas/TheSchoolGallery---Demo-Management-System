@@ -16,22 +16,16 @@ else
 }
 
 
+@section Scripts {
 
-
-<script>
+    <script>
         $(document).ready(function () {
-            function AddItemToCart(PaintingID) {
-            console.log("okk");
-            $.ajax({
-                type: "POST",
-                url: @Url.Action("AddToCart", "Paypal"),
-                data: "PaintingID="+PaintingID,
-                dataType: "json",
-                success: function (response) {
-                    console.log(response);
-                }
-            });
-            };
+            if('@ViewBag.NameSortParm'!='')
+                $("#profileImage").attr("src", "../Images/down.png");
+            else
+                $("#profileImage").attr("src", "../Images/up.png");
         });
+    </script>
 
-</script>
+}
+

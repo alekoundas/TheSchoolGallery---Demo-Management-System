@@ -74,6 +74,8 @@
     <Compile Include="Entities\Avatar\AvatarHair.cs" />
     <Compile Include="Entities\GoogleMaps\MapMarker.cs" />
     <Compile Include="Entities\reCAPTCHA\Recaptcha.cs" />
+    <Compile Include="Entities\Sales\PurchacedItem.cs" />
+    <Compile Include="Entities\Sales\Sale.cs" />
     <Compile Include="Entities\School\Classroom.cs" />
     <Compile Include="Entities\School\Painting.cs" />
     <Compile Include="Entities\School\School.cs" />
@@ -83,6 +85,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AvatarCreateVM.cs" />
     <Compile Include="ViewModels\AvatarEditVM.cs" />
+    <Compile Include="ViewModels\ChartDataVM.cs" />
     <Compile Include="ViewModels\ClassroomCreateVM.cs" />
     <Compile Include="ViewModels\SchoolIndexVM.cs" />
     <Compile Include="ViewModels\StudentCreateVM.cs" />

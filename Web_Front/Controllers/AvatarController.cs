@@ -109,7 +109,7 @@ namespace Web_Front.Controllers
             ViewModel.AvatarHairs = ServiceHair.GetHairs();
             ViewModel.AvatarBodys = ServiceBody.GetBodys();
             ViewModel.AvatarClothings = ServiceClothing.GetClothings();
-            ViewModel.SelectedStudentID = ServiceStudent.GetStudent(id).StudentId;
+            ViewModel.SelectedStudentID = ServiceStudent.GetStudents().Where(x=>x.AvatarFK == avatar.AvatarId).FirstOrDefault().StudentId;
             return View(ViewModel);
         }
 
