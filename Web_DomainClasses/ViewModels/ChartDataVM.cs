@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Web_DomainClasses.ViewModels
 {
-    class ChartDataVM
+    public class ChartDataVM
     {
+        public int TotalOrders { get; set; }
+        public double TotalMoneyCollected { get; set; }
+        public int TotalPaintingsSold { get; set; }
     }
 }

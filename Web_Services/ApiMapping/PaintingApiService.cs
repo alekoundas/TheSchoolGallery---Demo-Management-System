@@ -38,8 +38,8 @@ namespace Web_Services.ApiMapping
 
 
 
-        //                GET Painting By ID                   \\
-        //          Method:GET  -->  /api/Painting/id           \\
+        //        GET Painting By ID     (Nullable)          \\
+        //          Method:GET  -->  /api/Painting/id         \\
         public Painting GetPainting(int? Id)
         {
             //Create Client
@@ -56,6 +56,7 @@ namespace Web_Services.ApiMapping
 
             return painting;
         }
+
 
 
 

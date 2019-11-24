@@ -27,7 +27,7 @@ namespace Web_DomainClasses.Entities.School
         // Has A Price ------------------------------>>
         public double Price { get; set; }
 
-        // Has Many Awards ------------------------------>>
-        //public  ICollection<Award> Awards { get; set; }
+        // Holds A Value For Curtain Occasions--------------->>
+        public int Quantity { get; set; } = 0;
     }
 }
