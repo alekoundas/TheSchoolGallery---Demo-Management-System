@@ -8,7 +8,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E3E379DF-F4C6-4180-9B81-6769533ABE47}</ProjectGuid>
+    <ProjectGuid>{4725DFFA-EC6F-4C2F-BF2F-909F59FAE86B}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -1441,7 +1441,6 @@
     <Content Include="Views\Avatar\Details.cshtml" />
     <Content Include="Views\Avatar\Edit.cshtml" />
     <Content Include="Views\Avatar\Index.cshtml" />
-    <Content Include="Views\SkopiaGame\SkopiaGame.cshtml" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Roles\Index.cshtml" />
     <Content Include="Views\Roles\Edit.cshtml" />
@@ -1453,6 +1452,7 @@
     <Content Include="Views\Classroom\_classC.cshtml" />
     <Content Include="Views\Roles\_AdminToys.cshtml" />
     <Content Include="Views\Chart\Index.cshtml" />
+    <Content Include="Views\Paypal\_ParalaxBanner.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
