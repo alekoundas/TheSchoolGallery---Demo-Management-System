@@ -1350,6 +1350,19 @@
     <Content Include="Scripts\test-bundles\angular-route.js" />
     <Content Include="Scripts\test-bundles\angular-sanitize.js" />
     <Content Include="Scripts\test-bundles\angular-touch.js" />
+    <Content Include="Skopia\Build\UnityLoader.js" />
+    <Content Include="Skopia\index.html" />
+    <Content Include="Skopia\TemplateData\favicon.ico" />
+    <Content Include="Skopia\TemplateData\fullscreen.png" />
+    <Content Include="Skopia\TemplateData\progressEmpty.Dark.png" />
+    <Content Include="Skopia\TemplateData\progressEmpty.Light.png" />
+    <Content Include="Skopia\TemplateData\progressFull.Dark.png" />
+    <Content Include="Skopia\TemplateData\progressFull.Light.png" />
+    <Content Include="Skopia\TemplateData\progressLogo.Dark.png" />
+    <Content Include="Skopia\TemplateData\progressLogo.Light.png" />
+    <Content Include="Skopia\TemplateData\style.css" />
+    <Content Include="Skopia\TemplateData\UnityProgress.js" />
+    <Content Include="Skopia\TemplateData\webgl-logo.png" />
     <Content Include="UnityGalleryWeb\Build\UnityLoader.js" />
     <Content Include="UnityGalleryWeb\index.html" />
     <Content Include="UnityGalleryWeb\TemplateData\favicon.ico" />
@@ -1453,11 +1466,14 @@
     <Content Include="Views\Roles\_AdminToys.cshtml" />
     <Content Include="Views\Chart\Index.cshtml" />
     <Content Include="Views\Paypal\_ParalaxBanner.cshtml" />
+    <Content Include="Skopia\Build\Skopia GL.data.unityweb" />
+    <Content Include="Skopia\Build\Skopia GL.json" />
+    <Content Include="Skopia\Build\Skopia GL.wasm.code.unityweb" />
+    <Content Include="Skopia\Build\Skopia GL.wasm.framework.unityweb" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="images\schools\" />
-    <Folder Include="Skopia\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.min.css.map" />
