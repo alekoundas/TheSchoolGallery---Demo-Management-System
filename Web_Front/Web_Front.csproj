@@ -1457,10 +1457,6 @@
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Roles\Index.cshtml" />
     <Content Include="Views\Roles\Edit.cshtml" />
-    <Content Include="UnityGalleryWeb\Build\TheSchoolGallery3D.data.unityweb" />
-    <Content Include="UnityGalleryWeb\Build\TheSchoolGallery3D.json" />
-    <Content Include="UnityGalleryWeb\Build\TheSchoolGallery3D.wasm.code.unityweb" />
-    <Content Include="UnityGalleryWeb\Build\TheSchoolGallery3D.wasm.framework.unityweb" />
     <Content Include="Views\Classroom\classSharp.cshtml" />
     <Content Include="Views\Classroom\_classC.cshtml" />
     <Content Include="Views\Roles\_AdminToys.cshtml" />
@@ -1470,6 +1466,10 @@
     <Content Include="Skopia\Build\Skopia GL.json" />
     <Content Include="Skopia\Build\Skopia GL.wasm.code.unityweb" />
     <Content Include="Skopia\Build\Skopia GL.wasm.framework.unityweb" />
+    <Content Include="UnityGalleryWeb\Build\Gallery3D.data.unityweb" />
+    <Content Include="UnityGalleryWeb\Build\Gallery3D.json" />
+    <Content Include="UnityGalleryWeb\Build\Gallery3D.wasm.code.unityweb" />
+    <Content Include="UnityGalleryWeb\Build\Gallery3D.wasm.framework.unityweb" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -30,19 +30,6 @@
                             </div>
                         </div>
 
-                        @if (User.IsInRole("Admin"))
-                        {
-                            <!-- ADMIN ONLY VIEW ----------------------------------------------------- -->
-                            <div class="btn_contain3 col-1">
-                                <div class="btn_child_norm4">
-                                    <a title="Settings" href="@Url.Action("Index", "Roles")"><img src="~/images/UIcons/gears_off.png" /></a>
-                                </div>
-                                <div class="btn_child_live3">
-                                    <a title="Settings" href="@Url.Action("Index", "Roles")"><img src="~/images/UIcons/gears.png" /></a>
-                                </div>
-                            </div>
-                        }
-
                         <div class="btn_contain4 col-1">
                             <div class="btn_child_norm4">
                                 <a title="Home" href="@Url.Action("Index", "Home")"><img src="~/images/UIcons/schools_off.png" /></a>
@@ -61,10 +48,6 @@
                             </div>
 
                         </div>
-                        <!-- Cart Indication --------------------------- -->
-                        @*<div style="margin-left:14px; margin-top:15px;" class="navigationTitle text-center">
-                            <a style="font-size:24px;">cart is empty)</a>
-                        </div>*@
 
                     </div>
                 </div>

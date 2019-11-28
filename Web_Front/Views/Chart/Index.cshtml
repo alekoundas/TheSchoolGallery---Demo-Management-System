@@ -1,18 +1,272 @@
 ﻿@model Web_DomainClasses.ViewModels.ChartDataVM
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Chart Index";
+    <link href="~/css/AdminArch.css" rel="stylesheet" />
 }
 
-<h2>Index</h2>
-
-<table class="table">
-    <tr>
-        <th></th>
-    </tr>
 
 
     @Model.TotalOrders
     @Model.TotalMoneyCollected
-</table>
-a
+
+
+<div class="limiter">
+    <div class="container-login100">
+        <div class="container-fluid">
+            <h3 class="text-center" style="color:#f3efe9;"> Admin General Info</h3>
+            <hr />
+            <br />
+            <div class="row text-center">
+                <div class="col-12 mx-auto">
+                    <div class="wrap-AvatarnoH">
+                        <div class="wrap-login100noH">
+
+                            <!-- General Stuff -------------------------------------------------- -->
+                            <div class="app-main__outer">
+                                <div class="app-main__inner">
+
+                                    <div class="row">
+                                        <!-- BOX A - Painting Sales -->
+                                        <div class="col-md-6 col-xl-4">
+                                            <div class="card mb-3 widget-content bg-colorContainerA">
+                                                <div class="widget-content-wrapper text-white">
+                                                    <div class="widget-content-left">
+                                                        <div class="widget-heading">Total Orders</div>
+                                                        <div class="widget-subheading">Total of Paintings Sold</div>
+                                                    </div>
+                                                    <div class="widget-content-right">
+                                                        <div class="widget-numbers text-white"><span>12</span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- BOX B - Total Amount -->
+                                        <div class="col-md-6 col-xl-4">
+                                            <div class="card mb-3 widget-content bg-colorContainerB">
+                                                <div class="widget-content-wrapper text-white">
+                                                    <div class="widget-content-left">
+                                                        <div class="widget-heading">Students</div>
+                                                        <div class="widget-subheading">Total of Students enlisted</div>
+                                                    </div>
+                                                    <div class="widget-content-right">
+                                                        <div class="widget-numbers text-white"><span>60</span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- BOX C - Schools -->
+                                        <div class="col-md-6 col-xl-4">
+                                            <div class="card mb-3 widget-content bg-colorContainerC">
+                                                <div class="widget-content-wrapper text-white">
+                                                    <div class="widget-content-left">
+                                                        <div class="widget-heading">Total Paintings</div>
+                                                        <div class="widget-subheading">Total of Paintings Displayed</div>
+                                                    </div>
+                                                    <div class="widget-content-right">
+                                                        <div class="widget-numbers text-white"><span>74</span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- PROGRATION BARS --------------------------------------------- -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-3">
+                                            <div class="card-shadow-danger mb-3 widget-chart widget-chart2 text-left card">
+                                                <div class="widget-content">
+                                                    <div class="widget-content-outer">
+                                                        <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left pr-2 fsize-1">
+                                                                <div class="widget-numbers mt-0 fsize-3 text-danger">25%</div>
+                                                            </div>
+                                                            <div class="widget-content-right w-100">
+                                                                <div class="progress-bar-xs progress">
+                                                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget-content-left fsize-1">
+                                                            <div class="text-muted opacity-6">Paintings Sold per Students Involved</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <div class="card-shadow-success mb-3 widget-chart widget-chart2 text-left card">
+                                                <div class="widget-content">
+                                                    <div class="widget-content-outer">
+                                                        <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left pr-2 fsize-1">
+                                                                <div class="widget-numbers mt-0 fsize-3 text-success">12%</div>
+                                                            </div>
+                                                            <div class="widget-content-right w-100">
+                                                                <div class="progress-bar-xs progress">
+                                                                    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100" style="width: 12%;"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget-content-left fsize-1">
+                                                            <div class="text-muted opacity-6">School Goals Achieved</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <div class="card-shadow-warning mb-3 widget-chart widget-chart2 text-left card">
+                                                <div class="widget-content">
+                                                    <div class="widget-content-outer">
+                                                        <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left pr-2 fsize-1">
+                                                                <div class="widget-numbers mt-0 fsize-3 text-warning">32%</div>
+                                                            </div>
+                                                            <div class="widget-content-right w-100">
+                                                                <div class="progress-bar-xs progress">
+                                                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100" style="width: 32%;"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget-content-left fsize-1">
+                                                            <div class="text-muted opacity-6">Paintings Sales</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3">
+                                            <div class="card-shadow-info mb-3 widget-chart widget-chart2 text-left card">
+                                                <div class="widget-content">
+                                                    <div class="widget-content-outer">
+                                                        <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left pr-2 fsize-1">
+                                                                <div class="widget-numbers mt-0 fsize-3 text-info">0%</div>
+                                                            </div>
+                                                            <div class="widget-content-right w-100">
+                                                                <div class="progress-bar-xs progress">
+                                                                    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="widget-content-left fsize-1">
+                                                            <div class="text-muted opacity-6">Dissatisfacted Parents</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                   
+                                    <div class="row">
+                                        <!-- DIAGRAM A --------------------------------------------- -->
+                                        <div class="col-md-12 col-lg-12">
+                                            <div class="mb-3 card">
+                                                <div class="card-header-tab card-header-tab-animation card-header">
+                                                    <div class="card-header-title">
+                                                        <i class="header-icon lnr-apartment icon-gradient bg-love-kiss"> </i>
+                                                        Paintings Sold
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="tab-content">
+                                                        <div class="tab-pane fade show active" id="tabs-eg-77">
+
+                                                            <h6 class="text-muted text-uppercase font-size-md opacity-5 font-weight-normal">Top Painters</h6>
+                                                            <div class="scroll-area-sm">
+                                                                <div class="scrollbar-container">
+                                                                    <ul class="rm-list-borders rm-list-borders-scroll list-group list-group-flush">
+                                                                        <li class="list-group-item">
+                                                                            <div class="widget-content p-0">
+                                                                                <div class="widget-content-wrapper">
+                                                                                    <div class="widget-content-left mr-3">
+                                                                                        <img width="42" class="rounded-circle" src="~/images/UIcons/paintings.png" alt="">
+                                                                                    </div>
+                                                                                    <div class="widget-content-left">
+                                                                                        <div class="widget-heading">Village Celebration</div>
+                                                                                        <div class="widget-subheading">Iosif Pateras</div>
+                                                                                    </div>
+                                                                                    <div class="widget-content-right">
+                                                                                        <div class="font-size-xlg text-muted">
+                                                                                            <small class="opacity-5 pr-1">€</small>
+                                                                                            <span>9</span>
+                                                                                            <small class="text-danger pl-2">
+                                                                                                <i class="fa fa-angle-down"></i>
+                                                                                            </small>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="list-group-item">
+                                                                            <div class="widget-content p-0">
+                                                                                <div class="widget-content-wrapper">
+                                                                                    <div class="widget-content-left mr-3">
+                                                                                        <img width="42" class="rounded-circle" src="~/images/UIcons/paintings.png" alt="">
+                                                                                    </div>
+                                                                                    <div class="widget-content-left">
+                                                                                        <div class="widget-heading">Neberhoud</div>
+                                                                                        <div class="widget-subheading">Ifigeneia Grevena</div>
+                                                                                    </div>
+                                                                                    <div class="widget-content-right">
+                                                                                        <div class="font-size-xlg text-muted">
+                                                                                            <small class="opacity-5 pr-1">€</small>
+                                                                                            <span>4</span>
+                                                                                            <small class="text-success pl-2">
+                                                                                                <i class="fa fa-angle-up"></i>
+                                                                                            </small>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="list-group-item">
+                                                                            <div class="widget-content p-0">
+                                                                                <div class="widget-content-wrapper">
+                                                                                    <div class="widget-content-left mr-3">
+                                                                                        <img width="42" class="rounded-circle" src="~/images/UIcons/paintings.png" alt="">
+                                                                                    </div>
+                                                                                    <div class="widget-content-left">
+                                                                                        <div class="widget-heading">My Village</div>
+                                                                                        <div class="widget-subheading">Babis Lipsos</div>
+                                                                                    </div>
+                                                                                    <div class="widget-content-right">
+                                                                                        <div class="font-size-xlg text-muted">
+                                                                                            <small class="opacity-5 pr-1">€</small>
+                                                                                            <span>2</span>
+                                                                                            <small class="text-warning pl-2">
+                                                                                                <i class="fa fa-dot-circle"></i>
+                                                                                            </small>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/js/AdminArch.js"></script>
+}
+

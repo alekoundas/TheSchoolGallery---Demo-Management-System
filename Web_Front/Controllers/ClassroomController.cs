@@ -185,6 +185,7 @@ namespace Web_Front.Controllers
 
 
         // GET: C#
+        [AllowAnonymous]
         public ActionResult classSharp()
         {
             return View();

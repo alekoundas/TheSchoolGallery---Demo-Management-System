@@ -3918,17 +3918,17 @@ section hr {
 
 .dottedFrameAdmin:hover {
     cursor: pointer;
-    border-right: 2px dotted #ff6a00;
-    border-left: 2px dotted #ff6a00;
-    padding: 5px 0;
+    border-right: 1px dotted #ff6a00;
+    border-left: 1px dotted #ff6a00;
+    padding: 5px ;
     transition-duration: 1s;
 }
 
 .dottedFrameAdminC:hover {
     cursor: pointer;
-    border-right: 2px dotted #ff6a00;
-    border-left: 2px dotted #ff6a00;
-    padding: 5px 0;
+    border-right: 1px dotted #ff6a00;
+    border-left: 1px dotted #ff6a00;
+    padding: 5px;
     border-top: none;
     transition-duration: 1s;
 }
